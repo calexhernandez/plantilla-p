@@ -1,0 +1,88 @@
+{
+  "Patient1stLastName": "Casilla",
+  "Patient2ndLastName": "Uribe",
+  "PatientName": "Diego Arturo",
+  "PatientInitial": "DC",
+  "Cedula": "00201537818",
+  "NumberRFC": "value",
+  "DateBirth": "23/05/2020",
+  "Sex": "M",
+  "eMail": "ing.dionisc@gmail.com",
+  "TelMovil": "8096579005",
+  "Relation": "",
+  "Employer": "",
+  "Account": {
+    "PostalAddress1": "value",
+    "PostalAddress2": "value",
+    "PostalCity": "value",
+    "PostalState": "value",
+    "PostalZipCode": "value",
+    "PostalCountry": "value",
+    "PhysicalAddress1": "value",
+    "PhysicalAddress2": "value",
+    "PhysicalCity": "value",
+    "PhysicalState": "value",
+    "PhysicalZipCode": "value",
+    "PhysicalCountry": "value",
+    "Billing1stLastName": "value",
+    "Billing2ndLastName": "value",
+    "BillingName": "value",
+    "BillingInitial": "value",
+    "BillingAddress1": "value",
+    "BillingAddress2": "value",
+    "BillingCity": "value",
+    "BillingState": "value",
+    "BillingZipCode": "value",
+    "BillingCountry": "value",
+    "TelBusiness": "value",
+    "TelHome": "value"
+  },
+  "PatientIns": {
+    "InsCompanyNo": "value",
+    "InsPolicyNo": "value",
+    "InsPolicyType": "value",
+    "InsPolicyGroup": "value",
+    "DateExpedition": "value",
+    "DateExpiration": "value"
+  },
+  "RequisitionDetails": {
+    "token": "{{SessionTokenPos}}",
+    "AccountNumber": "{{AccountNumber}}",
+    "PatientNumber": "{{PatientNumber}}",
+    "RequisitionDate": "5/3/2023",
+    "RequisitionTime": "2",
+    "RefDoctorNumber": "24465",
+    "ServiceReason": "1",
+    "ServicePlace": "2",
+    "ServiceType": "1",
+    "Employeer": "1",
+    "LocationID": "L004",
+    "ICDCodes": {
+      "ICDCode01": "z017"
+    },
+    "Procedures": [
+      {
+        "LineNumber": "1",
+        "ProcNumber": "2000",
+        "QtyProcedures": "1",
+        "InvoiceCodeINT": "1",
+        "Amount": "0.0",
+        "AmountIns": "0.0",
+        "AmountPat": "0.0",
+        "AdditionalCharge": "2",
+        "Priority": "S"
+      },
+      {
+        "LineNumber": "2",
+        "ProcNumber": "6025",
+        "QtyProcedures": "1",
+        "InvoiceCodeINT": "1",
+        "Amount": "0.0",
+        "AmountIns": "0.0",
+        "AmountPat": "0.0",
+        "AdditionalCharge": "2",
+        "Priority": "S"
+      }
+    ]
+  }
+}
