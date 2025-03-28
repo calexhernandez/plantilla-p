@@ -1,6 +1,8 @@
 var Patient1stLastName = msg['Patient1stLastName'];
 var Patient2ndLastName = msg['Patient2ndLastName'];
 var PatientName = msg['PatientName'];
+
+logger.info(PatientName);
 var Cedula = msg['Cedula'];
 var NumberRFC = msg['NumberRFC'];
 var DateBirth = msg['DateBirth'];
@@ -61,13 +63,32 @@ var LocationID = msg['RequisitionDetails']['LocationID'];
 // ICD Codes
 var ICDCode01 = msg['RequisitionDetails']['ICDCodes']['ICDCode01'];
 
+
+
+channelMap.put("Patient1stLastName",Patient1stLastName);
+channelMap.put("Patient2ndLastName",Patient2ndLastName);
+
+
 // Procedure Details
-var LineNumber = msg['RequisitionDetails']['Procedures'][0]['LineNumber'];
-var ProcNumber = msg['RequisitionDetails']['Procedures'][0]['ProcNumber'];
-var QtyProcedures = msg['RequisitionDetails']['Procedures'][0]['QtyProcedures'];
-var InvoiceCodeINT = msg['RequisitionDetails']['Procedures'][0]['InvoiceCodeINT'];
-var Amount = msg['RequisitionDetails']['Procedures'][0]['Amount'];
-var AmountIns = msg['RequisitionDetails']['Procedures'][0]['AmountIns'];
-var AmountPat = msg['RequisitionDetails']['Procedures'][0]['AmountPat'];
-var AdditionalCharge = msg['RequisitionDetails']['Procedures'][0]['AdditionalCharge'];
-var Priority = msg['RequisitionDetails']['Procedures'][0]['Priority'];
+
+
+var LineNumber = [];
+	
+for(var i=0; i < getArrayOrXmlLength(msg['RequisitionDetails']['Procedures']); i++){
+
+	LineNumber.push(msg['RequisitionDetails']['Procedures'][i]['LineNumber']);
+	var ProcNumber = msg['RequisitionDetails']['Procedures'][i]['ProcNumber'];
+	var QtyProcedures = msg['RequisitionDetails']['Procedures'][i]['QtyProcedures'];
+	var InvoiceCodeINT = msg['RequisitionDetails']['Procedures'][i]['InvoiceCodeINT'];
+	var Amount = msg['RequisitionDetails']['Procedures'][i]['Amount'];
+	var AmountIns = msg['RequisitionDetails']['Procedures'][i]['AmountIns'];
+	var AmountPat = msg['RequisitionDetails']['Procedures'][i]['AmountPat'];
+	var AdditionalCharge = msg['RequisitionDetails']['Procedures'][i]['AdditionalCharge'];
+	var Priority = msg['RequisitionDetails']['Procedures'][i]['Priority'];
+
+	logger.info("indice " + i + "ProcNum " + ProcNumber);
+
+
+}
+
+
