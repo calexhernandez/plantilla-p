@@ -1,45 +1,27 @@
-logger.info("Destination: ");
 
-// Set Patient Name in HL7 PID segment
-tmp['PID']['PID.5']['PID.5.1'] = $('Patient1stLastName') + " " + $('Patient2ndLastName');
-tmp['PID']['PID.5']['PID.5.2'] = $('PatientName'); // Given name
-
-// Set Patient Identification
-tmp['PID']['PID.3']['PID.3.1'] = $('Cedula'); // National ID
-tmp['PID']['PID.3']['PID.3.2'] = $('NumberRFC'); // RFC Number
-
-// Set Birth Date and Sex
-tmp['PID']['PID.7'] = $('DateBirth'); // Date of Birth
-tmp['PID']['PID.8'] = $('Sex'); // Gender
-
-// Contact Information
-tmp['PID']['PID.13']['PID.13.1'] = $('TelMovil'); // Mobile Phone
-tmp['PID']['PID.13']['PID.13.4'] = $('eMail'); // Email Address
-
-// Insurance Information (IN1 Segment)
-tmp['IN1']['IN1.3']['IN1.3.1'] = $('PatientIns')['InsPolicyNo']; // Policy Number
-tmp['IN1']['IN1.4'] = $('PatientIns')['InsCompanyNo']; // Insurance Company
-tmp['IN1']['IN1.5'] = $('PatientIns')['InsPolicyType']; // Policy Type
-tmp['IN1']['IN1.6'] = $('PatientIns')['InsPolicyGroup']; // Policy Group
-
-// Requisition Details (ORC Segment)
-tmp['ORC']['ORC.2'] = $('RequisitionDetails')['AccountNumber']; // Account Number
-tmp['ORC']['ORC.3'] = $('RequisitionDetails')['PatientNumber']; // Patient Number
-tmp['ORC']['ORC.9'] = $('RequisitionDetails')['RequisitionDate']; // Requisition Date
-tmp['ORC']['ORC.10'] = $('RequisitionDetails')['RequisitionTime']; // Requisition Time
-tmp['ORC']['ORC.12'] = $('RequisitionDetails')['RefDoctorNumber']; // Referring Doctor
-
-// Diagnosis Codes (DG1 Segment)
-tmp['DG1']['DG1.3'] = $('RequisitionDetails')['ICDCodes']['ICDCode01']; // ICD Code
-
-// Procedure Details (OBR Segment)
-var LineNumbers = $('LineNumber');
-
-for (var i = 0; i < LineNumbers.length; i++) {
-    tmp['OBR'][i]['OBR.1'] = LineNumbers[i]; // Line Number
-    tmp['OBR'][i]['OBR.4'] = $('RequisitionDetails')['Procedures'][i]['ProcNumber']; // Procedure Code
-    tmp['OBR'][i]['OBR.7'] = $('RequisitionDetails')['Procedures'][i]['QtyProcedures']; // Quantity
-    tmp['OBR'][i]['OBR.11'] = $('RequisitionDetails')['Procedures'][i]['Priority']; // Priority
-}
-
-logger.info("HL7 Message Constructed Successfully");
+//creo xml
+            if (typeof(tmp) == 'xml') {
+                if (typeof(tmp['ORC'][i]) == 'undefined') {
+                    createSegment('ORC', tmp, i);
+                }
+                if (typeof(tmp['OBR'][i]) == 'undefined') {
+                    createSegment('OBR', tmp, i);
+                }
+              
+            } else {
+                if (typeof(tmp) == 'undefined') {
+                    tmp = {};
+                }
+                if (typeof(tmp['ORC']) == 'undefined') {
+                    tmp['ORC'] = [];
+                }
+                if (typeof(tmp['OBR']) == 'undefined') {
+                    tmp['OBR'] = [];
+                }
+                if (typeof(tmp['ORC'][i]) == 'undefined') {
+                    tmp['ORC'][i] = {};
+                }
+                if (typeof(tmp['OBR'][i]) == 'undefined') {
+                    tmp['OBR'][i] = {};
+                }
+            }
