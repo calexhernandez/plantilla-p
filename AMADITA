@@ -1,8 +1,7 @@
+// Patient Information
 var Patient1stLastName = msg['Patient1stLastName'];
 var Patient2ndLastName = msg['Patient2ndLastName'];
 var PatientName = msg['PatientName'];
-
-logger.info(PatientName);
 var Cedula = msg['Cedula'];
 var NumberRFC = msg['NumberRFC'];
 var DateBirth = msg['DateBirth'];
@@ -63,32 +62,102 @@ var LocationID = msg['RequisitionDetails']['LocationID'];
 // ICD Codes
 var ICDCode01 = msg['RequisitionDetails']['ICDCodes']['ICDCode01'];
 
+// Store Key Patient Details in channelMap
+channelMap.put("Patient1stLastName", Patient1stLastName);
+channelMap.put("Patient2ndLastName", Patient2ndLastName);
+channelMap.put("PatientName", PatientName);
+channelMap.put("Cedula", Cedula);
+channelMap.put("NumberRFC", NumberRFC);
+channelMap.put("DateBirth", DateBirth);
+channelMap.put("Sex", Sex);
+channelMap.put("eMail", eMail);
+channelMap.put("TelMovil", TelMovil);
+channelMap.put("Relation", Relation);
+channelMap.put("Employer", Employer);
 
+// Store Account Details in channelMap
+channelMap.put("PostalAddress1", PostalAddress1);
+channelMap.put("PostalAddress2", PostalAddress2);
+channelMap.put("PostalCity", PostalCity);
+channelMap.put("PostalState", PostalState);
+channelMap.put("PostalZipCode", PostalZipCode);
+channelMap.put("PostalCountry", PostalCountry);
+channelMap.put("PhysicalAddress1", PhysicalAddress1);
+channelMap.put("PhysicalAddress2", PhysicalAddress2);
+channelMap.put("PhysicalCity", PhysicalCity);
+channelMap.put("PhysicalState", PhysicalState);
+channelMap.put("PhysicalZipCode", PhysicalZipCode);
+channelMap.put("PhysicalCountry", PhysicalCountry);
 
-channelMap.put("Patient1stLastName",Patient1stLastName);
-channelMap.put("Patient2ndLastName",Patient2ndLastName);
+// Store Billing Information in channelMap
+channelMap.put("Billing1stLastName", Billing1stLastName);
+channelMap.put("Billing2ndLastName", Billing2ndLastName);
+channelMap.put("BillingName", BillingName);
+channelMap.put("BillingInitial", BillingInitial);
+channelMap.put("BillingAddress1", BillingAddress1);
+channelMap.put("BillingAddress2", BillingAddress2);
+channelMap.put("BillingCity", BillingCity);
+channelMap.put("BillingState", BillingState);
+channelMap.put("BillingZipCode", BillingZipCode);
+channelMap.put("BillingCountry", BillingCountry);
+channelMap.put("TelBusiness", TelBusiness);
+channelMap.put("TelHome", TelHome);
 
+// Store Insurance Details in channelMap
+channelMap.put("InsCompanyNo", InsCompanyNo);
+channelMap.put("InsPolicyNo", InsPolicyNo);
+channelMap.put("InsPolicyType", InsPolicyType);
+channelMap.put("InsPolicyGroup", InsPolicyGroup);
+channelMap.put("DateExpedition", DateExpedition);
+channelMap.put("DateExpiration", DateExpiration);
 
-// Procedure Details
+// Store Requisition Details in channelMap
+channelMap.put("AccountNumber", AccountNumber);
+channelMap.put("PatientNumber", PatientNumber);
+channelMap.put("RequisitionDate", RequisitionDate);
+channelMap.put("RequisitionTime", RequisitionTime);
+channelMap.put("RefDoctorNumber", RefDoctorNumber);
+channelMap.put("ServiceReason", ServiceReason);
+channelMap.put("ServicePlace", ServicePlace);
+channelMap.put("ServiceType", ServiceType);
+channelMap.put("Employeer", Employeer);
+channelMap.put("LocationID", LocationID);
 
+// Store ICD Codes in channelMap
+channelMap.put("ICDCode01", ICDCode01);
 
+// Procedure Details (Store as Arrays)
 var LineNumber = [];
-	
-for(var i=0; i < getArrayOrXmlLength(msg['RequisitionDetails']['Procedures']); i++){
+var ProcNumber = [];
+var QtyProcedures = [];
+var InvoiceCodeINT = [];
+var Amount = [];
+var AmountIns = [];
+var AmountPat = [];
+var AdditionalCharge = [];
+var Priority = [];
 
-	LineNumber.push(msg['RequisitionDetails']['Procedures'][i]['LineNumber']);
-	var ProcNumber = msg['RequisitionDetails']['Procedures'][i]['ProcNumber'];
-	var QtyProcedures = msg['RequisitionDetails']['Procedures'][i]['QtyProcedures'];
-	var InvoiceCodeINT = msg['RequisitionDetails']['Procedures'][i]['InvoiceCodeINT'];
-	var Amount = msg['RequisitionDetails']['Procedures'][i]['Amount'];
-	var AmountIns = msg['RequisitionDetails']['Procedures'][i]['AmountIns'];
-	var AmountPat = msg['RequisitionDetails']['Procedures'][i]['AmountPat'];
-	var AdditionalCharge = msg['RequisitionDetails']['Procedures'][i]['AdditionalCharge'];
-	var Priority = msg['RequisitionDetails']['Procedures'][i]['Priority'];
+for (var i = 0; i < getArrayOrXmlLength(msg['RequisitionDetails']['Procedures']); i++) {
+    LineNumber.push(msg['RequisitionDetails']['Procedures'][i]['LineNumber']);
+    ProcNumber.push(msg['RequisitionDetails']['Procedures'][i]['ProcNumber']);
+    QtyProcedures.push(msg['RequisitionDetails']['Procedures'][i]['QtyProcedures']);
+    InvoiceCodeINT.push(msg['RequisitionDetails']['Procedures'][i]['InvoiceCodeINT']);
+    Amount.push(msg['RequisitionDetails']['Procedures'][i]['Amount']);
+    AmountIns.push(msg['RequisitionDetails']['Procedures'][i]['AmountIns']);
+    AmountPat.push(msg['RequisitionDetails']['Procedures'][i]['AmountPat']);
+    AdditionalCharge.push(msg['RequisitionDetails']['Procedures'][i]['AdditionalCharge']);
+    Priority.push(msg['RequisitionDetails']['Procedures'][i]['Priority']);
 
-	logger.info("indice " + i + "ProcNum " + ProcNumber);
-
-
+    logger.info("Index: " + i + " | ProcNum: " + msg['RequisitionDetails']['Procedures'][i]['ProcNumber']);
 }
 
-
+// Store Procedure Data in channelMap
+channelMap.put("LineNumber", LineNumber);
+channelMap.put("ProcNumber", ProcNumber);
+channelMap.put("QtyProcedures", QtyProcedures);
+channelMap.put("InvoiceCodeINT", InvoiceCodeINT);
+channelMap.put("Amount", Amount);
+channelMap.put("AmountIns", AmountIns);
+channelMap.put("AmountPat", AmountPat);
+channelMap.put("AdditionalCharge", AdditionalCharge);
+channelMap.put("Priority", Priority);
