@@ -1,0 +1,139 @@
+type: collection.insomnia.rest/5.0
+name: Scratch Pad
+meta:
+  id: wrk_scratchpad
+  created: 1742931432621
+  modified: 1742931432621
+collection:
+  - url: http://192.168.0.137:8082/createOrder/
+    name: CreateRequest Amadita
+    meta:
+      id: req_876dc00827a94b1eb25a5de98a8aa406
+      created: 1742931527268
+      modified: 1743631452739
+      isPrivate: false
+      sortKey: -1742931527268
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "Patient1stLastName": "Casilla",
+          "Patient2ndLastName": "Uribe",
+          "PatientName": "Diego Arturo",
+          "PatientInitial": "DC",
+          "Cedula": "00201537818",
+          "NumberRFC": "value",
+          "DateBirth": "23/05/2020",
+          "Sex": "M",
+          "eMail": "ing.dionisc@gmail.com",
+          "TelMovil": "8096579005",
+          "Relation": "",
+          "Employer": "",
+          "Account": {
+            "PostalAddress1": "value",
+            "PostalAddress2": "value",
+            "PostalCity": "value",
+            "PostalState": "value",
+            "PostalZipCode": "value",
+            "PostalCountry": "value",
+            "PhysicalAddress1": "value",
+            "PhysicalAddress2": "value",
+            "PhysicalCity": "value",
+            "PhysicalState": "value",
+            "PhysicalZipCode": "value",
+            "PhysicalCountry": "value",
+            "Billing1stLastName": "value",
+            "Billing2ndLastName": "value",
+            "BillingName": "value",
+            "BillingInitial": "value",
+            "BillingAddress1": "value",
+            "BillingAddress2": "value",
+            "BillingCity": "value",
+            "BillingState": "value",
+            "BillingZipCode": "value",
+            "BillingCountry": "value",
+            "TelBusiness": "value",
+            "TelHome": "value"
+          },
+          "PatientIns": {
+            "InsCompanyNo": "value",
+            "InsPolicyNo": "value",
+            "InsPolicyType": "value",
+            "InsPolicyGroup": "value",
+            "DateExpedition": "value",
+            "DateExpiration": "value"
+          },
+          "RequisitionDetails": {
+            
+            "AccountNumber": "1",
+            "PatientNumber": "00201537818",
+            "RequisitionDate": "5/3/2023",
+            "RequisitionTime": "2",
+            "RefDoctorNumber": "24465",
+            "ServiceReason": "1",
+            "ServicePlace": "2",
+            "ServiceType": "1",
+            "Employeer": "1",
+            "LocationID": "L004",
+            "ICDCodes": {
+              "ICDCode01": "z017"
+            },
+            "Procedures": [
+              {
+                "LineNumber": "1",
+                "ProcNumber": "2000",
+                "QtyProcedures": "1",
+                "InvoiceCodeINT": "1",
+                "Amount": "0.0",
+                "AmountIns": "0.0",
+                "AmountPat": "0.0",
+                "AdditionalCharge": "2",
+                "Priority": "S"
+              },
+              {
+                "LineNumber": "2",
+                "ProcNumber": "6025",
+                "QtyProcedures": "1",
+                "InvoiceCodeINT": "1",
+                "Amount": "0.0",
+                "AmountIns": "0.0",
+                "AmountPat": "0.0",
+                "AdditionalCharge": "2",
+                "Priority": "S"
+              }
+            ]
+          }
+        }
+    parameters:
+      - id: pair_29309be102d34f0c9d375ce789cfc77d
+        disabled: false
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_0e1f8daf2c424724807ef44cb08635b7
+      - id: pair_7be3d46f906b4952b511dbfc60fb9ace
+        name: Authorization
+        value: Bearer 123456
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1742931487461
+    modified: 1742931487461
+environments:
+  name: Base Environment
+  meta:
+    id: env_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1742931487359
+    modified: 1742931487359
+    isPrivate: false
