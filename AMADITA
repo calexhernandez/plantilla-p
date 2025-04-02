@@ -169,7 +169,7 @@ return false;
 ************
 
 
-curl -X POST "[Especificar la URL]" \
+curl -X POST "http://192.168.0.137/createOrder/" \
      -H "Content-Type: application/json" \
      -H "Authorization: Bearer 123456" \
      -d '{ "Patient1stLastName": "Casilla", "Patient2ndLastName": "Uribe", "PatientName": "Diego Arturo", "Cedula": "00201537818" }'
