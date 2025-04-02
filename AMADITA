@@ -1,27 +1,77 @@
+var method = sourceMap.get('method');
+//logger.info(method)
+if( method == "POST"){
+	logger.info('entraste metodo POST');
 
-//creo xml
-            if (typeof(tmp) == 'xml') {
-                if (typeof(tmp['ORC'][i]) == 'undefined') {
-                    createSegment('ORC', tmp, i);
-                }
-                if (typeof(tmp['OBR'][i]) == 'undefined') {
-                    createSegment('OBR', tmp, i);
-                }
-              
-            } else {
-                if (typeof(tmp) == 'undefined') {
-                    tmp = {};
-                }
-                if (typeof(tmp['ORC']) == 'undefined') {
-                    tmp['ORC'] = [];
-                }
-                if (typeof(tmp['OBR']) == 'undefined') {
-                    tmp['OBR'] = [];
-                }
-                if (typeof(tmp['ORC'][i]) == 'undefined') {
-                    tmp['ORC'][i] = {};
-                }
-                if (typeof(tmp['OBR'][i]) == 'undefined') {
-                    tmp['OBR'][i] = {};
-                }
-            }
+
+	//responseMap.put('Content-Type', 'application/json');
+	var statusCode = "200";
+	
+	channelMap.put("statusCode", statusCode);
+	//responseMap.put('message','authorized Method.');
+	//responseMap.put("statusCode", statusCode);
+
+	logger.info("estatusCode: " +$('statusCode'));
+	
+	return true;	
+}
+
+	var statusCode = "405";
+
+	//responseMap.put('Content-Type', 'application/json')
+	
+	channelMap.put("statusCode", statusCode);
+	//responseMap.put('error','Only post requests are allowed.')
+	//responseMap.put("statusCode", statusCode);
+
+logger.info("estatusCode: " +$('statusCode'));
+return false;
+
+
+
+
+
+
+
+
+********************
+'
+
+
+var headers = sourceMap.get('headers');
+var apiKey = "Bearer 123456";
+const authHeader = headers ? headers.get('Authorization'): null;
+
+if(authHeader !== null){
+	authHeader = String(authHeader).trim();
+}
+
+logger.info("authHeader" + authHeader);
+logger.info("apiKey" + apiKey);
+
+	if(authHeader == apiKey){
+
+		var statusCode = "200";
+	
+		//responseMap.put('Content-Type', 'application/json')
+		//responseMap.put("message","authorized request!");
+		channelMap.put("statusCode", statusCode);
+		
+		//responseMap.put("statusCode", statusCode);
+
+		logger.info("estatusCode: " +$('statusCode'));
+		return true;
+		
+	}
+
+	var statusCode = "403";
+	//responseMap.put('Content-Type', 'application/json')
+	//responseMap.put("error","Invalid token!");
+	channelMap.put("statusCode", statusCode);
+	
+	//responseMap.put("statusCode", statusCode);
+
+logger.info("estatusCode: " +$('statusCode'));
+return false;
+
+
