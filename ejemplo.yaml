@@ -1,146 +1,93 @@
+// ===============================
 // Patient Information
+// ===============================
+var Cedula = msg['Cedula'];
+var DateBirth = msg['DateBirth'];
+var eMail = msg['eMail'];
+var Employer = msg['Employer'];
+var IdFamiliar = msg['IdFamiliar'];
+var IdMedicalCore = msg['IdMedicalCore'];
+var IdPrincipalNuevo = msg['IdPrincipalNuevo'];
+var NumberRFC = msg['NumberRFC'];
 var Patient1stLastName = msg['Patient1stLastName'];
 var Patient2ndLastName = msg['Patient2ndLastName'];
 var PatientName = msg['PatientName'];
-var Cedula = msg['Cedula'];
-var IdMedicalCore = msg['IdMedicalCore'];
-var IdFamiliar = msg['IdFamiliar'];
-var IdPrincipalNuevo = msg['IdPrincipalNuevo'];
-var NumberRFC = msg['NumberRFC'];
-var DateBirth = msg['DateBirth'];
-var Sex = msg['Sex'];
-var eMail = msg['eMail'];
-var TelMovil = msg['TelMovil'];
 var Relation = msg['Relation'];
-var Employer = msg['Employer'];
+var Sex = msg['Sex'];
+var TelMovil = msg['TelMovil'];
 
+// ===============================
 // Account Details
-var PostalAddress1 = msg['Account']['PostalAddress1'];
-var PostalAddress2 = msg['Account']['PostalAddress2'];
-var PostalCity = msg['Account']['PostalCity'];
-var PostalState = msg['Account']['PostalState'];
-var PostalZipCode = msg['Account']['PostalZipCode'];
-var PostalCountry = msg['Account']['PostalCountry'];
+// ===============================
 var PhysicalAddress1 = msg['Account']['PhysicalAddress1'];
 var PhysicalAddress2 = msg['Account']['PhysicalAddress2'];
 var PhysicalCity = msg['Account']['PhysicalCity'];
+var PhysicalCountry = msg['Account']['PhysicalCountry'];
 var PhysicalState = msg['Account']['PhysicalState'];
 var PhysicalZipCode = msg['Account']['PhysicalZipCode'];
-var PhysicalCountry = msg['Account']['PhysicalCountry'];
 
+var PostalAddress1 = msg['Account']['PostalAddress1'];
+var PostalAddress2 = msg['Account']['PostalAddress2'];
+var PostalCity = msg['Account']['PostalCity'];
+var PostalCountry = msg['Account']['PostalCountry'];
+var PostalState = msg['Account']['PostalState'];
+var PostalZipCode = msg['Account']['PostalZipCode'];
+
+// ===============================
 // Billing Information
+// ===============================
 var Billing1stLastName = msg['Account']['Billing1stLastName'];
 var Billing2ndLastName = msg['Account']['Billing2ndLastName'];
-var BillingName = msg['Account']['BillingName'];
-var BillingInitial = msg['Account']['BillingInitial'];
 var BillingAddress1 = msg['Account']['BillingAddress1'];
 var BillingAddress2 = msg['Account']['BillingAddress2'];
 var BillingCity = msg['Account']['BillingCity'];
+var BillingCountry = msg['Account']['BillingCountry'];
+var BillingInitial = msg['Account']['BillingInitial'];
+var BillingName = msg['Account']['BillingName'];
 var BillingState = msg['Account']['BillingState'];
 var BillingZipCode = msg['Account']['BillingZipCode'];
-var BillingCountry = msg['Account']['BillingCountry'];
 var TelBusiness = msg['Account']['TelBusiness'];
 var TelHome = msg['Account']['TelHome'];
 
+// ===============================
 // Insurance Details
-var InsCompanyNo = msg['PatientIns']['InsCompanyNo'];
-var InsPolicyNo = msg['PatientIns']['InsPolicyNo'];
-var InsPolicyType = msg['PatientIns']['InsPolicyType'];
-var InsPolicyGroup = msg['PatientIns']['InsPolicyGroup'];
+// ===============================
 var DateExpedition = msg['PatientIns']['DateExpedition'];
 var DateExpiration = msg['PatientIns']['DateExpiration'];
+var InsCompanyNo = msg['PatientIns']['InsCompanyNo'];
+var InsPolicyGroup = msg['PatientIns']['InsPolicyGroup'];
+var InsPolicyNo = msg['PatientIns']['InsPolicyNo'];
+var InsPolicyType = msg['PatientIns']['InsPolicyType'];
 
+// ===============================
 // Requisition Details
-var PatientClass = msg['RequisitionDetails']['PatientClass'];
+// ===============================
 var AccountNumber = msg['RequisitionDetails']['AccountNumber'];
+var AssignedPatientLocation = msg['RequisitionDetails']['AssignedPatientLocation'];
+var Destination = msg['RequisitionDetails']['Destination'];
+var Diagnosis = msg['RequisitionDetails']['Diagnosis'];
+var Employeer = msg['RequisitionDetails']['Employeer'];
+var IdService = msg['RequisitionDetails']['IdService'];
+var LocationID = msg['RequisitionDetails']['LocationID'];
+var PatientClass = msg['RequisitionDetails']['PatientClass'];
 var PatientNumber = msg['RequisitionDetails']['PatientNumber'];
+var RefDoctorName = msg['RequisitionDetails']['RefDoctorName'];
+var RefDoctorNumber = msg['RequisitionDetails']['RefDoctorNumber'];
 var RequisitionDate = msg['RequisitionDetails']['RequisitionDate'];
 var RequisitionTime = msg['RequisitionDetails']['RequisitionTime'];
-var RefDoctorNumber = msg['RequisitionDetails']['RefDoctorNumber'];
-var RefDoctorName = msg['RequisitionDetails']['RefDoctorName'];
-var Diagnosis = msg['RequisitionDetails']['Diagnosis'];
-var Destination = msg['RequisitionDetails']['Destination'];
-var AssignedPatientLocation = msg['RequisitionDetails']['AssignedPatientLocation'];
-
-var ServiceReason = msg['RequisitionDetails']['ServiceReason'];
-var IdService = msg['RequisitionDetails']['IdService'];
 var Service = msg['RequisitionDetails']['Service'];
-
 var ServicePlace = msg['RequisitionDetails']['ServicePlace'];
+var ServiceReason = msg['RequisitionDetails']['ServiceReason'];
 var ServiceType = msg['RequisitionDetails']['ServiceType'];
-var Employeer = msg['RequisitionDetails']['Employeer'];
-var LocationID = msg['RequisitionDetails']['LocationID'];
 
+// ===============================
 // ICD Codes
+// ===============================
 var ICDCode01 = msg['RequisitionDetails']['ICDCodes']['ICDCode01'];
 
-
-
-// Store Key Patient Details in channelMap
-channelMap.put("Patient1stLastName", Patient1stLastName);
-channelMap.put("Patient2ndLastName", Patient2ndLastName);
-channelMap.put("PatientName", PatientName);
-channelMap.put("Cedula", Cedula);
-channelMap.put("NumberRFC", NumberRFC);
-channelMap.put("DateBirth", DateBirth);
-channelMap.put("Sex", Sex);
-channelMap.put("eMail", eMail);
-channelMap.put("TelMovil", TelMovil);
-channelMap.put("Relation", Relation);
-channelMap.put("Employer", Employer);
-
-// Store Account Details in channelMap
-channelMap.put("PostalAddress1", PostalAddress1);
-channelMap.put("PostalAddress2", PostalAddress2);
-channelMap.put("PostalCity", PostalCity);
-channelMap.put("PostalState", PostalState);
-channelMap.put("PostalZipCode", PostalZipCode);
-channelMap.put("PostalCountry", PostalCountry);
-channelMap.put("PhysicalAddress1", PhysicalAddress1);
-channelMap.put("PhysicalAddress2", PhysicalAddress2);
-channelMap.put("PhysicalCity", PhysicalCity);
-channelMap.put("PhysicalState", PhysicalState);
-channelMap.put("PhysicalZipCode", PhysicalZipCode);
-channelMap.put("PhysicalCountry", PhysicalCountry);
-
-// Store Billing Information in channelMap
-channelMap.put("Billing1stLastName", Billing1stLastName);
-channelMap.put("Billing2ndLastName", Billing2ndLastName);
-channelMap.put("BillingName", BillingName);
-channelMap.put("BillingInitial", BillingInitial);
-channelMap.put("BillingAddress1", BillingAddress1);
-channelMap.put("BillingAddress2", BillingAddress2);
-channelMap.put("BillingCity", BillingCity);
-channelMap.put("BillingState", BillingState);
-channelMap.put("BillingZipCode", BillingZipCode);
-channelMap.put("BillingCountry", BillingCountry);
-channelMap.put("TelBusiness", TelBusiness);
-channelMap.put("TelHome", TelHome);
-
-// Store Insurance Details in channelMap
-channelMap.put("InsCompanyNo", InsCompanyNo);
-channelMap.put("InsPolicyNo", InsPolicyNo);
-channelMap.put("InsPolicyType", InsPolicyType);
-channelMap.put("InsPolicyGroup", InsPolicyGroup);
-channelMap.put("DateExpedition", DateExpedition);
-channelMap.put("DateExpiration", DateExpiration);
-
-// Store Requisition Details in channelMap
-channelMap.put("AccountNumber", AccountNumber);
-channelMap.put("PatientNumber", PatientNumber);
-channelMap.put("RequisitionDate", RequisitionDate);
-channelMap.put("RequisitionTime", RequisitionTime);
-channelMap.put("RefDoctorNumber", RefDoctorNumber);
-channelMap.put("ServiceReason", ServiceReason);
-channelMap.put("ServicePlace", ServicePlace);
-channelMap.put("ServiceType", ServiceType);
-channelMap.put("Employeer", Employeer);
-channelMap.put("LocationID", LocationID);
-
-// Store ICD Codes in channelMap
-channelMap.put("ICDCode01", ICDCode01);
-
-// Procedure Details (Store as Arrays)
+// ===============================
+// Procedure Details (Arrays)
+// ===============================
 var LineNumber = [];
 var ProcNumber = [];
 var QtyProcedures = [];
@@ -165,7 +112,85 @@ for (var i = 0; i < getArrayOrXmlLength(msg['RequisitionDetails']['Procedures'])
     logger.info("Index: " + i + " | ProcNum: " + msg['RequisitionDetails']['Procedures'][i]['ProcNumber']);
 }
 
-// Store Procedure Data in channelMap
+// ===============================
+// Store Values in channelMap
+// ===============================
+
+// Patient
+channelMap.put("Cedula", Cedula);
+channelMap.put("DateBirth", DateBirth);
+channelMap.put("eMail", eMail);
+channelMap.put("Employer", Employer);
+channelMap.put("IdFamiliar", IdFamiliar);
+channelMap.put("IdMedicalCore", IdMedicalCore);
+channelMap.put("IdPrincipalNuevo", IdPrincipalNuevo);
+channelMap.put("NumberRFC", NumberRFC);
+channelMap.put("Patient1stLastName", Patient1stLastName);
+channelMap.put("Patient2ndLastName", Patient2ndLastName);
+channelMap.put("PatientName", PatientName);
+channelMap.put("Relation", Relation);
+channelMap.put("Sex", Sex);
+channelMap.put("TelMovil", TelMovil);
+
+// Account
+channelMap.put("PhysicalAddress1", PhysicalAddress1);
+channelMap.put("PhysicalAddress2", PhysicalAddress2);
+channelMap.put("PhysicalCity", PhysicalCity);
+channelMap.put("PhysicalCountry", PhysicalCountry);
+channelMap.put("PhysicalState", PhysicalState);
+channelMap.put("PhysicalZipCode", PhysicalZipCode);
+channelMap.put("PostalAddress1", PostalAddress1);
+channelMap.put("PostalAddress2", PostalAddress2);
+channelMap.put("PostalCity", PostalCity);
+channelMap.put("PostalCountry", PostalCountry);
+channelMap.put("PostalState", PostalState);
+channelMap.put("PostalZipCode", PostalZipCode);
+
+// Billing
+channelMap.put("Billing1stLastName", Billing1stLastName);
+channelMap.put("Billing2ndLastName", Billing2ndLastName);
+channelMap.put("BillingAddress1", BillingAddress1);
+channelMap.put("BillingAddress2", BillingAddress2);
+channelMap.put("BillingCity", BillingCity);
+channelMap.put("BillingCountry", BillingCountry);
+channelMap.put("BillingInitial", BillingInitial);
+channelMap.put("BillingName", BillingName);
+channelMap.put("BillingState", BillingState);
+channelMap.put("BillingZipCode", BillingZipCode);
+channelMap.put("TelBusiness", TelBusiness);
+channelMap.put("TelHome", TelHome);
+
+// Insurance
+channelMap.put("DateExpedition", DateExpedition);
+channelMap.put("DateExpiration", DateExpiration);
+channelMap.put("InsCompanyNo", InsCompanyNo);
+channelMap.put("InsPolicyGroup", InsPolicyGroup);
+channelMap.put("InsPolicyNo", InsPolicyNo);
+channelMap.put("InsPolicyType", InsPolicyType);
+
+// Requisition
+channelMap.put("AccountNumber", AccountNumber);
+channelMap.put("AssignedPatientLocation", AssignedPatientLocation);
+channelMap.put("Destination", Destination);
+channelMap.put("Diagnosis", Diagnosis);
+channelMap.put("Employeer", Employeer);
+channelMap.put("IdService", IdService);
+channelMap.put("LocationID", LocationID);
+channelMap.put("PatientClass", PatientClass);
+channelMap.put("PatientNumber", PatientNumber);
+channelMap.put("RefDoctorName", RefDoctorName);
+channelMap.put("RefDoctorNumber", RefDoctorNumber);
+channelMap.put("RequisitionDate", RequisitionDate);
+channelMap.put("RequisitionTime", RequisitionTime);
+channelMap.put("Service", Service);
+channelMap.put("ServicePlace", ServicePlace);
+channelMap.put("ServiceReason", ServiceReason);
+channelMap.put("ServiceType", ServiceType);
+
+// ICD Code
+channelMap.put("ICDCode01", ICDCode01);
+
+// Procedures
 channelMap.put("LineNumber", LineNumber);
 channelMap.put("ProcNumber", ProcNumber);
 channelMap.put("QtyProcedures", QtyProcedures);
