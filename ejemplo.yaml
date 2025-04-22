@@ -1,99 +1,53 @@
-{
-  "Patient1stLastName": "Casilla",
-  "Patient2ndLastName": "Uribe",
-  "PatientName": "Diego Arturo",
-  "PatientInitial": "DC",
-  "Cedula": "00201537818",
-	"IdMedicalCore": "123456",
-	"IdFamiliar": "123456",
-	"IdPrincipalNuevo": "",
-  "NumberRFC": "value",
-  "DateBirth": "23/05/2020",
-  "Sex": "M",
-  "eMail": "ing.dionisc@gmail.com",
-  "TelMovil": "8096579005",
-  "Relation": "",
-  "Employer": "",
-  "Account": {
-    "PostalAddress1": "value",
-    "PostalAddress2": "value",
-    "PostalCity": "value",
-    "PostalState": "value",
-    "PostalZipCode": "value",
-    "PostalCountry": "value",
-    "PhysicalAddress1": "value",
-    "PhysicalAddress2": "value",
-    "PhysicalCity": "value",
-    "PhysicalState": "value",
-    "PhysicalZipCode": "value",
-    "PhysicalCountry": "value",
-    "Billing1stLastName": "value",
-    "Billing2ndLastName": "value",
-    "BillingName": "value",
-    "BillingInitial": "value",
-    "BillingAddress1": "value",
-    "BillingAddress2": "value",
-    "BillingCity": "value",
-    "BillingState": "value",
-    "BillingZipCode": "value",
-    "BillingCountry": "value",
-    "TelBusiness": "value",
-    "TelHome": "value"
-  },
-  "PatientIns": {
-    "InsCompanyNo": "value",
-    "InsPolicyNo": "value",
-    "InsPolicyType": "value",
-    "InsPolicyGroup": "value",
-    "DateExpedition": "value",
-    "DateExpiration": "value"
-  },
-  "RequisitionDetails": {
-    "PatientClass": "CC",
-    "AccountNumber": "123",
-    "PatientNumber": "00201537818",
-    "RequisitionDate": "05/03/2023",
-    "RequisitionTime": "2",
-    "RefDoctorNumber": "24465",
-		"RefDoctorName": "PRUEBA",
-		"Diagnosis": "NE",
-		"Destination": "PR",
-		"AssignedPatientLocation": "CAMA 18 UCI",
-    "ServiceReason": "1",
-		"IdService": "PER",
-		"Service": "PERSONAL",
-    "ServicePlace": "2",
-    "ServiceType": "1",
-    "Employeer": "1",
-    "LocationID": "L004",
-    "ICDCodes": {
-      "ICDCode01": "z017"
-    },
-    "Procedures": [
-      {
-        "LineNumber": "1",
-        "ProcNumber": "MC1",
-				"ProcName": "Urocultivo",
-        "QtyProcedures": "1",
-        "InvoiceCodeINT": "1",
-        "Amount": "0.0",
-        "AmountIns": "0.0",
-        "AmountPat": "0.0",
-        "AdditionalCharge": "2",
-        "Priority": "S"
-      },
-      {
-        "LineNumber": "2",
-        "ProcNumber": "MC1",
-				"ProcName": "Urocultivo",
-        "QtyProcedures": "1",
-        "InvoiceCodeINT": "1",
-        "Amount": "0.0",
-        "AmountIns": "0.0",
-        "AmountPat": "0.0",
-        "AdditionalCharge": "2",
-        "Priority": "S"
-      }
-    ]
-  }
+{				
+  "Patient1stLastName": "MedicalCore",				
+  "Patient2ndLastName": "Promed",				
+  "PatientName": "Prueba Paciente",				
+  "Cedula": "DNI12345",				
+  "IdMedicalCore": "HC123456",			
+  "IdFamiliar": "SSN123456",			
+  "IdPrincipalNuevo": "",			
+  "DateBirth": "23/05/2020",				
+  "Sex": "M",				
+  "eMail": "correo@electronico.com",				
+  "TelMovil": "0987654321",				
+  "Account": {				
+    "PostalAddress1": "Dirección del Paciente"				
+  },				
+  "RequisitionDetails": {				
+    "PatientClass": "P",
+	"DescPatientClass": "Privado",
+    "AccountNumber": "HIS123",				
+    "RequisitionDate": "24/04/2025",				
+    "RefDoctorNumber": "24465",				
+	"RefDoctorName": "PRUEBA",		
+	"Diagnosis": "NE",	
+    "DescDiagnosis": "No Especificado",	
+	"Destination": "RS",	
+	"DescDestination": "Retirar en Sucursal",		
+	"AssignedPatientLocation": "Ubicación del Paciente",		
+	"IdService": "PER",		
+	"Service": "PERSONAL",		
+    "LocationID": "L001",
+    "DescLocationID": "CE Laboratorio Gazcue"	
+   "Procedures": [				
+      {				
+        "LineNumber": "1",				
+        "ProcNumber": "MC1",				
+		"ProcName": "Urocultivo",
+        "Priority": "S"				
+      },				
+      {				
+        "LineNumber": "2",				
+        "ProcNumber": "QC1",				
+		"ProcName": "Acido Urico",
+        "Priority": "R"				
+      },				
+      {				
+        "LineNumber": "3",				
+        "ProcNumber": "HEMP1",				
+		"ProcName": "Hemograma",
+        "Priority": "S"				
+      }				
+    ]				
+  }				
 }
