@@ -1,52 +1,70 @@
 {				
-  "Patient1stLastName": "MedicalCore",				
-  "Patient2ndLastName": "Promed",				
-  "PatientName": "Prueba Paciente",				
-  "Cedula": "DNI12345",				
-  "IdMedicalCore": "HC123456",			
-  "IdFamiliar": "SSN123456",			
+  "Patient1stLastName": "apellido1",				
+  "Patient2ndLastName": "apellido2",				
+  "PatientName": "Nombre1 Nombre2",				
+  "Cedula": "DNI1234567",				
+  "IdMedicalCore": "HC1234567",			
+  "IdFamiliar": "SSN1234567",			
   "IdPrincipalNuevo": "",			
   "DateBirth": "23/05/2020",				
   "Sex": "M",				
   "eMail": "correo@electronico.com",				
-  "TelMovil": "0987654321",				
-  "PostalAddress1": "Dirección del Paciente",				
+  "TelMovil": "0987654321",	
+	"PostalAddress1": "Dirección del Paciente",
   "RequisitionDetails": {				
-    "PatientClass": "P",
+  "PatientClass": "P",
 	"DescPatientClass": "Privado",
-    "AccountNumber": "HIS123",				
-    "RequisitionDate": "24/04/2025",				
-    "RefDoctorNumber": "24465",				
+  "AccountNumber": "HIS123",				
+  "RequisitionDate": "24/04/2025",				
+  "RefDoctorNumber": "24465",				
 	"RefDoctorName": "PRUEBA",		
 	"Diagnosis": "NE",	
-    "DescDiagnosis": "No Especificado",	
+  "DescDiagnosis": "No Especificado",	
 	"Destination": "RS",	
 	"DescDestination": "Retirar en Sucursal",		
 	"AssignedPatientLocation": "Ubicación del Paciente",		
 	"IdService": "PER",		
 	"Service": "PERSONAL",		
-    "LocationID": "L001",
-    "DescLocationID": "CE Laboratorio Gazcue"	
+  "LocationID": "L001",
+  "DescLocationID": "CE Laboratorio Gazcue",	
    "Procedures": [				
       {				
         "LineNumber": "1",				
         "ProcNumber": "MC1",				
-		"ProcName": "Urocultivo",
+				"ProcName": "Urocultivo",
         "Priority": "S"				
       },				
       {				
         "LineNumber": "2",				
         "ProcNumber": "QC1",				
-		"ProcName": "Acido Urico",
+				"ProcName": "Acido Urico",
         "Priority": "R"				
       },				
       {				
         "LineNumber": "3",				
         "ProcNumber": "HEMP1",				
-		"ProcName": "Hemograma",
+				"ProcName": "Hemograma",
         "Priority": "S"				
       }				
     ]				
   }				
 }
+
+
+
+MSH|^~\&|AMADITA|AMADITA|Modulab|Modulab|||OML^O21^OML_O21||P|2.5||||||8859/1|||
+PID|1|HC123456|DNI12345^^^^PI~SSN123456^^^^PPN~^^^^SS||MedicalCore Promed^Prueba Paciente||20200523|M|||Dirección del Paciente^^^^^^^||0987654321^^^correo@electronico.com|||||||||||||||||N
+PV1|1|P|^^Ubicación del Paciente||||||||||||||||
+DG1|||||||||||||||||||||||||||||
+IN1|||||||||||||||||||||||||||||
+ORC|NW|||HIS123|A||||20250424|||24465|||||||||PER^PERSONAL||||||
+OBR|1|||MC1^Urocultivo||||||L001||||||24465^PRUEBA||||||||NE||||RS^|
+TQ1|||||||||S
+ORC|NW|||HIS123|||||20250424|||24465|||||||||PER^PERSONAL
+OBR|2|||QC1^Acido Urico||||||L001||||||24465^PRUEBA||||||||NE||||RS
+TQ1|||||||||R
+ORC|NW|||HIS123|||||20250424|||24465|||||||||PER^PERSONAL
+OBR|3|||HEMP1^Hemograma||||||L001||||||24465^PRUEBA||||||||NE||||RS
+TQ1|||||||||S
+
 
