@@ -1,73 +1,264 @@
-https://wetransfer.com/downloads/3d694c0e66b667abff327ed4f54a628320250424193209/54a921?t_exp=1745609529&t_lsid=00b8aac4-6c95-4242-b435-95a12eea9283&t_network=link&t_rid=Z29vZ2xlLW9hdXRoMnwxMTY5NDYzODQ1MDIwNzMzMDMzNjY=&t_s=download_link&t_ts=1745523147&utm_campaign=TRN_TDL_05&utm_source=sendgrid&utm_medium=email&trk=TRN_TDL_05
-https://we.tl/t-m0YT3JfOgJ
+filtro
 
-{				
-  "Patient1stLastName": "apellido1",				
-  "Patient2ndLastName": "apellido2",				
-  "PatientName": "Nombre1 Nombre2",				
-  "Cedula": "DNI1234567",				
-  "IdMedicalCore": "HC1234567",			
-  "IdFamiliar": "SSN1234567",			
-  "IdPrincipalNuevo": "",			
-  "DateBirth": "23/05/2020",				
-  "Sex": "M",				
-  "eMail": "correo@electronico.com",				
-  "TelMovil": "0987654321",	
-	"PostalAddress1": "Dirección del Paciente",
-  "RequisitionDetails": {				
-  "PatientClass": "P",
-	"DescPatientClass": "Privado",
-  "AccountNumber": "HIS123",				
-  "RequisitionDate": "24/04/2025",				
-  "RefDoctorNumber": "24465",				
-	"RefDoctorName": "PRUEBA",		
-	"Diagnosis": "NE",	
-  "DescDiagnosis": "No Especificado",	
-	"Destination": "RS",	
-	"DescDestination": "Retirar en Sucursal",		
-	"AssignedPatientLocation": "Ubicación del Paciente",		
-	"IdService": "PER",		
-	"Service": "PERSONAL",		
-  "LocationID": "L001",
-  "DescLocationID": "CE Laboratorio Gazcue",	
-   "Procedures": [				
-      {				
-        "LineNumber": "1",				
-        "ProcNumber": "MC1",				
-				"ProcName": "Urocultivo",
-        "Priority": "S"				
-      },				
-      {				
-        "LineNumber": "2",				
-        "ProcNumber": "QC1",				
-				"ProcName": "Acido Urico",
-        "Priority": "R"				
-      },				
-      {				
-        "LineNumber": "3",				
-        "ProcNumber": "HEMP1",				
-				"ProcName": "Hemograma",
-        "Priority": "S"				
-      }				
-    ]				
-  }				
+*********
+
+if ((msg['MSH']['MSH.9']['MSH.9.1'].toString() == "OML") && (msg['MSH']['MSH.9']['MSH.9.2'].toString() == "O21"))
+{
+    return true;
+}
+else if ((msg['MSH']['MSH.9']['MSH.9.1'].toString() == "ORU") && (msg['MSH']['MSH.9']['MSH.9.2'].toString() == "R01"))
+{
+	
+	if ((msg['ORC'][0]['ORC.5']['ORC.5.1'].toString() == "CM") && (msg['OBR'][0]['OBR.25']['OBR.25.1'].toString() == "F"))
+	{
+		return true;
+	}
+
+	return false;
+	
+}
+return false;
+
+****
+
+
+tranformador
+JWT1.1
+******
+
+var Base64 = Packages.java.util.Base64;
+var Algorithm = Packages.com.auth0.jwt.algorithms.Algorithm;
+var JWT = Packages.com.auth0.jwt.JWT;
+
+//var idcard = msg['PID']['PID.3']['PID.3.1'].toString()
+
+
+
+if(getArrayOrXmlLength(msg['PID']['PID.3']) > 1){
+	//cuando viene mas de un identificador
+	for (var i = 0; i < getArrayOrXmlLength(msg['PID']['PID.3']); i++) {
+		if (msg['PID']['PID.3'][i]['PID.3.5'].toString() == "PI") {
+			
+			var idcard = msg['PID']['PID.3'][i]['PID.3.1'].toString()
+		}
+		
+	}
+}else{
+	//logger.info("else")
+	if (msg['PID']['PID.3']['PID.3.5'].toString() == "PI") {
+		
+		var idcard = msg['PID']['PID.3']['PID.3.1'].toString()
+	}
 }
 
 
+if(getArrayOrXmlLength(msg['PID']['PID.3']) > 1){
+	//cuando viene mas de un identificador
+	for (var i = 0; i < getArrayOrXmlLength(msg['PID']['PID.3']); i++) {
+		if (msg['PID']['PID.3'][i]['PID.3.5'].toString() == "PPN") {
+			
+			var patientexternalid = msg['PID']['PID.3'][i]['PID.3.1'].toString()
+		}
+		
+	}
+}else{
+	//logger.info("else")
+	if (msg['PID']['PID.3']['PID.3.5'].toString() == "PPN") {
+		
+		var patientexternalid = msg['PID']['PID.3']['PID.3.1'].toString()
+	}
+	
+}
 
-MSH|^~\&|AMADITA|AMADITA|Modulab|Modulab|||OML^O21^OML_O21||P|2.5||||||8859/1|||
-PID|1|HC123456|DNI12345^^^^PI~SSN123456^^^^PPN~^^^^SS||MedicalCore Promed^Prueba Paciente||20200523|M|||Dirección del Paciente^^^^^^^||0987654321^^^correo@electronico.com|||||||||||||||||N
-PV1|1|P|^^Ubicación del Paciente||||||||||||||||
-DG1|||||||||||||||||||||||||||||
-IN1|||||||||||||||||||||||||||||
-ORC|NW|||HIS123|A||||20250424|||24465|||||||||PER^PERSONAL||||||
-OBR|1|||MC1^Urocultivo||||||L001||||||24465^PRUEBA||||||||NE||||RS^|
-TQ1|||||||||S
-ORC|NW|||HIS123|||||20250424|||24465|||||||||PER^PERSONAL
-OBR|2|||QC1^Acido Urico||||||L001||||||24465^PRUEBA||||||||NE||||RS
-TQ1|||||||||R
-ORC|NW|||HIS123|||||20250424|||24465|||||||||PER^PERSONAL
-OBR|3|||HEMP1^Hemograma||||||L001||||||24465^PRUEBA||||||||NE||||RS
-TQ1|||||||||S
+var base64Key = configurationMap.get('base64key')
+var secretKeyBytes = Base64.getDecoder().decode(base64Key);
+
+
+var signingKey = Algorithm.HMAC256(secretKeyBytes);
+
+// Create a JWT token
+var token = JWT.create()
+    //.withIssuer("mirth")
+    .withClaim("idcard", patientexternalid)
+    .withClaim("username", "SIGMA")
+    .sign(signingKey);
+
+
+
+channelMap.put('idcard',idcard);
+channelMap.put('externalId',patientexternalid);
+channelMap.put('token',token);
+
+//logger.info(token)
+//logger.info(headerEncoded + "." + payloadEncoded + "." + signingKey)
+
+****
+
+Destination
+response
+XML requestId
+*******
+
+requests = msg['REQUESTLIST']['REQUEST']
+contador = getArrayOrXmlLength(requests)
+
+
+
+for (var i=0; i < contador; i++){
+	//logger.info(i)
+	requestLabel = msg['REQUESTLIST']['REQUEST'][i]['REQUESTLABEL'].toString()
+	
+	if(requestLabel == $('requestLabel')){
+		//logger.info('encontrado')	
+		
+		email = msg['REQUESTLIST']['REQUEST'][i]['PATIENT']['EMAIL'].toString()
+		doctorMail = msg['REQUESTLIST']['REQUEST'][i]['DOCTOREMAIL'].toString()
+		requestId = msg['REQUESTLIST']['REQUEST'][i]['REQUESTID'].toString()
+		
+		i=contador
+		//se usara el del portal o no se usara.
+		//channelMap.put('doctorMail', doctorMail);
+		channelMap.put('email', email);
+		channelMap.put('requestId',requestId);
+	}
+	
+}
+******
+
+
+Oru inovapar
+
+******
+
+var institucion = "82" + "M"
+var nombreInstitucion = "CLINICA AZUERO"
+
+
+tmp['MSH']['MSH.3']['MSH.3.1'] = msg['MSH']['MSH.3']['MSH.3.1'].toString()
+tmp['MSH']['MSH.4']['MSH.4.1'] = msg['MSH']['MSH.4']['MSH.4.1'].toString()
+tmp['MSH']['MSH.5']['MSH.5.1'] = msg['MSH']['MSH.5']['MSH.5.1'].toString()
+tmp['MSH']['MSH.6']['MSH.6.1'] = msg['MSH']['MSH.6']['MSH.6.1'].toString()
+
+
+
+// requeridos
+//MSH
+tmp['MSH']['MSH.7']['MSH.7.1'] = msg['MSH']['MSH.7']['MSH.7.1'].toString()
+tmp['MSH']['MSH.9']['MSH.9.1'] = msg['MSH']['MSH.9']['MSH.9.1'].toString()
+tmp['MSH']['MSH.9']['MSH.9.2'] = msg['MSH']['MSH.9']['MSH.9.2'].toString()
+tmp['MSH']['MSH.9']['MSH.9.3'] = msg['MSH']['MSH.9']['MSH.9.3'].toString()
+
+tmp['MSH']['MSH.10']['MSH.10.1'] = msg['MSH']['MSH.10']['MSH.10.1'].toString() 
+tmp['MSH']['MSH.11']['MSH.11.1'] = msg['MSH']['MSH.11']['MSH.11.1'].toString()
+tmp['MSH']['MSH.12']['MSH.12.1'] = msg['MSH']['MSH.12']['MSH.12.1'].toString()
+
+//PID
+
+tmp['PID']['PID.1']['PID.1.1'] = "1"
+//prefijo 82 -- paciente colocar si se desea que se vea solo en esa compañia
+//es el mismo idcard
+tmp['PID']['PID.2']['PID.2.1'] = $('externalId')
+if($('idcard')!="undefined"){tmp['PID']['PID.3']['PID.3.1'] = $('idcard')}
+tmp['PID']['PID.5']['PID.5.1'] = msg['PID']['PID.5']['PID.5.1'].toString()
+tmp['PID']['PID.5']['PID.5.2'] = msg['PID']['PID.5']['PID.5.2'].toString()
+tmp['PID']['PID.7']['PID.7.1'] = msg['PID']['PID.7']['PID.7.1'].toString()
+tmp['PID']['PID.8']['PID.8.1'] = msg['PID']['PID.8']['PID.8.1'].toString()
+
+
+if(getArrayOrXmlLength(msg['PID']['PID.13']) > 1){
+	for (var i = 0; i < getArrayOrXmlLength(msg['PID']['PID.13']); i++) {
+		if (msg['PID']['PID.13'][i]['PID.13.3'].toString() == "Internet" && i == 1) {
+			//delete msg['PID']['PID.13'][0];
+			tmp['PID']['PID.13'][0]['PID.13.4'] = msg['PID']['PID.13'][1]['PID.13.4'].toString()
+			
+		}
+	}
+}else{
+	//logger.info("else")
+	tmp['PID']['PID.13']['PID.13.4'] = msg['PID']['PID.13']['PID.13.4'].toString()
+}
+
+//**********
+
+
+for (var i = 0; i < getArrayOrXmlLength(msg['ORC']); i++) {
+
+	//creo xml
+		    if (typeof(tmp) == 'xml') {
+		        if (typeof(tmp['ORC'][i]) == 'undefined') {
+		            createSegment('ORC', tmp, i);
+		        }
+		        if (typeof(tmp['OBR'][i]) == 'undefined') {
+		            createSegment('OBR', tmp, i);
+		        }
+		        
+
+		    } else {
+		        if (typeof(tmp) == 'undefined') {
+		            tmp = {};
+		        }
+		        if (typeof(tmp['ORC']) == 'undefined') {
+		            tmp['ORC'] = [];
+		        }
+		        if (typeof(tmp['OBR']) == 'undefined') {
+		            tmp['OBR'] = [];
+		        }
+		        
+		        
+		        if (typeof(tmp['ORC'][i]) == 'undefined') {
+		            tmp['ORC'][i] = {};
+		        }
+		        if (typeof(tmp['OBR'][i]) == 'undefined') {
+		            tmp['OBR'][i] = {};
+		        }
+		    }
+	//creacion fin
+		
+	//ORC
+	tmp['ORC'][i]['ORC.1']['ORC.1.1'] = msg['ORC'][i]['ORC.1']['ORC.1.1'].toString()
+	tmp['ORC'][i]['ORC.2']['ORC.2.1'] = $('requestId')
+	tmp['ORC'][i]['ORC.3']['ORC.3.1'] =  msg['ORC'][i]['ORC.3']['ORC.3.1'].toString()
+
+	//no esta en la doc , pero se debe agregar
+	tmp['ORC'][i]['ORC.5']['ORC.5.1'] = msg['ORC'][i]['ORC.5']['ORC.5.1'].toString()
+	
+	tmp['ORC'][i]['ORC.9']['ORC.9.1'] = msg['ORC'][i]['ORC.9']['ORC.9.1'].toString()
+	tmp['ORC'][i]['ORC.15']['ORC.15.1'] = msg['ORC'][i]['ORC.15']['ORC.15.1'].toString()
+								
+	//no se ocupara aseguradora
+	//tmp['ORC'][i]['ORC.21']['ORC.21.1'] = msg['ORC'][i]['ORC.21']['ORC.21.1'].toString()
+	
+	//OBR
+	tmp['OBR'][i]['OBR.1']['OBR.1.1'] =msg['OBR'][i]['OBR.1']['OBR.1.1'].toString()
+	//prefijo 82 -- servicio
+	tmp['OBR'][i]['OBR.4']['OBR.4.1'] =  msg['OBR'][i]['OBR.4']['OBR.4.1'].toString()
+	tmp['OBR'][i]['OBR.4']['OBR.4.2'] =msg['OBR'][i]['OBR.4']['OBR.4.2'].toString()
+	//prefijo 82 --institucion
+	tmp['OBR'][i]['OBR.10']['OBR.10.1'] = institucion + "^" + nombreInstitucion
+	//prefijo 82 -- medico
+	tmp['OBR'][i]['OBR.16']['OBR.16.1'] =  msg['OBR'][i]['OBR.16']['OBR.16.1'].toString()
+	//tmp['OBR'][i]['OBR.16']['OBR.16.2'] = msg['OBR'][i]['OBR.16']['OBR.16.2'].toString() + "^^^^^^^^^^^^^^&" +  $('doctorMail')
+	tmp['OBR'][i]['OBR.16']['OBR.16.2'] = msg['OBR'][i]['OBR.16']['OBR.16.2'].toString() + "^^^^^^^^^^^^^^&"
+	
+	tmp['OBR'][i]['OBR.17']['OBR.17.1'] = ""
+	tmp['OBR'][i]['OBR.18']['OBR.18.1'] = ""
+	tmp['OBR'][i]['OBR.19']['OBR.19.1'] = ""
+	tmp['OBR'][i]['OBR.20']['OBR.20.1'] = ""
+	tmp['OBR'][i]['OBR.21']['OBR.21.1'] = ""
+	tmp['OBR'][i]['OBR.22']['OBR.22.1'] = ""
+	tmp['OBR'][i]['OBR.23']['OBR.23.1'] = ""
+	tmp['OBR'][i]['OBR.24']['OBR.24.1'] = ""
+	tmp['OBR'][i]['OBR.25']['OBR.25.1'] = ""
+	tmp['OBR'][i]['OBR.26']['OBR.26.1'] = ""
+	tmp['OBR'][i]['OBR.27']['OBR.27.1'] = ""
+	tmp['OBR'][i]['OBR.28']['OBR.28.1'] = ""
+	
+	
+}
+
+
+*******
+
+
 
 
