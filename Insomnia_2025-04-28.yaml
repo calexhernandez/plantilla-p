@@ -1,0 +1,102 @@
+type: collection.insomnia.rest/5.0
+name: Scratch Pad
+meta:
+  id: wrk_scratchpad
+  created: 1742931432621
+  modified: 1742931432621
+collection:
+  - url: http://192.168.0.137:8082/createOrder/
+    name: CreateRequest Amadita
+    meta:
+      id: req_876dc00827a94b1eb25a5de98a8aa406
+      created: 1742931527268
+      modified: 1745362084268
+      isPrivate: false
+      sortKey: -1742931527268
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {				
+          "Patient1stLastName": "apellido1",				
+          "Patient2ndLastName": "apellido2",				
+          "PatientName": "Nombre1 Nombre2",				
+          "Cedula": "DNI1234567",				
+          "IdMedicalCore": "HC1234567",			
+          "IdFamiliar": "SSN1234567",			
+          "IdPrincipalNuevo": "",			
+          "DateBirth": "23/05/2020",				
+          "Sex": "M",				
+          "eMail": "correo@electronico.com",				
+          "TelMovil": "0987654321",	
+        	"PostalAddress1": "Dirección del Paciente",
+          "RequisitionDetails": {				
+          "PatientClass": "P",
+        	"DescPatientClass": "Privado",
+          "AccountNumber": "HIS123",				
+          "RequisitionDate": "24/04/2025",				
+          "RefDoctorNumber": "24465",				
+        	"RefDoctorName": "PRUEBA",		
+        	"Diagnosis": "NE",	
+          "DescDiagnosis": "No Especificado",	
+        	"Destination": "RS",	
+        	"DescDestination": "Retirar en Sucursal",		
+        	"AssignedPatientLocation": "Ubicación del Paciente",		
+        	"IdService": "PER",		
+        	"Service": "PERSONAL",		
+          "LocationID": "L001",
+          "DescLocationID": "CE Laboratorio Gazcue",	
+           "Procedures": [				
+              {				
+                "LineNumber": "1",				
+                "ProcNumber": "MC1",				
+        				"ProcName": "Urocultivo",
+                "Priority": "S"				
+              },				
+              {				
+                "LineNumber": "2",				
+                "ProcNumber": "QC1",				
+        				"ProcName": "Acido Urico",
+                "Priority": "R"				
+              },				
+              {				
+                "LineNumber": "3",				
+                "ProcNumber": "HEMP1",				
+        				"ProcName": "Hemograma",
+                "Priority": "S"				
+              }				
+            ]				
+          }				
+        }
+    parameters:
+      - id: pair_29309be102d34f0c9d375ce789cfc77d
+        disabled: false
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_0e1f8daf2c424724807ef44cb08635b7
+      - id: pair_7be3d46f906b4952b511dbfc60fb9ace
+        name: Authorization
+        value: Bearer 123456
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1742931487461
+    modified: 1742931487461
+environments:
+  name: Base Environment
+  meta:
+    id: env_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1742931487359
+    modified: 1742931487359
+    isPrivate: false
