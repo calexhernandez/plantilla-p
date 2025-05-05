@@ -71,3 +71,310 @@ OBR|1|||QC39^Hemoglobina Glicosilada||||||L001^CE Laboratorio Gazcue||||||24465^
 ORC|SC|214|01000161||CM||||20250505182811-0400||||||20250505182707-0400||||||Personal^^^^^^FI^^^PER
 OBR|2|||HEMP1^Hemograma||||||L001^CE Laboratorio Gazcue||||||24465^PRUEBA^^^^^^^^^^^^^^&||||||||||||
 
+
+
+
+JSON
+
+{
+  "atendimento": {
+    "origem": "-",
+    "codigoIdentificador": "L001_01000161",
+    "codigo": "DNI12345678",
+    "senha": "L001_01000161",
+    "removerProtocolosAnteriores": false,
+    "senhaTipoCriptografia": "PLAIN",
+    "jaCriptografada": false,
+    "data": "May 5, 2025 6:27:07 PM",
+    "disponivel": true,
+    "organizacaoResponsavel": {
+      "nome": "Amadita",
+      "codigosExternos": [
+        {
+          "codigo": "1",
+          "sistema": "MODULAB",
+          "chaveDoTipo": "ORGANIZAÇÃO RESPONSÁVEL"
+        }
+      ]
+    },
+    "organizacaoAbertura": {
+      "nome": "CE Laboratorio Gazcue",
+      "codigosExternos": [
+        {
+          "codigo": "L001",
+          "sistema": "L001",
+          "chaveDoTipo": "ORGANIZAÇÃO ABERTURA"
+        }
+      ]
+    },
+    "gruposTrabalhoDaOrganizacaoResponsavel": {},
+    "gruposTrabalhoDaOrganizacaoAbertura": {},
+    "organizacoesComplementares": {
+      "Convênio": {
+        "nome": "Personal",
+        "codigosExternos": [
+          {
+            "codigo": "PER",
+            "sistema": "L001",
+            "chaveDoTipo": "ORGANIZAÇÃO COMPLEMENTAR"
+          }
+        ]
+      }
+    },
+    "organizacoesComplementaresLabels": {
+      "Convênio": "Aseguradora"
+    },
+    "gruposTrabalhoDasOrganizacoesComplementares": {},
+    "codigosExternos": [
+      {
+        "codigo": "01000161",
+        "sistema": "L001",
+        "chaveDoTipo": "ATENDIMENTO"
+      }
+    ],
+    "paciente": {
+      "nome": "NOMBRE1 NOMBRE2 APELLIDO1 APELLIDO2",
+      "sexo": "MASCULINO",
+      "dataNascimento": "May 23, 2020 12:00:00 PM",
+      "email": "chernandez@promed-sa.com",
+      "documentosDePacienteCustomizados": [],
+      "codigosExternos": [
+        {
+          "codigo": "DNI12345678",
+          "sistema": "L001",
+          "chaveDoTipo": "PACIENTE"
+        }
+      ],
+      "metadados": [
+        {
+          "chave": "Patient ID",
+          "valor": "DNI12345678",
+          "tipo": "TEXTO"
+        }
+      ]
+    },
+    "pedidosMedicos": [
+      {
+        "medico": {
+          "nome": " PRUEBA",
+          "codigosExternos": [
+            {
+              "codigo": "24465",
+              "sistema": "L001",
+              "chaveDoTipo": "MEDICO"
+            }
+          ]
+        },
+        "gruposTrabalhoDaOrganizacaoSolicitante": {},
+        "organizacoesComplementares": {},
+        "organizacoesComplementaresLabels": {},
+        "gruposTrabalhoDasOrganizacoesComplementares": {},
+        "agrupadores": [
+          {
+            "titulo": "Análisis clínico",
+            "tiposDocumentoValidos": [],
+            "disponivel": true,
+            "documentos": [
+              {
+                "titulo": "Informe",
+                "tipo": "Laudo Modulab",
+                "mimeType": "text/html",
+                "codigosExternos": [
+                  {
+                    "codigo": "01000161",
+                    "sistema": "L001",
+                    "chaveDoTipo": "DOC_INFORME"
+                  }
+                ],
+                "tipoImportacao": "PROGRAMATICO",
+                "disponivel": true,
+                "conteudoDisponivel": true,
+                "metadados": [],
+                "forcarVersionamento": false,
+                "acesso": "POST",
+                "naoCriarDocumentoSeIndisponivel": false,
+                "entregas": [],
+                "enviarNotificacaoPaciente": true,
+                "enviarNotificacaoMedico": true,
+                "parametros": [
+                  {
+                    "nome": "tipoDocumento",
+                    "valor": "Laudo Modulab"
+                  },
+                  {
+                    "nome": "patientExternalId",
+                    "valor": "DNI12345678"
+                  },
+                  {
+                    "nome": "requestId",
+                    "valor": "214"
+                  }
+                ]
+              },
+              {
+                "titulo": "Informe",
+                "tipo": "Laudo Modulab",
+                "mimeType": "text/html",
+                "codigosExternos": [
+                  {
+                    "codigo": "01000161",
+                    "sistema": "L001",
+                    "chaveDoTipo": "DOC_INFORME"
+                  }
+                ],
+                "tipoImportacao": "PROGRAMATICO",
+                "disponivel": true,
+                "conteudoDisponivel": true,
+                "metadados": [],
+                "forcarVersionamento": false,
+                "acesso": "POST",
+                "naoCriarDocumentoSeIndisponivel": false,
+                "entregas": [],
+                "enviarNotificacaoPaciente": true,
+                "enviarNotificacaoMedico": true,
+                "parametros": [
+                  {
+                    "nome": "tipoDocumento",
+                    "valor": "Laudo Modulab"
+                  },
+                  {
+                    "nome": "patientExternalId",
+                    "valor": "DNI12345678"
+                  },
+                  {
+                    "nome": "requestId",
+                    "valor": "214"
+                  }
+                ]
+              }
+            ],
+            "codigosExternos": [
+              {
+                "codigo": "01000161",
+                "sistema": "L001",
+                "chaveDoTipo": "AGRUPADOR"
+              }
+            ],
+            "metadados": [],
+            "exames": [
+              {
+                "titulo": "Hemoglobina Glicosilada",
+                "codigosExternos": [
+                  {
+                    "codigo": "QC39",
+                    "sistema": "L001",
+                    "chaveDoTipo": "EXAME"
+                  }
+                ],
+                "metadados": [],
+                "categoria": {
+                  "titulo": "Laboratorio clínico",
+                  "codigosExternos": [
+                    {
+                      "codigo": "Laboratorio clínico",
+                      "sistema": "MODULAB",
+                      "chaveDoTipo": "CATEGORIA"
+                    }
+                  ]
+                }
+              },
+              {
+                "titulo": "Hemograma",
+                "codigosExternos": [
+                  {
+                    "codigo": "HEMP1",
+                    "sistema": "L001",
+                    "chaveDoTipo": "EXAME"
+                  }
+                ],
+                "metadados": [],
+                "categoria": {
+                  "titulo": "Laboratorio clínico",
+                  "codigosExternos": [
+                    {
+                      "codigo": "Laboratorio clínico",
+                      "sistema": "MODULAB",
+                      "chaveDoTipo": "CATEGORIA"
+                    }
+                  ]
+                }
+              }
+            ],
+            "informacaoCompletaDeExames": false
+          },
+          {
+            "titulo": "Historial",
+            "tiposDocumentoValidos": [],
+            "disponivel": true,
+            "documentos": [
+              {
+                "titulo": "Historial",
+                "tipo": "Historial",
+                "mimeType": "text/html",
+                "codigosExternos": [
+                  {
+                    "codigo": "01000161",
+                    "sistema": "L001",
+                    "chaveDoTipo": "DOC_HISTORIAL"
+                  }
+                ],
+                "tipoImportacao": "PROGRAMATICO",
+                "disponivel": true,
+                "conteudoDisponivel": true,
+                "metadados": [],
+                "forcarVersionamento": false,
+                "acesso": "POST",
+                "naoCriarDocumentoSeIndisponivel": false,
+                "entregas": [],
+                "enviarNotificacaoPaciente": true,
+                "enviarNotificacaoMedico": true,
+                "parametros": [
+                  {
+                    "nome": "tipoDocumento",
+                    "valor": "Historial"
+                  },
+                  {
+                    "nome": "patientExternalId",
+                    "valor": "DNI12345678"
+                  }
+                ]
+              }
+            ],
+            "codigosExternos": [
+              {
+                "codigo": "01000161",
+                "sistema": "L001",
+                "chaveDoTipo": "AGRUPADOR_HISTORICO"
+              }
+            ],
+            "metadados": [],
+            "exames": [
+              {
+                "titulo": "Historial",
+                "codigosExternos": [
+                  {
+                    "codigo": "AGRUPADOR_HISTORICO_EXAME",
+                    "sistema": "L001",
+                    "chaveDoTipo": "AGRUPADOR_HISTORICO_EXAME"
+                  }
+                ],
+                "metadados": []
+              }
+            ],
+            "informacaoCompletaDeExames": false
+          }
+        ],
+        "metadados": []
+      }
+    ],
+    "agrupadores": [],
+    "metadados": [
+      {
+        "chave": "Placer Order Number",
+        "valor": "214",
+        "tipo": "TEXTO"
+      }
+    ]
+  },
+  "dataEnvio": "May 5, 2025 6:28:37 PM"
+}
