@@ -1,40 +1,65 @@
-{				
-  "Patient1stLastName": "PruAPELLIDO1",				
-  "Patient2ndLastName": "PruAPELLIDO2",				
-  "PatientName": "PruNOMBRE1 PruNOMBRE2",				
-  "Cedula": "PruDNI12345678",				
-  "IdMedicalCore": "PruHC12345678",			
-  "IdFamiliar": "PruSSN12345678",			
-  "IdPrincipalNuevo": "",			
-  "DateBirth": "23/05/2020",				
-  "Sex": "M",				
-  "eMail": "chernandez@promed-sa.com",				
-  "TelMovil": "0987654321",	
-	"PostalAddress1": "Dirección del Paciente",
-  "RequisitionDetails": {				
-  "PatientClass": "A",
-	"DescPatientClass": "Ambulatorio",
-  "AccountNumber": "PruHIS1243",				
-  "RequisitionDate": "24/04/2025",				
-  "RefDoctorNumber": "24465",				
-	"RefDoctorName": "PRUEBA",		
-	"Diagnosis": "NE",	
-  "DescDiagnosis": "No Especificado",	
-	"Destination": "RS",	
-	"DescDestination": "Retirar en Sucursal",		
-	"AssignedPatientLocation": "Ubicación del Paciente",		
-	"IdService": "PER",		
-	"Service": "PERSONAL",		
-  "LocationID": "L001",
-  "DescLocationID": "CE Laboratorio Gazcue",	
-   "Procedures": [				
-      
-      {				
-        "LineNumber": "2",				
-        "ProcNumber": "4036",				
-				"ProcName": "Hemoglobina Glicosilada",
-        "Priority": "R"				
+{
+  "IDTipoPaciente": "Amb",
+  "TipoPaciente": "Ambulatorio",
+  "NumeroRequisicionPedido": "PruHIS1243",
+  "FechaAtencion": "24/04/2025",
+  "IDServicio": "S001",
+  "Servicio": "Consulta General",
+  "UbicacionPaciente": "Sala A",
+  "IDCentroExtraccion": "L001",
+  "CentroExtraccion": "CE Laboratorio Gazcue",
+  "IDDoctor": "24465",
+  "CedulaDoctor": "123-4567890-1",
+  "Doctor": "PRUEBA",
+  "IDDiagnostico": "NE",
+  "Diagnostico": "No Especificado",
+  "IDDestino": "RS",
+  "Destino": "Retirar en Sucursal",
+  "Prioridad": "R",
+  "ImagenOrdenMedica": [
+    {
+      "NombreArchivo": "indicacion1.png",
+      "Base64": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUg..."
+    },
+    {
+      "NombreArchivo": "indicacion2.jpg",
+      "Base64": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD..."
+    }
+  ],
+  "ConsultaResultados": "Paciente",
+  "Apellidos": "PruAPELLIDO1 PruAPELLIDO2",
+  "Nombres": "PruNOMBRE1 PruNOMBRE2",
+  "IDPrincipalActual": "PruDNI12345678",
+  "IdPrincipalNuevo": "",
+  "IdPaciente": "PruHC12345678",
+  "IdFamiliar": "PruSSN12345678",
+  "FechaNacimiento": "23/05/2020",
+  "Sexo": "M",
+  "Embarazo": "",
+  "CorreoElectronico": "chernandez@promed-sa.com",
+  "Direccion": {
+    "Fisica": {
+      "Calle": "Av. Principal",
+      "Ciudad": "Santo Domingo",
+      "Estado": "Distrito Nacional",
+      "CodigoPostal": "10101",
+      "Pais": "RD"
+},
+    "Postal": {
+      "Calle": "Av. Principal",
+      "Ciudad": "Santo Domingo",
+      "Estado": "Distrito Nacional",
+      "CodigoPostal": "10101",
+      "Pais": "RD"
+    }
+  },
+  "Telefono": "0987654321",
+  "Procedures": [
+
+      {
+        "NumeroLinea": "2",
+        "IDProcedimiento": "4036",
+		"Procedimiento": "Hemoglobina Glicosilada"
       }
-    ]				
-  }				
+    ]
 }
