@@ -8,8 +8,7 @@ var eMail = msg['CorreoElectronico'];
 var IdFamiliar = msg['IdFamiliar'];
 var IdMedicalCore = msg['IdPaciente'];
 var IdPrincipalNuevo = msg['IdPrincipalNuevo'];
-//var NumberRFC = msg['NumberRFC'];
-//var Patient1stLastName = msg['Patient1stLastName'];
+
 var PatientLastName = msg['Apellidos'];
 var PatientName = msg['Nombres'];
 //var Relation = msg['Relation'];
@@ -35,16 +34,6 @@ var RefDoctorNumber = msg['IDDoctor'];
 var RefDoctorName = msg['Doctor'];
 
 var RequisitionDate = msg['FechaAtencion'];
-//var RequisitionTime = msg['RequisitionDetails']['RequisitionTime'];
-//var Service = msg['RequisitionDetails']['Service'];
-//var ServicePlace = msg['RequisitionDetails']['ServicePlace'];
-//var ServiceReason = msg['RequisitionDetails']['ServiceReason'];
-//var ServiceType = msg['RequisitionDetails']['ServiceType'];
-
-// ===============================
-// ICD Codes
-// ===============================
-//var ICDCode01 = msg['RequisitionDetails']['ICDCodes']['ICDCode01'];
 
 // ===============================
 // Procedure Details (Arrays)
@@ -61,20 +50,12 @@ var AmountPat = [];
 var AdditionalCharge = [];
 //var Priority = [];
 
+
 for (var i = 0; i < getArrayOrXmlLength(msg['Procedures']); i++) {
     LineNumber.push(msg['Procedures'][i]['NumeroLinea']);
     ProcNumber.push(msg['Procedures'][i]['IDProcedimiento']);
     ProcName.push(msg['Procedures'][i]['Procedimiento']);
     
-    //QtyProcedures.push(msg['RequisitionDetails']['Procedures'][i]['QtyProcedures']);
-    //InvoiceCodeINT.push(msg['RequisitionDetails']['Procedures'][i]['InvoiceCodeINT']);
-    //Amount.push(msg['RequisitionDetails']['Procedures'][i]['Amount']);
-    //AmountIns.push(msg['RequisitionDetails']['Procedures'][i]['AmountIns']);
-    //AmountPat.push(msg['RequisitionDetails']['Procedures'][i]['AmountPat']);
-    //AdditionalCharge.push(msg['RequisitionDetails']['Procedures'][i]['AdditionalCharge']);
-    
-    //Priority.push(msg['RequisitionDetails']['Procedures'][i]['Priority']);
-
     logger.info("Index: " + i + " | ProcNum: " + msg['Procedures'][i]['NumeroLinea']);
 }
 
@@ -93,9 +74,8 @@ channelMap.put("eMail", eMail);
 channelMap.put("IdFamiliar", IdFamiliar);
 channelMap.put("IdMedicalCore", IdMedicalCore);
 channelMap.put("IdPrincipalNuevo", IdPrincipalNuevo);
-//channelMap.put("NumberRFC", NumberRFC);
-channelMap.put("Patient1stLastName", Patient1stLastName);
-channelMap.put("Patient2ndLastName", Patient2ndLastName);
+
+channelMap.put("PatientLastName", PatientLastName);
 channelMap.put("PatientName", PatientName);
 channelMap.put("Relation", Relation);
 channelMap.put("Sex", Sex);
