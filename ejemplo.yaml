@@ -1,109 +1,89 @@
-// ===============================
-// Patient Information
-// ===============================
-var Cedula = msg['IDPrincipalActual'];
-var DateBirth = msg['FechaNacimiento'];
-var eMail = msg['CorreoElectronico'];
-//var Employer = msg['Employer'];
-var IdFamiliar = msg['IdFamiliar'];
-var IdMedicalCore = msg['IdPaciente'];
-var IdPrincipalNuevo = msg['IdPrincipalNuevo'];
+{
+  "IDTipoPaciente": "A",
+  "TipoPaciente": "Ambulatorio",
+  "NumeroRequisicionPedido": "PruHIS1243",
+  "FechaAtencion": "24/04/2025",
+  "IDServicio": "PER",
+  "Servicio": "PERSONAL",
+  "UbicacionPaciente": "Sala A",
+  "IDCentroExtraccion": "L001",
+  "CentroExtraccion": "CE Laboratorio Gazcue",
+  "IDDoctor": "24465",
+  "CedulaDoctor": "123-4567890-1",
+  "Doctor": "PRUEBA",
+  "IDDiagnostico": "NE",
+  "Diagnostico": "No Especificado",
+  "IDDestino": "RS",
+  "Destino": "Retirar en Sucursal",
+  "Prioridad": "R",
+  "ImagenOrdenMedica": [
+    {
+      "NombreArchivo": "indicacion1.png",
+      "Base64": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUg..."
+    },
+    {
+      "NombreArchivo": "indicacion2.jpg",
+      "Base64": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD..."
+    }
+  ],
+  "ConsultaResultados": "Paciente",
+  "Apellidos": "PruAPELLIDO1 PruAPELLIDO2",
+  "Nombres": "PruNOMBRE1 PruNOMBRE2",
+  "IDPrincipalActual": "PruDNI12345678",
+  "IdPrincipalNuevo": "",
+  "IdPaciente": "PruHC12345678",
+  "IdFamiliar": "PruSSN12345678",
+  "FechaNacimiento": "23/05/2020",
+  "Sexo": "M",
+  "Embarazo": "",
+  "CorreoElectronico": "chernandez@promed-sa.com",
+  "Direccion": {
+    "Fisica": {
+      "Calle": "Av. Principal",
+      "Ciudad": "Santo Domingo",
+      "Estado": "Distrito Nacional",
+      "CodigoPostal": "10101",
+      "Pais": "RD"
+},
+    "Postal": {
+      "Calle": "Av. Principal",
+      "Ciudad": "Santo Domingo",
+      "Estado": "Distrito Nacional",
+      "CodigoPostal": "10101",
+      "Pais": "RD"
+    }
+  },
+  "Telefono": "0987654321",
+  "Procedures": [
 
-var PatientLastName = msg['Apellidos'];
-var PatientName = msg['Nombres'];
-//var Relation = msg['Relation'];
-var Sex = msg['Sexo'];
-var TelMovil = msg['Telefono'];
-
-var PostalAddress1 =msg['Direccion']['Postal']['Calle']
-
-var AccountNumber = msg['NumeroRequisicionPedido'];
-var AssignedPatientLocation = msg['UbicacionPaciente']
-var Destination = msg['IDDestino'];
-var Destino = msg['Destino'];
-
-var Diagnosis = msg['IDDiagnostico'];
-//var Employeer = msg['RequisitionDetails']['Employeer'];
-var IdService = msg['IDServicio'];
-
-var LocationID = msg['IDCentroExtraccion'];
-var PatientClass = msg['IDTipoPaciente'];
-//var PatientNumber = msg['RequisitionDetails']['PatientNumber'];
-
-var RefDoctorNumber = msg['IDDoctor'];
-var RefDoctorName = msg['Doctor'];
-
-var RequisitionDate = msg['FechaAtencion'];
-
-// ===============================
-// Procedure Details (Arrays)
-// ===============================
-
-var LineNumber = [];
-var ProcNumber = [];
-var ProcName = [];
-var QtyProcedures = [];
-var InvoiceCodeINT = [];
-var Amount = [];
-var AmountIns = [];
-var AmountPat = [];
-var AdditionalCharge = [];
-//var Priority = [];
-
-
-for (var i = 0; i < getArrayOrXmlLength(msg['Procedures']); i++) {
-    LineNumber.push(msg['Procedures'][i]['NumeroLinea']);
-    ProcNumber.push(msg['Procedures'][i]['IDProcedimiento']);
-    ProcName.push(msg['Procedures'][i]['Procedimiento']);
-    
-    logger.info("Index: " + i + " | ProcNum: " + msg['Procedures'][i]['NumeroLinea']);
+      {
+        "NumeroLinea": "1",
+        "IDProcedimiento": "4036",
+		"Procedimiento": "Hemoglobina Glicosilada"
+      },
+		{
+        "NumeroLinea": "2",
+        "IDProcedimiento": "QC1",
+		"Procedimiento": "Acido Urico"
+      }
+		
+    ]
 }
 
-var prioridad = msg['Prioridad'];
 
 
-// ===============================
-// Store Values in channelMap
-// ===============================
 
-// Patient
-channelMap.put("Cedula", Cedula);
-channelMap.put("DateBirth", DateBirth);
-channelMap.put("eMail", eMail);
-//channelMap.put("Employer", Employer);
-channelMap.put("IdFamiliar", IdFamiliar);
-channelMap.put("IdMedicalCore", IdMedicalCore);
-channelMap.put("IdPrincipalNuevo", IdPrincipalNuevo);
-
-channelMap.put("PatientLastName", PatientLastName);
-channelMap.put("PatientName", PatientName);
-channelMap.put("Relation", Relation);
-channelMap.put("Sex", Sex);
-channelMap.put("TelMovil", TelMovil);
-
-channelMap.put("PostalAddress1", PostalAddress1);
-
-// Requisition
-channelMap.put("AccountNumber", AccountNumber);
-channelMap.put("AssignedPatientLocation", AssignedPatientLocation);
-channelMap.put("Destination", Destination);
-channelMap.put("Diagnosis", Diagnosis);
-//channelMap.put("Employeer", Employeer);
-channelMap.put("IdService", IdService);
-channelMap.put("LocationID", LocationID);
-channelMap.put("PatientClass", PatientClass);
-channelMap.put("PatientNumber", PatientNumber);
-channelMap.put("RefDoctorName", RefDoctorName);
-channelMap.put("RefDoctorNumber", RefDoctorNumber);
-channelMap.put("RequisitionDate", RequisitionDate);
-channelMap.put("RequisitionTime", RequisitionTime);
-channelMap.put("Service", Service);
+MSH|^~\&|AMADITA|AMADITA|Modulab|Modulab|||OML^O21^OML_O21||P|2.5||||||8859/1|||
+PID|1|PruHC12345678|PruDNI12345678^^^^PI~PruSSN12345678^^^^PPN~^^^^SS||PruAPELLIDO1 PruAPELLIDO2^PruNOMBRE1 PruNOMBRE2||20200523|M|||Av. Principal^^^^^^^||0987654321^^^chernandez@promed-sa.com|||||||||||||||||N
+PV1|1|A|^^Sala A||||||||||||||||
+DG1|||||||||||||||||||||||||||||
+IN1|||||||||||||||||||||||||||||
+ORC|NW|||PruHIS1243|A||||20250424|||24465^PRUEBA|||||||||PER^PERSONAL||||||
+OBR|1|||4036^Hemoglobina Glicosilada||||||L001^CE Laboratorio Gazcue||||||24465^PRUEBA||||||||NE^No Especificado||||RS^Retirar en Sucursal|
+TQ1|||||||||R
+ORC|NW|||PruHIS1243|||||20250424|||24465^PRUEBA|||||||||PER^PERSONAL
+OBR|2|||QC1^Acido Urico||||||L001^CE Laboratorio Gazcue||||||24465^PRUEBA||||||||NE^No Especificado||||RS^Retirar en Sucursal
+TQ1|||||||||R
 
 
-// Procedures
-channelMap.put("LineNumber", LineNumber);
-channelMap.put("ProcNumber", ProcNumber);
-channelMap.put("ProcName", ProcName);
-//
 
-channelMap.put("Priority", prioridad);
