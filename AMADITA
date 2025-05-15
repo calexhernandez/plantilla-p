@@ -1,86 +1,45 @@
-[2025-05-15 18:53:30.903]  ERROR  (transformer:138): ❌ Connect error: [Ljava.lang.Object;@2a0889a1
+MSH|^~\&|Modulab|Modulab|Portal|Portal|20250515153502-0400||OML^O21^OML_O21|LAB11747337702510|P|2.5|||||RD||ES
+PID|||||MICRO 30^LUIS ERNESTO||19601002120000-0400|M||||||||||||||||||||||N
+PV1||A||||||||||||||N
+ORC|SN||01000335^MODULAB||SC||||20250515153433-0400||||||20250515120000-0400||||||Personal^^^^^^FI^^^PER
+OBR|1|||QC1^Ácido Úrico|||||||A|||||^Personal||||||||LAB|S|||RS
+SPM|1|1001000335||3^Suero|||^^MODULAB|^^MODULAB||||||||||||N||||||1
+ORC|SN||01000335^MODULAB||SC||||20250515153433-0400||||||20250515120000-0400||||||Personal^^^^^^FI^^^PER
+OBR|2|||MC59^Coloración de Gram|||||||A|||||^Personal||||||||LAB|S|||RS
+SPM|1|7301000335||35^Secreción|||^^MODULAB|^^MODULAB||||||||||||N||||||1
 
 
 
-this is my code
 
-//var IO = Java.type("io.socket.client.IO");
-var IO = Packages.io.socket.client.IO;
-var Socket = Packages.io.socket.client.Socket;
-var JSONObject = Packages.org.json.JSONObject;
-
-
-logger.info(Packages.io.socket.client.IO);
-
-var options = IO.Options();
-options.forceNew = true;
-options.reconnection = false;
-//options.transports = Java.to(["websocket"], "java.lang.String[]");
-
-var transports = java.lang.reflect.Array.newInstance(java.lang.String, 1);
-transports[0] = "websocket";
-options.transports = transports;
-
-var socket = IO.socket("http://socket-handle-tests.amaditaplayground.com:30008", options);
+MSH|^~\&|Modulab|Modulab|Portal|Portal|20250515153503-0400||OML^O21^OML_O21|LAB11747337703318|P|2.5|||||RD||ES
+PID|||||MICRO 30^LUIS ERNESTO||19601002120000-0400|M||||||||||||||||||||||N
+PV1||A||||||||||||||N
+ORC|SN||01000335^MODULAB||SC||||20250515153453-0400||||||20250515120000-0400||||||Personal^^^^^^FI^^^PER
+OBR|1|||MC59^Coloración de Gram|||||||A|||||^Personal||||||||LAB|S|||RS
+SPM|1|7301000335||35^Secreción|||^^MODULAB|^^MODULAB||||||||||||N||||||1
 
 
-socket.on("connect", function() {
-    logger.info("✅ Connected to Socket.IO");
 
-    // Auth
-    var auth = new JSONObject();
-    auth.put("username", "amadita.socket.user");
-    auth.put("password", "amadita.socket.password");
-    socket.emit("auth", auth);
+MSH|^~\&|Modulab|Modulab|Portal|Portal|20250515154136-0400||ORU^R01^ORU_R01|LAB31747338096804|P|2.5|||||RD||ES
+PID|1||||MICRO 30^LUIS ERNESTO||19601002120000-0400|M||||||||||||||||||||||N
+PV1|1|A||||||||||||||N
+ORC|SC||01000335^MODULAB|^422&MODULAB|CM||||20250515154132-0400|||^Personal|||20250515153540-0400||||||Personal^^^^^^FI^^^PER
+OBR|1||01000335^MODULAB|MC59^Coloración de Gram^MODULAB||||||L001||||||^Personal||||8||||LAB|F|||RS||||maribel.meran^20250515154132-0400
+OBX|1|ST|MC52^Leucocitos^MODULAB||2-4/c|||N|||F|||20250515154132||maribel.meran|||20250515154132
+OBX|2|ST|MC49^Coloración de Gram^MODULAB||Coccos Gram Positivos Moderado; Bacilos Gram Negativos Moderado|||H|||F|||20250515154132||maribel.meran|||20250515154132
+OBX|3|ST|MC53^Células Epiteliales^MODULAB||Moderado|||N|||F|||20250515154132||maribel.meran|||20250515154132
+OBX|4|ST|MC54^Levaduras^MODULAB||No se observan|||N|||F|||20250515154132||maribel.meran|||20250515154132
+SPM|1|7301000335||35^Secreción|||^Hisopado^MODULAB|^^MODULAB||||||||||20250515153540||Y||||||1
 
-    // Payload
-    var request = new JSONObject();
-    request.put("requestNumber", 99009901);
-    request.put("accountNumber", 0);
-    request.put("patientNumber", 0);
-    request.put("cedula", "402-1115792-6");
-    request.put("email", "angel.perez@amadita.com");
-    request.put("isCompleted", false);
-    request.put("totalProcedures", 20);
-    request.put("totalPendingProcedures", 20);
-    request.put("locationId", "2023");
-    request.put("patientId", JSONObject.NULL);
-    request.put("resultNumber", 99009901);
-    request.put("origen", "SOCKET-CORE4ALL");
 
-    var test1 = new JSONObject();
-    test1.put("priority", 0);
-    test1.put("flagInfectiousDisease", 0);
-    test1.put("averageDate", "2021-09-19");
-    test1.put("averageHour", "10:59:00.0000000");
-    test1.put("flagAbnormal", 0);
-    test1.put("procNumber", 1);
-    test1.put("description", "Blood");
-    test1.put("result", "base64");
-    test1.put("hl7Result", "lorem");
-    test1.put("statusRequest", "C");
-    test1.put("statusResult", "C");
 
-    var test2 = new JSONObject(test1.toString());
-    test2.put("procNumber", 2);
-    test2.put("description", "X-Ray");
-    test2.put("statusRequest", "P");
-    test2.put("statusResult", "P");
-
-    var tests = Java.to([test1, test2], "org.json.JSONObject[]");
-    request.put("tests", new org.json.JSONArray(tests));
-
-    // Emit order
-    socket.emit("send order", request);
-});
-
-socket.on("sent order", function(response) {
-    logger.info("📥 Response from 'sent order': " + response.toString());
-    socket.disconnect();
-});
-
-socket.on("connect_error", function(err) {
-    logger.error("❌ Connect error: " + err.toString());
-});
-
-socket.connect();
+MSH|^~\&|Modulab|Modulab|Portal|Portal|20250515154409-0400||ORU^R01^ORU_R01|LAB31747338249308|P|2.5|||||RD||ES
+PID|1||||MICRO 30^LUIS ERNESTO||19601002120000-0400|M||||||||||||||||||||||N
+PV1|1|A||||||||||||||N
+ORC|SC||01000335^MODULAB|^422&MODULAB|CM||||20250515154356-0400|||^Personal|||20250515153540-0400||||||Personal^^^^^^FI^^^PER
+OBR|1||01000335^MODULAB|MC59^Coloración de Gram^MODULAB||||||L001||||||^Personal||||8||||LAB|F|||RS||||maribel.meran^20250515154356-0400
+OBX|1|ST|MC52^Leucocitos^MODULAB||2-4/c|||N|||F|||20250515154356||maribel.meran|||20250515154132
+OBX|2|ST|MC49^Coloración de Gram^MODULAB||Coccos Gram Positivos Moderado; Bacilos Gram Negativos Moderado|||H|||F|||20250515154356||maribel.meran|||20250515154132
+OBX|3|ST|MC53^Células Epiteliales^MODULAB||Moderado|||N|||F|||20250515154356||maribel.meran|||20250515154132
+OBX|4|ST|MC54^Levaduras^MODULAB||No se observan|||N|||F|||20250515154356||maribel.meran|||20250515154132
+SPM|1|7301000335||35^Secreción|||^Hisopado^MODULAB|^^MODULAB||||||||||20250515153540||Y||||||1
