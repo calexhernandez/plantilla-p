@@ -1,3 +1,14 @@
-var transports = java.lang.reflect.Array.newInstance(java.lang.String, 1);
-transports[0] = "websocket";
-options.transports = transports;
+[2025-05-15 18:39:03.056]  ERROR  (io.socket.thread.EventThread:27): Task threw exception
+java.lang.NoClassDefFoundError: Could not initialize class okhttp3.OkHttpClient
+	at io.socket.engineio.client.Socket.<init>(Socket.java:215)
+	at io.socket.engineio.client.Socket.<init>(Socket.java:174)
+	at io.socket.client.Manager$Engine.<init>(Manager.java:638)
+	at io.socket.client.Manager$1.run(Manager.java:277)
+	at io.socket.thread.EventThread.exec(EventThread.java:55)
+	at io.socket.client.Manager.open(Manager.java:266)
+	at io.socket.client.Manager.open(Manager.java:256)
+	at io.socket.client.Socket$3.run(Socket.java:142)
+	at io.socket.thread.EventThread$2.run(EventThread.java:80)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
