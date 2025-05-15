@@ -1,52 +1,29 @@
 Transformer error
 ERROR MESSAGE: Error evaluating transformer
-java.lang.NoClassDefFoundError: io/socket/engineio/client/Socket$Options
-	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
-	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1022)
-	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:174)
-	at java.base/java.net.URLClassLoader.defineClass(URLClassLoader.java:555)
-	at java.base/java.net.URLClassLoader$1.run(URLClassLoader.java:458)
-	at java.base/java.net.URLClassLoader$1.run(URLClassLoader.java:452)
-	at java.base/java.security.AccessController.doPrivileged(Native Method)
-	at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:451)
-	at com.mirth.connect.server.util.ChildFirstURLClassLoader.loadClass(ChildFirstURLClassLoader.java:30)
-	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:527)
-	at java.base/java.lang.Class.getDeclaredMethods0(Native Method)
-	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3166)
-	at java.base/java.lang.Class.privateGetPublicMethods(Class.java:3191)
-	at java.base/java.lang.Class.getMethods(Class.java:1904)
-	at org.mozilla.javascript.JavaMembers.discoverAccessibleMethods(JavaMembers.java:358)
-	at org.mozilla.javascript.JavaMembers.discoverAccessibleMethods(JavaMembers.java:309)
-	at org.mozilla.javascript.JavaMembers.reflect(JavaMembers.java:431)
-	at org.mozilla.javascript.JavaMembers.<init>(JavaMembers.java:52)
-	at org.mozilla.javascript.JavaMembers.lookupClass(JavaMembers.java:816)
-	at org.mozilla.javascript.NativeJavaClass.initMembers(NativeJavaClass.java:50)
-	at org.mozilla.javascript.NativeJavaObject.<init>(NativeJavaObject.java:50)
-	at org.mozilla.javascript.NativeJavaClass.<init>(NativeJavaClass.java:44)
-	at org.mozilla.javascript.NativeJavaClass.<init>(NativeJavaClass.java:40)
-	at org.mozilla.javascript.WrapFactory.wrapJavaClass(WrapFactory.java:147)
-	at org.mozilla.javascript.NativeJavaPackage.getPkgProperty(NativeJavaPackage.java:134)
-	at org.mozilla.javascript.NativeJavaPackage.get(NativeJavaPackage.java:84)
-	at org.mozilla.javascript.ScriptableObject.getProperty(ScriptableObject.java:2329)
-	at org.mozilla.javascript.ScriptRuntime.getObjectProp(ScriptRuntime.java:1596)
-	at org.mozilla.javascript.ScriptRuntime.getObjectProp(ScriptRuntime.java:1589)
-	at org.mozilla.javascript.Interpreter.interpretLoop(Interpreter.java:1455)
-	at org.mozilla.javascript.Interpreter.interpret(Interpreter.java:1013)
-	at org.mozilla.javascript.InterpretedFunction.call(InterpretedFunction.java:109)
-	at org.mozilla.javascript.ContextFactory.doTopCall(ContextFactory.java:412)
-	at org.mozilla.javascript.ScriptRuntime.doTopCall(ScriptRuntime.java:3578)
-	at org.mozilla.javascript.InterpretedFunction.exec(InterpretedFunction.java:121)
-	at com.mirth.connect.server.util.javascript.JavaScriptTask.executeScript(JavaScriptTask.java:151)
-	at com.mirth.connect.server.transformers.JavaScriptFilterTransformer$FilterTransformerTask.doCall(JavaScriptFilterTransformer.java:224)
+com.mirth.connect.server.MirthJavascriptTransformerException: 
+CHANNEL:	testWebSocket
+CONNECTOR:	sourceConnector
+SCRIPT SOURCE:	TRANSFORMER
+SOURCE CODE:	
+101: function doFilter() { phase[0] = 'filter'; return true; }function doTransform() { phase[0] = 'transformer'; logger = Packages.org.apache.log4j.Logger.getLogger(phase[0]);
+102: 
+103: 
+104: //var IO = Java.type("io.socket.client.IO");
+105: var IO = Packages.io.socket.client.IO;
+106: var Socket = Java.type("io.socket.client.Socket");
+107: var JSONObject = Java.type("org.json.JSONObject");
+108: 
+109: 
+110: logger.info(Packages.io.socket.client.IO);
+LINE NUMBER:	106
+DETAILS:	ReferenceError: "Java" is not defined.
+	at 68b23f80-bfe2-4be9-903e-fdb72411b449_JavaScript_Filter_Transformer_0:106 (doTransform)
+	at 68b23f80-bfe2-4be9-903e-fdb72411b449_JavaScript_Filter_Transformer_0:201 (doScript)
+	at 68b23f80-bfe2-4be9-903e-fdb72411b449_JavaScript_Filter_Transformer_0:203
+	at com.mirth.connect.server.transformers.JavaScriptFilterTransformer$FilterTransformerTask.doCall(JavaScriptFilterTransformer.java:235)
 	at com.mirth.connect.server.transformers.JavaScriptFilterTransformer$FilterTransformerTask.doCall(JavaScriptFilterTransformer.java:187)
 	at com.mirth.connect.server.util.javascript.JavaScriptTask.call(JavaScriptTask.java:114)
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at java.base/java.lang.Thread.run(Thread.java:829)
-Caused by: java.lang.ClassNotFoundException: io.socket.engineio.client.Socket$Options
-	at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:476)
-	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:594)
-	at com.mirth.connect.server.util.ChildFirstURLClassLoader.loadClass(ChildFirstURLClassLoader.java:36)
-	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:527)
-	... 43 more
