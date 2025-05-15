@@ -54,6 +54,8 @@ http://socket-handle-tests.amaditaplayground.com:30008
 
 
 https://repo1.maven.org/maven2/io/socket/socket.io-client/1.0.0/socket.io-client-1.0.0.jar
+https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp
+https://mvnrepository.com/artifact/com.squareup.okio/okio
 
 
 var IO = Java.type("io.socket.client.IO");
