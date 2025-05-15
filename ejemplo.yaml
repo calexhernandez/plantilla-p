@@ -50,3 +50,84 @@ http://socket-handle-tests.amaditaplayground.com:30008
     ] 
 }
 
+
+
+
+https://repo1.maven.org/maven2/io/socket/socket.io-client/1.0.0/socket.io-client-1.0.0.jar
+
+
+var IO = Java.type("io.socket.client.IO");
+var Socket = Java.type("io.socket.client.Socket");
+var JSONObject = Java.type("org.json.JSONObject");
+
+var options = IO.Options();
+options.forceNew = true;
+options.reconnection = false;
+options.transports = Java.to(["websocket"], "java.lang.String[]");
+
+var socket = IO.socket("http://socket-handle-tests.amaditaplayground.com:30008", options);
+
+socket.on("connect", function() {
+    logger.info("✅ Connected to Socket.IO");
+
+    // Auth
+    var auth = new JSONObject();
+    auth.put("username", "amadita.socket.user");
+    auth.put("password", "amadita.socket.password");
+    socket.emit("auth", auth);
+
+    // Payload
+    var request = new JSONObject();
+    request.put("requestNumber", 99009901);
+    request.put("accountNumber", 0);
+    request.put("patientNumber", 0);
+    request.put("cedula", "402-1115792-6");
+    request.put("email", "angel.perez@amadita.com");
+    request.put("isCompleted", false);
+    request.put("totalProcedures", 20);
+    request.put("totalPendingProcedures", 20);
+    request.put("locationId", "2023");
+    request.put("patientId", JSONObject.NULL);
+    request.put("resultNumber", 99009901);
+    request.put("origen", "SOCKET-CORE4ALL");
+
+    var test1 = new JSONObject();
+    test1.put("priority", 0);
+    test1.put("flagInfectiousDisease", 0);
+    test1.put("averageDate", "2021-09-19");
+    test1.put("averageHour", "10:59:00.0000000");
+    test1.put("flagAbnormal", 0);
+    test1.put("procNumber", 1);
+    test1.put("description", "Blood");
+    test1.put("result", "base64");
+    test1.put("hl7Result", "lorem");
+    test1.put("statusRequest", "C");
+    test1.put("statusResult", "C");
+
+    var test2 = new JSONObject(test1.toString());
+    test2.put("procNumber", 2);
+    test2.put("description", "X-Ray");
+    test2.put("statusRequest", "P");
+    test2.put("statusResult", "P");
+
+    var tests = Java.to([test1, test2], "org.json.JSONObject[]");
+    request.put("tests", new org.json.JSONArray(tests));
+
+    // Emit order
+    socket.emit("send order", request);
+});
+
+socket.on("sent order", function(response) {
+    logger.info("📥 Response from 'sent order': " + response.toString());
+    socket.disconnect();
+});
+
+socket.on("connect_error", function(err) {
+    logger.error("❌ Connect error: " + err.toString());
+});
+
+socket.connect();
+
+
+
+
