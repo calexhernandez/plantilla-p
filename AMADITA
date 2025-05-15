@@ -5,19 +5,19 @@ CHANNEL:	testWebSocket
 CONNECTOR:	sourceConnector
 SCRIPT SOURCE:	TRANSFORMER
 SOURCE CODE:	
-101: function doFilter() { phase[0] = 'filter'; return true; }function doTransform() { phase[0] = 'transformer'; logger = Packages.org.apache.log4j.Logger.getLogger(phase[0]);
-102: 
-103: 
-104: //var IO = Java.type("io.socket.client.IO");
-105: var IO = Packages.io.socket.client.IO;
-106: var Socket = Java.type("io.socket.client.Socket");
-107: var JSONObject = Java.type("org.json.JSONObject");
-108: 
-109: 
 110: logger.info(Packages.io.socket.client.IO);
-LINE NUMBER:	106
+111: 
+112: var options = IO.Options();
+113: options.forceNew = true;
+114: options.reconnection = false;
+115: options.transports = Java.to(["websocket"], "java.lang.String[]");
+116: 
+117: var socket = IO.socket("http://socket-handle-tests.amaditaplayground.com:30008", options);
+118: 
+119: 
+LINE NUMBER:	115
 DETAILS:	ReferenceError: "Java" is not defined.
-	at 68b23f80-bfe2-4be9-903e-fdb72411b449_JavaScript_Filter_Transformer_0:106 (doTransform)
+	at 68b23f80-bfe2-4be9-903e-fdb72411b449_JavaScript_Filter_Transformer_0:115 (doTransform)
 	at 68b23f80-bfe2-4be9-903e-fdb72411b449_JavaScript_Filter_Transformer_0:201 (doScript)
 	at 68b23f80-bfe2-4be9-903e-fdb72411b449_JavaScript_Filter_Transformer_0:203
 	at com.mirth.connect.server.transformers.JavaScriptFilterTransformer$FilterTransformerTask.doCall(JavaScriptFilterTransformer.java:235)
