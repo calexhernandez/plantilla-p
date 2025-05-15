@@ -1,13 +1,52 @@
-MSH|^~\&|Modulab|Modulab|Portal|Portal|20250512155231-0400||ORU^R01^ORU_R01|LAB31747079551053|P|2.5|||
-PID|1|C053166180^^^^ExternalPatientID|C053166180^^^^IDCARD||PRUEBA^PORTAL^||19960512120000-0400|F|||^^^^^||^^^rayma.suarez@amadita.com|||
-ORC|SC|333|01000253-0525||CM||^^^^^||20250512155204-0400||||||20250512152925-0400||||||S001^^^^^^FI^^^S001
-OBR|1|||QC1^Ácido Úrico||||||L001^CE Laboratorio Gazcue||||||NO^NO CODIFICADO^^^^^^^^^^^^^^&||||||||||||
+http://socket-handle-tests.amaditaplayground.com:30008
 
 
+{ 
+    "username": "amadita.socket.user", 
+    "password": "amadita.socket.password" 
+}
 
-https://lis.amadita.com/modulab/servlet/ShowPDFReportServlet?jwt=eyJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6IklOT1ZBUEFSIiwicmVxdWVzdElEIjoiMzMzIiwicGF0aWVudGV4dGVybmFsaWQiOiJDMDUzMTY2MTgwIiwiaWF0IjoxNzQ3MDg0MDE3fQ._x8fir7g8ReqSSM59YoZvlUxqExnOVhWn2iwKTKUC1k&returnJSP=/intralab/showMessage
+{ 
+    "requestNumber": 99009901, 
+    "accountNumber": 0, 
+    "patientNumber": 0, 
+    "cedula": "402-1115792-6", 
+    "email": "angel.perez@amadita.com", 
+    "isCompleted": false, 
+    "totalProcedures": 20, 
+    "totalPendingProcedures": 20, 
+    "locationId": "2023", 
+    "patientId": null, 
+    "resultNumber": 99009901, 
+    "origen": "SOCKET-CORE4ALL",
+    "tests": 
+    [ 
+        { 
+            "priority": 0, 
+            "flagInfectiousDisease": 0, 
+            "averageDate": "2021-09-19", 
+            "averageHour": "10:59:00.0000000", 
+            "flagAbnormal": 0, 
+            "procNumber": 1, 
+            "description": "Blood", 
+            "result": "base64", 
+            "hl7Result": "lorem", 
+            "statusRequest": "C", 
+            "statusResult": "C" 
+        }, 
+        { 
+            "priority": 0, 
+            "flagInfectiousDisease": 0, 
+            "averageDate": "2021-09-19", 
+            "averageHour": "10:59:00.0000000", 
+            "flagAbnormal": 0, 
+            "procNumber": 2, 
+            "description": "X-Ray", 
+            "result": "base64", 
+            "hl7Result": "lorem", 
+            "statusRequest": "P", 
+            "statusResult": "P" 
+        } 
+    ] 
+}
 
-
-
-
-https://lis.amadita.com/lab/external-results/#/patient-history?jwt=eyJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6IklOT1ZBUEFSIiwiaWRjYXJkIjoiQzA1MzE2NjE4MCJ9IiwiaWF0IjoxNzQ3MDg0MDU0fQ.EKklUZ9HOavdZYgTITXXKHVuV_cDN868LVTQ--hvJYQ
