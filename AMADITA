@@ -1,99 +1,56 @@
-//var IO = Java.type("io.socket.client.IO");
 var IO = Packages.io.socket.client.IO;
 var Socket = Packages.io.socket.client.Socket;
 var JSONObject = Packages.org.json.JSONObject;
+var EmitterListener = Packages.io.socket.emitter.Emitter.Listener;
 
-
-logger.info(Packages.io.socket.client.IO);
+logger.info("Connecting to Socket.IO...");
 
 var options = IO.Options();
 options.forceNew = true;
 options.reconnection = false;
-//options.transports = Java.to(["websocket"], "java.lang.String[]");
+options.reconnectionAttempts = 5;
+options.timeout = 5000;
+options.autoConnect = true;
 
 var transports = java.lang.reflect.Array.newInstance(java.lang.String, 1);
 transports[0] = "websocket";
-
-
 options.transports = transports;
 
+// Set auth
+var authObj = new JSONObject();
+authObj.put("username", "employees.consultor");
+authObj.put("password", "gVh6#1TSyPt2");
+options.auth = authObj;
 
-	var socket=IO.socket("http://socket-handle-tests.amaditaplayground.com:30008",
-	{
-	auth:{
-		"username":"employees.consultor",
-		"password":"gVh6#1TSyPt2",
+var socket = IO.socket("http://socket-handle-tests.amaditaplayground.com:30008", options);
 
-		
-	},
-	reconnectionAttemps:5,
-	timeOut:5000,
-	autoConnect: true,	
-	});
+// CONNECT
+socket.on("connect", new EmitterListener({
+    call: function(args) {
+        logger.info("✅ Connected to Socket.IO");
 
+        var auth = new JSONObject();
+        auth.put("username", "employees.consultor");
+        auth.put("password", "gVh6#1TSyPt2");
+        socket.emit("auth", auth);
+    }
+}));
 
-//var socket = IO.socket("http://socket-handle-tests.amaditaplayground.com:30008", options);
+// SENT ORDER RESPONSE
+socket.on("sent order", new EmitterListener({
+    call: function(args) {
+        var response = args[0];
+        logger.info("📥 Response from 'sent order': " + response.toString());
+        socket.disconnect();
+    }
+}));
 
-socket.on("connect", ()=> {
-    logger.info("✅ Connected to Socket.IO");
-
-    // Auth
-    var auth = new JSONObject();
-    auth.put("username", "employees.consultor");
-    auth.put("password", "gVh6#1TSyPt2");
-    socket.emit("auth", auth);
-    
-/*
-    // Payload
-    var request = new JSONObject();
-    request.put("requestNumber", 99009901);
-    request.put("accountNumber", 0);
-    request.put("patientNumber", 0);
-    request.put("cedula", "402-1115792-6");
-    request.put("email", "angel.perez@amadita.com");
-    request.put("isCompleted", false);
-    request.put("totalProcedures", 20);
-    request.put("totalPendingProcedures", 20);
-    request.put("locationId", "2023");
-    request.put("patientId", JSONObject.NULL);
-    request.put("resultNumber", 99009901);
-    request.put("origen", "SOCKET-CORE4ALL");
-
-    var test1 = new JSONObject();
-    test1.put("priority", 0);
-    test1.put("flagInfectiousDisease", 0);
-    test1.put("averageDate", "2021-09-19");
-    test1.put("averageHour", "10:59:00.0000000");
-    test1.put("flagAbnormal", 0);
-    test1.put("procNumber", 1);
-    test1.put("description", "Blood");
-    test1.put("result", "base64");
-    test1.put("hl7Result", "lorem");
-    test1.put("statusRequest", "C");
-    test1.put("statusResult", "C");
-
-    var test2 = new JSONObject(test1.toString());
-    test2.put("procNumber", 2);
-    test2.put("description", "X-Ray");
-    test2.put("statusRequest", "P");
-    test2.put("statusResult", "P");
-
-    var tests = Java.to([test1, test2], "org.json.JSONObject[]");
-    request.put("tests", new org.json.JSONArray(tests));
-
-    // Emit order
-    socket.emit("send order", request);
-
-    */
-});
-
-socket.on("sent order", function(response) {
-    logger.info("📥 Response from 'sent order': " + response.toString());
-    socket.disconnect();
-});
-
-socket.on("connect_error", function(err) {
-    logger.error("❌ Connect error: " + err.toString());
-});
+// CONNECT ERROR
+socket.on("connect_error", new EmitterListener({
+    call: function(args) {
+        var err = args[0];
+        logger.error("❌ Connect error: " + err.toString());
+    }
+}));
 
 socket.connect();
