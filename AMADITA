@@ -1,3 +1,37 @@
-[2025-05-21 13:03:00.502]  ERROR  (transformer:138): ❌ Error de conexión: 
-io.socket.engineio.client.EngineIOException: 
-websocket error
+from flask import Flask, request
+from flask_socketio import SocketIO, emit
+import json
+
+app = Flask(__name__)
+socketio = SocketIO(app, cors_allowed_origins="*")  # Allow connections from any origin
+
+# Credentials for testing
+VALID_USERNAME = "employees.consultor"
+VALID_PASSWORD = "gVh6#1TSyPt2"
+
+@socketio.on("connect")
+def on_connect():
+    print("🔌 Client connected:", request.sid)
+
+@socketio.on("auth")
+def on_auth(data):
+    print("🔐 Auth received:", data)
+    username = data.get("username")
+    password = data.get("password")
+
+    if username == VALID_USERNAME and password == VALID_PASSWORD:
+        emit("auth_response", {"status": "ok", "message": "Authenticated"})
+    else:
+        emit("auth_response", {"status": "error", "message": "Invalid credentials"})
+
+@socketio.on("send order")
+def on_send_order(data):
+    print("📦 Order received:", json.dumps(data, indent=2))
+    emit("sent order", {"status": "received", "data": data})
+
+@socketio.on("disconnect")
+def on_disconnect():
+    print("❌ Client disconnected:", request.sid)
+
+if __name__ == '__main__':
+    socketio.run(app, host="0.0.0.0", port=30008)
