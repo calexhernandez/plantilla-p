@@ -1,52 +1,29 @@
-var IO = Packages.io.socket.client.IO;
-var Socket = Packages.io.socket.client.Socket;
-var EmitterListener = Packages.io.socket.emitter.Emitter.Listener;
-var JSONObject = Packages.org.json.JSONObject;
-
-var options = IO.Options();
-options.forceNew = true;
-options.reconnection = true;
-options.reconnectionAttempts = 5;
-options.timeout = 5000;
-
-var transports = java.lang.reflect.Array.newInstance(java.lang.String, 1);
-transports[0] = "websocket";
-options.transports = transports;
-
-// Auth object (optional)
-var auth = new JSONObject();
-auth.put("username", "employees.consultor");
-auth.put("password", "gVh6#1TSyPt2");
-options.auth = auth;
-
-// Connect to WebSocket
-var socket = IO.socket("http://socket-handle-tests.amaditaplayground.com:30008", options);
-
-// On connect
-socket.on("connect", new EmitterListener({
-    call: function(args) {
-        logger.info("✅ Connected to WebSocket!");
-
-        // Emit auth
-        socket.emit("auth", auth);
-    }
-}));
-
-// On response
-socket.on("sent order", new EmitterListener({
-    call: function(args) {
-        var response = args[0];
-        logger.info("📥 Got response: " + response.toString());
-        socket.disconnect();
-    }
-}));
-
-// On error
-socket.on("connect_error", new EmitterListener({
-    call: function(args) {
-        var err = args[0];
-        logger.error("❌ Connection error: " + err.toString());
-    }
-}));
-
-socket.connect();
+Transformer error
+ERROR MESSAGE: Error evaluating transformer
+com.mirth.connect.server.MirthJavascriptTransformerException: 
+CHANNEL:	testWebSocket
+CONNECTOR:	sourceConnector
+SCRIPT SOURCE:	TRANSFORMER
+SOURCE CODE:	
+118: 
+119: // Auth object (optional)
+120: var auth = new JSONObject();
+121: auth.put("username", "employees.consultor");
+122: auth.put("password", "gVh6#1TSyPt2");
+123: options.auth = auth;
+124: 
+125: // Connect to WebSocket
+126: var socket = IO.socket("http://socket-handle-tests.amaditaplayground.com:30008", options);
+127: 
+LINE NUMBER:	123
+DETAILS:	Java class "io.socket.client.IO$Options" has no public instance field or method named "auth".
+	at 68b23f80-bfe2-4be9-903e-fdb72411b449_JavaScript_Filter_Transformer_0:123 (doTransform)
+	at 68b23f80-bfe2-4be9-903e-fdb72411b449_JavaScript_Filter_Transformer_0:177 (doScript)
+	at 68b23f80-bfe2-4be9-903e-fdb72411b449_JavaScript_Filter_Transformer_0:179
+	at com.mirth.connect.server.transformers.JavaScriptFilterTransformer$FilterTransformerTask.doCall(JavaScriptFilterTransformer.java:235)
+	at com.mirth.connect.server.transformers.JavaScriptFilterTransformer$FilterTransformerTask.doCall(JavaScriptFilterTransformer.java:187)
+	at com.mirth.connect.server.util.javascript.JavaScriptTask.call(JavaScriptTask.java:114)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
