@@ -1,3 +1,35 @@
+var IO = Packages.io.socket.client.IO;
+var Socket = Packages.io.socket.client.Socket;
+var EmitterListener = Packages.io.socket.emitter.Emitter.Listener;
+var JSONObject = Packages.org.json.JSONObject;
+
+
+
+
+
+var options = IO.Options();
+options.forceNew = true;
+options.reconnection = true;
+options.reconnectionAttempts = 5;
+options.timeout = 5000;
+
+
+
+
+
+var transports = java.lang.reflect.Array.newInstance(java.lang.String, 1);
+transports[0] = "websocket";
+options.transports = transports;
+
+/*
+// Auth object (optional)
+var auth = new JSONObject();
+auth.put("username", "employees.consultor");
+auth.put("password", "gVh6#1TSyPt2");
+options.auth = auth;
+*/
+
+
 var headers = new java.util.HashMap();
 headers.put("username", "employees.consultor");
 headers.put("password", "gVh6#1TSyPt2");
@@ -5,21 +37,36 @@ headers.put("password", "gVh6#1TSyPt2");
 var options = new IO.Options();
 options.extraHeaders = headers;
 
+
+
+// Connect to WebSocket
 var socket = IO.socket("http://socket-handle-tests.amaditaplayground.com:30008", options);
 
+// On connect
+socket.on("connect", new EmitterListener({
+    call: function(args) {
+        logger.info("✅ Connected to WebSocket!");
 
+        // Emit auth
+        socket.emit("auth", auth);
+    }
+}));
 
+// On response
+socket.on("sent order", new EmitterListener({
+    call: function(args) {
+        var response = args[0];
+        logger.info("📥 Got response: " + response.toString());
+        socket.disconnect();
+    }
+}));
 
+// On error
+socket.on("connect_error", new EmitterListener({
+    call: function(args) {
+        var err = args[0];
+        logger.error("❌ Connection error: " + err.toString());
+    }
+}));
 
-***********
-
-
-var options = new IO.Options();
-options.query = "username=employees.consultor&password=gVh6#1TSyPt2";
-
-var socket = IO.socket("http://socket-handle-tests.amaditaplayground.com:30008", options);
-
-
-***********
-
-
+socket.connect();
