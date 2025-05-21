@@ -1,56 +1,29 @@
-var IO = Packages.io.socket.client.IO;
-var Socket = Packages.io.socket.client.Socket;
-var JSONObject = Packages.org.json.JSONObject;
-var EmitterListener = Packages.io.socket.emitter.Emitter.Listener;
-
-logger.info("Connecting to Socket.IO...");
-
-var options = IO.Options();
-options.forceNew = true;
-options.reconnection = false;
-options.reconnectionAttempts = 5;
-options.timeout = 5000;
-options.autoConnect = true;
-
-var transports = java.lang.reflect.Array.newInstance(java.lang.String, 1);
-transports[0] = "websocket";
-options.transports = transports;
-
-// Set auth
-var authObj = new JSONObject();
-authObj.put("username", "employees.consultor");
-authObj.put("password", "gVh6#1TSyPt2");
-options.auth = authObj;
-
-var socket = IO.socket("http://socket-handle-tests.amaditaplayground.com:30008", options);
-
-// CONNECT
-socket.on("connect", new EmitterListener({
-    call: function(args) {
-        logger.info("✅ Connected to Socket.IO");
-
-        var auth = new JSONObject();
-        auth.put("username", "employees.consultor");
-        auth.put("password", "gVh6#1TSyPt2");
-        socket.emit("auth", auth);
-    }
-}));
-
-// SENT ORDER RESPONSE
-socket.on("sent order", new EmitterListener({
-    call: function(args) {
-        var response = args[0];
-        logger.info("📥 Response from 'sent order': " + response.toString());
-        socket.disconnect();
-    }
-}));
-
-// CONNECT ERROR
-socket.on("connect_error", new EmitterListener({
-    call: function(args) {
-        var err = args[0];
-        logger.error("❌ Connect error: " + err.toString());
-    }
-}));
-
-socket.connect();
+Transformer error
+ERROR MESSAGE: Error evaluating transformer
+com.mirth.connect.server.MirthJavascriptTransformerException: 
+CHANNEL:	testWebSocket
+CONNECTOR:	sourceConnector
+SCRIPT SOURCE:	TRANSFORMER
+SOURCE CODE:	
+111: var options = IO.Options();
+112: options.forceNew = true;
+113: options.reconnection = false;
+114: options.reconnectionAttempts = 5;
+115: options.timeout = 5000;
+116: options.autoConnect = true;
+117: 
+118: var transports = java.lang.reflect.Array.newInstance(java.lang.String, 1);
+119: transports[0] = "websocket";
+120: options.transports = transports;
+LINE NUMBER:	116
+DETAILS:	Java class "io.socket.client.IO$Options" has no public instance field or method named "autoConnect".
+	at 68b23f80-bfe2-4be9-903e-fdb72411b449_JavaScript_Filter_Transformer_0:116 (doTransform)
+	at 68b23f80-bfe2-4be9-903e-fdb72411b449_JavaScript_Filter_Transformer_0:181 (doScript)
+	at 68b23f80-bfe2-4be9-903e-fdb72411b449_JavaScript_Filter_Transformer_0:183
+	at com.mirth.connect.server.transformers.JavaScriptFilterTransformer$FilterTransformerTask.doCall(JavaScriptFilterTransformer.java:235)
+	at com.mirth.connect.server.transformers.JavaScriptFilterTransformer$FilterTransformerTask.doCall(JavaScriptFilterTransformer.java:187)
+	at com.mirth.connect.server.util.javascript.JavaScriptTask.call(JavaScriptTask.java:114)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
