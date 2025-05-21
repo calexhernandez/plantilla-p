@@ -1,37 +1,42 @@
-from flask import Flask, request
-from flask_socketio import SocketIO, emit
-import json
+import socketio
 
-app = Flask(__name__)
-socketio = SocketIO(app, cors_allowed_origins="*")  # Allow connections from any origin
+# Create a Socket.IO client
+sio = socketio.Client()
 
-# Credentials for testing
-VALID_USERNAME = "employees.consultor"
-VALID_PASSWORD = "gVh6#1TSyPt2"
+@sio.event
+def connect():
+    print("✅ Connected to server")
 
-@socketio.on("connect")
-def on_connect():
-    print("🔌 Client connected:", request.sid)
+    # Send credentials
+    sio.emit("auth", {
+        "username": "employees.consultor",
+        "password": "gVh6#1TSyPt2"
+    })
 
-@socketio.on("auth")
-def on_auth(data):
-    print("🔐 Auth received:", data)
-    username = data.get("username")
-    password = data.get("password")
+@sio.on("auth_response")
+def on_auth_response(data):
+    print("🔐 Auth response:", data)
 
-    if username == VALID_USERNAME and password == VALID_PASSWORD:
-        emit("auth_response", {"status": "ok", "message": "Authenticated"})
-    else:
-        emit("auth_response", {"status": "error", "message": "Invalid credentials"})
+    if data.get("status") == "ok":
+        # Send order data if auth was successful
+        sio.emit("send order", {
+            "orderId": 12345,
+            "note": "Hello from Python client"
+        })
 
-@socketio.on("send order")
-def on_send_order(data):
-    print("📦 Order received:", json.dumps(data, indent=2))
-    emit("sent order", {"status": "received", "data": data})
+@sio.on("sent order")
+def on_sent_order(data):
+    print("📦 Sent order response:", data)
+    sio.disconnect()
 
-@socketio.on("disconnect")
-def on_disconnect():
-    print("❌ Client disconnected:", request.sid)
+@sio.event
+def connect_error(data):
+    print("❌ Connection failed:", data)
 
-if __name__ == '__main__':
-    socketio.run(app, host="0.0.0.0", port=30008)
+@sio.event
+def disconnect():
+    print("❌ Disconnected from server")
+
+# Connect to the server
+sio.connect("http://socket-handle-tests.amaditaplayground.com:30008", transports=["websocket"])
+sio.wait()
