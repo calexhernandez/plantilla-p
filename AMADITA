@@ -1,37 +1,36 @@
-import socketio  sio.waitl servidor socket.io
+import socketio
+
 SERVER_URL = 'http://socket-handle-tests.amaditaplayground.com:30008'  # Cambia por tu URL y puerto
- 
+
 # Credenciales para autenticación
-username = "employees.consultor"
-password = "gVh6#1TSyPt2"
- 
+username = "USER"
+password = "PASS"
+
 # Crear cliente Socket.IO
 sio = socketio.Client()
- 
- 
+
+
 # Evento al conectarse
 @sio.event
 def connect():
     print('Conectado al servidor')
- 
- 
+    sio.emit('chat message', 'Hello from client! Angel Perez presentando')
+
+
 # Evento al desconectarse
 @sio.event
 def disconnect():
     print('Desconectado del servidor')
- 
- 
-# Evento para errores (ejemplo)
+
+
 @sio.event
 def connect_error(data):
     print('Error de conexión:', data)
- 
- 
-# Conexión enviando auth en handshake
+
+
 sio.connect(
     SERVER_URL,
     auth={'username': username, 'password': password}
 )
- 
-# Mantener vivo para recibir eventos (puedes enviar y recibir aquí)
+
 sio.wait()
