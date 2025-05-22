@@ -1,67 +1,37 @@
-{
-  "IDTipoPaciente": "A",
-  "TipoPaciente": "Ambulatorio",
-  "NumeroRequisicionPedido": "PruHIS1243CH27",
-	"TipoMensaje":  "ampliar",
-  "FechaAtencion": "24/04/2025",
-  "IDServicio": "PER",
-  "Servicio": "PERSONAL",
-  "UbicacionPaciente": "Sala A",
-  "IDCentroExtraccion": "L001",
-  "CentroExtraccion": "CE Laboratorio Gazcue",
-  "IDDoctor": "24465",
-  "CedulaDoctor": "123-4567890-1",
-  "Doctor": "PRUEBA",
-  "IDDiagnostico": "NE",
-  "Diagnostico": "No Especificado",
-  "IDDestino": "RS",
-  "Destino": "Retirar en Sucursal",
-  "Prioridad": "R",
-  "ImagenOrdenMedica": [
-    {
-      "NombreArchivo": "indicacion1.png",
-      "Base64": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUg..."
-    },
-    {
-      "NombreArchivo": "indicacion2.jpg",
-      "Base64": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD..."
-    }
-  ],
-  "ConsultaResultados": "Paciente",
-  "Apellidos": "PruAPELLIDO1 PruAPELLIDO2",
-  "Nombres": "PruNOMBRE1 PruNOMBRE2",
-  "IDPrincipalActual": "PruDNI12345678",
-  "IdPrincipalNuevo": "",
-  "IdPaciente": "PruHC12345678",
-  "IdFamiliar": "PruSSN12345678",
-  "FechaNacimiento": "23/05/2020",
-  "Sexo": "M",
-  "Embarazo": "",
-  "CorreoElectronico": "chernandez@promed-sa.com",
-  "Direccion": {
-    "Fisica": {
-      "Calle": "Av. Principal",
-      "Ciudad": "Santo Domingo",
-      "Estado": "Distrito Nacional",
-      "CodigoPostal": "10101",
-      "Pais": "RD"
-},
-    "Postal": {
-      "Calle": "Av. Principal",
-      "Ciudad": "Santo Domingo",
-      "Estado": "Distrito Nacional",
-      "CodigoPostal": "10101",
-      "Pais": "RD"
-    }
-  },
-  "Telefono": "0987654321",
-  "Procedures": [
-
-
-		{
-        "NumeroLinea": "1",
-        "IDProcedimiento": "6651",
-		"Procedimiento": "PT"
-      }
-    ]
-}
+import socketio  sio.waitl servidor socket.io
+SERVER_URL = 'http://socket-handle-tests.amaditaplayground.com:30008'  # Cambia por tu URL y puerto
+ 
+# Credenciales para autenticación
+username = "employees.consultor"
+password = "gVh6#1TSyPt2"
+ 
+# Crear cliente Socket.IO
+sio = socketio.Client()
+ 
+ 
+# Evento al conectarse
+@sio.event
+def connect():
+    print('Conectado al servidor')
+ 
+ 
+# Evento al desconectarse
+@sio.event
+def disconnect():
+    print('Desconectado del servidor')
+ 
+ 
+# Evento para errores (ejemplo)
+@sio.event
+def connect_error(data):
+    print('Error de conexión:', data)
+ 
+ 
+# Conexión enviando auth en handshake
+sio.connect(
+    SERVER_URL,
+    auth={'username': username, 'password': password}
+)
+ 
+# Mantener vivo para recibir eventos (puedes enviar y recibir aquí)
+sio.wait()
