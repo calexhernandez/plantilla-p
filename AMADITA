@@ -1,3 +1,5 @@
+Basic ZW1wbG95ZWVzLmNvbnN1bHRvcjpnVmg2IzFUU3lQdDI=
+
 C:\Users\pv-admin-promed02\.jdks\ms-17.0.15\bin\java.exe "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2025.1.1.1\lib\idea_rt.jar=62850" -Dfile.encoding=UTF-8 -classpath C:\Users\pv-admin-promed02\IdeaProjects\checker\target\classes;C:\Users\pv-admin-promed02\.m2\repository\org\java-websocket\Java-WebSocket\1.5.3\Java-WebSocket-1.5.3.jar;C:\Users\pv-admin-promed02\.m2\repository\org\slf4j\slf4j-api\1.7.25\slf4j-api-1.7.25.jar org.example.WebSocketChecker
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
