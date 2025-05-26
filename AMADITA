@@ -1,34 +1,75 @@
-Transformer error
-ERROR MESSAGE: Error evaluating transformer
-java.lang.LinkageError: loader constraint violation: when resolving method 'org.slf4j.ILoggerFactory org.slf4j.impl.StaticLoggerBinder.getLoggerFactory()' the class loader com.mirth.connect.server.util.ChildFirstURLClassLoader @714fb5ff of the current class, org/slf4j/LoggerFactory, and the class loader java.net.URLClassLoader @65570160 for the method's defining class, org/slf4j/impl/StaticLoggerBinder, have different Class objects for the type org/slf4j/ILoggerFactory used in the signature (org.slf4j.LoggerFactory is in unnamed module of loader com.mirth.connect.server.util.ChildFirstURLClassLoader @714fb5ff, parent loader java.net.URLClassLoader @65570160; org.slf4j.impl.StaticLoggerBinder is in unnamed module of loader java.net.URLClassLoader @65570160, parent loader java.net.URLClassLoader @f38225f)
-	at org.slf4j.LoggerFactory.getILoggerFactory(LoggerFactory.java:418)
-	at org.slf4j.LoggerFactory.getLogger(LoggerFactory.java:357)
-	at org.slf4j.LoggerFactory.getLogger(LoggerFactory.java:383)
-	at org.java_websocket.drafts.Draft_6455.<init>(Draft_6455.java:113)
-	at org.java_websocket.drafts.Draft_6455.<init>(Draft_6455.java:210)
-	at org.java_websocket.drafts.Draft_6455.<init>(Draft_6455.java:198)
-	at org.java_websocket.drafts.Draft_6455.<init>(Draft_6455.java:178)
-	at org.java_websocket.client.WebSocketClient.<init>(WebSocketClient.java:160)
-	at com.example.checker.WebSocketChecker.<init>(WebSocketChecker.java:15)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
-	at org.mozilla.javascript.MemberBox.newInstance(MemberBox.java:171)
-	at org.mozilla.javascript.NativeJavaClass.constructInternal(NativeJavaClass.java:268)
-	at org.mozilla.javascript.NativeJavaClass.constructSpecific(NativeJavaClass.java:207)
-	at org.mozilla.javascript.NativeJavaClass.construct(NativeJavaClass.java:169)
-	at org.mozilla.javascript.Interpreter.interpretLoop(Interpreter.java:1736)
-	at org.mozilla.javascript.Interpreter.interpret(Interpreter.java:1013)
-	at org.mozilla.javascript.InterpretedFunction.call(InterpretedFunction.java:109)
-	at org.mozilla.javascript.ContextFactory.doTopCall(ContextFactory.java:412)
-	at org.mozilla.javascript.ScriptRuntime.doTopCall(ScriptRuntime.java:3578)
-	at org.mozilla.javascript.InterpretedFunction.exec(InterpretedFunction.java:121)
-	at com.mirth.connect.server.util.javascript.JavaScriptTask.executeScript(JavaScriptTask.java:151)
-	at com.mirth.connect.server.transformers.JavaScriptFilterTransformer$FilterTransformerTask.doCall(JavaScriptFilterTransformer.java:224)
-	at com.mirth.connect.server.transformers.JavaScriptFilterTransformer$FilterTransformerTask.doCall(JavaScriptFilterTransformer.java:187)
-	at com.mirth.connect.server.util.javascript.JavaScriptTask.call(JavaScriptTask.java:114)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-	at java.base/java.lang.Thread.run(Thread.java:829)
+C:\Users\pv-admin-promed02\.jdks\ms-17.0.15\bin\java.exe "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2025.1.1.1\lib\idea_rt.jar=62521" -Dfile.encoding=UTF-8 -classpath C:\Users\pv-admin-promed02\IdeaProjects\checker\target\classes;C:\Users\pv-admin-promed02\.m2\repository\org\java-websocket\Java-WebSocket\1.5.3\Java-WebSocket-1.5.3.jar;C:\Users\pv-admin-promed02\.m2\repository\org\slf4j\slf4j-api\1.7.25\slf4j-api-1.7.25.jar org.example.WebSocketChecker
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Error al conectarunknown scheme: http
+conexion cerradaunknown scheme: http
+
+
+
+package org.example;
+
+import org.java_websocket.client.WebSocketClient;
+import org.java_websocket.handshake.ServerHandshake;
+
+import java.net.URI;
+import java.nio.charset.StandardCharsets;
+import java.util.Base64;
+import java.util.concurrent.CountDownLatch;
+
+
+
+public class WebSocketChecker extends WebSocketClient{
+
+    private static CountDownLatch latch;
+
+    private static final String WEBSOCKET_URL = "http://socket-handle-tests.amaditaplayground.com:30008";
+    private static final String USERNAME = "employees.consultor";
+    private static final String PASSWORD = "gVh6#1TSyPt2";
+
+
+    public WebSocketChecker(URI serverUri, String username, String password){
+        super(serverUri);
+        if(username != null && !username.isEmpty()){
+            String basicAuth = "Basic"+ Base64.getEncoder().encodeToString((username+":"+password).getBytes(StandardCharsets.UTF_8));
+            this.addHeader("Authorization",basicAuth);
+        }
+
+    }
+
+    @Override
+    public void onOpen(ServerHandshake handshake){
+        System.out.println("Conexion Exitosa");
+        latch.countDown();
+    }
+
+    @Override
+    public void onMessage(String message){}
+
+    @Override
+    public void onClose(int code, String reason, boolean remote){
+        System.out.println("conexion cerrada"+reason);
+    }
+
+    @Override
+    public void onError(Exception ex){
+        System.out.println("Error al conectar"+ ex.getMessage());
+    }
+
+    public static void main(String[] args){
+
+        try{
+        latch = new CountDownLatch(1);
+        WebSocketChecker client = new WebSocketChecker(new URI(WEBSOCKET_URL),USERNAME,PASSWORD);
+        client.connect();
+        latch.await();
+        client.close();
+        }catch (Exception e){
+            System.out.println("Exception"+e.getMessage());
+        }
+    }
+
+
+
+
+}
