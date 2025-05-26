@@ -1,36 +1,34 @@
-import socketio
-
-SERVER_URL = 'http://socket-handle-tests.amaditaplayground.com:30008'  # Cambia por tu URL y puerto
-
-# Credenciales para autenticación
-username = "USER"
-password = "PASS"
-
-# Crear cliente Socket.IO
-sio = socketio.Client()
-
-
-# Evento al conectarse
-@sio.event
-def connect():
-    print('Conectado al servidor')
-    sio.emit('chat message', 'Hello from client! Angel Perez presentando')
-
-
-# Evento al desconectarse
-@sio.event
-def disconnect():
-    print('Desconectado del servidor')
-
-
-@sio.event
-def connect_error(data):
-    print('Error de conexión:', data)
-
-
-sio.connect(
-    SERVER_URL,
-    auth={'username': username, 'password': password}
-)
-
-sio.wait()
+Transformer error
+ERROR MESSAGE: Error evaluating transformer
+java.lang.LinkageError: loader constraint violation: when resolving method 'org.slf4j.ILoggerFactory org.slf4j.impl.StaticLoggerBinder.getLoggerFactory()' the class loader com.mirth.connect.server.util.ChildFirstURLClassLoader @714fb5ff of the current class, org/slf4j/LoggerFactory, and the class loader java.net.URLClassLoader @65570160 for the method's defining class, org/slf4j/impl/StaticLoggerBinder, have different Class objects for the type org/slf4j/ILoggerFactory used in the signature (org.slf4j.LoggerFactory is in unnamed module of loader com.mirth.connect.server.util.ChildFirstURLClassLoader @714fb5ff, parent loader java.net.URLClassLoader @65570160; org.slf4j.impl.StaticLoggerBinder is in unnamed module of loader java.net.URLClassLoader @65570160, parent loader java.net.URLClassLoader @f38225f)
+	at org.slf4j.LoggerFactory.getILoggerFactory(LoggerFactory.java:418)
+	at org.slf4j.LoggerFactory.getLogger(LoggerFactory.java:357)
+	at org.slf4j.LoggerFactory.getLogger(LoggerFactory.java:383)
+	at org.java_websocket.drafts.Draft_6455.<init>(Draft_6455.java:113)
+	at org.java_websocket.drafts.Draft_6455.<init>(Draft_6455.java:210)
+	at org.java_websocket.drafts.Draft_6455.<init>(Draft_6455.java:198)
+	at org.java_websocket.drafts.Draft_6455.<init>(Draft_6455.java:178)
+	at org.java_websocket.client.WebSocketClient.<init>(WebSocketClient.java:160)
+	at com.example.checker.WebSocketChecker.<init>(WebSocketChecker.java:15)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.mozilla.javascript.MemberBox.newInstance(MemberBox.java:171)
+	at org.mozilla.javascript.NativeJavaClass.constructInternal(NativeJavaClass.java:268)
+	at org.mozilla.javascript.NativeJavaClass.constructSpecific(NativeJavaClass.java:207)
+	at org.mozilla.javascript.NativeJavaClass.construct(NativeJavaClass.java:169)
+	at org.mozilla.javascript.Interpreter.interpretLoop(Interpreter.java:1736)
+	at org.mozilla.javascript.Interpreter.interpret(Interpreter.java:1013)
+	at org.mozilla.javascript.InterpretedFunction.call(InterpretedFunction.java:109)
+	at org.mozilla.javascript.ContextFactory.doTopCall(ContextFactory.java:412)
+	at org.mozilla.javascript.ScriptRuntime.doTopCall(ScriptRuntime.java:3578)
+	at org.mozilla.javascript.InterpretedFunction.exec(InterpretedFunction.java:121)
+	at com.mirth.connect.server.util.javascript.JavaScriptTask.executeScript(JavaScriptTask.java:151)
+	at com.mirth.connect.server.transformers.JavaScriptFilterTransformer$FilterTransformerTask.doCall(JavaScriptFilterTransformer.java:224)
+	at com.mirth.connect.server.transformers.JavaScriptFilterTransformer$FilterTransformerTask.doCall(JavaScriptFilterTransformer.java:187)
+	at com.mirth.connect.server.util.javascript.JavaScriptTask.call(JavaScriptTask.java:114)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
