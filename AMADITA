@@ -1,3 +1,21 @@
+
+**************
+
+Map<String, String> auth = new HashMap<>();
+
+auth.put("username", "employees.consultor");
+
+auth.put("password", "gVh6#1TSyPt2");
+
+options.auth = auth;
+
+
+******************
+
+
+
+
+
 import io.socket.client.IO;
 import io.socket.client.Socket;
 import io.socket.emitter.Emitter;
