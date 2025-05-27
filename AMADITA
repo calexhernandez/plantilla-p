@@ -1,4 +1,4 @@
 C:\Users\pv-admin-promed02\IdeaProjects\checker\src\main\java\org\example\SocketIOChecker.java:23:20
 java: cannot find symbol
   symbol:   variable extraHeaders
-  location: variable options of type io.socket.client.IO.Options
+  location: variable options of type com.github.nkzawa.socketio.client.IO.Options
