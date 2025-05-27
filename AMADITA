@@ -1,60 +1,106 @@
 
 
-Este mensaje puede contener información privilegiada y confidencial. Dicha información es exclusivamente para el uso del individuo o entidad al cual es enviada. Si el lector de este mensaje no es el destinatario del mismo, queda formalmente notificado que cualquier divulgación, distribución, reproducción o copiado de esta comunicación está estrictamente prohibido. Si este es el caso, favor de eliminar el mensaje de su computadora e informar al emisor a través de un mensaje de respuesta. Las opiniones expresadas en este mensaje son propias del autor y no necesariamente coinciden con las de Amadita Laboratorio Clínico S.A.S
+<dependency>
+  <groupId>io.socket</groupId>
+  <artifactId>socket.io-client</artifactId>
+  <version>2.0.1</version>
+</dependency>
 
 
-SERVER_URL = 'http://socket-handle-tests.amaditaplayground.com:30008'  # Cambia por tu URL y puerto
-
-# Credenciales para autenticaciÃ³n
-username = "employees.consultor"
-password = "gVh6#1TSyPt2"
-
-# Crear cliente Socket.IO
-sio = socketio.Client()
 
 
-# Evento al conectarse
-@sio.event
-def connect():
-   print('Conectado al servidor')
-   sio.emit('chat message', 'Hello from client! Angel Perez presentando')
+****************
 
+import io.socket.client.IO;
+import io.socket.client.Socket;
+import io.socket.emitter.Emitter;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
-# Evento al desconectarse
-@sio.event
-def disconnect():
-   print('Desconectado del servidor')
+public class SocketClient {
 
+    public static void main(String[] args) {
+        try {
+            IO.Options options = new IO.Options();
+            options.transports = new String[]{"websocket"};
+            options.auth = new JSONObject()
+                .put("username", "employees.consultor")
+                .put("password", "gVh6#1TSyPt2");
 
-# Evento en caso de error de conexiÃ³n
-@sio.event
-def connect_error(data):
-   print('Error de conexiÃ³n:', data)
+            Socket socket = IO.socket("http://socket-handle-tests.amaditaplayground.com:30008", options);
 
+            socket.on(Socket.EVENT_CONNECT, new Emitter.Listener() {
+                @Override
+                public void call(Object... args) {
+                    System.out.println("✅ Conectado al servidor");
 
-# Evento para recibir mensajes del servidor
-@sio.on('chat message')
-def on_message(data):
-   print(f'Mensaje recibido: {data}')
+                    JSONObject payload = new JSONObject()
+                        .put("requestNumber", 99009901)
+                        .put("accountNumber", 0)
+                        .put("patientNumber", 0)
+                        .put("cedula", "402-1115792-6")
+                        .put("email", "angel.perez@amadita.com")
+                        .put("isCompleted", false)
+                        .put("totalProcedures", 20)
+                        .put("totalPendingProcedures", 20)
+                        .put("locationId", "2023")
+                        .put("patientId", JSONObject.NULL)
+                        .put("resultNumber", 99009901)
+                        .put("origen", "SOCKET-CORE4ALL");
 
+                    JSONArray tests = new JSONArray();
+                    tests.put(new JSONObject()
+                        .put("priority", 0)
+                        .put("flagInfectiousDisease", 0)
+                        .put("averageDate", "2021-09-19")
+                        .put("averageHour", "10:59:00.0000000")
+                        .put("flagAbnormal", 0)
+                        .put("procNumber", 1)
+                        .put("description", "Blood")
+                        .put("result", "base64")
+                        .put("hl7Result", "lorem")
+                        .put("statusRequest", "C")
+                        .put("statusResult", "C"));
 
-# FunciÃ³n para leer desde la terminal y enviar mensajes
-def input_loop():
-   while True:
-       msg = input()
-       if msg.lower() == 'exit':
-           break
-       sio.emit('chat message', msg)
+                    tests.put(new JSONObject()
+                        .put("priority", 0)
+                        .put("flagInfectiousDisease", 0)
+                        .put("averageDate", "2021-09-19")
+                        .put("averageHour", "10:59:00.0000000")
+                        .put("flagAbnormal", 0)
+                        .put("procNumber", 2)
+                        .put("description", "X-Ray")
+                        .put("result", "base64")
+                        .put("hl7Result", "lorem")
+                        .put("statusRequest", "P")
+                        .put("statusResult", "P"));
 
+                    payload.put("tests", tests);
 
-# Conectar al servidor
-sio.connect(
-   SERVER_URL,
-   auth={'username': username, 'password': password}
-)
+                    socket.emit("send order", payload);
+                    System.out.println("📤 Evento 'send order' enviado");
+                }
+            });
 
-# Ejecutar el input_loop en un hilo separado
-threading.Thread(target=input_loop, daemon=True).start()
+            socket.on("respuesta", new Emitter.Listener() {
+                @Override
+                public void call(Object... args) {
+                    System.out.println("📩 Respuesta recibida:");
+                    System.out.println(args[0]);
+                }
+            });
 
-# Mantener el cliente funcionando
-sio.wait()
+            socket.on(Socket.EVENT_DISCONNECT, new Emitter.Listener() {
+                @Override
+                public void call(Object... args) {
+                    System.out.println("🔌 Desconectado del servidor");
+                }
+            });
+
+            socket.connect();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
