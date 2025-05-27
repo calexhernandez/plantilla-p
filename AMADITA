@@ -1,43 +1,70 @@
-{
-  "requestNumber": 99009901,
-  "accountNumber": 0,
-  "patientNumber": 0,
-  "cedula": "402-1115792-6",
-  "email": "angel.perez@amadita.com",
-  "isCompleted": false,
-  "totalProcedures": 20,
-  "totalPendingProcedures": 20,
-  "locationId": "2023",
-  "patientId": null,
-  "resultNumber": 99009901,
-  "origen": "SOCKET-CORE4ALL",
-  "tests": [
-    {
-      "priority": 0,
-      "flagInfectiousDisease": 0,
-      "averageDate": "2021-09-19",
-      "averageHour": "10:59:00.0000000",
-      "flagAbnormal": 0,
-      "procNumber": 1,
-      "description": "Blood",
-      "result": "base64",
-      "hl7Result": "lorem",
-      "statusRequest": "C",
-      "statusResult": "C"
-    },
-    {
-      "priority": 0,
-      "flagInfectiousDisease": 0,
-      "averageDate": "2021-09-19",
-      "averageHour": "10:59:00.0000000",
-      "flagAbnormal": 0,
-      "procNumber": 2,
-      "description": "X-Ray",
-      "result": "base64",
-      "hl7Result": "lorem",
-      "statusRequest": "P",
-      "statusResult": "P"
+package org.example;
+
+import org.java_websocket.client.WebSocketClient;
+import org.java_websocket.handshake.ServerHandshake;
+
+import java.net.URI;
+import java.nio.charset.StandardCharsets;
+import java.util.Base64;
+import java.util.concurrent.CountDownLatch;
+
+
+
+public class WebSocketChecker extends WebSocketClient{
+
+    private static CountDownLatch latch;
+
+    private static final String WEBSOCKET_URL = "ws://socket-handle-tests.amaditaplayground.com:30008";
+    private static final String USERNAME = "employees.consultor";
+    private static final String PASSWORD = "gVh6#1TSyPt2";
+
+
+    public WebSocketChecker(URI serverUri, String username, String password){
+        super(serverUri);
+        if(username != null && !username.isEmpty()){
+            String basicAuth = "Basic "+ Base64.getEncoder().encodeToString((username+":"+password).getBytes(StandardCharsets.UTF_8));
+            this.addHeader("Authorization",basicAuth);
+        }
+
     }
-  ]
+
+    @Override
+    public void onOpen(ServerHandshake handshake){
+        System.out.println("Conexion Exitosa");
+        latch.countDown();
+    }
+
+    @Override
+    public void onMessage(String message){
+        System.out.println("mensaje recibido"+message);
+    }
+
+    @Override
+    public void onClose(int code, String reason, boolean remote){
+        System.out.println("conexion cerrada"+reason);
+    }
+
+    @Override
+    public void onError(Exception ex){
+        System.out.println("Error al conectar"+ ex.getMessage());
+    }
+
+    public static void main(String[] args){
+
+        try{
+            latch = new CountDownLatch(1);
+            WebSocketChecker client = new WebSocketChecker(new URI(WEBSOCKET_URL),USERNAME,PASSWORD);
+            client.connect();
+            latch.await();
+            Thread.sleep(5000);
+            client.close();
+        }catch (Exception e){
+            System.out.println("Exception"+e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+
+
+
 }
- 
