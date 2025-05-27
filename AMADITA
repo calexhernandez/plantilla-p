@@ -1,4 +1,60 @@
-C:\Users\pv-admin-promed02\IdeaProjects\checker\src\main\java\org\example\SocketIOChecker.java:23:20
-java: cannot find symbol
-  symbol:   variable extraHeaders
-  location: variable options of type com.github.nkzawa.socketio.client.IO.Options
+
+
+Este mensaje puede contener información privilegiada y confidencial. Dicha información es exclusivamente para el uso del individuo o entidad al cual es enviada. Si el lector de este mensaje no es el destinatario del mismo, queda formalmente notificado que cualquier divulgación, distribución, reproducción o copiado de esta comunicación está estrictamente prohibido. Si este es el caso, favor de eliminar el mensaje de su computadora e informar al emisor a través de un mensaje de respuesta. Las opiniones expresadas en este mensaje son propias del autor y no necesariamente coinciden con las de Amadita Laboratorio Clínico S.A.S
+
+
+SERVER_URL = 'http://socket-handle-tests.amaditaplayground.com:30008'  # Cambia por tu URL y puerto
+
+# Credenciales para autenticaciÃ³n
+username = "employees.consultor"
+password = "gVh6#1TSyPt2"
+
+# Crear cliente Socket.IO
+sio = socketio.Client()
+
+
+# Evento al conectarse
+@sio.event
+def connect():
+   print('Conectado al servidor')
+   sio.emit('chat message', 'Hello from client! Angel Perez presentando')
+
+
+# Evento al desconectarse
+@sio.event
+def disconnect():
+   print('Desconectado del servidor')
+
+
+# Evento en caso de error de conexiÃ³n
+@sio.event
+def connect_error(data):
+   print('Error de conexiÃ³n:', data)
+
+
+# Evento para recibir mensajes del servidor
+@sio.on('chat message')
+def on_message(data):
+   print(f'Mensaje recibido: {data}')
+
+
+# FunciÃ³n para leer desde la terminal y enviar mensajes
+def input_loop():
+   while True:
+       msg = input()
+       if msg.lower() == 'exit':
+           break
+       sio.emit('chat message', msg)
+
+
+# Conectar al servidor
+sio.connect(
+   SERVER_URL,
+   auth={'username': username, 'password': password}
+)
+
+# Ejecutar el input_loop en un hilo separado
+threading.Thread(target=input_loop, daemon=True).start()
+
+# Mantener el cliente funcionando
+sio.wait()
