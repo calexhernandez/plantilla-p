@@ -1,70 +1,63 @@
+<dependencies>
+    <dependency>
+        <groupId>io.socket</groupId>
+        <artifactId>socket.io-client</artifactId>
+        <version>1.0.0</version>
+    </dependency>
+</dependencies>
+
+
+
 package org.example;
 
-import org.java_websocket.client.WebSocketClient;
-import org.java_websocket.handshake.ServerHandshake;
+import io.socket.client.IO;
+import io.socket.client.Socket;
 
-import java.net.URI;
-import java.nio.charset.StandardCharsets;
 import java.util.Base64;
-import java.util.concurrent.CountDownLatch;
+import java.util.Collections;
+import java.util.HashMap;
 
+public class SocketIOChecker {
+    public static void main(String[] args) {
+        try {
+            IO.Options options = new IO.Options();
+            options.reconnection = true;
 
+            // Header Authorization (Basic)
+            String username = "employees.consultor";
+            String password = "gVh6#1TSyPt2";
+            String basicAuth = "Basic " + Base64.getEncoder().encodeToString((username + ":" + password).getBytes());
 
-public class WebSocketChecker extends WebSocketClient{
+            HashMap<String, java.util.List<String>> headers = new HashMap<>();
+            headers.put("Authorization", Collections.singletonList(basicAuth));
+            options.extraHeaders = headers;
 
-    private static CountDownLatch latch;
+            // Dirección del servidor Socket.IO
+            String url = "ws://socket-handle-tests.amaditaplayground.com:30008";
 
-    private static final String WEBSOCKET_URL = "ws://socket-handle-tests.amaditaplayground.com:30008";
-    private static final String USERNAME = "employees.consultor";
-    private static final String PASSWORD = "gVh6#1TSyPt2";
+            Socket socket = IO.socket(url, options);
 
+            socket.on(Socket.EVENT_CONNECT, args1 -> {
+                System.out.println("✅ Conectado al servidor");
+                socket.emit("mensaje", "Hola desde Java");
+            });
 
-    public WebSocketChecker(URI serverUri, String username, String password){
-        super(serverUri);
-        if(username != null && !username.isEmpty()){
-            String basicAuth = "Basic "+ Base64.getEncoder().encodeToString((username+":"+password).getBytes(StandardCharsets.UTF_8));
-            this.addHeader("Authorization",basicAuth);
-        }
+            socket.on("respuesta", args1 -> {
+                System.out.println("📩 Respuesta: " + args1[0]);
+            });
 
-    }
+            socket.on(Socket.EVENT_DISCONNECT, args1 -> {
+                System.out.println("❌ Desconectado");
+            });
 
-    @Override
-    public void onOpen(ServerHandshake handshake){
-        System.out.println("Conexion Exitosa");
-        latch.countDown();
-    }
+            socket.connect();
 
-    @Override
-    public void onMessage(String message){
-        System.out.println("mensaje recibido"+message);
-    }
+            // Espera 10 segundos
+            Thread.sleep(10000);
+            socket.disconnect();
 
-    @Override
-    public void onClose(int code, String reason, boolean remote){
-        System.out.println("conexion cerrada"+reason);
-    }
-
-    @Override
-    public void onError(Exception ex){
-        System.out.println("Error al conectar"+ ex.getMessage());
-    }
-
-    public static void main(String[] args){
-
-        try{
-            latch = new CountDownLatch(1);
-            WebSocketChecker client = new WebSocketChecker(new URI(WEBSOCKET_URL),USERNAME,PASSWORD);
-            client.connect();
-            latch.await();
-            Thread.sleep(5000);
-            client.close();
-        }catch (Exception e){
-            System.out.println("Exception"+e.getMessage());
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
-
-
-
-
 }
