@@ -1,15 +1,1 @@
-[2025-05-28 13:52:23.565]  INFO  (transformer:138): no main manifest attribute, in C:\socket-client\SocketClient.jar
-
-var processBuilder = new java.lang.ProcessBuilder(
-    "java", "-jar", "C:\\socket-client\\SocketClient.jar",
-    "http://socket-handle-tests.amaditaplayground.com:30008",
-    "usuario",
-    "clave"
-);
-processBuilder.redirectErrorStream(true);
-var process = processBuilder.start();
-var reader = new java.io.BufferedReader(new java.io.InputStreamReader(process.getInputStream()));
-var line;
-while ((line = reader.readLine()) != null) {
-    logger.info(line);
-}
+	java.lang.UnsupportedClassVersionError: org/example/SocketClient has been compiled by a more recent version of the Java Runtime (class file version 61.0), this version of the Java Runtime only recognizes class file versions up to 55.0
