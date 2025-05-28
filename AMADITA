@@ -1,19 +1,4 @@
-
-**************
-
-Map<String, String> auth = new HashMap<>();
-
-auth.put("username", "employees.consultor");
-
-auth.put("password", "gVh6#1TSyPt2");
-
-options.auth = auth;
-
-
-******************
-
-
-
+package org.example;
 
 
 import io.socket.client.IO;
@@ -21,6 +6,9 @@ import io.socket.client.Socket;
 import io.socket.emitter.Emitter;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import java.util.Map;
+import java.util.HashMap;
+
 
 public class SocketClient {
 
@@ -28,9 +16,11 @@ public class SocketClient {
         try {
             IO.Options options = new IO.Options();
             options.transports = new String[]{"websocket"};
-            options.auth = new JSONObject()
-                .put("username", "employees.consultor")
-                .put("password", "gVh6#1TSyPt2");
+
+            Map<String, String> auth = new HashMap<>();
+            auth.put("username", "employees.consultor");
+            auth.put("password", "gVh6#1TSyPt2");
+            options.auth = auth;
 
             Socket socket = IO.socket("http://socket-handle-tests.amaditaplayground.com:30008", options);
 
@@ -40,45 +30,45 @@ public class SocketClient {
                     System.out.println("✅ Conectado al servidor");
 
                     JSONObject payload = new JSONObject()
-                        .put("requestNumber", 99009901)
-                        .put("accountNumber", 0)
-                        .put("patientNumber", 0)
-                        .put("cedula", "402-1115792-6")
-                        .put("email", "angel.perez@amadita.com")
-                        .put("isCompleted", false)
-                        .put("totalProcedures", 20)
-                        .put("totalPendingProcedures", 20)
-                        .put("locationId", "2023")
-                        .put("patientId", JSONObject.NULL)
-                        .put("resultNumber", 99009901)
-                        .put("origen", "SOCKET-CORE4ALL");
+                            .put("requestNumber", 99009901)
+                            .put("accountNumber", 0)
+                            .put("patientNumber", 0)
+                            .put("cedula", "402-1115792-6")
+                            .put("email", "angel.perez@amadita.com")
+                            .put("isCompleted", false)
+                            .put("totalProcedures", 20)
+                            .put("totalPendingProcedures", 20)
+                            .put("locationId", "2023")
+                            .put("patientId", JSONObject.NULL)
+                            .put("resultNumber", 99009901)
+                            .put("origen", "SOCKET-CORE4ALL");
 
                     JSONArray tests = new JSONArray();
                     tests.put(new JSONObject()
-                        .put("priority", 0)
-                        .put("flagInfectiousDisease", 0)
-                        .put("averageDate", "2021-09-19")
-                        .put("averageHour", "10:59:00.0000000")
-                        .put("flagAbnormal", 0)
-                        .put("procNumber", 1)
-                        .put("description", "Blood")
-                        .put("result", "base64")
-                        .put("hl7Result", "lorem")
-                        .put("statusRequest", "C")
-                        .put("statusResult", "C"));
+                            .put("priority", 0)
+                            .put("flagInfectiousDisease", 0)
+                            .put("averageDate", "2021-09-19")
+                            .put("averageHour", "10:59:00.0000000")
+                            .put("flagAbnormal", 0)
+                            .put("procNumber", 1)
+                            .put("description", "Blood")
+                            .put("result", "base64")
+                            .put("hl7Result", "lorem")
+                            .put("statusRequest", "C")
+                            .put("statusResult", "C"));
 
                     tests.put(new JSONObject()
-                        .put("priority", 0)
-                        .put("flagInfectiousDisease", 0)
-                        .put("averageDate", "2021-09-19")
-                        .put("averageHour", "10:59:00.0000000")
-                        .put("flagAbnormal", 0)
-                        .put("procNumber", 2)
-                        .put("description", "X-Ray")
-                        .put("result", "base64")
-                        .put("hl7Result", "lorem")
-                        .put("statusRequest", "P")
-                        .put("statusResult", "P"));
+                            .put("priority", 0)
+                            .put("flagInfectiousDisease", 0)
+                            .put("averageDate", "2021-09-19")
+                            .put("averageHour", "10:59:00.0000000")
+                            .put("flagAbnormal", 0)
+                            .put("procNumber", 2)
+                            .put("description", "prueba envio integracion")
+                            .put("result", "base64")
+                            .put("hl7Result", "lorem")
+                            .put("statusRequest", "P")
+                            .put("statusResult", "P"));
 
                     payload.put("tests", tests);
 
