@@ -1,3 +1,5 @@
+[2025-05-28 13:52:23.565]  INFO  (transformer:138): no main manifest attribute, in C:\socket-client\SocketClient.jar
+
 var processBuilder = new java.lang.ProcessBuilder(
     "java", "-jar", "C:\\socket-client\\SocketClient.jar",
     "http://socket-handle-tests.amaditaplayground.com:30008",
