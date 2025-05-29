@@ -1,112 +1,67 @@
-package org.example;
-
-
-import io.socket.client.IO;
-import io.socket.client.Socket;
-import io.socket.emitter.Emitter;
-import org.json.JSONArray;
-import org.json.JSONObject;
-import java.util.Map;
-import java.util.HashMap;
-
-
-public class SocketClient {
-
-    public static void main(String[] args) {
-
-        /*
-        if(args.length<3){
-            System.out.println("Faltan parametros");
-            return;
-        }
-
-        String url = args[0];
-        */
-
-        try {
-            IO.Options options = new IO.Options();
-            options.transports = new String[]{"websocket"};
-
-            Map<String, String> auth = new HashMap<>();
-            auth.put("username", "employees.consultor");
-            auth.put("password", "gVh6#1TSyPt2");
-            options.auth = auth;
-
-            Socket socket = IO.socket("http://socket-handle-tests.amaditaplayground.com:30008", options);
-
-            socket.on(Socket.EVENT_CONNECT, new Emitter.Listener() {
-                @Override
-                public void call(Object... args) {
-                    System.out.println("✅ Conectado al servidor");
-
-                    JSONObject payload = new JSONObject()
-                            .put("requestNumber", 99009901)
-                            .put("accountNumber", 0)
-                            .put("patientNumber", 0)
-                            .put("cedula", "402-1115792-6")
-                            .put("email", "angel.perez@amadita.com")
-                            .put("isCompleted", false)
-                            .put("totalProcedures", 20)
-                            .put("totalPendingProcedures", 20)
-                            .put("locationId", "2023")
-                            .put("patientId", JSONObject.NULL)
-                            .put("resultNumber", 99009901)
-                            .put("origen", "SOCKET-CORE4ALL");
-
-                    JSONArray tests = new JSONArray();
-                    tests.put(new JSONObject()
-                            .put("priority", 0)
-                            .put("flagInfectiousDisease", 0)
-                            .put("averageDate", "2021-09-19")
-                            .put("averageHour", "10:59:00.0000000")
-                            .put("flagAbnormal", 0)
-                            .put("procNumber", 1)
-                            .put("description", "Blood")
-                            .put("result", "base64")
-                            .put("hl7Result", "lorem")
-                            .put("statusRequest", "C")
-                            .put("statusResult", "C"));
-
-                    tests.put(new JSONObject()
-                            .put("priority", 0)
-                            .put("flagInfectiousDisease", 0)
-                            .put("averageDate", "2021-09-19")
-                            .put("averageHour", "10:59:00.0000000")
-                            .put("flagAbnormal", 0)
-                            .put("procNumber", 2)
-                            .put("description", "prueba envio integracion2")
-                            .put("result", "base64")
-                            .put("hl7Result", "lorem")
-                            .put("statusRequest", "P")
-                            .put("statusResult", "P"));
-
-                    payload.put("tests", tests);
-
-                    socket.emit("send order", payload);
-                    System.out.println("📤 Evento 'send order' enviado");
-                }
-            });
-
-            socket.on("respuesta", new Emitter.Listener() {
-                @Override
-                public void call(Object... args) {
-                    System.out.println("📩 Respuesta recibida:");
-                    System.out.println(args[0]);
-                }
-            });
-
-            socket.on(Socket.EVENT_DISCONNECT, new Emitter.Listener() {
-                @Override
-                public void call(Object... args) {
-                    System.out.println("🔌 Desconectado del servidor");
-                }
-            });
-
-            socket.connect();
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+{
+  "IDTipoPaciente": "A",
+  "TipoPaciente": "Ambulatorio",
+  "NumeroRequisicionPedido": "PruHIS1243CH27",
+	"TipoMensaje":  "ampliar",
+  "FechaAtencion": "24/04/2025",
+  "IDServicio": "PER",
+  "Servicio": "PERSONAL",
+  "UbicacionPaciente": "Sala A",
+  "IDCentroExtraccion": "L001",
+  "CentroExtraccion": "CE Laboratorio Gazcue",
+  "IDDoctor": "24465",
+  "CedulaDoctor": "123-4567890-1",
+  "Doctor": "PRUEBA",
+  "IDDiagnostico": "NE",
+  "Diagnostico": "No Especificado",
+  "IDDestino": "RS",
+  "Destino": "Retirar en Sucursal",
+  "Prioridad": "R",
+  "ImagenOrdenMedica": [
+    {
+      "NombreArchivo": "indicacion1.png",
+      "Base64": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUg..."
+    },
+    {
+      "NombreArchivo": "indicacion2.jpg",
+      "Base64": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD..."
     }
-}
+  ],
+  "ConsultaResultados": "Paciente",
+  "Apellidos": "PruAPELLIDO1 PruAPELLIDO2",
+  "Nombres": "PruNOMBRE1 PruNOMBRE2",
+  "IDPrincipalActual": "PruDNI12345678",
+  "IdPrincipalNuevo": "",
+  "IdPaciente": "PruHC12345678",
+  "IdFamiliar": "PruSSN12345678",
+  "FechaNacimiento": "23/05/2020",
+  "Sexo": "M",
+  "Embarazo": "",
+  "CorreoElectronico": "chernandez@promed-sa.com",
+  "Direccion": {
+    "Fisica": {
+      "Calle": "Av. Principal",
+      "Ciudad": "Santo Domingo",
+      "Estado": "Distrito Nacional",
+      "CodigoPostal": "10101",
+      "Pais": "RD"
+},
+    "Postal": {
+      "Calle": "Av. Principal",
+      "Ciudad": "Santo Domingo",
+      "Estado": "Distrito Nacional",
+      "CodigoPostal": "10101",
+      "Pais": "RD"
+    }
+  },
+  "Telefono": "0987654321",
+  "Procedures": [
 
+
+		{
+        "NumeroLinea": "1",
+        "IDProcedimiento": "6651",
+		"Procedimiento": "PT"
+      }
+    ]
+}
