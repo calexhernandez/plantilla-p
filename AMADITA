@@ -1,27 +1,13 @@
-logger.info("socketClient: " + Packages.org.example.SocketClientMetodos);
-// Cargar clase
 var SocketClient = Packages.org.example.SocketClientMetodos;
-//var SocketClient = Java.type('org.example.SocketClientMetodos');
 
-// Crear instancia
-var client = new SocketClient();
+// Conectar (llamada estática)
+SocketClient.connect('http://socket-handle-tests.amaditaplayground.com:30008', 'employees.consultor', 'gVh6#1TSyPt2');
 
-// Conectar
-client.connect('http://socket-handle-tests.amaditaplayground.com:30008', 'employees.consultor', 'gVh6#1TSyPt2');
-
-// Crear el payload desde Mirth (o usar el método que ya tienes)
-var JSONObject = Java.type('org.json.JSONObject');
-var JSONArray = Java.type('org.json.JSONArray');
-
-var payload = new JSONObject();
-payload.put("requestNumber", 99009901);
-// ... continúa llenando tu payload como en tu código Java
-
-// O mejor: si tienes un método en Java como crearPayloadDemo()
-payload = SocketClient.crearPayloadDemo();
+// Crear payload
+var payload = SocketClient.crearPayloadDemo();
 
 // Enviar
-client.sendOrder(payload);
+SocketClient.sendOrder(payload);
 
-// Desconectar (si deseas hacerlo desde Mirth)
-client.disconnect();
+// Desconectar
+SocketClient.disconnect();
