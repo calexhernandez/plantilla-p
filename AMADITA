@@ -1,17 +1,29 @@
-// Importar la clase correcta
-var SocketClient = Packages.org.example.SocketClient;
-
-// Crear instancia (porque los métodos NO son estáticos, excepto uno)
-var client = new SocketClient();
-
-// Conectar
-client.connect('http://socket-handle-tests.amaditaplayground.com:30008', 'employees.consultor', 'gVh6#1TSyPt2');
-
-// Llamar al método estático para generar el payload
-var payload = Packages.org.example.SocketClient.crearPayloadDemo();
-
-// Enviar
-client.sendOrder(payload);
-
-// Desconectar
-client.disconnect();
+Transformer error
+ERROR MESSAGE: Error evaluating transformer
+com.mirth.connect.server.MirthJavascriptTransformerException: 
+CHANNEL:	testWebSocket
+CONNECTOR:	sourceConnector
+SCRIPT SOURCE:	TRANSFORMER
+SOURCE CODE:	
+106: 
+107: // Importar la clase correcta
+108: var SocketClient = Packages.org.example.SocketClient;
+109: 
+110: // Crear instancia (porque los métodos NO son estáticos, excepto uno)
+111: var client = new SocketClient();
+112: 
+113: // Conectar
+114: client.connect('http://socket-handle-tests.amaditaplayground.com:30008', 'employees.consultor', 'gVh6#1TSyPt2');
+115: 
+LINE NUMBER:	111
+DETAILS:	TypeError: [JavaPackage org.example.SocketClient] is not a function, it is object.
+	at 68b23f80-bfe2-4be9-903e-fdb72411b449_JavaScript_Filter_Transformer_0:111 (doTransform)
+	at 68b23f80-bfe2-4be9-903e-fdb72411b449_JavaScript_Filter_Transformer_0:145 (doScript)
+	at 68b23f80-bfe2-4be9-903e-fdb72411b449_JavaScript_Filter_Transformer_0:147
+	at com.mirth.connect.server.transformers.JavaScriptFilterTransformer$FilterTransformerTask.doCall(JavaScriptFilterTransformer.java:235)
+	at com.mirth.connect.server.transformers.JavaScriptFilterTransformer$FilterTransformerTask.doCall(JavaScriptFilterTransformer.java:187)
+	at com.mirth.connect.server.util.javascript.JavaScriptTask.call(JavaScriptTask.java:114)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
