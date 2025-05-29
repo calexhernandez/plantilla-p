@@ -5,19 +5,19 @@ CHANNEL:	testWebSocket
 CONNECTOR:	sourceConnector
 SCRIPT SOURCE:	TRANSFORMER
 SOURCE CODE:	
-101: function doFilter() { phase[0] = 'filter'; return true; }function doTransform() { phase[0] = 'transformer'; logger = Packages.org.apache.log4j.Logger.getLogger(phase[0]);
-102: 
-103: 
 104: // Cargar clase
-105: //var SocketClient = Packages.org.example.SocketClientMetodos;
-106: var SocketClient = Java.type('org.example.SocketClientMetodos');
+105: var SocketClient = Packages.org.example.SocketClientMetodos;
+106: //var SocketClient = Java.type('org.example.SocketClientMetodos');
 107: 
 108: // Crear instancia
 109: var client = new SocketClient();
 110: 
-LINE NUMBER:	106
-DETAILS:	ReferenceError: "Java" is not defined.
-	at 68b23f80-bfe2-4be9-903e-fdb72411b449_JavaScript_Filter_Transformer_0:106 (doTransform)
+111: // Conectar
+112: client.connect('http://socket-handle-tests.amaditaplayground.com:30008', 'employees.consultor', 'gVh6#1TSyPt2');
+113: 
+LINE NUMBER:	109
+DETAILS:	TypeError: [JavaPackage org.example.SocketClientMetodos] is not a function, it is object.
+	at 68b23f80-bfe2-4be9-903e-fdb72411b449_JavaScript_Filter_Transformer_0:109 (doTransform)
 	at 68b23f80-bfe2-4be9-903e-fdb72411b449_JavaScript_Filter_Transformer_0:151 (doScript)
 	at 68b23f80-bfe2-4be9-903e-fdb72411b449_JavaScript_Filter_Transformer_0:153
 	at com.mirth.connect.server.transformers.JavaScriptFilterTransformer$FilterTransformerTask.doCall(JavaScriptFilterTransformer.java:235)
