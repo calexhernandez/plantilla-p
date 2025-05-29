@@ -1,25 +1,29 @@
-// Cargar clase
-var SocketClient = Java.type('org.example.SocketClient');
-
-// Crear instancia
-var client = new SocketClient();
-
-// Conectar
-client.connect('http://socket-handle-tests.amaditaplayground.com:30008', 'employees.consultor', 'gVh6#1TSyPt2');
-
-// Crear el payload desde Mirth (o usar el método que ya tienes)
-var JSONObject = Java.type('org.json.JSONObject');
-var JSONArray = Java.type('org.json.JSONArray');
-
-var payload = new JSONObject();
-payload.put("requestNumber", 99009901);
-// ... continúa llenando tu payload como en tu código Java
-
-// O mejor: si tienes un método en Java como crearPayloadDemo()
-payload = SocketClient.crearPayloadDemo();
-
-// Enviar
-client.sendOrder(payload);
-
-// Desconectar (si deseas hacerlo desde Mirth)
-client.disconnect();
+Transformer error
+ERROR MESSAGE: Error evaluating transformer
+com.mirth.connect.server.MirthJavascriptTransformerException: 
+CHANNEL:	testWebSocket
+CONNECTOR:	sourceConnector
+SCRIPT SOURCE:	TRANSFORMER
+SOURCE CODE:	
+101: function doFilter() { phase[0] = 'filter'; return true; }function doTransform() { phase[0] = 'transformer'; logger = Packages.org.apache.log4j.Logger.getLogger(phase[0]);
+102: 
+103: 
+104: // Cargar clase
+105: //var SocketClient = Packages.org.example.SocketClientMetodos;
+106: var SocketClient = Java.type('org.example.SocketClientMetodos');
+107: 
+108: // Crear instancia
+109: var client = new SocketClient();
+110: 
+LINE NUMBER:	106
+DETAILS:	ReferenceError: "Java" is not defined.
+	at 68b23f80-bfe2-4be9-903e-fdb72411b449_JavaScript_Filter_Transformer_0:106 (doTransform)
+	at 68b23f80-bfe2-4be9-903e-fdb72411b449_JavaScript_Filter_Transformer_0:151 (doScript)
+	at 68b23f80-bfe2-4be9-903e-fdb72411b449_JavaScript_Filter_Transformer_0:153
+	at com.mirth.connect.server.transformers.JavaScriptFilterTransformer$FilterTransformerTask.doCall(JavaScriptFilterTransformer.java:235)
+	at com.mirth.connect.server.transformers.JavaScriptFilterTransformer$FilterTransformerTask.doCall(JavaScriptFilterTransformer.java:187)
+	at com.mirth.connect.server.util.javascript.JavaScriptTask.call(JavaScriptTask.java:114)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
