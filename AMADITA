@@ -1,67 +1,29 @@
-from flask import Flask, request, jsonify
-import socketio
-import threading
-
-app = Flask(__name__)
-
-# ⚙️ Configuración del WebSocket
-SOCKET_URL = 'http://localhost:3000'  # Cambia por el host real
-USERNAME = 'admin'
-PASSWORD = '123456'
-
-# Cliente Socket.IO persistente
-sio = socketio.Client()
-
-# Eventos WebSocket
-@sio.event
-def connect():
-    print("✅ WebSocket conectado")
-
-@sio.event
-def disconnect():
-    print("🔌 WebSocket desconectado")
-
-@sio.event
-def connect_error(data):
-    print("❌ Error de conexión:", data)
-
-@sio.on("order_sent")
-def on_order_sent(data):
-    print("📩 Respuesta desde WebSocket:")
-    print(data)
-
-# Conexión WebSocket en un hilo separado para no bloquear Flask
-def conectar_websocket():
-    try:
-        sio.connect(
-            SOCKET_URL,
-            transports=['websocket'],
-            auth={'username': USERNAME, 'password': PASSWORD}
-        )
-        sio.wait()  # Mantiene la conexión abierta
-    except Exception as e:
-        print("❌ Fallo al conectar al WebSocket:", str(e))
-
-# Iniciar conexión WebSocket en segundo plano
-threading.Thread(target=conectar_websocket, daemon=True).start()
-
-# ✅ Ruta HTTP para Mirth
-@app.route('/receive', methods=['POST'])
-def recibir_desde_mirth():
-    payload = request.get_json()
-    if not payload:
-        return jsonify({'error': 'No se recibió JSON'}), 400
-
-    print("📥 JSON recibido de Mirth:")
-    print(payload)
-
-    if sio.connected:
-        sio.emit("send_order", payload)
-        print("📤 Enviado a WebSocket")
-        return jsonify({'status': 'enviado'}), 200
-    else:
-        print("❌ WebSocket no conectado")
-        return jsonify({'error': 'WebSocket no conectado'}), 500
-
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+{
+  "requestNumber": 99009901,
+  "accountNumber": 0,
+  "patientNumber": 0,
+  "cedula": "402-1115792-6",
+  "email": "angel.perez@amadita.com",
+  "isCompleted": false,
+  "totalProcedures": 20,
+  "totalPendingProcedures": 20,
+  "locationId": "2023",
+  "patientId": null,
+  "resultNumber": 99009901,
+  "origen": "SOCKET-CORE4ALL",
+  "tests": [
+    {
+      "priority": 0,
+      "flagInfectiousDisease": 0,
+      "averageDate": "2021-09-19",
+      "averageHour": "10:59:00.0000000",
+      "flagAbnormal": 0,
+      "procNumber": 1,
+      "description": "Blood",
+      "result": "base64",
+      "hl7Result": "lorem",
+      "statusRequest": "C",
+      "statusResult": "C"
+    }
+  ]
+}
