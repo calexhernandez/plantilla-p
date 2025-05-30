@@ -1,65 +1,107 @@
-{
-  "IDTipoPaciente" : "A",
-  "TipoPaciente" : "Ambulatorio",
-  "NumeroRequisicionPedido" : "PruHIS1243CH28",
-  "TipoMensaje" : "nuevo",
-  "FechaAtencion" : "24/04/2025",
-  "IDServicio" : "PER",
-  "Servicio" : "PERSONAL",
-  "UbicacionPaciente" : "Sala A",
-  "IDCentroExtraccion" : "L001",
-  "CentroExtraccion" : "CE Laboratorio Gazcue",
-  "IDDoctor" : "24465",
-  "CedulaDoctor" : "123-4567890-1",
-  "Doctor" : "PRUEBA",
-  "IDDiagnostico" : "NE",
-  "Diagnostico" : "No Especificado",
-  "IDDestino" : "RS",
-  "Destino" : "Retirar en Sucursal",
-  "Prioridad" : "R",
-  "ImagenOrdenMedica" : [
-    {
-      "NombreArchivo" : "indicacion1.png",
-      "Base64" : "data:image/png;base64,iVBORw0KGgoAAAANSUhEUg..."
-    },
-    {
-      "NombreArchivo" : "indicacion2.jpg",
-      "Base64" : "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD..."
-    }
-  ],
-  "ConsultaResultados" : "Paciente",
-  "Apellidos" : "PruAPELLIDO1 PruAPELLIDO2",
-  "Nombres" : "PruNOMBRE1 PruNOMBRE2",
-  "IDPrincipalActual" : "PruDNI12345678",
-  "IdPrincipalNuevo" : "",
-  "IdPaciente" : "PruHC12345678",
-  "IdFamiliar" : "PruSSN12345678",
-  "FechaNacimiento" : "23/05/2020",
-  "Sexo" : "M",
-  "Embarazo" : "",
-  "CorreoElectronico" : "chernandez@promed-sa.com",
-  "Direccion" : {
-    "Fisica" : {
-      "Calle" : "",
-      "Ciudad" : "",
-      "Estado" : "",
-      "CodigoPostal" : "",
-      "Pais" : ""
-    },
-    "Postal" : {
-      "Calle" : "",
-      "Ciudad" : "",
-      "Estado" : "",
-      "CodigoPostal" : "",
-      "Pais" : ""
-    }
-  },
-  "Telefono" : "0987654321",
-  "Procedures" : [
-    {
-      "NumeroLinea" : "1",
-      "IDProcedimiento" : "6651",
-      "Procedimiento" : "PT"
-    }
-  ]
-}
+import socketio
+import threading
+
+SERVER_URL = 'http://socket-handle-tests.amaditaplayground.com:30008'  # Cambia por tu URL y puerto
+
+# Credenciales para autenticación
+username = ""
+password = ""
+
+# Crear cliente Socket.IO
+sio = socketio.Client()
+
+
+# Evento al conectarse
+@sio.event
+def connect():
+    print('Conectado al servidor')
+    sio.emit('chat message', 'Hello from client! Angel Perez presentando')
+
+
+# Evento al desconectarse
+@sio.event
+def disconnect():
+    print('Desconectado del servidor')
+
+
+# Evento en caso de error de conexión
+@sio.event
+def connect_error(data):
+    print('Error de conexión:', data)
+
+
+# Evento para recibir mensajes del servidor
+@sio.on('chat message')
+def on_message(data):
+    print(f'Mensaje recibido: {data}')
+
+
+@sio.on('order_sent')
+def order_sent(data):
+    print(f'order_sent #### La orden fue procesada {data}')
+
+
+# Función para leer desde la terminal y enviar mensajes
+def input_loop():
+    while True:
+        msg = input()
+        if msg.lower() == 'exit':
+            break
+        sio.emit('chat message', msg)
+        sio.emit('send_order', {
+            "requestNumber": 99009901,  # bien
+            "accountNumber": 0,
+            "patientNumber": 0,
+            "cedula": "402-1115792-6",
+            "email": "angel.perez@amadita.com",
+            "isCompleted": False,
+            "totalProcedures": 20,
+            "totalPendingProcedures": 20,
+            "locationId": "2023",
+            "patientId": None,
+            "resultNumber": 99009901,
+            "origen": "SOCKET-CORE4ALL",
+            "tests": [
+                {
+                    "fecha_analisis": "new",  # new
+
+                    "priority": 0,  # bien
+                    "flagInfectiousDisease": 0,
+                    "averageDate": "2021-09-19",
+                    "averageHour": "10:59:00.0000000",
+                    "flagAbnormal": 0,  # bien
+                    "procNumber": 1,  # bien (idProcedimiento)
+                    "description": "Python here1",  # bien
+                    "result": "base64",
+                    "hl7Result": "lorem",  # bien
+                    "statusRequest": "C",  # bien
+                    "statusResult": "C"  # bien
+                },
+                {
+                    "priority": 0,
+                    "flagInfectiousDisease": 0,
+                    "averageDate": "2021-09-19",
+                    "averageHour": "10:59:00.0000000",
+                    "flagAbnormal": 0,
+                    "procNumber": 2,
+                    "description": "Python here2",
+                    "result": "base64",
+                    "hl7Result": "lorem",
+                    "statusRequest": "P",
+                    "statusResult": "P"
+                }
+            ]
+        })
+
+
+# Conectar al servidor
+sio.connect(
+    SERVER_URL,
+    auth={'username': username, 'password': password}
+)
+
+# Ejecutar el input_loop en un hilo separado
+threading.Thread(target=input_loop, daemon=True).start()
+
+# Mantener el cliente funcionando
+sio.wait()
