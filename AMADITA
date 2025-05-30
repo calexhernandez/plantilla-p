@@ -1,6 +1,27 @@
-try {
-    var clientClass = Packages.org.example.SocketClient;
+/*try {
+    var clientClass = Packages.org.example.SocketClient1;
     logger.info("✅ Clase cargada correctamente: " + clientClass);
 } catch (e) {
     logger.error("❌ Error cargando clase SocketClient: " + e);
-}
+}*/
+
+//logger.info("socketClient" + Packages.org.example.SocketClient1);
+
+
+// Importar la clase correcta
+//var SocketClient = Packages.org.example.SocketClient;
+
+// Crear instancia (porque los métodos NO son estáticos, excepto uno)
+var client = new Packages.org.example.SocketClient();
+
+// Conectar
+client.connect('http://socket-handle-tests.amaditaplayground.com:30008', 'employees.consultor', 'gVh6#1TSyPt2');
+
+// Llamar al método estático para generar el payload
+var payload = Packages.org.example.SocketClient.crearPayloadDemo();
+
+// Enviar
+client.sendOrder(payload);
+
+// Desconectar
+client.disconnect();
