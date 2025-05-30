@@ -1,68 +1,65 @@
-from flask import Flask, request, jsonify
-import socketio
-import threading
-
-app = Flask(__name__)
-
-# ⚙️ Configuración del WebSocket
-SOCKET_URL = 'http://socket-handle-tests.amaditaplayground.com:30008'  # Cambia por el host real
-USERNAME = 'employees.consultor'
-PASSWORD = 'gVh6#1TSyPt2'
-
-# Cliente Socket.IO persistente
-sio = socketio.Client()
-
-# Eventos WebSocket
-@sio.event
-def connect():
-    print("✅ WebSocket conectadoo")
-
-@sio.event
-def disconnect():
-    print("🔌 WebSocket desconectado")
-
-@sio.event
-def connect_error(data):
-    print("❌ Error de conexión:", data)
-
-@sio.on("order_sent")
-def on_order_sent(data):
-    print("📩 Respuesta desde WebSocket:")
-    print(data)
-
-# Conexión WebSocket en un hilo separado para no bloquear Flask
-def conectar_websocket():
-    try:
-        sio.connect(
-            SOCKET_URL,
-            transports=['websocket'],
-            auth={'username': USERNAME, 'password': PASSWORD}
-        )
-        sio.wait()  # Mantiene la conexión abierta
-    except Exception as e:
-        print("❌ Fallo al conectar al WebSocket:", str(e))
-
-# Iniciar conexión WebSocket en segundo plano
-threading.Thread(target=conectar_websocket, daemon=True).start()
-
-# ✅ Ruta HTTP para Mirth
-@app.route('/receive', methods=['POST'])
-def recibir_desde_mirth():
-    payload = request.get_json()
-    if not payload:
-        return jsonify({'error': 'No se recibió JSON'}), 400
-
-    print("📥 JSON recibido de Mirth:")
-    print(payload)
-
-    if sio.connected:
-        sio.emit("send_order", payload)
-        print("📤 Enviado a WebSocket")
-        return jsonify({'status': 'enviado'}), 200
-    else:
-        print("❌ WebSocket no conectado")
-        return jsonify({'error': 'WebSocket no conectado'}), 500
-
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=4000)
-    
+{
+  "IDTipoPaciente" : "A",
+  "TipoPaciente" : "Ambulatorio",
+  "NumeroRequisicionPedido" : "PruHIS1243CH28",
+  "TipoMensaje" : "nuevo",
+  "FechaAtencion" : "24/04/2025",
+  "IDServicio" : "PER",
+  "Servicio" : "PERSONAL",
+  "UbicacionPaciente" : "Sala A",
+  "IDCentroExtraccion" : "L001",
+  "CentroExtraccion" : "CE Laboratorio Gazcue",
+  "IDDoctor" : "24465",
+  "CedulaDoctor" : "123-4567890-1",
+  "Doctor" : "PRUEBA",
+  "IDDiagnostico" : "NE",
+  "Diagnostico" : "No Especificado",
+  "IDDestino" : "RS",
+  "Destino" : "Retirar en Sucursal",
+  "Prioridad" : "R",
+  "ImagenOrdenMedica" : [
+    {
+      "NombreArchivo" : "indicacion1.png",
+      "Base64" : "data:image/png;base64,iVBORw0KGgoAAAANSUhEUg..."
+    },
+    {
+      "NombreArchivo" : "indicacion2.jpg",
+      "Base64" : "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD..."
+    }
+  ],
+  "ConsultaResultados" : "Paciente",
+  "Apellidos" : "PruAPELLIDO1 PruAPELLIDO2",
+  "Nombres" : "PruNOMBRE1 PruNOMBRE2",
+  "IDPrincipalActual" : "PruDNI12345678",
+  "IdPrincipalNuevo" : "",
+  "IdPaciente" : "PruHC12345678",
+  "IdFamiliar" : "PruSSN12345678",
+  "FechaNacimiento" : "23/05/2020",
+  "Sexo" : "M",
+  "Embarazo" : "",
+  "CorreoElectronico" : "chernandez@promed-sa.com",
+  "Direccion" : {
+    "Fisica" : {
+      "Calle" : "",
+      "Ciudad" : "",
+      "Estado" : "",
+      "CodigoPostal" : "",
+      "Pais" : ""
+    },
+    "Postal" : {
+      "Calle" : "",
+      "Ciudad" : "",
+      "Estado" : "",
+      "CodigoPostal" : "",
+      "Pais" : ""
+    }
+  },
+  "Telefono" : "0987654321",
+  "Procedures" : [
+    {
+      "NumeroLinea" : "1",
+      "IDProcedimiento" : "6651",
+      "Procedimiento" : "PT"
+    }
+  ]
+}
