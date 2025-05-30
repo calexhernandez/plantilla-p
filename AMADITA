@@ -1,18 +1,117 @@
-? Error de conexión:
-errorio.socket.engineio.client.EngineIOException: websocket error
-ERROR 2025-05-29 22:01:49.010 [EventThread] Server: io.socket.engineio.client.EngineIOException: websocket error
-ERROR 2025-05-29 22:01:49.010 [EventThread] Server:     at io.socket.engineio.client.Transport.onError(Transport.java:63)
-ERROR 2025-05-29 22:01:49.010 [EventThread] Server:     at io.socket.engineio.client.transports.WebSocket.access$400(WebSocket.java:24)
-ERROR 2025-05-29 22:01:49.011 [EventThread] Server:     at io.socket.engineio.client.transports.WebSocket$1$5.run(WebSocket.java:107)
-ERROR 2025-05-29 22:01:49.011 [EventThread] Server:     at io.socket.thread.EventThread$2.run(EventThread.java:80)
-ERROR 2025-05-29 22:01:49.011 [EventThread] Server:     at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-ERROR 2025-05-29 22:01:49.012 [EventThread] Server:     at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-ERROR 2025-05-29 22:01:49.012 [EventThread] Server:     at java.base/java.lang.Thread.run(Thread.java:829)
-ERROR 2025-05-29 22:01:49.013 [EventThread] Server: Caused by: java.net.ProtocolException: Control frames must be final.
-ERROR 2025-05-29 22:01:49.013 [EventThread] Server:     at okhttp3.internal.ws.WebSocketReader.readHeader(WebSocketReader.java:128)
-ERROR 2025-05-29 22:01:49.013 [EventThread] Server:     at okhttp3.internal.ws.WebSocketReader.processNextFrame(WebSocketReader.java:101)
-ERROR 2025-05-29 22:01:49.014 [EventThread] Server:     at okhttp3.internal.ws.RealWebSocket.loopReader(RealWebSocket.java:274)
-ERROR 2025-05-29 22:01:49.014 [EventThread] Server:     at okhttp3.internal.ws.RealWebSocket$2.onResponse(RealWebSocket.java:214)
-ERROR 2025-05-29 22:01:49.014 [EventThread] Server:     at okhttp3.RealCall$AsyncCall.execute(RealCall.java:203)
-ERROR 2025-05-29 22:01:49.015 [EventThread] Server:     at okhttp3.internal.NamedRunnable.run(NamedRunnable.java:32)
-ERROR 2025-05-29
+package org.example;
+
+import io.socket.client.IO;
+import io.socket.client.Socket;
+import io.socket.emitter.Emitter;
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.net.URISyntaxException;
+
+public class SocketClient {
+
+    private Socket socket;
+
+    public void connect(String url, String username, String password) throws URISyntaxException {
+        IO.Options options = new IO.Options();
+        options.transports = new String[]{"websocket"};
+
+        Map<String, String> auth = new HashMap<>();
+        auth.put("username", username);
+        auth.put("password", password);
+        options.auth = auth;
+
+        System.out.println("intentando conectar con" + url);
+        System.out.println("usuario" + username);
+        System.out.println("clave" + password);
+
+
+        socket = IO.socket(url, options);
+
+        socket.on(Socket.EVENT_CONNECT_ERROR, args -> {
+            System.out.println("❌ Error de conexión:");
+            System.out.println("error"+args[0]);
+            if(args[0] instanceof Exception)
+            {
+                ((Exception) args[0]).printStackTrace();
+            }
+        });
+
+
+        socket.on(Socket.EVENT_CONNECT, new Emitter.Listener() {
+            @Override
+            public void call(Object... args) {
+                System.out.println("✅ Conectado al servidor");
+            }
+        });
+
+        socket.on("order_sent", new Emitter.Listener() {
+            @Override
+            public void call(Object... args) {
+                System.out.println("📩 Respuesta recibida:");
+                System.out.println(args[0]);
+            }
+        });
+
+        socket.on(Socket.EVENT_DISCONNECT, new Emitter.Listener() {
+            @Override
+            public void call(Object... args) {
+                System.out.println("🔌 Desconectado del servidor");
+            }
+        });
+
+        socket.connect();
+    }
+
+    public void sendOrder(JSONObject payload) {
+        if (socket != null && socket.connected()) {
+            socket.emit("send_order", payload);
+            System.out.println("📤 Evento 'send_order' enviado desde método");
+        } else {
+            System.out.println("❌ No conectado");
+        }
+    }
+
+    public void disconnect() {
+        if (socket != null) {
+            socket.disconnect();
+            socket.close();
+            System.out.println("🔌 Desconectado manualmente");
+        }
+    }
+
+    public static JSONObject crearPayloadDemo() {
+        JSONObject payload = new JSONObject()
+                .put("requestNumber", 99009901)
+                .put("accountNumber", 0)
+                .put("patientNumber", 0)
+                .put("cedula", "402-1115792-6")
+                .put("email", "angel.perez@amadita.com")
+                .put("isCompleted", false)
+                .put("totalProcedures", 20)
+                .put("totalPendingProcedures", 20)
+                .put("locationId", "2023")
+                .put("patientId", JSONObject.NULL)
+                .put("resultNumber", 99009901)
+                .put("origen", "SOCKET-CORE4ALL");
+
+        JSONArray tests = new JSONArray();
+        tests.put(new JSONObject()
+                .put("priority", 0)
+                .put("flagInfectiousDisease", 0)
+                .put("averageDate", "2021-09-19")
+                .put("averageHour", "10:59:00.0000000")
+                .put("flagAbnormal", 0)
+                .put("procNumber", 1)
+                .put("description", "Blood")
+                .put("result", "base64")
+                .put("hl7Result", "lorem")
+                .put("statusRequest", "C")
+                .put("statusResult", "C"));
+
+        payload.put("tests", tests);
+        return payload;
+    }
+}
