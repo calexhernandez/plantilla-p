@@ -1,117 +1,67 @@
-package org.example;
+from flask import Flask, request, jsonify
+import socketio
+import threading
 
-import io.socket.client.IO;
-import io.socket.client.Socket;
-import io.socket.emitter.Emitter;
-import org.json.JSONArray;
-import org.json.JSONObject;
+app = Flask(__name__)
 
-import java.util.HashMap;
-import java.util.Map;
-import java.net.URISyntaxException;
+# ⚙️ Configuración del WebSocket
+SOCKET_URL = 'http://localhost:3000'  # Cambia por el host real
+USERNAME = 'admin'
+PASSWORD = '123456'
 
-public class SocketClient {
+# Cliente Socket.IO persistente
+sio = socketio.Client()
 
-    private Socket socket;
+# Eventos WebSocket
+@sio.event
+def connect():
+    print("✅ WebSocket conectado")
 
-    public void connect(String url, String username, String password) throws URISyntaxException {
-        IO.Options options = new IO.Options();
-        options.transports = new String[]{"websocket"};
+@sio.event
+def disconnect():
+    print("🔌 WebSocket desconectado")
 
-        Map<String, String> auth = new HashMap<>();
-        auth.put("username", username);
-        auth.put("password", password);
-        options.auth = auth;
+@sio.event
+def connect_error(data):
+    print("❌ Error de conexión:", data)
 
-        System.out.println("intentando conectar con" + url);
-        System.out.println("usuario" + username);
-        System.out.println("clave" + password);
+@sio.on("order_sent")
+def on_order_sent(data):
+    print("📩 Respuesta desde WebSocket:")
+    print(data)
 
+# Conexión WebSocket en un hilo separado para no bloquear Flask
+def conectar_websocket():
+    try:
+        sio.connect(
+            SOCKET_URL,
+            transports=['websocket'],
+            auth={'username': USERNAME, 'password': PASSWORD}
+        )
+        sio.wait()  # Mantiene la conexión abierta
+    except Exception as e:
+        print("❌ Fallo al conectar al WebSocket:", str(e))
 
-        socket = IO.socket(url, options);
+# Iniciar conexión WebSocket en segundo plano
+threading.Thread(target=conectar_websocket, daemon=True).start()
 
-        socket.on(Socket.EVENT_CONNECT_ERROR, args -> {
-            System.out.println("❌ Error de conexión:");
-            System.out.println("error"+args[0]);
-            if(args[0] instanceof Exception)
-            {
-                ((Exception) args[0]).printStackTrace();
-            }
-        });
+# ✅ Ruta HTTP para Mirth
+@app.route('/receive', methods=['POST'])
+def recibir_desde_mirth():
+    payload = request.get_json()
+    if not payload:
+        return jsonify({'error': 'No se recibió JSON'}), 400
 
+    print("📥 JSON recibido de Mirth:")
+    print(payload)
 
-        socket.on(Socket.EVENT_CONNECT, new Emitter.Listener() {
-            @Override
-            public void call(Object... args) {
-                System.out.println("✅ Conectado al servidor");
-            }
-        });
+    if sio.connected:
+        sio.emit("send_order", payload)
+        print("📤 Enviado a WebSocket")
+        return jsonify({'status': 'enviado'}), 200
+    else:
+        print("❌ WebSocket no conectado")
+        return jsonify({'error': 'WebSocket no conectado'}), 500
 
-        socket.on("order_sent", new Emitter.Listener() {
-            @Override
-            public void call(Object... args) {
-                System.out.println("📩 Respuesta recibida:");
-                System.out.println(args[0]);
-            }
-        });
-
-        socket.on(Socket.EVENT_DISCONNECT, new Emitter.Listener() {
-            @Override
-            public void call(Object... args) {
-                System.out.println("🔌 Desconectado del servidor");
-            }
-        });
-
-        socket.connect();
-    }
-
-    public void sendOrder(JSONObject payload) {
-        if (socket != null && socket.connected()) {
-            socket.emit("send_order", payload);
-            System.out.println("📤 Evento 'send_order' enviado desde método");
-        } else {
-            System.out.println("❌ No conectado");
-        }
-    }
-
-    public void disconnect() {
-        if (socket != null) {
-            socket.disconnect();
-            socket.close();
-            System.out.println("🔌 Desconectado manualmente");
-        }
-    }
-
-    public static JSONObject crearPayloadDemo() {
-        JSONObject payload = new JSONObject()
-                .put("requestNumber", 99009901)
-                .put("accountNumber", 0)
-                .put("patientNumber", 0)
-                .put("cedula", "402-1115792-6")
-                .put("email", "angel.perez@amadita.com")
-                .put("isCompleted", false)
-                .put("totalProcedures", 20)
-                .put("totalPendingProcedures", 20)
-                .put("locationId", "2023")
-                .put("patientId", JSONObject.NULL)
-                .put("resultNumber", 99009901)
-                .put("origen", "SOCKET-CORE4ALL");
-
-        JSONArray tests = new JSONArray();
-        tests.put(new JSONObject()
-                .put("priority", 0)
-                .put("flagInfectiousDisease", 0)
-                .put("averageDate", "2021-09-19")
-                .put("averageHour", "10:59:00.0000000")
-                .put("flagAbnormal", 0)
-                .put("procNumber", 1)
-                .put("description", "Blood")
-                .put("result", "base64")
-                .put("hl7Result", "lorem")
-                .put("statusRequest", "C")
-                .put("statusResult", "C"));
-
-        payload.put("tests", tests);
-        return payload;
-    }
-}
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
