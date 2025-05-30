@@ -1,29 +1,3 @@
 {
-  "requestNumber": 99009901,
-  "accountNumber": 0,
-  "patientNumber": 0,
-  "cedula": "402-1115792-6",
-  "email": "angel.perez@amadita.com",
-  "isCompleted": false,
-  "totalProcedures": 20,
-  "totalPendingProcedures": 20,
-  "locationId": "2023",
-  "patientId": null,
-  "resultNumber": 99009901,
-  "origen": "SOCKET-CORE4ALL",
-  "tests": [
-    {
-      "priority": 0,
-      "flagInfectiousDisease": 0,
-      "averageDate": "2021-09-19",
-      "averageHour": "10:59:00.0000000",
-      "flagAbnormal": 0,
-      "procNumber": 1,
-      "description": "Blood",
-      "result": "base64",
-      "hl7Result": "lorem",
-      "statusRequest": "C",
-      "statusResult": "C"
-    }
-  ]
+  "message" : "The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again."
 }
