@@ -1,57 +1,59 @@
-// Obtener el XML del mensaje
-var xml = new XML(msg);  // 'msg' es el mensaje entrante en XML
-var root = xml;
-var obrList = root.getElementsByTagName("OBR");
-
-// Crear el JSON principal
-var resultado = {
-    order_id: "",
-    patient_id: "",
-    profiles: []
+// Inicializar el objeto JSON
+var json = {
+  PeticionModulab: '',
+  NumeroRequisicionPedido: '',
+  FechaPeticion: '',
+  IDPrincipalActual: '',
+  FechaNacimiento: '',
+  EstadoOrden: 'Con Resultado',
+  Procedimientos: []
 };
 
-// Obtener ID de orden y paciente
-var pid = root.getElementsByTagName("PID")[0];
-if (pid) {
-    resultado.patient_id = pid.getElementsByTagName("PID.3")[0]?.text() || "";
-}
+// Extraer información del mensaje HL7
+json.PeticionModulab = msg['ORC']['ORC.3']['ORC.3.1'].toString();
+json.NumeroRequisicionPedido = msg['ORC']['ORC.4']['ORC.4.1'].toString();
+json.FechaPeticion = msg['MSH']['MSH.7']['MSH.7.1'].toString().substring(0,8);
+json.IDPrincipalActual = msg['PID']['PID.3']['PID.3.2'].toString();
+json.FechaNacimiento = msg['PID']['PID.7']['PID.7.1'].toString().substring(0,8);
 
-var orc = root.getElementsByTagName("ORC")[0];
-if (orc) {
-    resultado.order_id = orc.getElementsByTagName("ORC.2")[0]?.text() || "";
-}
-
-// Procesar los OBR
-for (var i = 0; i < obrList.length(); i++) {
-    var obr = obrList[i];
-    var profileName = obr.getElementsByTagName("OBR.4")[0]?.text() || "Perfil sin nombre";
-
-    var profile = {
-        name: profileName,
-        tests: []
-    };
-
-    // Agregar OBX que están después de este OBR y antes del siguiente OBR
-    var current = obr;
-    var sibling = current.nextSibling();
-
-    while (sibling != null && sibling.name() != "OBR") {
-        if (sibling.name() == "OBX") {
-            var testName = sibling.getElementsByTagName("OBX.3")[0]?.text() || "Prueba sin nombre";
-            var value = sibling.getElementsByTagName("OBX.5")[0]?.text() || "";
-
-            profile.tests.push({
-                name: testName,
-                value: value
-            });
-        }
-        sibling = sibling.nextSibling();
+// Procesar los segmentos OBR y OBX
+for each (var obr in msg.getSegments('OBR')) {
+  var procedimiento = {
+    Procedimiento: '',
+    perfil: '',
+    IDProcedimiento: '',
+    Procedimiento: '',
+    Estatus: 'Validado',
+    pruebas: []
+  };
+  
+  procedimiento.IDProcedimiento = obr['OBR.4']['OBR.4.1'].toString();
+  procedimiento.Procedimiento = obr['OBR.4']['OBR.4.2'].toString();
+  
+  // Verificar si hay segmentos OBX asociados
+  var obxSegments = msg.getSegmentsAfter('OBX', obr);
+  if (obxSegments.length > 0) {
+    // Es un perfil con pruebas
+    procedimiento.perfil = procedimiento.IDProcedimiento;
+    for each (var obx in obxSegments) {
+      var prueba = {
+        prueba: obx['OBX.3']['OBX.3.1'].toString(),
+        IDProcedimiento: obx['OBX.3']['OBX.3.1'].toString(),
+        Procedimiento: obx['OBX.3']['OBX.3.2'].toString(),
+        Estatus: 'Validado'
+      };
+      procedimiento.pruebas.push(prueba);
     }
-
-    if (profile.tests.length > 0) {
-        resultado.profiles.push(profile);
-    }
+  } else {
+    // Es una prueba individual
+    procedimiento.prueba = procedimiento.IDProcedimiento;
+  }
+  
+  json.Procedimientos.push(procedimiento);
 }
 
-// Convertir a JSON para salida
-return JSON.stringify(resultado, null, 2);
+// Convertir el objeto JSON a cadena
+var jsonString = JSON.stringify(json, null, 2);
+
+// Asignar la cadena JSON al mensaje de salida
+message = jsonString;
