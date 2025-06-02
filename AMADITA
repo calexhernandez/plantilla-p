@@ -1,29 +1,57 @@
-Transformer error
-ERROR MESSAGE: Error evaluating transformer
-com.mirth.connect.server.MirthJavascriptTransformerException: 
-CHANNEL:	procesa_hl7_to_json
-CONNECTOR:	Destination 1
-SCRIPT SOURCE:	TRANSFORMER
-SOURCE CODE:	
-120: json.IDPrincipalActual = msg['PID']['PID.3'][1]['PID.3.1'].toString();
-121: json.FechaNacimiento = msg['PID']['PID.7']['PID.7.1'].toString();
-122: 
-123: 
-124: //procesar los segmentos OBR y OBX
-125: for each(var obr in msg.getSegments('OBR')){
-126: 	var procedimiento ={
-127: 		Linea: '',
-128: 		Perfil: '',
-129: 		IDProcedimiento: '',
-LINE NUMBER:	125
-DETAILS:	TypeError: Cannot find function getSegments in object <HL7Message><MSH><MSH.1>|</MSH.1><MSH.2>^~\&amp;</MSH.2><MSH.3><MSH.3.1>Modulab</MSH.3.1></MSH.3><MSH.4><MSH.4.1>Modulab</MSH.4.1></MSH.4><MSH.5><MSH.5.1>Portal</MSH.5.1></MSH.5><MSH.6><MSH.6.1>Portal</MSH.6.1></MSH.6><MSH.7><MSH.7.1>20250523102040-0400</MSH.7.1></MSH.7><MSH.8/><MSH.9><MSH.9.1>ORU</MSH.9.1><MSH.9.2>R01</MSH.9.2><MSH.9.3>ORU_R01</MSH.9.3></MSH.9><MSH.10><MSH.10.1>LAB31748010040134</MSH.10.1></MSH.10><MSH.11><MSH.11.1>P</MSH.11.1></MSH.11><MSH.12><MSH.12.1>2.5</MSH.12.1></MSH.12><MSH.13/><MSH.14/><MSH.15/><MSH.16/><MSH.17><MSH.17.1>RD</MSH.17.1></MSH.17><MSH.18/><MSH.19><MSH.19.1>ES</MSH.19.1></MSH.19></MSH><PID><PID.1><PID.1.1>1</PID.1.1></PID.1><PID.2/><PID.3><PID.3.1>NHC12345</PID.3.1><PID.3.2/><PID.3.3/><PID.3.4/><PID.3.5>PI</PID.3.5></PID.3><PID.3><PID.3.1>DNI67890</PID.3.1><PID.3.2/><PID.3.3/><PID.3.4/><PID.3.5>PPN</PID.3.5></PID.3><PID.4/><PID.5><PID.5.1>PRUEBA</PID.5.1><PID.5.2>PRUEBA</PID.5.2></PID.5><PID.6/><PID.7><PID.7.1>19820413130000-0400</PID.7.1></PID.7><PID.8><PID.8.1>M</PID.8.1></PID.8><PID.9/><PID.10/><PID.11/><PID.12/><PID.13><PID.13.1/><PID.13.2>PRN</PID.13.2><PID.13.3>Internet</PID.13.3><PID.13.4>jechazabal@promed-sa.com</PID.13.4></PID.13><PID.14/><PID.15/><PID.16/><PID.17/><PID.18/><PID.19/><PID.20/><PID.21/><PID.22/><PID.23/><PID.24/><PID.25/><PID.26/><PID.27/><PID.28/><PID.29/><PID.30><PID.30.1>N</PID.30.1></PID.30></PID><PV1><PV1.1><PV1.1.1>1</PV1.1.1></PV1.1><PV1.2><PV1.2.1>EM</PV1.2.1></PV1.2><PV1.3/><PV1.4/><PV1.5/><PV1.6/><PV1.7/><PV1.8/><PV1.9/><PV1.10/><PV1.11/><PV1.12/><PV1.13/><PV1.14/><PV1.15/><PV1.16><PV1.16.1>N</PV1.16.1></PV1.16></PV1><ORC><ORC.1><ORC.1.1>SC</ORC.1.1></ORC.1><ORC.2/><ORC.3><ORC.3.1>01000533</ORC.3.1><ORC.3.2>MODULAB</ORC.3.2></ORC.3><ORC.4><ORC.4.1>Mayo23</ORC.4.1><ORC.4.2><ORC.4.2.1>659</ORC.4.2.1><ORC.4.2.2>MODULAB</ORC.4.2.2></ORC.4.2></ORC.4><ORC.5><ORC.5.1>CM</ORC.5.1></ORC.5><ORC.6/><ORC.7/><ORC.8/><ORC.9><ORC.9.1>20250523102021-0400</ORC.9.1></ORC.9><ORC.10/><ORC.11/><ORC.12><ORC.12.1>NO</ORC.12.1><ORC.12.2>NO CODIFICADO</ORC.12.2></ORC.12><ORC.13/><ORC.14/><ORC.15><ORC.15.1>20250523100915-0400</ORC.15.1></ORC.15><ORC.16/><ORC.17/><ORC.18/><ORC.19/><ORC.20/><ORC.21><ORC.21.1>Personal</ORC.21.1><ORC.21.2/><ORC.21.3/><ORC.21.4/><ORC.21.5/><ORC.21.6/><ORC.21.7>FI</ORC.21.7><ORC.21.8/><ORC.21.9/><ORC.21.10>PER</ORC.21.10></ORC.21></ORC><OBR><OBR.1><OBR.1.1>1</OBR.1.1></OBR.1><OBR.2><OBR.2.1>Mayo23</OBR.2.1></OBR.2><OBR.3><OBR.3.1>01000533</OBR.3.1><OBR.3.2>MODULAB</OBR.3.2></OBR.3><OBR.4><OBR.4.1>QC68</OBR.4.1><OBR.4.2>Cloro</OBR.4.2><OBR.4.3>MODULAB</OBR.4.3></OBR.4><OBR.5/><OBR.6/><OBR.7/><OBR.8/><OBR.9/><OBR.10><OBR.10.1>L001</OBR.10.1></OBR.10><OBR.11/><OBR.12/><OBR.13/><OBR.14/><OBR.15/><OBR.16><OBR.16.1>NO</OBR.16.1><OBR.16.2>NO CODIFICADO</OBR.16.2></OBR.16><OBR.17/><OBR.18/><OBR.19/><OBR.20><OBR.20.1>1</OBR.20.1></OBR.20><OBR.21/><OBR.22/><OBR.23/><OBR.24><OBR.24.1>LAB</OBR.24.1></OBR.24><OBR.25><OBR.25.1>F</OBR.25.1></OBR.25><OBR.26/><OBR.27/><OBR.28><OBR.28.1>PR</OBR.28.1></OBR.28><OBR.29/><OBR.30/><OBR.31/><OBR.32><OBR.32.1>jechaz</OBR.32.1><OBR.32.2>20250523102021-0400</OBR.32.2></OBR.32></OBR><OBX><OBX.1><OBX.1.1>1</OBX.1.1></OBX.1><OBX.2><OBX.2.1>NM</OBX.2.1></OBX.2><OBX.3><OBX.3.1>QC68</OBX.3.1><OBX.3.2>Cloro</OBX.3.2><OBX.3.3>MODULAB</OBX.3.3></OBX.3><OBX.4/><OBX.5><OBX.5.1>100.0</OBX.5.1></OBX.5><OBX.6><OBX.6.1>mEq/L</OBX.6.1></OBX.6><OBX.7><OBX.7.1>98.0 - 107.0</OBX.7.1></OBX.7><OBX.8><OBX.8.1>N</OBX.8.1></OBX.8><OBX.9/><OBX.10/><OBX.11><OBX.11.1>F</OBX.11.1></OBX.11><OBX.12/><OBX.13/><OBX.14><OBX.14.1>20250523102021</OBX.14.1></OBX.14><OBX.15/><OBX.16><OBX.16.1>jechaz</OBX.16.1></OBX.16><OBX.17/><OBX.18/><OBX.19><OBX.19.1>20250523102021</OBX.19.1></OBX.19></OBX><SPM><SPM.1><SPM.1.1>1</SPM.1.1></SPM.1><SPM.2><SPM.2.1>1001000533</SPM.2.1></SPM.2><SPM.3/><SPM.4><SPM.4.1>3</SPM.4.1><SPM.4.2>Suero</SPM.4.2></SPM.4><SPM.5/><SPM.6/><SPM.7><SPM.7.1/><SPM.7.2/><SPM.7.3>MODULAB</SPM.7.3></SPM.7><SPM.8><SPM.8.1/><SPM.8.2/><SPM.8.3>MODULAB</SPM.8.3></SPM.8><SPM.9/><SPM.10/><SPM.11/><SPM.12/><SPM.13/><SPM.14/><SPM.15/><SPM.16/><SPM.17/><SPM.18><SPM.18.1>20250523101718</SPM.18.1></SPM.18><SPM.19/><SPM.20><SPM.20.1>Y</SPM.20.1></SPM.20><SPM.21/><SPM.22/><SPM.23/><SPM.24/><SPM.25/><SPM.26><SPM.26.1>1</SPM.26.1></SPM.26></SPM><ORC><ORC.1><ORC.1.1>SC</ORC.1.1></ORC.1><ORC.2/><ORC.3><ORC.3.1>01000533</ORC.3.1><ORC.3.2>MODULAB</ORC.3.2></ORC.3><ORC.4><ORC.4.1>Mayo23</ORC.4.1><ORC.4.2><ORC.4.2.1>659</ORC.4.2.1><ORC.4.2.2>MODULAB</ORC.4.2.2></ORC.4.2></ORC.4><ORC.5><ORC.5.1>CM</ORC.5.1></ORC.5><ORC.6/><ORC.7/><ORC.8/><ORC.9><ORC.9.1>20250523102021-0400</ORC.9.1></ORC.9><ORC.10/><ORC.11/><ORC.12><ORC.12.1>NO</ORC.12.1><ORC.12.2>NO CODIFICADO</ORC.12.2></ORC.12><ORC.13/><ORC.14/><ORC.15><ORC.15.1>20250523100915-0400</ORC.15.1></ORC.15><ORC.16/><ORC.17/><ORC.18/><ORC.19/><ORC.20/><ORC.21><ORC.21.1>Personal</ORC.21.1><ORC.21.2/><ORC.21.3/><ORC.21.4/><ORC.21.5/><ORC.21.6/><ORC.21.7>FI</ORC.21.7><ORC.21.8/><ORC.21.9/><ORC.21.10>PER</ORC.21.10></ORC.21></ORC><OBR><OBR.1><OBR.1.1>2</OBR.1.1></OBR.1><OBR.2><OBR.2.1>Mayo23</OBR.2.1></OBR.2><OBR.3><OBR.3.1>01000533</OBR.3.1><OBR.3.2>MODULAB</OBR.3.2></OBR.3><OBR.4><OBR.4.1>QC72</OBR.4.1><OBR.4.2>CO2 (Dióxido de Carbono)</OBR.4.2><OBR.4.3>MODULAB</OBR.4.3></OBR.4><OBR.5/><OBR.6/><OBR.7/><OBR.8/><OBR.9/><OBR.10><OBR.10.1>L001</OBR.10.1></OBR.10><OBR.11/><OBR.12/><OBR.13/><OBR.14/><OBR.15/><OBR.16><OBR.16.1>NO</OBR.16.1><OBR.16.2>NO CODIFICADO</OBR.16.2></OBR.16><OBR.17/><OBR.18/><OBR.19/><OBR.20><OBR.20.1>1</OBR.20.1></OBR.20><OBR.21/><OBR.22/><OBR.23/><OBR.24><OBR.24.1>LAB</OBR.24.1></OBR.24><OBR.25><OBR.25.1>F</OBR.25.1></OBR.25><OBR.26/><OBR.27/><OBR.28><OBR.28.1>PR</OBR.28.1></OBR.28><OBR.29/><OBR.30/><OBR.31/><OBR.32><OBR.32.1>jechaz</OBR.32.1><OBR.32.2>20250523102021-0400</OBR.32.2></OBR.32></OBR><OBX><OBX.1><OBX.1.1>1</OBX.1.1></OBX.1><OBX.2><OBX.2.1>NM</OBX.2.1></OBX.2><OBX.3><OBX.3.1>QC72</OBX.3.1><OBX.3.2>CO2 (Dióxido de Carbono)</OBX.3.2><OBX.3.3>MODULAB</OBX.3.3></OBX.3><OBX.4/><OBX.5><OBX.5.1>50.00</OBX.5.1></OBX.5><OBX.6><OBX.6.1>mEq/L</OBX.6.1></OBX.6><OBX.7><OBX.7.1>21.0 - 31.0</OBX.7.1></OBX.7><OBX.8><OBX.8.1>H</OBX.8.1></OBX.8><OBX.9/><OBX.10/><OBX.11><OBX.11.1>F</OBX.11.1></OBX.11><OBX.12/><OBX.13/><OBX.14><OBX.14.1>20250523102021</OBX.14.1></OBX.14><OBX.15/><OBX.16><OBX.16.1>jechaz</OBX.16.1></OBX.16><OBX.17/><OBX.18/><OBX.19><OBX.19.1>20250523102021</OBX.19.1></OBX.19></OBX><SPM><SPM.1><SPM.1.1>1</SPM.1.1></SPM.1><SPM.2><SPM.2.1>1001000533</SPM.2.1></SPM.2><SPM.3/><SPM.4><SPM.4.1>3</SPM.4.1><SPM.4.2>Suero</SPM.4.2></SPM.4><SPM.5/><SPM.6/><SPM.7><SPM.7.1/><SPM.7.2/><SPM.7.3>MODULAB</SPM.7.3></SPM.7><SPM.8><SPM.8.1/><SPM.8.2/><SPM.8.3>MODULAB</SPM.8.3></SPM.8><SPM.9/><SPM.10/><SPM.11/><SPM.12/><SPM.13/><SPM.14/><SPM.15/><SPM.16/><SPM.17/><SPM.18><SPM.18.1>20250523101718</SPM.18.1></SPM.18><SPM.19/><SPM.20><SPM.20.1>Y</SPM.20.1></SPM.20><SPM.21/><SPM.22/><SPM.23/><SPM.24/><SPM.25/><SPM.26><SPM.26.1>1</SPM.26.1></SPM.26></SPM><ORC><ORC.1><ORC.1.1>SC</ORC.1.1></ORC.1><ORC.2/><ORC.3><ORC.3.1>01000533</ORC.3.1><ORC.3.2>MODULAB</ORC.3.2></ORC.3><ORC.4><ORC.4.1>Mayo23</ORC.4.1><ORC.4.2><ORC.4.2.1>659</ORC.4.2.1><ORC.4.2.2>MODULAB</ORC.4.2.2></ORC.4.2></ORC.4><ORC.5><ORC.5.1>CM</ORC.5.1></ORC.5><ORC.6/><ORC.7/><ORC.8/><ORC.9><ORC.9.1>20250523102021-0400</ORC.9.1></ORC.9><ORC.10/><ORC.11/><ORC.12><ORC.12.1>NO</ORC.12.1><ORC.12.2>NO CODIFICADO</ORC.12.2></ORC.12><ORC.13/><ORC.14/><ORC.15><ORC.15.1>20250523100915-0400</ORC.15.1></ORC.15><ORC.16/><ORC.17/><ORC.18/><ORC.19/><ORC.20/><ORC.21><ORC.21.1>Personal</ORC.21.1><ORC.21.2/><ORC.21.3/><ORC.21.4/><ORC.21.5/><ORC.21.6/><ORC.21.7>FI</ORC.21.7><ORC.21.8/><ORC.21.9/><ORC.21.10>PER</ORC.21.10></ORC.21></ORC><OBR><OBR.1><OBR.1.1>3</OBR.1.1></OBR.1><OBR.2><OBR.2.1>Mayo23</OBR.2.1></OBR.2><OBR.3><OBR.3.1>01000533</OBR.3.1><OBR.3.2>MODULAB</OBR.3.2></OBR.3><OBR.4><OBR.4.1>QC65</OBR.4.1><OBR.4.2>Potasio en Suero</OBR.4.2><OBR.4.3>MODULAB</OBR.4.3></OBR.4><OBR.5/><OBR.6/><OBR.7/><OBR.8/><OBR.9/><OBR.10><OBR.10.1>L001</OBR.10.1></OBR.10><OBR.11/><OBR.12/><OBR.13/><OBR.14/><OBR.15/><OBR.16><OBR.16.1>NO</OBR.16.1><OBR.16.2>NO CODIFICADO</OBR.16.2></OBR.16><OBR.17/><OBR.18/><OBR.19/><OBR.20><OBR.20.1>1</OBR.20.1></OBR.20><OBR.21/><OBR.22/><OBR.23/><OBR.24><OBR.24.1>LAB</OBR.24.1></OBR.24><OBR.25><OBR.25.1>F</OBR.25.1></OBR.25><OBR.26/><OBR.27/><OBR.28><OBR.28.1>PR</OBR.28.1></OBR.28><OBR.29/><OBR.30/><OBR.31/><OBR.32><OBR.32.1>jechaz</OBR.32.1><OBR.32.2>20250523102021-0400</OBR.32.2></OBR.32></OBR><OBX><OBX.1><OBX.1.1>1</OBX.1.1></OBX.1><OBX.2><OBX.2.1>NM</OBX.2.1></OBX.2><OBX.3><OBX.3.1>QC65</OBX.3.1><OBX.3.2>Potasio en Suero</OBX.3.2><OBX.3.3>MODULAB</OBX.3.3></OBX.3><OBX.4/><OBX.5><OBX.5.1>10.0</OBX.5.1></OBX.5><OBX.6><OBX.6.1>mEq/L</OBX.6.1></OBX.6><OBX.7><OBX.7.1>3.5 - 5.1</OBX.7.1></OBX.7><OBX.8><OBX.8.1>H</OBX.8.1></OBX.8><OBX.9/><OBX.10/><OBX.11><OBX.11.1>F</OBX.11.1></OBX.11><OBX.12/><OBX.13/><OBX.14><OBX.14.1>20250523102021</OBX.14.1></OBX.14><OBX.15/><OBX.16><OBX.16.1>jechaz</OBX.16.1></OBX.16><OBX.17/><OBX.18/><OBX.19><OBX.19.1>20250523102021</OBX.19.1></OBX.19></OBX><SPM><SPM.1><SPM.1.1>1</SPM.1.1></SPM.1><SPM.2><SPM.2.1>1001000533</SPM.2.1></SPM.2><SPM.3/><SPM.4><SPM.4.1>3</SPM.4.1><SPM.4.2>Suero</SPM.4.2></SPM.4><SPM.5/><SPM.6/><SPM.7><SPM.7.1/><SPM.7.2/><SPM.7.3>MODULAB</SPM.7.3></SPM.7><SPM.8><SPM.8.1/><SPM.8.2/><SPM.8.3>MODULAB</SPM.8.3></SPM.8><SPM.9/><SPM.10/><SPM.11/><SPM.12/><SPM.13/><SPM.14/><SPM.15/><SPM.16/><SPM.17/><SPM.18><SPM.18.1>20250523101718</SPM.18.1></SPM.18><SPM.19/><SPM.20><SPM.20.1>Y</SPM.20.1></SPM.20><SPM.21/><SPM.22/><SPM.23/><SPM.24/><SPM.25/><SPM.26><SPM.26.1>1</SPM.26.1></SPM.26></SPM><ORC><ORC.1><ORC.1.1>SC</ORC.1.1></ORC.1><ORC.2/><ORC.3><ORC.3.1>01000533</ORC.3.1><ORC.3.2>MODULAB</ORC.3.2></ORC.3><ORC.4><ORC.4.1>Mayo23</ORC.4.1><ORC.4.2><ORC.4.2.1>659</ORC.4.2.1><ORC.4.2.2>MODULAB</ORC.4.2.2></ORC.4.2></ORC.4><ORC.5><ORC.5.1>CM</ORC.5.1></ORC.5><ORC.6/><ORC.7/><ORC.8/><ORC.9><ORC.9.1>20250523102021-0400</ORC.9.1></ORC.9><ORC.10/><ORC.11/><ORC.12><ORC.12.1>NO</ORC.12.1><ORC.12.2>NO CODIFICADO</ORC.12.2></ORC.12><ORC.13/><ORC.14/><ORC.15><ORC.15.1>20250523100915-0400</ORC.15.1></ORC.15><ORC.16/><ORC.17/><ORC.18/><ORC.19/><ORC.20/><ORC.21><ORC.21.1>Personal</ORC.21.1><ORC.21.2/><ORC.21.3/><ORC.21.4/><ORC.21.5/><ORC.21.6/><ORC.21.7>FI</ORC.21.7><ORC.21.8/><ORC.21.9/><ORC.21.10>PER</ORC.21.10></ORC.21></ORC><OBR><OBR.1><OBR.1.1>4</OBR.1.1></OBR.1><OBR.2><OBR.2.1>Mayo23</OBR.2.1></OBR.2><OBR.3><OBR.3.1>01000533</OBR.3.1><OBR.3.2>MODULAB</OBR.3.2></OBR.3><OBR.4><OBR.4.1>QC62</OBR.4.1><OBR.4.2>Sodio en Suero</OBR.4.2><OBR.4.3>MODULAB</OBR.4.3></OBR.4><OBR.5/><OBR.6/><OBR.7/><OBR.8/><OBR.9/><OBR.10><OBR.10.1>L001</OBR.10.1></OBR.10><OBR.11/><OBR.12/><OBR.13/><OBR.14/><OBR.15/><OBR.16><OBR.16.1>NO</OBR.16.1><OBR.16.2>NO CODIFICADO</OBR.16.2></OBR.16><OBR.17/><OBR.18/><OBR.19/><OBR.20><OBR.20.1>1</OBR.20.1></OBR.20><OBR.21/><OBR.22/><OBR.23/><OBR.24><OBR.24.1>LAB</OBR.24.1></OBR.24><OBR.25><OBR.25.1>F</OBR.25.1></OBR.25><OBR.26/><OBR.27/><OBR.28><OBR.28.1>PR</OBR.28.1></OBR.28><OBR.29/><OBR.30/><OBR.31/><OBR.32><OBR.32.1>jechaz</OBR.32.1><OBR.32.2>20250523102021-0400</OBR.32.2></OBR.32></OBR><OBX><OBX.1><OBX.1.1>1</OBX.1.1></OBX.1><OBX.2><OBX.2.1>NM</OBX.2.1></OBX.2><OBX.3><OBX.3.1>QC62</OBX.3.1><OBX.3.2>Sodio en Suero</OBX.3.2><OBX.3.3>MODULAB</OBX.3.3></OBX.3><OBX.4/><OBX.5><OBX.5.1>140.0</OBX.5.1></OBX.5><OBX.6><OBX.6.1>mEq/L</OBX.6.1></OBX.6><OBX.7><OBX.7.1>136.0 - 145.0</OBX.7.1></OBX.7><OBX.8><OBX.8.1>N</OBX.8.1></OBX.8><OBX.9/><OBX.10/><OBX.11><OBX.11.1>F</OBX.11.1></OBX.11><OBX.12/><OBX.13/><OBX.14><OBX.14.1>20250523102021</OBX.14.1></OBX.14><OBX.15/><OBX.16><OBX.16.1>jechaz</OBX.16.1></OBX.16><OBX.17/><OBX.18/><OBX.19><OBX.19.1>20250523102021</OBX.19.1></OBX.19></OBX><SPM><SPM.1><SPM.1.1>1</SPM.1.1></SPM.1><SPM.2><SPM.2.1>1001000533</SPM.2.1></SPM.2><SPM.3/><SPM.4><SPM.4.1>3</SPM.4.1><SPM.4.2>Suero</SPM.4.2></SPM.4><SPM.5/><SPM.6/><SPM.7><SPM.7.1/><SPM.7.2/><SPM.7.3>MODULAB</SPM.7.3></SPM.7><SPM.8><SPM.8.1/><SPM.8.2/><SPM.8.3>MODULAB</SPM.8.3></SPM.8><SPM.9/><SPM.10/><SPM.11/><SPM.12/><SPM.13/><SPM.14/><SPM.15/><SPM.16/><SPM.17/><SPM.18><SPM.18.1>20250523101718</SPM.18.1></SPM.18><SPM.19/><SPM.20><SPM.20.1>Y</SPM.20.1></SPM.20><SPM.21/><SPM.22/><SPM.23/><SPM.24/><SPM.25/><SPM.26><SPM.26.1>1</SPM.26.1></SPM.26></SPM></HL7Message>.
-	at 0bddb74a-a834-4c62-9451-66281bbfdc2d_JavaScript_Filter_Transformer_1:125 (doTransform)
-	at 0bddb74a-a834-4c62-9451-66281bbfdc2d_JavaScript_Filter_Transformer_1:187 (doScript)
-	at 0bddb74a-a834-4c62-9451-66281bbfdc2d_JavaScript_Filter_Transformer_1:189
-	at com.mirth.connect.server.transformers.JavaScriptFilterTransformer$FilterTransformerTask.doCall(JavaScriptFilterTransformer.java:235)
-	at com.mirth.connect.server.transformers.JavaScriptFilterTransformer$FilterTransformerTask.doCall(JavaScriptFilterTransformer.java:187)
-	at com.mirth.connect.server.util.javascript.JavaScriptTask.call(JavaScriptTask.java:114)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-	at java.base/java.lang.Thread.run(Thread.java:829)
+// Obtener el XML del mensaje
+var xml = new XML(msg);  // 'msg' es el mensaje entrante en XML
+var root = xml;
+var obrList = root.getElementsByTagName("OBR");
+
+// Crear el JSON principal
+var resultado = {
+    order_id: "",
+    patient_id: "",
+    profiles: []
+};
+
+// Obtener ID de orden y paciente
+var pid = root.getElementsByTagName("PID")[0];
+if (pid) {
+    resultado.patient_id = pid.getElementsByTagName("PID.3")[0]?.text() || "";
+}
+
+var orc = root.getElementsByTagName("ORC")[0];
+if (orc) {
+    resultado.order_id = orc.getElementsByTagName("ORC.2")[0]?.text() || "";
+}
+
+// Procesar los OBR
+for (var i = 0; i < obrList.length(); i++) {
+    var obr = obrList[i];
+    var profileName = obr.getElementsByTagName("OBR.4")[0]?.text() || "Perfil sin nombre";
+
+    var profile = {
+        name: profileName,
+        tests: []
+    };
+
+    // Agregar OBX que están después de este OBR y antes del siguiente OBR
+    var current = obr;
+    var sibling = current.nextSibling();
+
+    while (sibling != null && sibling.name() != "OBR") {
+        if (sibling.name() == "OBX") {
+            var testName = sibling.getElementsByTagName("OBX.3")[0]?.text() || "Prueba sin nombre";
+            var value = sibling.getElementsByTagName("OBX.5")[0]?.text() || "";
+
+            profile.tests.push({
+                name: testName,
+                value: value
+            });
+        }
+        sibling = sibling.nextSibling();
+    }
+
+    if (profile.tests.length > 0) {
+        resultado.profiles.push(profile);
+    }
+}
+
+// Convertir a JSON para salida
+return JSON.stringify(resultado, null, 2);
