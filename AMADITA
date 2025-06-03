@@ -1,156 +1,52 @@
+// Asume que 'msg' contiene el mensaje HL7 completo
+var obrList = [];
+var lines = msg.split(/\r?\n/);
 
-Resultado 1 - 4 pruebas de química validadas
+var currentOBR = null;
 
-MSH|^~\&|Modulab|Modulab|Portal|Portal|20250523102040-0400||ORU^R01^ORU_R01|LAB31748010040134|P|2.5|||||RD||ES
-PID|1||NHC12345^^^^PI~DNI67890^^^^PPN||PRUEBA^PRUEBA||19820413130000-0400|M|||||^PRN^Internet^jechazabal@promed-sa.com|||||||||||||||||N
-PV1|1|EM||||||||||||||N
-ORC|SC||01000533^MODULAB|Mayo23^659&MODULAB|CM||||20250523102021-0400|||NO^NO CODIFICADO|||20250523100915-0400||||||Personal^^^^^^FI^^^PER
-OBR|1|Mayo23|01000533^MODULAB|QC68^Cloro^MODULAB||||||L001||||||NO^NO CODIFICADO||||1||||LAB|F|||PR||||jechaz^20250523102021-0400
-OBX|1|NM|QC68^Cloro^MODULAB||100.0|mEq/L|98.0 - 107.0|N|||F|||20250523102021||jechaz|||20250523102021
-SPM|1|1001000533||3^Suero|||^^MODULAB|^^MODULAB||||||||||20250523101718||Y||||||1
-ORC|SC||01000533^MODULAB|Mayo23^659&MODULAB|CM||||20250523102021-0400|||NO^NO CODIFICADO|||20250523100915-0400||||||Personal^^^^^^FI^^^PER
-OBR|2|Mayo23|01000533^MODULAB|QC72^CO2 (Dióxido de Carbono)^MODULAB||||||L001||||||NO^NO CODIFICADO||||1||||LAB|F|||PR||||jechaz^20250523102021-0400
-OBX|1|NM|QC72^CO2 (Dióxido de Carbono)^MODULAB||50.00|mEq/L|21.0 - 31.0|H|||F|||20250523102021||jechaz|||20250523102021
-SPM|1|1001000533||3^Suero|||^^MODULAB|^^MODULAB||||||||||20250523101718||Y||||||1
-ORC|SC||01000533^MODULAB|Mayo23^659&MODULAB|CM||||20250523102021-0400|||NO^NO CODIFICADO|||20250523100915-0400||||||Personal^^^^^^FI^^^PER
-OBR|3|Mayo23|01000533^MODULAB|QC65^Potasio en Suero^MODULAB||||||L001||||||NO^NO CODIFICADO||||1||||LAB|F|||PR||||jechaz^20250523102021-0400
-OBX|1|NM|QC65^Potasio en Suero^MODULAB||10.0|mEq/L|3.5 - 5.1|H|||F|||20250523102021||jechaz|||20250523102021
-SPM|1|1001000533||3^Suero|||^^MODULAB|^^MODULAB||||||||||20250523101718||Y||||||1
-ORC|SC||01000533^MODULAB|Mayo23^659&MODULAB|CM||||20250523102021-0400|||NO^NO CODIFICADO|||20250523100915-0400||||||Personal^^^^^^FI^^^PER
-OBR|4|Mayo23|01000533^MODULAB|QC62^Sodio en Suero^MODULAB||||||L001||||||NO^NO CODIFICADO||||1||||LAB|F|||PR||||jechaz^20250523102021-0400
-OBX|1|NM|QC62^Sodio en Suero^MODULAB||140.0|mEq/L|136.0 - 145.0|N|||F|||20250523102021||jechaz|||20250523102021
-SPM|1|1001000533||3^Suero|||^^MODULAB|^^MODULAB||||||||||20250523101718||Y||||||1
+for (var i = 0; i < lines.length; i++) {
+    var line = lines[i];
+    var fields = line.split('|');
 
+    if (fields[0] === 'OBR') {
+        currentOBR = {
+            obrIndex: fields[1],
+            obrCode: (fields[4] || '').split('^')[0],
+            obrDesc: (fields[4] || '').split('^')[1],
+            obxList: []
+        };
+        obrList.push(currentOBR);
+    }
 
-{
-  "PeticionModulab": “01000533”,
-  "NumeroRequisicionPedido": "Mayo23",
-  "FechaPeticion": "20250525",
-  "IDPrincipalActual": "DNI67890",
-  "FechaNacimiento": "19820413",
-  "EstadoOrden": "Con Resultado",
-  "procedimientos": [				
-  {				
-    "Prueba": "QC68",				
-    "IDProcedimiento": "QC68",				
-    "Procedimiento": "Cloro",
-    "Estatus": "Validado"
-  },				
-  {				
-    "Prueba": "QC72",				
-    "IDProcedimiento": "QC72",				
-    "Procedimiento": "CO2 (Dióxido de Carbono)",
-    "Estatus": "Validado"
-  },				
-  {				
-    "Prueba": "QC65",				
-    "IDProcedimiento": "QC65",				
-    "Procedimiento": "Potasio en Suero",
-    "Estatus": "Validado"
-  },				
-  {				
-    "Prueba": "QC62",				
-    "IDProcedimiento": "QC62",				
-    "Procedimiento": "Sodio en Suero",
-    "Estatus": "Validado"
-  }				
-]
-  "HL7": "MSH|^~\\&|Modulab|Modulab|Portal|Portal|20250523102040-0400||ORU^R01^ORU_R01|LAB31748010040134|P|2.5|||||RD||ES\rPID|1||NHC12345^^^^PI~DNI67890^^^^PPN||PRUEBA^PRUEBA||19820413130000-0400|M|||||^PRN^Internet^jechazabal@promed-sa.com|||||||||||||||||N\rPV1|1|EM||||||||||||||N\rORC|SC||01000533^MODULAB|Mayo23^659&MODULAB|CM||||20250523102021-0400|||NO^NO CODIFICADO|||20250523100915-0400||||||Personal^^^^^^FI^^^PER\rOBR|1|Mayo23|01000533^MODULAB|QC68^Cloro^MODULAB||||||L001||||||NO^NO CODIFICADO||||1||||LAB|F|||PR||||jechaz^20250523102021-0400\rOBX|1|NM|QC68^Cloro^MODULAB||100.0|mEq/L|98.0 - 107.0|N|||F|||20250523102021||jechaz|||20250523102021\rSPM|1|1001000533||3^Suero|||^^MODULAB|^^MODULAB||||||||||20250523101718||Y||||||1\rORC|SC||01000533^MODULAB|Mayo23^659&MODULAB|CM||||20250523102021-0400|||NO^NO CODIFICADO|||20250523100915-0400||||||Personal^^^^^^FI^^^PER\rOBR|2|Mayo23|01000533^MODULAB|QC72^CO2 (Dióxido de Carbono)^MODULAB||||||L001||||||NO^NO CODIFICADO||||1||||LAB|F|||PR||||jechaz^20250523102021-0400\rOBX|1|NM|QC72^CO2 (Dióxido de Carbono)^MODULAB||50.00|mEq/L|21.0 - 31.0|H|||F|||20250523102021||jechaz|||20250523102021\rSPM|1|1001000533||3^Suero|||^^MODULAB|^^MODULAB||||||||||20250523101718||Y||||||1\rORC|SC||01000533^MODULAB|Mayo23^659&MODULAB|CM||||20250523102021-0400|||NO^NO CODIFICADO|||20250523100915-0400||||||Personal^^^^^^FI^^^PER\rOBR|3|Mayo23|01000533^MODULAB|QC65^Potasio en Suero^MODULAB||||||L001||||||NO^NO CODIFICADO||||1||||LAB|F|||PR||||jechaz^20250523102021-0400\rOBX|1|NM|QC65^Potasio en Suero^MODULAB||10.0|mEq/L|3.5 - 5.1|H|||F|||20250523102021||jechaz|||20250523102021\rSPM|1|1001000533||3^Suero|||^^MODULAB|^^MODULAB||||||||||20250523101718||Y||||||1\rORC|SC||01000533^MODULAB|Mayo23^659&MODULAB|CM||||20250523102021-0400|||NO^NO CODIFICADO|||20250523100915-0400||||||Personal^^^^^^FI^^^PER\rOBR|4|Mayo23|01000533^MODULAB|QC62^Sodio en Suero^MODULAB||||||L001||||||NO^NO CODIFICADO||||1||||LAB|F|||PR||||jechaz^20250523102021-0400\rOBX|1|NM|QC62^Sodio en Suero^MODULAB||140.0|mEq/L|136.0 - 145.0|N|||F|||20250523102021||jechaz|||20250523102021\rSPM|1|1001000533||3^Suero|||^^MODULAB|^^MODULAB||||||||||20250523101718||Y||||||1",
+    if (fields[0] === 'OBX' && currentOBR != null) {
+        var obxCode = (fields[3] || '').split('^')[0];
+        var obxDesc = (fields[3] || '').split('^')[1];
+        currentOBR.obxList.push({
+            code: obxCode,
+            desc: obxDesc
+        });
+    }
 }
 
+// Ahora analizamos cada OBR para saber si es perfil o prueba
+for (var j = 0; j < obrList.length; j++) {
+    var obr = obrList[j];
+    var obxCount = obr.obxList.length;
 
-Resultado 2 - 3 perfiles de orina validados
+    var isProfile = false;
+    if (obxCount > 1) {
+        isProfile = true;
+    } else if (obxCount === 1 && obr.obrCode !== obr.obxList[0].code) {
+        isProfile = true;
+    }
 
-MSH|^~\&|Modulab|Modulab|Portal|Portal|20250523102611-0400||ORU^R01^ORU_R01|LAB31748010371156|P|2.5|||||RD||ES
-PID|1||NHC12345^^^^PI~DNI67890^^^^PPN||PRUEBA^PRUEBA||19820413130000-0400|M|||||^PRN^Internet^jechazabal@promed-sa.com|||||||||||||||||N
-PV1|1|EM||||||||||||||N
-ORC|SC||01000533^MODULAB|Mayo23^659&MODULAB|CM||||20250523102605-0400|||NO^NO CODIFICADO|||20250523100915-0400||||||Personal^^^^^^FI^^^PER
-OBR|1|Mayo23|01000533^MODULAB|QC6P^Calcio en Orina 24 Horas^MODULAB||||||L001||||||NO^NO CODIFICADO||||1||||LAB|F|||PR||||jechaz^20250523102605-0400
-OBX|1|NM|QC29^Calcio en orina de 24 horas^MODULAB||130.0|mg/24h|100.0 - 300.0|N|||F|||20250523102605||jechaz|||20250523102543
-OBX|2|NM|Q1C^Diuresis^MODULAB||12|mg/24h||N|||F|||20250523102605||jechaz|||20250523102543
-SPM|1|7201000533||2^Orina|||^^MODULAB|^^MODULAB||||||||||20250523100915||Y||||||1
-ORC|SC||01000533^MODULAB|Mayo23^659&MODULAB|CM||||20250523102605-0400|||NO^NO CODIFICADO|||20250523100915-0400||||||Personal^^^^^^FI^^^PER
-OBR|2|Mayo23|01000533^MODULAB|QC7P^Fósforo en Orina 24 Horas^MODULAB||||||L001||||||NO^NO CODIFICADO||||1||||LAB|F|||PR||||jechaz^20250523102605-0400
-OBX|1|NM|QC88^Fósforo en orina 24 horas^MODULAB||25|mg/24h|400.0 - 1300.0|L|||F|||20250523102605||jechaz|||20250523102543
-SPM|1|7201000533||2^Orina|||^^MODULAB|^^MODULAB||||||||||20250523100915||Y||||||1
-ORC|SC||01000533^MODULAB|Mayo23^659&MODULAB|CM||||20250523102605-0400|||NO^NO CODIFICADO|||20250523100915-0400||||||Personal^^^^^^FI^^^PER
-OBR|3|Mayo23|01000533^MODULAB|QC12P^Creatinina en Orina 24 Horas^MODULAB||||||L001||||||NO^NO CODIFICADO||||1||||LAB|F|||PR||||jechaz^20250523102605-0400
-OBX|1|NM|QC60^Creatinina en orina 24 horas^MODULAB||10.00|g/24h|1.0 - 1.5|H|||F|||20250523102605||jechaz|||20250523102543
-SPM|1|6701000533||2^Orina|||^^MODULAB|^^MODULAB||||||||||20250523101638||Y||||||1
+    logger.info("OBR #" + obr.obrIndex + " - " + obr.obrDesc);
+    logger.info("  Código OBR: " + obr.obrCode);
+    logger.info("  Número de OBX: " + obxCount);
+    logger.info("  Es perfil: " + (isProfile ? "Sí" : "No"));
 
-
-
-
-
-{
-  "PeticionModulab": “01000533”,
-  "NumeroRequisicionPedido": "Mayo23",
-  "FechaPeticion": "20250525",
-  "IDPrincipalActual": "DNI67890",
-  "FechaNacimiento": "19820413",
-  "EstadoOrden": "Con Resultado",
-  "Procedimientos": [				
-  {
-    "Procedimiento": "1",				
-    "perfil": " QC6P",				
-    "IDProcedimiento": "QC6P",				
-    "Procedimiento": "Calcio en Orina 24 Horas",
-    "Estatus": "Validado"
-  “pruebas”: 
-[
-{				
-    "prueba": "QC29",				
-    "IDProcedimiento": "QC29",				
-    "Procedimiento": "Calcio en orina de 24 horas",
-    "Estatus": "Validado"
-  },				
-  {				
-    "prueba": "Q1C ",				
-    "IDProcedimiento": "Q1C",				
-    "Procedimiento": "Diuresis",
-    "Estatus": "Validado"
-  }
-]
-  },								 
-  {
-    " Procedimiento ": "2",				
-    "perfil": "1",				
-    "IDProcedimiento": "QC7P",				
-    "Procedimiento": "Fósforo en Orina 24 Horas",
-    "Estatus": "Validado"
-    “pruebas”: 
-[
-{				
-    "prueba": "QC88",				
-    "IDProcedimiento": "QC88",				
-    "Procedimiento": "Fósforo en orina 24 horas",
-    "Estatus": "Validado"
-  }
-]
-  },								
-  {				
-    " Procedimiento ": "3",
-    "perfil": "QC12P ",				
-    "IDProcedimiento": "QC12P",				
-    "Procedimiento": "Creatinina en Orina 24 Horas",
-    "Estatus": "Validado"
-    “pruebas”: 
-[
-  {				
-    "prueba": "QC60",				
-    "IDProcedimiento": "QC60",				
-    "Procedimiento": "Creatinina en orina 24 horas",
-    "Estatus": "Validado"
-  }
-]
-  }				
-]
-  "HL7": "MSH|^~\&|Modulab|Modulab|Portal|Portal|20250523102611-0400||ORU^R01^ORU_R01|LAB31748010371156|P|2.5|||||RD||ES\rPID|1||NHC12345^^^^PI~DNI67890^^^^PPN||PRUEBA^PRUEBA||19820413130000-0400|M|||||^PRN^Internet^jechazabal@promed-sa.com|||||||||||||||||N\rPV1|1|EM||||||||||||||N\rORC|SC||01000533^MODULAB|Mayo23^659&MODULAB|CM||||20250523102605-0400|||NO^NO CODIFICADO|||20250523100915-0400||||||Personal^^^^^^FI^^^PER\rOBR|1|Mayo23|01000533^MODULAB|QC6P^Calcio en Orina 24 Horas^MODULAB||||||L001||||||NO^NO CODIFICADO||||1||||LAB|F|||PR||||jechaz^20250523102605-0400\rOBX|1|NM|QC29^Calcio en orina de 24 horas^MODULAB||130.0|mg/24h|100.0 - 300.0|N|||F|||20250523102605||jechaz|||20250523102543
-OBX|2|NM|Q1C^Diuresis^MODULAB||12|mg/24h||N|||F|||20250523102605||jechaz|||20250523102543\rSPM|1|7201000533||2^Orina|||^^MODULAB|^^MODULAB||||||||||20250523100915||Y||||||1\rORC|SC||01000533^MODULAB|Mayo23^659&MODULAB|CM||||20250523102605-0400|||NO^NO CODIFICADO|||20250523100915-0400||||||Personal^^^^^^FI^^^PER\rOBR|2|Mayo23|01000533^MODULAB|QC7P^Fósforo en Orina 24 Horas^MODULAB||||||L001||||||NO^NO CODIFICADO||||1||||LAB|F|||PR||||jechaz^20250523102605-0400\rOBX|1|NM|QC88^Fósforo en orina 24 horas^MODULAB||25|mg/24h|400.0 - 1300.0|L|||F|||20250523102605||jechaz|||20250523102543\rSPM|1|7201000533||2^Orina|||^^MODULAB|^^MODULAB||||||||||20250523100915||Y||||||1
-ORC|SC||01000533^MODULAB|Mayo23^659&MODULAB|CM||||20250523102605-0400|||NO^NO CODIFICADO|||20250523100915-0400||||||Personal^^^^^^FI^^^PER\rOBR|3|Mayo23|01000533^MODULAB|QC12P^Creatinina en Orina 24 Horas^MODULAB||||||L001||||||NO^NO CODIFICADO||||1||||LAB|F|||PR||||jechaz^20250523102605-0400\rOBX|1|NM|QC60^Creatinina en orina 24 horas^MODULAB||10.00|g/24h|1.0 - 1.5|H|||F|||20250523102605||jechaz|||20250523102543\rSPM|1|6701000533||2^Orina|||^^MODULAB|^^MODULAB||||||||||20250523101638||Y||||||1",
+    for (var k = 0; k < obr.obxList.length; k++) {
+        var obx = obr.obxList[k];
+        logger.info("    OBX[" + (k+1) + "]: " + obx.code + " - " + obx.desc);
+    }
 }
-
-
-
-
-
