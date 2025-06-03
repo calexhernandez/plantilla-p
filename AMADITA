@@ -1,66 +1,33 @@
-function doFilter() {
-    return true;
+var raw = message;  // mensaje HL7 como string
+var lines = raw.split('\n');  // separar líneas
+
+var results = [];
+var currentObr = null;
+var currentObxCount = 0;
+
+for (var i = 0; i < lines.length; i++) {
+    var line = lines[i].trim();
+    
+    if (line.startsWith("OBR|")) {
+        // Si ya teníamos un OBR anterior, guardamos su conteo
+        if (currentObr != null) {
+            results.push({ obr: currentObr, obxCount: currentObxCount });
+        }
+        // Iniciar nuevo conteo
+        var obrFields = line.split("|");
+        currentObr = obrFields[4];  // por ejemplo: QC6P^Calcio en Orina 24 Horas^MODULAB
+        currentObxCount = 0;
+    } else if (line.startsWith("OBX|")) {
+        currentObxCount++;
+    }
 }
 
-function doTransform() {
-    logger = Packages.org.apache.log4j.Logger.getLogger("transformer");
+// No olvides guardar el último OBR
+if (currentObr != null) {
+    results.push({ obr: currentObr, obxCount: currentObxCount });
+}
 
-    // Asegúrate de que el mensaje esté en texto
-    var hl7 = msg.toString(); 
-    var lines = hl7.split(/\r?\n/);
-
-    var result = {
-        paciente: {},
-        examenes: []
-    };
-
-    var currentProfile = null;
-
-    for (var i = 0; i < lines.length; i++) {
-        var line = lines[i];
-        var fields = line.split('|');
-        var segmentType = fields[0];
-
-        if (segmentType === 'PID') {
-            result.paciente = {
-                id: fields[3] || "",
-                nombre: fields[5] || "",
-                nacimiento: fields[7] || "",
-                sexo: fields[8] || ""
-            };
-        }
-
-        else if (segmentType === 'OBR') {
-            if (currentProfile != null) {
-                result.examenes.push(currentProfile);
-            }
-            currentProfile = {
-                perfil: {
-                    id: fields[4].split('^')[0] || "",
-                    nombre: fields[4].split('^')[1] || ""
-                },
-                pruebas: []
-            };
-        }
-
-        else if (segmentType === 'OBX') {
-            if (currentProfile != null) {
-                currentProfile.pruebas.push({
-                    id: fields[3].split('^')[0] || "",
-                    nombre: fields[3].split('^')[1] || "",
-                    valor: fields[5] || "",
-                    unidad: fields[6] || "",
-                    rango: fields[7] || "",
-                    interpretacion: fields[8] || ""
-                });
-            }
-        }
-    }
-
-    if (currentProfile != null) {
-        result.examenes.push(currentProfile);
-    }
-
-    // Asignar JSON al destino
-    destinationMap.put('resultado_json', JSON.stringify(result, null, 2));
+// Imprimir resultados
+for (var j = 0; j < results.length; j++) {
+    logger.info("Perfil: " + results[j].obr + " -> OBX encontrados: " + results[j].obxCount);
 }
