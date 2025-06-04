@@ -1,158 +1,82 @@
-etInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-Software caused connection abort: recv failed
-Software caused connection abort: recv failed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-Software caused connection abort: recv failed
-Software caused connection abort: recv failed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-Software caused connection abort: recv failed
-Software caused connection abort: recv failed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-Software caused connection abort: recv failed
-Software caused connection abort: recv failed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-Software caused connection abort: recv failed
-Software caused connection abort: recv failed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-Software caused connection abort: recv failed
-Software caused connection abort: recv failed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-Software caused connection abort: recv failed
-Software caused connection abort: recv failed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-Software caused connection abort: recv failed
-Software caused connection abort: recv failed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-Software caused connection abort: recv failed
-Software caused connection abort: recv failed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-Software caused connection abort: recv failed
-Software caused connection abort: recv failed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-Software caused connection abort: recv failed
-Software caused connection abort: recv failed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-Software caused connection abort: recv failed
-Software caused connection abort: recv failed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-Software caused connection abort: recv failed
-Software caused connection abort: recv failed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-Software caused connection abort: recv failed
-Software caused connection abort: recv failed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-Software caused connection abort: recv failed
-Software caused connection abort: recv failed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-Software caused connection abort: recv failed
-Software caused connection abort: recv failed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-Software caused connection abort: recv failed
-Software caused connection abort: recv failed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-Software caused connection abort: recv failed
-Software caused connection abort: recv failed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-Software caused connection abort: recv failed
-Software caused connection abort: recv failed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-Software caused connection abort: recv failed
-Software caused connection abort: recv failed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-Software caused connection abort: recv failed
-Software caused connection abort: recv failed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-Software caused connection abort: recv failed
-Software caused connection abort: recv failed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-Software caused connection abort: recv failed
-Software caused connection abort: recv failed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-Software caused connection abort: recv failed
-Software caused connection abort: recv failed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-Software caused connection abort: recv failed
-Software caused connection abort: recv failed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-Software caused connection abort: recv failed
-Software caused connection abort: recv failed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-Software caused connection abort: recv failed
-Software caused connection abort: recv failed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-Software caused connection abort: recv failed
-Software caused connection abort: recv failed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-Software caused connection abort: recv failed
-Software caused connection abort: recv failed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-Software caused connection abort: recv failed
-Software caused connection abort: recv failed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-Software caused connection abort: recv failed
-Software caused connection abort: recv failed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-Software caused connection abort: recv failed
-Software caused connection abort: recv failed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-Software caused connection abort: recv failed
-Software caused connection abort: recv failed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-Software caused connection abort: recv failed
-Software caused connection abort: recv failed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-Software caused connection abort: recv failed
-Software caused connection abort: recv failed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-Software caused connection abort: recv failed
-Software caused connection abort: recv failed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-Software caused connection abort: recv failed
-Software caused connection abort: recv failed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-Software caused connection abort: recv failed
-Software caused connection abort: recv failed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-Software caused connection abort: recv failed
-Software caused connection abort: recv failed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-Software caused connection abort: recv failed
-Software caused connection abort: recv failed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-Software caused connection abort: recv failed
-Software caused connection abort: recv failed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-Software caused connection abort: recv failed
-Software caused connection abort: recv failed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-Software caused connection abort: recv failed
-Software caused connection abort: recv failed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-Software caused connection abort: recv failed
-Software caused connection abort: recv failed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-Software caused connection abort: recv failed
-Software caused connection abort: recv failed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-Software caused connection abort: recv failed
-Software caused connection abort: recv failed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-Software caused connection abort: recv failed
-Software caused connection abort: recv failed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-Software caused connection abort: recv failed
-Software caused connection abort: recv failed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-Software caused connection abort: recv failed
-Software caused connection abort: recv failed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-Software caused connection abort: recv failed
-Software caused connection abort: recv failed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-Software caused connection abort: recv failed
-Software caused connection abort: recv failed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-Software caused connection abort: recv failed
-Software caused connection abort: recv failed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-Software caused connection abort: recv failed
-Software caused connection abort: recv failed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-Software caused connection abort: recv failed
-Software caused connection abort: recv failed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-Software caused connection abort: recv failed
-Software caused connection abort: recv failed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-Software caused connection abort: recv failed
-Software caused connection abort: recv failed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-Software caused connection abort: recv failed
-Software caused connection abort: recv failed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-Software caused connection abort: recv failed
-Software caused connection abort: recv failed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-Authorized remote IP 127.0.0.1
-Connection ACCEPTed from /127.0.0.1:63917
-ALREADY CONNECTED
-SAFETY on
-socket closed
-socket closed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-socket closed
-socket closed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-socket closed
-socket closed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-socket closed
-socket closed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-socket closed
-socket closed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
-Getting streams
-NetworkSerialServerProtocol terminated:true
-TX: <VT>MSH|^~\&|AMADITA|AMADITA|Modulab|Modulab|||OML^O21^OML_O21||P|2.5||||||8859/1|||<CR>PID|1|ef8f77a8-1c2e-4432-9816-fde40abcbb3c|40224193199^^^^PI~^^^^PPN~^^^^SS||CAMACHO^YANET||19830314|F|||NA^^^^^^^||^^^yanet3135@yahoo.com|||||||||||||||||N<CR>PV1|1|A|^^||||||||||||||||<CR>DG1|||||||||||||||||||||||||||||<CR>IN1|||||||||||||||||||||||||||||<CR>ORC|NW|||17196|A||||20250604|||24465^PRUEBA|||||||||PER^PERSONAL||||||<CR>OBR|0|||6025^5471842||||||L009^Bella Vista||||||24465^PRUEBA||||||||NE^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR><FS><CR>
-R: <VT>MSH|^~\&|AMADITA|AMADITA|Modulab|Modulab|||OML^O21^OML_O21||P|2.5||||||8859/1|||<CR>PID|1|ef8f77a8-1c2e-4432-9816-fde40abcbb3c|40224193199^^^^PI~^^^^PPN~^^^^SS||CAMACHO^YANET||19830314|F|||NA^^^^^^^||^^^yanet3135@yahoo.com|||||||||||||||||N<CR>PV1|1|A|^^||||||||||||||||<CR>DG1|||||||||||||||||||||||||||||<CR>IN1|||||||||||||||||||||||||||||<CR>ORC|NW|||17196|A||||20250604|||24465^PRUEBA|||||||||PER^PERSONAL||||||<CR>OBR|0|||6025^5471842||||||L009^Bella Vista||||||24465^PRUEBA||||||||NE^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR><FS><CR>
-L: MSH|^~\&|AMADITA|AMADITA|Modulab|Modulab|||OML^O21^OML_O21||P|2.5||||||8859/1|||
-L: PID|1|ef8f77a8-1c2e-4432-9816-fde40abcbb3c|40224193199^^^^PI~^^^^PPN~^^^^SS||CAMACHO^YANET||19830314|F|||NA^^^^^^^||^^^yanet3135@yahoo.com|||||||||||||||||N
-L: PV1|1|A|^^||||||||||||||||
-L: DG1|||||||||||||||||||||||||||||
-L: IN1|||||||||||||||||||||||||||||
-L: ORC|NW|||17196|A||||20250604|||24465^PRUEBA|||||||||PER^PERSONAL||||||
-L: OBR|0|||6025^5471842||||||L009^Bella Vista||||||24465^PRUEBA||||||||NE^NO ESPECIFICADO||||CP^Correo Paciente|
-L: TQ1|||||||||R
-OML Message Found: New Request
-License Error. You don't have a valid license number. Contact Your Sales Representative.
-Creating New Request...
-Patient found.
-Blocked in accept() awaiting connections 
-Request NOT Sent to Modulab (ERR_CREQU_008: The order does not contain any test (it was created empty by the user).)
-Application Error:ERR_CREQU_008: The order does not contain any test (it was created empty by the user).
-Patient CAMACHO, YANET Modified
-Updating or inserting add info on the patientid: 725
-E: MSH|^~\&|||||20250604125233||ACK|MSG-20250604125233-3|D|2.5|||
-E: MSA|AE||NO Acknowledgment
-E: ERR||||||||ERR_CREQU_008: The order does not contain any test (it was created empty by the user).
-data=<VT>MSH|^~\&|||||20250604125233||ACK|MSG-20250604125233-3|D|2.5|||<LF>MSA|AE||NO Acknowledgment<LF>ERR||||||||ERR_CREQU_008: The order does not contain any test (it was created empty by the user).<LF><FS><LF>
-S: <VT>MSH|^~\&|||||20250604125233||ACK|MSG-20250604125233-3|D|2.5|||<CR>MSA|AE||NO Acknowledgment<CR>ERR||||||||ERR_CREQU_008: The order does not contain any test (it was created empty by the user).<CR><FS><CR>
-SEND(<VT>MSH|^~\&|||||20250604125233||ACK|MSG-20250604125233-3|D|2.5|||<CR>MSA|AE||NO Acknowledgment<CR>ERR||||||||ERR_CREQU_008: The order does not contain any test (it was created empty by the user).<CR><FS><CR>)
+var xml = msg;
+
+var obrList = xml..OBR;
+var obxList = xml..OBX;
+
+var results = [];
+
+var obxIndex = 0;
+
+for (var i = 0; i < obrList.length(); i++) {
+    var obr = obrList[i];
+    var peticionModulab = obr['OBR.3']['OBR.3.1'].toString();
+    
+    var numeroRequisicionPedido = obr['OBR.2'].toString();
+    logger.info("Requi: " +numeroRequisicionPedido);
+    var id = obr['OBR.4']['OBR.4.1'].toString(); // Ajusta si es otro campo
+    var profileName = obr['OBR.4']['OBR.4.2'].toString(); // Ajusta si es otro campo
+    var idPrincipalActual =  msg['PID']['PID.3'][1]['PID.3.1'].toString();
+    var fechaNacimiento = msg['PID']['PID.7']['PID.7.1'].toString();
+    var fechaPeticion = msg['MSH']['MSH.7']['MSH.7.1'].toString();
+    
+    var obxItems = [];
+
+    while (obxIndex < obxList.length()) {
+        var obx = obxList[obxIndex];
+
+        // Si no es el último OBR, verifica si este OBX está antes del siguiente OBR
+        if (i < obrList.length() - 1) {
+            if (obx.childIndex() < obrList[i + 1].childIndex()) {
+                // Extraemos datos del OBX
+                var testCode = obx['OBX.3']['OBX.3.1'].toString();
+                var value = obx['OBX.5'].toString();
+                var unit = obx['OBX.6']['OBX.6.1'].toString();
+
+                obxItems.push({
+                    codigo: testCode,
+                    valor: value,
+                    unidad: unit
+                });
+
+                obxIndex++;
+            } else {
+                break;
+            }
+        } else {
+            // Último OBR: toma todos los OBX restantes
+            var testCode = obx['OBX.3']['OBX.3.1'].toString();
+            var value = obx['OBX.5'].toString();
+            var unit = obx['OBX.6']['OBX.6.1'].toString();
+
+            obxItems.push({
+                codigo: testCode,
+                valor: value,
+                unidad: unit
+            });
+
+            obxIndex++;
+        }
+    }
+
+    results.push({
+    	   peticionModulab1: peticionModulab,
+    	   numeroRequisicionPedido1: numeroRequisicionPedido,
+    	   fechaNacimiento: fechaNacimiento,
+    	   fechaPeticion:fechaPeticion,
+    	   idPrincipalActual: idPrincipalActual,
+    	   codigo: id,
+        perfil: profileName,
+        fechaNacimiento: fechaNacimiento,
+        obx: obxItems
+    });
+}
+
+// Si quieres imprimirlo en logger:
+for each (var r in results) {
+    logger.info("Perfil: " + r.perfil + " Codigo: "+r.codigo);
+    for each (var o in r.obx) {
+        logger.info("  -> Código: " + o.codigo + ", Valor: " + o.valor + ", Unidad: " + o.unidad);
+        logger.info("peticion modulab" + r.peticionModulab1);
+        logger.info("numero Requisicion Pedido" + r.numeroRequisicionPedido1);
+    }
+}
