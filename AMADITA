@@ -1,10 +1,23 @@
-finalJson.procedimientos.push({
-    Prueba: o.codigo,
-    IDProcedimiento: o.codigo,
-    Procedimiento: r.perfil, // Aquí se usa el valor de OBR.4.2
-    Estatus: "Validado"
-});
+var finalJson = {
+    PeticionModulab: results[0].peticionModulab1,
+    NumeroRequisicionPedido: results[0].numeroRequisicionPedido1,
+    FechaPeticion: results[0].fechaPeticion,
+    IDPrincipalActual: results[0].idPrincipalActual,
+    FechaNacimiento: results[0].fechaNacimiento,
+    EstadoOrden: "Con Resultado",
+    procedimientos: [],
+    HL7: msg.toString()
+};
 
+for each (var r in results) {
+    for each (var o in r.obx) {
+        finalJson.procedimientos.push({
+            Prueba: o.codigo,
+            IDProcedimiento: o.codigo,
+            Procedimiento: r.perfil, // nombre de la prueba del OBR
+            Estatus: "Validado"
+        });
+    }
+}
 
-
-logger.info("Procedimiento: " + r.perfil);
+logger.info(JSON.stringify(finalJson));
