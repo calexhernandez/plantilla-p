@@ -1,100 +1,10 @@
-//paso a la variable xml el mensaje
-var xml = msg;
-
-//asigno a obrlist todos los OBR del mensaje
-var obrList = xml..OBR;
-var obxList = xml..OBX;
-
-//aqui se guardaran los resultados
-var results = [];
+finalJson.procedimientos.push({
+    Prueba: o.codigo,
+    IDProcedimiento: o.codigo,
+    Procedimiento: r.perfil, // Aquí se usa el valor de OBR.4.2
+    Estatus: "Validado"
+});
 
 
-var obxIndex = 0;
 
-//empiezo a recorrer los rrequerimientos
-for (var i = 0; i < obrList.length(); i++) {
-    var obr = obrList[i];
-
-    //asigno las variables fijas del JSON **********************************************
-    var peticionModulab = obr['OBR.3']['OBR.3.1'].toString();    
-    var numeroRequisicionPedido = obr['OBR.2']['OBR.2.1'].toString();
-    //logger.info("Requi: " +numeroRequisicionPedido);
-    var id = obr['OBR.4']['OBR.4.1'].toString(); // Ajusta si es otro campo
-    var profileName = obr['OBR.4']['OBR.4.2'].toString(); // Ajusta si es otro campo
-    var idPrincipalActual =  msg['PID']['PID.3'][1]['PID.3.1'].toString();
-    var fechaNacimiento = msg['PID']['PID.7']['PID.7.1'].toString();
-    var fechaPeticion = msg['MSH']['MSH.7']['MSH.7.1'].toString();
-    //*********************************************************************************
-
-
-    
-    var obxItems = [];
-
-	//primer segmento del procedimiento que es un OBR
-    obxItems.push({
-                	segmento: "OBR",
-                    codigo: id,
-                    valor: "",
-                    unidad: ""
-                });
-    
-    while (obxIndex < obxList.length()) {
-        var obx = obxList[obxIndex];
-        // Si no es el último OBR, verifica si este OBX está antes del siguiente OBR
-        if (i < obrList.length() - 1) {
-            if (obx.childIndex() < obrList[i + 1].childIndex()) {
-                // Extraemos datos del OBX
-                var testCode = obx['OBX.3']['OBX.3.1'].toString();
-                var value = obx['OBX.5'].toString();
-                var unit = obx['OBX.6']['OBX.6.1'].toString();
-
-                obxItems.push({
-                	segmento: "OBX",
-                    codigo: testCode,
-                    valor: value,
-                    unidad: unit
-                });
-
-                obxIndex++;
-            } else {
-                break;
-            }
-        } else {
-            // Último OBR: toma todos los OBX restantes
-            var testCode = obx['OBX.3']['OBX.3.1'].toString();
-            var value = obx['OBX.5'].toString();
-            var unit = obx['OBX.6']['OBX.6.1'].toString();
-
-            obxItems.push({
-            	 segmento: "OBX",
-                codigo: testCode,
-                valor: value,
-                unidad: unit
-            });
-
-            obxIndex++;
-        }
-    }
-
-    results.push({
-    	   peticionModulab1: peticionModulab,
-    	   numeroRequisicionPedido1: numeroRequisicionPedido,
-    	   fechaNacimiento: fechaNacimiento,
-    	   fechaPeticion:fechaPeticion,
-    	   idPrincipalActual: idPrincipalActual,
-    	   codigo: id,
-        perfil: profileName,
-        fechaNacimiento: fechaNacimiento,
-        obx: obxItems
-    });
-}
-
-// Si quieres imprimirlo en logger:
-for each (var r in results) {
-	logger.info("encabezado -> numero Requisicion Pedido" + r.numeroRequisicionPedido1);
-     
-    for each (var o in r.obx) {
-        logger.info(" Procedimientos -> Segmento:"+ o.segmento + "Código: " + o.codigo + ", Valor: " + o.valor + ", Unidad: " + o.unidad);
-       
-    }
-}
+logger.info("Procedimiento: " + r.perfil);
