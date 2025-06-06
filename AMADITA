@@ -1,34 +1,38 @@
-function formatDateHL7toDDMMYYYY(hl7Date) {
-    if (!hl7Date || hl7Date.length < 8) return "";
-    return hl7Date.substring(6, 8) + "-" + hl7Date.substring(4, 6) + "-" + hl7Date.substring(0, 4);
-}
-
-var results = $('resultsArray'); // lista de órdenes
-var finalJson = {
-    PeticionModulab: results[0].peticionModulab1,
-    NumeroRequisicionPedido: results[0].numeroRequisicionPedido1,
-    FechaPeticion: formatDateHL7toDDMMYYYY(results[0].fechaPeticion),
-    IDPrincipalActual: results[0].idPrincipalActual,
-    FechaNacimiento: formatDateHL7toDDMMYYYY(results[0].fechaNacimiento),
-    EstadoOrden: "Con Resultado",
-    Procedimientos: [],
-    HL7: msg.toString()
-};
-
-var linea = 1;
+var results = $('resultsArray');
+var finalJson = JSON.parse(channelMap.get('resultsJson'));
 
 for each (var r in results) {
-    var obxList = r.obx;
+  //lista todos los obx de este procedimiento 
+  var obxList = r.obx;
+  var contObx=1;
+  //revisa la primera ves en este procedimiento, si es 0 no es perfil y debe revisar
+  var revisaPerfil=0;
 
-    if (obxList && obxList.length > 1 && obxList[0].segmento === "OBR") {
-        var codigoPerfil = r.codigo.trim();
-        var codigoPrimerOBX = obxList.length > 1 ? obxList[1].codigo.trim() : "";
+  //este bucle va a revisar en la lsita de obx
+  for each (var o in r.obx) {
+    if(revisaPerfil==0){
+    	//del procedimiento asigna el codigo de perfil o prueba
+    	 var codigoPerfil = r.codigo.trim();
+    	 //en el procedimiento a revisar, revisa en el segundo obx, lo asigna
+	 var codigoPrimerOBX = obxList.length > 1 ? obxList[1].codigo.trim() : ""; 
+	 logger.info('codigoPerfil: ' + codigoPerfil + ' codigoPrimerOBX: ' + codigoPrimerOBX);
+	//si es true y son diferentes esto quiere decir que es un perfil
+      esPerfil = codigoPerfil !== codigoPrimerOBX;
+    
+      logger.info('esPerfil: ' +esPerfil);
+      	//esto para que ya no revise de nuevo si es perfil, en este procedimiento 
+      	if(esPerfil == true ){
+      		logger.info('es un perfil entro');
+      		revisaPerfil=1;
+      	}
+    	}else{//va con el siguiente procedimiento
+    		//break
+    		}
 
-        var esPerfil = codigoPerfil !== codigoPrimerOBX;
+    	if(esPerfil){
 
-        if (esPerfil) {
             var perfil = {
-                Linea: linea.toString(),
+                Linea: '0',
                 Perfil: codigoPerfil,
                 IDProcedimiento: codigoPerfil,
                 Procedimiento: r.perfil,
@@ -39,6 +43,7 @@ for each (var r in results) {
             for (var i = 1; i < obxList.length; i++) {
                 var obx = obxList[i];
                 if (obx.segmento === "OBX") {
+                	logger.info('entro obx')
                     perfil.Pruebas.push({
                         Prueba: obx.codigo.trim(),
                         IDProcedimiento: obx.codigo.trim(),
@@ -48,33 +53,19 @@ for each (var r in results) {
                 }
             }
 
+            break
+
             if (perfil.Pruebas.length > 0) {
-                finalJson.Procedimientos.push(perfil);
-                linea++;
+                //finalJson.Procedimientos.push(perfil);
+                //linea++;
             }
 
-        } else {
-            // Prueba individual, no perfil
-            var prueba = {
-                Linea: linea.toString(),
-                Perfil: codigoPerfil,
-                IDProcedimiento: codigoPerfil,
-                Procedimiento: r.perfil,
-                Estatus: "Validado",
-                Pruebas: [
-                    {
-                        Prueba: codigoPerfil,
-                        IDProcedimiento: codigoPerfil,
-                        Procedimiento: r.perfil,
-                        Estatus: "Validado"
-                    }
-                ]
-            };
-
-            finalJson.Procedimientos.push(prueba);
-            linea++;
-        }
+    		
+    	}
+    contObx = contObx+1;
+        
     }
 }
 
-channelMap.put('resultsJson', JSON.stringify(finalJson, null, 2));
+//no se esta agregando al json global
+channelMap.put('resultsJson', JSON.stringify(finalJson));
