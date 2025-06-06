@@ -1,1 +1,80 @@
-[2025-06-06 13:10:00.563]  INFO  (transformer:138): codigo="QC7P" estadoOrden="" fechaNacimiento="19820413130000-0400" fechaPeticion="20250523102611-0400" idPrincipalActual="DNI67890" numeroRequisicionPedido1="Mayo23" obx="[{segmento=OBR, codigo=QC7P, valor=, unidad=}, {segmento=OBX, codigo=QC88, valor=<OBX.5><OBX.5.1>25</OBX.5.1></OBX.5>, unidad=mg/24h}]" perfil="Fósforo en Orina 24 Horas" peticionModulab1="01000533"
+function formatDateHL7toDDMMYYYY(hl7Date) {
+    if (!hl7Date || hl7Date.length < 8) return "";
+    return hl7Date.substring(6, 8) + "-" + hl7Date.substring(4, 6) + "-" + hl7Date.substring(0, 4);
+}
+
+var results = $('resultsArray'); // lista de órdenes
+var finalJson = {
+    PeticionModulab: results[0].peticionModulab1,
+    NumeroRequisicionPedido: results[0].numeroRequisicionPedido1,
+    FechaPeticion: formatDateHL7toDDMMYYYY(results[0].fechaPeticion),
+    IDPrincipalActual: results[0].idPrincipalActual,
+    FechaNacimiento: formatDateHL7toDDMMYYYY(results[0].fechaNacimiento),
+    EstadoOrden: "Con Resultado",
+    Procedimientos: [],
+    HL7: msg.toString()
+};
+
+var linea = 1;
+
+for each (var r in results) {
+    var obxList = r.obx;
+
+    if (obxList && obxList.length > 1 && obxList[0].segmento === "OBR") {
+        var codigoPerfil = r.codigo.trim();
+        var codigoPrimerOBX = obxList.length > 1 ? obxList[1].codigo.trim() : "";
+
+        var esPerfil = codigoPerfil !== codigoPrimerOBX;
+
+        if (esPerfil) {
+            var perfil = {
+                Linea: linea.toString(),
+                Perfil: codigoPerfil,
+                IDProcedimiento: codigoPerfil,
+                Procedimiento: r.perfil,
+                Estatus: "Validado",
+                Pruebas: []
+            };
+
+            for (var i = 1; i < obxList.length; i++) {
+                var obx = obxList[i];
+                if (obx.segmento === "OBX") {
+                    perfil.Pruebas.push({
+                        Prueba: obx.codigo.trim(),
+                        IDProcedimiento: obx.codigo.trim(),
+                        Procedimiento: obx.procedimiento || obx.codigo.trim(),
+                        Estatus: "Validado"
+                    });
+                }
+            }
+
+            if (perfil.Pruebas.length > 0) {
+                finalJson.Procedimientos.push(perfil);
+                linea++;
+            }
+
+        } else {
+            // Prueba individual, no perfil
+            var prueba = {
+                Linea: linea.toString(),
+                Perfil: codigoPerfil,
+                IDProcedimiento: codigoPerfil,
+                Procedimiento: r.perfil,
+                Estatus: "Validado",
+                Pruebas: [
+                    {
+                        Prueba: codigoPerfil,
+                        IDProcedimiento: codigoPerfil,
+                        Procedimiento: r.perfil,
+                        Estatus: "Validado"
+                    }
+                ]
+            };
+
+            finalJson.Procedimientos.push(prueba);
+            linea++;
+        }
+    }
+}
+
+channelMap.put('resultsJson', JSON.stringify(finalJson, null, 2));
