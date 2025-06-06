@@ -1,71 +1,37 @@
 var results = $('resultsArray');
 var finalJson = JSON.parse(channelMap.get('resultsJson'));
 
+
 for each (var r in results) {
-  //lista todos los obx de este procedimiento 
-  var obxList = r.obx;
+	//logger.info(r);
   var contObx=1;
-  //revisa la primera ves en este procedimiento, si es 0 no es perfil y debe revisar
-  var revisaPerfil=0;
-
-  //este bucle va a revisar en la lsita de obx
+  var revisaPrueba=0;
   for each (var o in r.obx) {
-    if(revisaPerfil==0){
-    	//del procedimiento asigna el codigo de perfil o prueba
-    	 var codigoPerfil = r.codigo.trim();
-    	 //en el procedimiento a revisar, revisa en el segundo obx, lo asigna
-	 var codigoPrimerOBX = obxList.length > 1 ? obxList[1].codigo.trim() : ""; 
-	 logger.info('codigoPerfil: ' + codigoPerfil + ' codigoPrimerOBX: ' + codigoPrimerOBX);
-	//si es true y son diferentes esto quiere decir que es un perfil
-      esPerfil = codigoPerfil !== codigoPrimerOBX;
-    
-      logger.info('esPerfil: ' +esPerfil);
-      	//esto para que ya no revise de nuevo si es perfil, en este procedimiento 
-      	if(esPerfil == true ){
-      		logger.info('es un perfil entro');
-      		revisaPerfil=1;
-      	}
-    	}else{//va con el siguiente procedimiento
-    		//break
-    		}
 
-    	if(esPerfil){
-
-            var perfil = {
-                Linea: '0',
-                Perfil: codigoPerfil,
-                IDProcedimiento: codigoPerfil,
-                Procedimiento: r.perfil,
-                Estatus: "Validado",
-                Pruebas: []
-            };
-
-            for (var i = 1; i < obxList.length; i++) {
-                var obx = obxList[i];
-                if (obx.segmento === "OBX") {
-                	logger.info('entro obx')
-                    perfil.Pruebas.push({
-                        Prueba: obx.codigo.trim(),
-                        IDProcedimiento: obx.codigo.trim(),
-                        Procedimiento: obx.procedimiento || obx.codigo.trim(),
-                        Estatus: "Validado"
-                    });
-                }
-            }
-
-            break
-
-            if (perfil.Pruebas.length > 0) {
-                //finalJson.Procedimientos.push(perfil);
-                //linea++;
-            }
-
-    		
+    //revisa el segundo porque aqui inician los obx, porque el primero es obr
+    if(contObx == 2){
+    	if(r.codigo == o.codigo && revisaPrueba==0){
+    		var esPruebaIndividual=1;
+    		//si ya entro una ves en este obr , ya no es necesario que revise
+    		revisaPrueba=1;
     	}
+    	//logger.info(r.codigo +"--"+ o.codigo )
+     //Pruebas individuales
+    }
+
+	if(esPruebaIndividual==1){
+		
+	   finalJson.procedimientos.push({
+	   	  linea: 0,
+            Prueba: o.codigo,
+            IDProcedimiento: o.codigo,
+            Procedimiento: r.perfil, // nombre de la prueba del OBR
+            Estatus: "Validado"
+       });
+	}
     contObx = contObx+1;
         
     }
 }
 
-//no se esta agregando al json global
 channelMap.put('resultsJson', JSON.stringify(finalJson));
