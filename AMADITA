@@ -1,22 +1,23 @@
-pruebas de química validadas
+var idPrincipalActual = "";
 
-MSH|^~\&|Modulab|Modulab|Portal|Portal|20250523102040-0400||ORU^R01^ORU_R01|LAB31748010040134|P|2.5|||||RD||ES
-PID|1||NHC12345^^^^PI~DNI67890^^^^PPN||PRUEBA^PRUEBA||19820413130000-0400|M|||||^PRN^Internet^jechazabal@promed-sa.com|||||||||||||||||N
-PV1|1|EM||||||||||||||N
-ORC|SC||01000533^MODULAB|Mayo23^659&MODULAB|CM||||20250523102021-0400|||NO^NO CODIFICADO|||20250523100915-0400||||||Personal^^^^^^FI^^^PER
-OBR|1|Mayo23|01000533^MODULAB|QC68^Cloro^MODULAB||||||L001||||||NO^NO CODIFICADO||||1||||LAB|F|||PR||||jechaz^20250523102021-0400
-OBX|1|NM|QC68^Cloro^MODULAB||100.0|mEq/L|98.0 - 107.0|N|||F|||20250523102021||jechaz|||20250523102021
-SPM|1|1001000533||3^Suero|||^^MODULAB|^^MODULAB||||||||||20250523101718||Y||||||1
-ORC|SC||01000533^MODULAB|Mayo23^659&MODULAB|CM||||20250523102021-0400|||NO^NO CODIFICADO|||20250523100915-0400||||||Personal^^^^^^FI^^^PER
-OBR|2|Mayo23|01000533^MODULAB|QC72^CO2 (Dióxido de Carbono)^MODULAB||||||L001||||||NO^NO CODIFICADO||||1||||LAB|F|||PR||||jechaz^20250523102021-0400
-OBX|1|NM|QC72^CO2 (Dióxido de Carbono)^MODULAB||50.00|mEq/L|21.0 - 31.0|H|||F|||20250523102021||jechaz|||20250523102021
-SPM|1|1001000533||3^Suero|||^^MODULAB|^^MODULAB||||||||||20250523101718||Y||||||1
-ORC|SC||01000533^MODULAB|Mayo23^659&MODULAB|CM||||20250523102021-0400|||NO^NO CODIFICADO|||20250523100915-0400||||||Personal^^^^^^FI^^^PER
-OBR|3|Mayo23|01000533^MODULAB|QC65^Potasio en Suero^MODULAB||||||L001||||||NO^NO CODIFICADO||||1||||LAB|F|||PR||||jechaz^20250523102021-0400
-OBX|1|NM|QC65^Potasio en Suero^MODULAB||10.0|mEq/L|3.5 - 5.1|H|||F|||20250523102021||jechaz|||20250523102021
-SPM|1|1001000533||3^Suero|||^^MODULAB|^^MODULAB||||||||||20250523101718||Y||||||1
-ORC|SC||01000533^MODULAB|Mayo23^659&MODULAB|CM||||20250523102021-0400|||NO^NO CODIFICADO|||20250523100915-0400||||||Personal^^^^^^FI^^^PER
-OBR|4|Mayo23|01000533^MODULAB|QC62^Sodio en Suero^MODULAB||||||L001||||||NO^NO CODIFICADO||||1||||LAB|F|||PR||||jechaz^20250523102021-0400
-OBX|1|NM|QC62^Sodio en Suero^MODULAB||140.0|mEq/L|136.0 - 145.0|N|||F|||20250523102021||jechaz|||20250523102021
-SPM|1|1001000533||3^Suero|||^^MODULAB|^^MODULAB||||||||||20250523101718||Y||||||1
+var pid3List = msg['PID']['PID.3'];
+for (var i = 0; i < pid3List.length(); i++) {
+    var valor = pid3List[i]['PID.3.1'].toString();
+    
+    if (valor && valor.trim().length > 0) {
+        idPrincipalActual = valor;
+        break;
+    }
+}
 
+
+
+for (var i = 0; i < pid3List.length(); i++) {
+    var valor = pid3List[i]['PID.3.1'].toString();
+    var tipo = pid3List[i]['PID.3.5'].toString(); // Tipo de identificador (PI, PPN, etc.)
+
+    if (valor && valor.trim().length > 0 && tipo === 'PI') {
+        idPrincipalActual = valor;
+        break;
+    }
+}
