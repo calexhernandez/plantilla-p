@@ -1,1 +1,14 @@
-19820413120000-0400
+// Fecha original en formato 'yyyyMMddHHmmssZ'
+var inputDateStr = '19820413120000-0400';
+
+// Crear un objeto SimpleDateFormat para interpretar la fecha original
+var sdfInput = java.text.SimpleDateFormat("yyyyMMddHHmmssZ");
+var date = sdfInput.parse(inputDateStr);
+
+// Crear otro SimpleDateFormat para formatear como 'dd/MM/yyyy'
+var sdfOutput = java.text.SimpleDateFormat("dd/MM/yyyy");
+var formattedDate = sdfOutput.format(date);
+
+logger.info("Fecha formateada: " + formattedDate);
+
+// Resultado: 13/04/1982
