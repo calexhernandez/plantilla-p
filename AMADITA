@@ -1,14 +1,16 @@
-// Fecha original en formato 'yyyyMMddHHmmssZ'
+// Fecha original con zona horaria
 var inputDateStr = '19820413120000-0400';
 
-// Crear un objeto SimpleDateFormat para interpretar la fecha original
+// Analiza el string como fecha
 var sdfInput = java.text.SimpleDateFormat("yyyyMMddHHmmssZ");
 var date = sdfInput.parse(inputDateStr);
 
-// Crear otro SimpleDateFormat para formatear como 'dd/MM/yyyy'
+// Formatea la fecha como "dd/MM/yyyy"
 var sdfOutput = java.text.SimpleDateFormat("dd/MM/yyyy");
 var formattedDate = sdfOutput.format(date);
 
-logger.info("Fecha formateada: " + formattedDate);
+// Opcional: mostrar en logs
+logger.info("Fecha convertida: " + formattedDate);
 
-// Resultado: 13/04/1982
+// Puedes devolver el valor o asignarlo a una variable para usarlo en el mensaje
+return formattedDate;
