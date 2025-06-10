@@ -1,1 +1,10 @@
- var numeroRequisicionPedido = obr['OBR.2']['OBR.2.1'].toString();
+var numeroRequisicionPedido = "";
+
+var valorObr = obr['OBR.2']['OBR.2.1'].toString();
+var valorOrc = msg['ORC']['ORC.4']['ORC.4.1'].toString(); // o usa obr['ORC.4'] si estás recorriendo OBR y ORC juntos
+
+if (valorObr && valorObr.trim().length() > 0) {
+    numeroRequisicionPedido = valorObr;
+} else if (valorOrc && valorOrc.trim().length() > 0) {
+    numeroRequisicionPedido = valorOrc;
+}
