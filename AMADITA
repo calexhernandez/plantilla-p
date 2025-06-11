@@ -1,29 +1,352 @@
-Transformer error
-ERROR MESSAGE: Error evaluating transformer
-com.mirth.connect.server.MirthJavascriptTransformerException: 
-CHANNEL:	procesa_hl7_to_json
-CONNECTOR:	Destination 1
-SCRIPT SOURCE:	TRANSFORMER
-SOURCE CODE:	
-392: 
-393: 
-394: 
-395: //logger.info("Fecha formateada: " + fechaPeticion);
-396: 
-397: var hl7Plano = SerializerFactory.getHL7Serializer(false).fromXML(msg);
-398: 
-399: var finalJson = {
-400:     PeticionModulab: results[0].peticionModulab1,
-401:     NumeroRequisicionPedido: results[0].numeroRequisicionPedido1,
-LINE NUMBER:	397
-DETAILS:	Can't find method com.mirth.connect.server.userutil.SerializerFactory.getHL7Serializer(boolean).
-	at 0bddb74a-a834-4c62-9451-66281bbfdc2d_JavaScript_Filter_Transformer_1:397 (doTransform)
-	at 0bddb74a-a834-4c62-9451-66281bbfdc2d_JavaScript_Filter_Transformer_1:565 (doScript)
-	at 0bddb74a-a834-4c62-9451-66281bbfdc2d_JavaScript_Filter_Transformer_1:567
-	at com.mirth.connect.server.transformers.JavaScriptFilterTransformer$FilterTransformerTask.doCall(JavaScriptFilterTransformer.java:235)
-	at com.mirth.connect.server.transformers.JavaScriptFilterTransformer$FilterTransformerTask.doCall(JavaScriptFilterTransformer.java:187)
-	at com.mirth.connect.server.util.javascript.JavaScriptTask.call(JavaScriptTask.java:114)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-	at java.base/java.lang.Thread.run(Thread.java:829)
+//arreglar el HL7 que no se ve
+//revisar porque HL7 aparece abajo en algunos mensajes
+//agregar filtros, para recibir solo del HIS
+//arreglar un error cuando no viene la fecha de nacimiento en el paciente
+
+//paso a la variable xml el mensaje
+var xml = msg;
+
+//asigno a obrlist todos los OBR del mensaje
+var orcList = xml..ORC;
+var obrList = xml..OBR;
+var obxList = xml..OBX;
+
+//aqui se guardaran los resultados
+var results = [];
+
+
+//****************************************************************************
+
+	var idPrincipalActual = "";
+	
+	if(msg['PID']['PID.3'] != null && msg['PID']['PID.3'] != ''){
+		
+		//logger.info("PID prueba no nulo" );
+		var pid3List = msg['PID']['PID.3'];
+		
+		for (var i = 0; i < pid3List.length(); i++) {
+			logger.info(i);
+	    		var valor = pid3List[i]['PID.3.1'].toString();
+	    		var tipo = pid3List[i]['PID.3.5'].toString(); // Tipo de identificador (PI, PPN, etc.)
+	
+	    		if (valor && valor.trim().length > 0 && tipo === 'PPN') {
+	        		idPrincipalActual = valor;
+	       		 break;
+	    		}
+	     } 
+	}
+	
+	  
+    
+    	
+
+    //var idPrincipalActual =  msg['PID']['PID.3'][1]['PID.3.1'].toString();
+    var fechaNacimiento = msg['PID']['PID.7']['PID.7.1'].toString();
+    var fechaPeticion = msg['MSH']['MSH.7']['MSH.7.1'].toString();
+    //*********************************************************************************
+
+//*******************estado de la orden*********************
+if(obxList.length()>1){
+ 
+ estadoOrden="CR";
+
+ 
+}else{
+  var estadoHl7 = msg['ORC'][0]['ORC.1']['ORC.1.1'].toString();
+  estadoOrden="NR";
+  if(estadoHl7 == "CA"){estadoOrden="CA";}
+  
+}
+//***********************************************************
+
+//****************numero de HIS ***********
+//por ejemplo cuan do es cancelacion este numero viene en el ORC 4.1 , por eso se verifica
+var numeroRequisicionPedido = "";
+
+var valorObr =msg['OBR'][0]['OBR.2']['OBR.2.1'].toString();
+var valorOrc = msg['ORC'][0]['ORC.4']['ORC.4.1'].toString(); // o usa obr['ORC.4'] si estás recorriendo OBR y ORC juntos
+
+//logger.info("obr valor" + valorObr);
+if (valorObr) {
+//	logger.info("entro obr");
+	//valorObr.trim().length() > 0
+    numeroRequisicionPedido = valorObr;
+} else if (valorOrc) {
+//	logger.info("entro ORC");
+    numeroRequisicionPedido = valorOrc;
+}
+//*****************************
+
+
+
+
+var obxIndex = 0;
+
+//empiezo a recorrer los rrequerimientos
+for (var i = 0; i < obrList.length(); i++) {
+    var orc = orcList[i];
+    var obr = obrList[i];
+
+    //asigno las variables fijas del JSON **********************************************
+    var peticionModulab = orc['ORC.3']['ORC.3.1'].toString();    
+    //var numeroRequisicionPedido = obr['OBR.2']['OBR.2.1'].toString();
+    //logger.info("Requi: " +numeroRequisicionPedido);
+    var id = obr['OBR.4']['OBR.4.1'].toString(); // Ajusta si es otro campo
+    var profileName = obr['OBR.4']['OBR.4.2'].toString(); // Ajusta si es otro campo
+
+
+    
+    var obxItems = [];
+
+	//primer segmento del procedimiento que es un OBR
+    obxItems.push({
+                	segmento: "OBR",
+                    codigo: id,
+                    valor: "",
+                    unidad: ""
+                });
+    
+    while (obxIndex < obxList.length()) {
+        var obx = obxList[obxIndex];
+        // Si no es el último OBR, verifica si este OBX está antes del siguiente OBR
+        if (i < obrList.length() - 1) {
+            if (obx.childIndex() < obrList[i + 1].childIndex()) {
+                // Extraemos datos del OBX
+                var testCode = obx['OBX.3']['OBX.3.1'].toString();
+                var value = obx['OBX.5'].toString();
+                var unit = obx['OBX.6']['OBX.6.1'].toString();
+
+                obxItems.push({
+                	segmento: "OBX",
+                    codigo: testCode,
+                    valor: value,
+                    unidad: unit
+                });
+
+                obxIndex++;
+            } else {
+                break;
+            }
+        } else {
+            // Último OBR: toma todos los OBX restantes
+            var testCode = obx['OBX.3']['OBX.3.1'].toString();
+            var value = obx['OBX.5'].toString();
+            var unit = obx['OBX.6']['OBX.6.1'].toString();
+
+            obxItems.push({
+            	 segmento: "OBX",
+                codigo: testCode,
+                valor: value,
+                unidad: unit
+            });
+
+            obxIndex++;
+        }
+    }
+
+    results.push({
+    	   peticionModulab1: peticionModulab,
+    	   numeroRequisicionPedido1: numeroRequisicionPedido,
+    	   fechaNacimiento: fechaNacimiento,
+    	   fechaPeticion:fechaPeticion,
+    	   idPrincipalActual: idPrincipalActual,
+    	   codigo: id,
+        perfil: profileName,
+        fechaNacimiento: fechaNacimiento,
+        estadoOrden:estadoOrden,
+        obx: obxItems
+    });
+
+    if(estadoOrden != "CR"){
+    	//si no tiene resultado, solo recorro el  primer registro para llenar json con lo que interesa
+    		break;
+    }
+}
+
+//paso el arreglo
+channelMap.put('resultsArray', results);
+channelMap.put('estadoOrdenR', estadoOrden);
+
+
+
+
+****************************************************************************
+
+
+var results = $('resultsArray');
+
+// Fecha original en formato 'yyyyMMddHHmmssZ'
+var fechaPeticion =fn_convertirFechaHl7ToNormal(results[0].fechaPeticion);
+var fechaNacimiento =fn_convertirFechaHl7ToNormal(results[0].fechaNacimiento);
+
+//logger.info("Fecha formateada: " + fechaPeticion);
+
+var hl7Plano = SerializerFactory.getSerializer('HL7V2').fromXML(msg);
+
+
+var finalJson = {
+    PeticionModulab: results[0].peticionModulab1,
+    NumeroRequisicionPedido: results[0].numeroRequisicionPedido1,
+    FechaPeticion: fechaPeticion,
+    IDPrincipalActual: results[0].idPrincipalActual,
+    FechaNacimiento: fechaNacimiento,
+    EstadoOrden: results[0].estadoOrden,
+    HL7: hl7Plano,
+    procedimientos: []
+    
+};
+
+// msg.toString()
+
+channelMap.put('resultsJson', JSON.stringify(finalJson));
+
+
+*******************************************************************************
+
+
+var results = $('resultsArray');
+var finalJson = JSON.parse(channelMap.get('resultsJson'));
+
+var estadoOrden =  $('estadoOrdenR');
+
+if(!finalJson.procedimientos){
+	finalJson.procedimientos=[];
+}
+
+var linea = 1;
+if(estadoOrden=="CR"){
+for each (var r in results) {
+	//logger.info(r);
+  var contObx=1;
+  var revisaPrueba=0;
+  var esPruebaIndividual=0;
+  
+  for each (var o in r.obx) {
+
+    //revisa el segundo porque aqui inician los obx, porque el primero es obr
+    if(contObx == 2 && revisaPrueba==0 ){
+    	if(r.codigo == o.codigo ){
+    		var esPruebaIndividual=1;
+    		//si ya entro una ves en este obr , ya no es necesario que revise
+    		
+    	}
+    	revisaPrueba=1;
+    	//logger.info(r.codigo +"--"+ o.codigo )
+     //Pruebas individuales
+    }
+
+	if(esPruebaIndividual==1){
+		
+	   finalJson.procedimientos.push({
+	   	  linea: linea,
+            Prueba: o.codigo,
+            IDProcedimiento: o.codigo,
+            Procedimiento: r.perfil, // nombre de la prueba del OBR
+            Estatus: "Validado"
+       });
+       linea = linea + 1;
+	}
+    contObx = contObx+1;
+        
+    }
+}
+}
+
+channelMap.put('resultsJson', JSON.stringify(finalJson));
+channelMap.put('linea',linea);
+
+****************************************************************************************
+
+
+var results = $('resultsArray');
+var finalJson = JSON.parse(channelMap.get('resultsJson'));
+if($('linea')){
+	var linea=$('linea');
+}else{
+	var linea = 1;
+}
+for each (var r in results) {
+  //lista todos los obx de este procedimiento 
+  var obxList = r.obx;
+  var contObx=1;
+  //revisa la primera ves en este procedimiento, si es 0 no es perfil y debe revisar
+  var revisaPerfil=0;
+
+  //este bucle va a revisar en la lsita de obx
+  for each (var o in r.obx) {
+    if(revisaPerfil==0){
+    	//del procedimiento asigna el codigo de perfil o prueba
+    	 var codigoPerfil = r.codigo.trim();
+    	 //en el procedimiento a revisar, revisa en el segundo obx, lo asigna
+	 var codigoPrimerOBX = obxList.length > 1 ? obxList[1].codigo.trim() : ""; 
+	 logger.info('codigoPerfil: ' + codigoPerfil + ' codigoPrimerOBX: ' + codigoPrimerOBX);
+	//si es true y son diferentes esto quiere decir que es un perfil
+      esPerfil = codigoPerfil !== codigoPrimerOBX;
+    
+      logger.info('esPerfil: ' +esPerfil);
+      	//esto para que ya no revise de nuevo si es perfil, en este procedimiento 
+      	if(esPerfil == true ){
+      		logger.info('es un perfil entro');
+      		revisaPerfil=1;
+      		
+      	}
+
+      	if(!esPerfil){
+      		//no es un perfil ir al siguiente resultado
+      		break;
+      	}
+    	}
+
+    	if(esPerfil){
+
+            var perfil = {
+                Linea: linea,
+                Perfil: codigoPerfil,
+                IDProcedimiento: codigoPerfil,
+                Procedimiento: r.perfil,
+                Estatus: "Validado",
+                Pruebas: []
+            };
+			
+            for (var i = 1; i < obxList.length; i++) {
+                var obx = obxList[i];
+                if (obx.segmento === "OBX") {
+                	logger.info('entro obx')
+                    perfil.Pruebas.push({
+                        Prueba: obx.codigo.trim(),
+                        IDProcedimiento: obx.codigo.trim(),
+                        Procedimiento: obx.procedimiento || obx.codigo.trim(),
+                        Estatus: "Validado"
+                    });
+                }
+            }
+
+            if (perfil.Pruebas.length > 0) {
+            	 if(!finalJson.Procedimientos){
+            	 	finalJson.Procedimientos = [];
+            	 }
+                finalJson.Procedimientos.push(perfil);
+                linea++;
+            }
+
+    		//salir del bucle
+    		break;
+    	}
+    contObx = contObx+1;
+        
+    }
+}
+
+//no se esta agregando al json global
+channelMap.put('resultsJson', JSON.stringify(finalJson));
+
+
+
+
+
+
+
+
+
+
+
