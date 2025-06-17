@@ -1,37 +1,12 @@
-//creo xml
-            if (typeof(tmp) == 'xml') {
-                if (typeof(tmp['ORC'][i]) == 'undefined') {
-                    createSegment('ORC', tmp, i);
-                }
-                if (typeof(tmp['OBR'][i]) == 'undefined') {
-                    createSegment('OBR', tmp, i);
-                }
-                if (typeof(tmp['TQ1'][i]) == 'undefined') {
-                    createSegment('TQ1', tmp, i);
-                }
-
-              
-            } else {
-                if (typeof(tmp) == 'undefined') {
-                    tmp = {};
-                }
-                if (typeof(tmp['ORC']) == 'undefined') {
-                    tmp['ORC'] = [];
-                }
-                if (typeof(tmp['OBR']) == 'undefined') {
-                    tmp['OBR'] = [];
-                }
-                if (typeof(tmp['ORC'][i]) == 'undefined') {
-                    tmp['ORC'][i] = {};
-                }
-                if (typeof(tmp['OBR'][i]) == 'undefined') {
-                    tmp['OBR'][i] = {};
-                }
-                if (typeof(tmp['TQ1'][i]) == 'undefined') {
-                    tmp['TQ1'][i] = {};
-                }
-            }
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 
 
-	
-	tmp['ORC'][i]['ORC.1']['ORC.1.1'] = "NW";
+.\venv\Scripts\activate
+
+
+$env:FLASK_APP="app.py"
+
+flask run --host=0.0.0.0 --port=9000
+
+
+
