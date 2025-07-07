@@ -3,3 +3,10 @@
 SOCKET_URL = 'http://socket-handle-tests-uat.amadita.com:30008'  # Cambia por el host real
 USERNAME = 'modulab.websocket'
 PASSWORD = 'tyuA*R$AcN@9'
+
+
+118
+# ⚙️ Configuración del WebSocket
+SOCKET_URL = 'http://socket-handle-tests.amaditaplayground.com:30008'  # Cambia por el host real
+USERNAME = 'employees.consultor'
+PASSWORD = 'gVh6#1TSyPt2'
