@@ -1,12 +1,21 @@
-137
-# ⚙️ Configuración del WebSocket
-SOCKET_URL = 'http://socket-handle-tests-uat.amadita.com:30008'  # Cambia por el host real
-USERNAME = 'modulab.websocket'
-PASSWORD = 'tyuA*R$AcN@9'
-
-
-118
-# ⚙️ Configuración del WebSocket
-SOCKET_URL = 'http://socket-handle-tests.amaditaplayground.com:30008'  # Cambia por el host real
-USERNAME = 'employees.consultor'
-PASSWORD = 'gVh6#1TSyPt2'
+module.exports = {
+  apps: [
+    {
+      name: "flask-app",
+      script: "powershell.exe",
+      args: "-ExecutionPolicy Bypass -File start.ps1",
+      interpreter: "none", // importante para scripts .ps1
+      cwd: "C:/ruta/a/tu/proyecto", // ruta de tu proyecto
+      env: {
+        FLASK_ENV: "production"
+      },
+      autorestart: true,
+      watch: false,
+      max_restarts: 5,
+      restart_delay: 1000,
+      error_file: "logs/err.log",
+      out_file: "logs/out.log",
+      log_date_format: "YYYY-MM-DD HH:mm Z"
+    }
+  ]
+};
