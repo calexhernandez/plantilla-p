@@ -1,12 +1,10 @@
-Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-
-
-.\venv\Scripts\activate
-
-
-$env:FLASK_APP="app.py"
-
-flask run --host=0.0.0.0 --port=9000
-
-
-
+module.exports = {
+  apps : [{
+    name: "mi-aplicacion-bat",
+    script: "cmd",
+    args: "/c C:\\PM2\\aplicacion\\mi_script.bat",
+    autorestart: false, // Opcional: PM2 no reiniciará el proceso si se cierra
+    watch: false,
+    windowsHide: false // Muestra ventana de consola si aplica
+  }]
+};
