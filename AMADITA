@@ -1,26 +1,51 @@
-script.engine.imports = com.mirth.connect.server.controllers.ChannelUtil
+import requests
+import urllib3
+import time
+from requests.auth import HTTPBasicAuth
+from datetime import datetime
+
+# Ignorar advertencias de certificados autofirmados
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
+# Configuración
+MIRTH_URL = "https://192.168.0.137:8443/api"
+USERNAME = "admin"
+PASSWORD = "admin"
+CHANNEL_ID = "220fb0a4-74ee-4c08-b497-470a55aa32ee"
+
+auth = HTTPBasicAuth(USERNAME, PASSWORD)
+headers = {
+    "X-Requested-With": "XMLHttpRequest",
+    "Accept": "application/json"
+}
+
+def reiniciar_canal():
+    try:
+        # Detener canal
+        stop_url = f"{MIRTH_URL}/channels/{CHANNEL_ID}/_stop"
+        stop_response = requests.post(stop_url, headers=headers, auth=auth, verify=False)
+        stop_response.raise_for_status()
+        print(f"🛑 Canal detenido a {datetime.now()} - Status: {stop_response.status_code}")
+
+        # Esperar 3 segundos antes de iniciar
+        time.sleep(5)
 
 
-var channelId = 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx';
-ChannelUtil.stop(channelId);
-java.lang.Thread.sleep(5000);
-ChannelUtil.start(channelId);
+        # Iniciar canal (descomenta si deseas reiniciarlo)
+        start_url = f"{MIRTH_URL}/channels/{CHANNEL_ID}/_start"
+        start_response = requests.post(start_url, headers=headers, auth=auth, verify=False)
+        start_response.raise_for_status()
+        print(f"▶️ Canal iniciado a {datetime.now()} - Status: {start_response.status_code}")
 
+    except requests.exceptions.HTTPError as errh:
+        print(f"❌ Error HTTP: {errh}")
+        if errh.response is not None:
+            print("Detalle de la respuesta:", errh.response.text)
+    except requests.exceptions.RequestException as e:
+        print(f"❌ Error en la solicitud: {e}")
 
-# Variables
-$MirthURL = "http://localhost:8080/api"
-$username = "admin"
-$password = "admin"
-$channelId = "12345678-1234-1234-1234-123456789abc"
-
-# Autenticación - Obtener Token
-$loginBody = @{ username = $username; password = $password } | ConvertTo-Json
-$response = Invoke-RestMethod -Uri "$MirthURL/users/_login" -Method Post -Body $loginBody -ContentType "application/json"
-
-# Extraer Token
-$token = $response.message
-
-# Iniciar canal
-Invoke-RestMethod -Uri "$MirthURL/channels/$channelId/_start" -Method Post -Headers @{ "Authorization" = "Mirth $token" }
-
-Write-Output "Canal iniciado a $(Get-Date)"
+# Bucle infinito cada 5 minutos
+while True:
+    reiniciar_canal()
+    print("⏳ Esperando 5 minutos para la próxima ejecución...\n")
+    time.sleep(60)  # Espera 300 segundos = 5 minutos
