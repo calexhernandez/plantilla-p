@@ -1,1 +1,7 @@
 script.engine.imports = com.mirth.connect.server.controllers.ChannelUtil
+
+
+var channelId = 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx';
+ChannelUtil.stop(channelId);
+java.lang.Thread.sleep(5000);
+ChannelUtil.start(channelId);
