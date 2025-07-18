@@ -1,10 +1,1 @@
-module.exports = {
-  apps : [{
-    name: "mi-aplicacion-bat",
-    script: "cmd",
-    args: "/c C:\\PM2\\aplicacion\\mi_script.bat",
-    autorestart: false, // Opcional: PM2 no reiniciará el proceso si se cierra
-    watch: false,
-    windowsHide: false // Muestra ventana de consola si aplica
-  }]
-};
+script.engine.imports = com.mirth.connect.server.controllers.ChannelUtil
