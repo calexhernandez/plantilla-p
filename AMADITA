@@ -41,6 +41,11 @@ powershell.exe -ExecutionPolicy Bypass -Command "pm2 resurrect"
 
 
 
+@echo off
+set EXE="C:\Program Files (x86)\Modulab\MultiOnlineCommandLine.exe"
+%EXE% -multionline HL7 -server http://localhost/ -username HL7 -password Promed01. -verbose yes -debug lowlevel,highlevel -startwebserver yes
+
+
 
 
 
