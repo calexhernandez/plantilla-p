@@ -37,4 +37,10 @@ flask run --host=0.0.0.0 --port=9000
 powershell.exe -ExecutionPolicy Bypass -Command "pm2 resurrect"
 
 
+"C:\Program Files (x86)\Modulab\MultiOnlineCommandLine.exe" -multionline HL7 -server http://localhost/ -username HL7 -password Promed01. -verbose yes -debug lowlevel,highlevel -startwebserver yes
+
+
+
+
+
 
