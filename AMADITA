@@ -1,1 +1,150 @@
-[2025-07-31 15:59:52.972]  INFO  (transformer:138): <HL7Message><MSH><MSH.1>|</MSH.1><MSH.2>^~\&amp;</MSH.2><MSH.3><MSH.3.1>Modulab</MSH.3.1></MSH.3><MSH.4><MSH.4.1>Amadita</MSH.4.1></MSH.4><MSH.5><MSH.5.1>Medicalcore</MSH.5.1></MSH.5><MSH.6><MSH.6.1>2434</MSH.6.1></MSH.6><MSH.7/><MSH.8/><MSH.9><MSH.9.1>ORU</MSH.9.1><MSH.9.2>R01</MSH.9.2><MSH.9.3>ORU_R01</MSH.9.3></MSH.9><MSH.10/><MSH.11><MSH.11.1>P</MSH.11.1></MSH.11><MSH.12><MSH.12.1>2.5</MSH.12.1></MSH.12><MSH.13/><MSH.14/><MSH.15/><MSH.16/><MSH.17><MSH.17.1>RD</MSH.17.1></MSH.17><MSH.18/><MSH.19><MSH.19.1>ES</MSH.19.1></MSH.19></MSH><PID><PID.1><PID.1.1>1</PID.1.1></PID.1><PID.2><PID.2.1>828a8c1c-fcaf-4ac2-b745-be0612aebf3b</PID.2.1></PID.2><PID.3><PID.3.1/><PID.3.2/><PID.3.3/><PID.3.4/><PID.3.5>PI</PID.3.5></PID.3><PID.3><PID.3.1/><PID.3.2/><PID.3.3/><PID.3.4/><PID.3.5>PPN</PID.3.5></PID.3><PID.4/><PID.5><PID.5.1>BUENO </PID.5.1><PID.5.2>ROSA MARIA </PID.5.2></PID.5><PID.6/><PID.7><PID.7.1>19521110120000-0400</PID.7.1></PID.7><PID.8><PID.8.1>F</PID.8.1></PID.8><PID.9/><PID.10/><PID.11><PID.11.12/></PID.11><PID.12/><PID.13><PID.13.1>8095858895 </PID.13.1></PID.13><PID.14/><PID.15/><PID.16/><PID.17/><PID.18/><PID.19/><PID.20/><PID.21/><PID.22/><PID.23/><PID.24/><PID.25/><PID.26/><PID.27/><PID.28/><PID.29/><PID.30/></PID><ORC><ORC.1><ORC.1.1>RE</ORC.1.1></ORC.1><ORC.2><ORC.2.1>1752973</ORC.2.1></ORC.2><ORC.3/><ORC.4/><ORC.5><ORC.5.1>CM</ORC.5.1></ORC.5><ORC.6/><ORC.7/><ORC.8/><ORC.9/><ORC.10/><ORC.11/><ORC.12><ORC.12.1>0000000000</ORC.12.1><ORC.12.2/><ORC.12.3>TOMA DE MUESTRA 1</ORC.12.3></ORC.12></ORC><OBR><OBR.1/><OBR.2><OBR.2.1>1752973</OBR.2.1></OBR.2><OBR.3/><OBR.4><OBR.4.1/><OBR.4.2/><OBR.4.3/><OBR.4.4/><OBR.4.5/></OBR.4><OBR.5/><OBR.6/><OBR.7><OBR.7.1>20250730150011-0400</OBR.7.1></OBR.7><OBR.8/><OBR.9/><OBR.10/><OBR.11/><OBR.12/><OBR.13/><OBR.14/><OBR.15/><OBR.16><OBR.16.1>0000000000</OBR.16.1><OBR.16.2/><OBR.16.3>TOMA DE MUESTRA 1</OBR.16.3></OBR.16><OBR.17/><OBR.18/><OBR.19/><OBR.20/><OBR.21><OBR.21.1/><OBR.21.2>AMADITA LABORATORIO CLINICO</OBR.21.2><OBR.21.3>ABELARDO RODRIGUEZ URDANETA NO 102 GAZCUE</OBR.21.3><OBR.21.4>STO. DGO.</OBR.21.4><OBR.21.5>RD</OBR.21.5><OBR.21.6>10205</OBR.21.6><OBR.21.7>Dra. Patricia González -Exequatur:5709</OBR.21.7><OBR.21.8>99996</OBR.21.8></OBR.21><OBR.22/><OBR.23/><OBR.24/><OBR.25><OBR.25.1>F</OBR.25.1></OBR.25><OBR.26/><OBR.27><OBR.27.1>1</OBR.27.1></OBR.27><OBR.28/></OBR><OBX><OBX.1><OBX.1.1>1</OBX.1.1></OBX.1><OBX.2/><OBX.3><OBX.3.1/><OBX.3.2/><OBX.3.3/><OBX.3.4>3465</OBX.3.4><OBX.3.5>Colesterol total</OBX.3.5></OBX.3><OBX.4/><OBX.5><OBX.5.1>159.0</OBX.5.1></OBX.5><OBX.6><OBX.6.1>mg/dL</OBX.6.1></OBX.6><OBX.7><OBX.7.1>0.0 - 200.0</OBX.7.1></OBX.7><OBX.8><OBX.8.1>N</OBX.8.1></OBX.8><OBX.9/><OBX.10/><OBX.11><OBX.11.1>F</OBX.11.1></OBX.11><OBX.12/><OBX.13/><OBX.14><OBX.14.1>20250730150011</OBX.14.1></OBX.14><OBX.15/><OBX.16><OBX.16.1>MO29</OBX.16.1></OBX.16><OBX.17/><OBX.18/><OBX.19><OBX.19.1>20250730150010</OBX.19.1></OBX.19></OBX></HL7Message>
+var xml = msg;
+var orcList = xml..ORC;
+var obxList = xml..OBX;
+var obrList = xml..OBR;
+
+var obxIndex = 0; //para recorrer OBX global
+var obxI = 0; //para crear los OBX de TMP
+
+for(var i = 0; i < orcList.length(); i++ ){
+	orc = orcList[i];
+	obr = obrList[i];
+
+//creo xml / voy con la variable que va a recibir 
+            if (typeof(tmp) == 'xml') {
+                if (typeof(tmp['ORC'][i]) == 'undefined') {
+                    createSegment('ORC', tmp, i);
+                }
+                if (typeof(tmp['OBR'][i]) == 'undefined') {
+                    createSegment('OBR', tmp, i);
+                }
+                                       
+              
+            } else {
+                if (typeof(tmp) == 'undefined') {
+                    tmp = {};
+                }
+                if (typeof(tmp['ORC']) == 'undefined') {
+                    tmp['ORC'] = [];
+                }
+                if (typeof(tmp['OBR']) == 'undefined') {
+                    tmp['OBR'] = [];
+                }
+                if (typeof(tmp['ORC'][i]) == 'undefined') {
+                    tmp['ORC'][i] = {};
+                }
+                if (typeof(tmp['OBR'][i]) == 'undefined') {
+                    tmp['OBR'][i] = {};
+                }
+                
+                 
+            }
+		//ORC
+            tmp['ORC'][i]['ORC.1']['ORC.1.1'] = 'RE';
+            tmp['ORC'][i]['ORC.2']['ORC.2.1'] = orc['ORC.4']['ORC.4.1'].toString();
+            tmp['ORC'][i]['ORC.5']['ORC.5.1'] = 'CM'
+
+		//OBR
+		  tmp['OBR'][i]['OBR.2']['OBR.2.1'] = orc['ORC.4']['ORC.4.1'].toString();
+
+		  tmp['OBR'][i]['OBR.4']['OBR.4.1'] = orc['OBR.4']['OBR.4.1'].toString();
+		  tmp['OBR'][i]['OBR.4']['OBR.4.2'] = orc['OBR.4']['OBR.4.2'].toString();
+		  
+
+		  tmp['OBR'][i]['OBR.7']['OBR.7.1'] = orc['ORC.9']['ORC.9.1'].toString()
+
+		//vqmos con los obxs  
+            while(obxIndex < obxList.length()){
+            	var obx = obxList[obxIndex];
+			var testCode = obx['OBX.3']['OBX.3.1'].toString()
+
+	          if (i < orcList.length() - 1) {
+	            if (obx.childIndex() >= orcList[i + 1].childIndex()) {
+	                //logger.info('Fin de OBX para ORC #' + i);
+	                break; // Salir del while, los OBX siguientes ya son del próximo ORC
+	            }
+	        	}
+			//creo xml
+	            if (typeof(tmp) == 'xml') {                
+	                if (typeof(tmp['OBX'][obxI]) == 'undefined') {
+	                    createSegment('OBX', tmp, obxI);
+	                    //obxI++;
+	                    
+	                }                         
+	            } else {               
+	                if (typeof(tmp['OBX'][obxI]) == 'undefined') {
+	                    tmp['OBX'][obxI] = {};
+	                    //obxI++;
+	                   	               
+	                }                  
+	            }
+
+	            //++++++++++++++++++ OBX +++++++++++++++++++++++++++++++
+
+	            tmp['OBX'][obxI]['OBX.3']['OBX.3.4'] = obx['OBX.3']['OBX.3.1'].toString();
+	            tmp['OBX'][obxI]['OBX.3']['OBX.3.5'] = obx['OBX.3']['OBX.3.2'].toString();
+			  tmp['OBX'][obxI]['OBX.5']['OBX.5.1'] = obx['OBX.5']['OBX.5.1'].toString();
+			  tmp['OBX'][obxI]['OBX.6']['OBX.6.1'] = obx['OBX.6']['OBX.6.1'].toString();
+			  tmp['OBX'][obxI]['OBX.7']['OBX.7.1'] = obx['OBX.7']['OBX.7.1'].toString();
+			  tmp['OBX'][obxI]['OBX.8']['OBX.8.1'] = obx['OBX.8']['OBX.8.1'].toString();
+			  tmp['OBX'][obxI]['OBX.11']['OBX.11.1'] = obx['OBX.11']['OBX.11.1'].toString();
+			  tmp['OBX'][obxI]['OBX.14']['OBX.14.1'] = obx['OBX.14']['OBX.14.1'].toString();
+			  tmp['OBX'][obxI]['OBX.16']['OBX.16.1'] = obx['OBX.16']['OBX.16.1'].toString();
+			  tmp['OBX'][obxI]['OBX.19']['OBX.19.1'] = obx['OBX.19']['OBX.19.1'].toString();
+			
+
+	            //++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+		        // ++++++++++++++ NTEs asociados ++++++++++++++
+		        
+				var currentIndex = obxList[obxIndex].childIndex();
+				logger.info('currentIndex' +currentIndex);
+				
+				var siblings = xml.children();
+				logger.info('siblings' + siblings);
+				
+				for (var j = currentIndex + 1; j < siblings.length(); j++) {
+				    var next = siblings[j];
+				    logger.info("next:" + next);
+				   
+				    
+				    // Si es un NTE, lo agregamos
+				    if (next.name().toString() == 'NTE') {
+				    	
+						logger.info(tmp.toString());
+				    	
+						if (typeof tmp['OBX'] === 'undefined') {
+						    logger.info("tmp['OBX'] NO existe");
+						} else if (typeof tmp['OBX'][obxI] === 'undefined') {
+						    logger.info("tmp['OBX'][" + obxI + "] NO existe");
+						} else if (typeof tmp['OBX'][obxI]['NTE'] === 'undefined') {
+						    logger.info("✅ tmp['OBX'][" + obxI + "]['NTE'] está indefinido, lo creamos");
+						    tmp['OBX'][obxI]['NTE'] = [];
+						}
+				
+				        var n = tmp['OBX'][obxI]['NTE'].length;
+				        logger.info(n);
+				        //tmp['OBX'][obxI]['NTE'][n] = {};
+				        //tmp['OBX'][obxI]['NTE'][n]['NTE.3'] = {};
+				        //tmp['OBX'][obxI]['NTE'][n]['NTE.3']['NTE.3.1'] = next['NTE.3']['NTE.3.1'].toString();
+				    logger.info("NTE agregado")
+				    break;
+				    } else {
+				        break; // si ya no es NTE, salimos
+				    }
+				    
+				}
+				break;
+		        // ++++++++++++++ Fin NTEs asociados ++++++++++++++
+
+
+	            obxI++;
+	            obxIndex++;
+
+            
+            }   
+            break;     
+	
+}
