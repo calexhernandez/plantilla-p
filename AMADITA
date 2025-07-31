@@ -1,21 +1,8 @@
-// Estamos dentro del while(obxIndex < obxList.length)
-var currentIndex = obxList[obxIndex].childIndex();
-var siblings = xml.children();
-
-for (var j = currentIndex + 1; j < siblings.length(); j++) {
-    var next = siblings[j];
-    
-    // Si es un NTE, lo agregamos
-    if (next.name().toString() == 'NTE') {
-        if (typeof(tmp['OBX'][obxI]['NTE']) == 'undefined') {
-            tmp['OBX'][obxI]['NTE'] = [];
-        }
-
-        var n = tmp['OBX'][obxI]['NTE'].length;
-        tmp['OBX'][obxI]['NTE'][n] = {};
-        tmp['OBX'][obxI]['NTE'][n]['NTE.3'] = {};
-        tmp['OBX'][obxI]['NTE'][n]['NTE.3']['NTE.3.1'] = next['NTE.3']['NTE.3.1'].toString();
-    } else {
-        break; // si ya no es NTE, salimos
-    }
+if (typeof tmp['OBX'] === 'undefined') {
+    logger.info("tmp['OBX'] NO existe");
+} else if (typeof tmp['OBX'][obxI] === 'undefined') {
+    logger.info("tmp['OBX'][" + obxI + "] NO existe");
+} else if (typeof tmp['OBX'][obxI]['NTE'] === 'undefined') {
+    logger.info("✅ tmp['OBX'][" + obxI + "]['NTE'] está indefinido, lo creamos");
+    tmp['OBX'][obxI]['NTE'] = [];
 }
