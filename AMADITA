@@ -1,133 +1,21 @@
-var xml = msg;
-var orcList = xml..ORC;
-var obxList = xml..OBX;
-var obrList = xml..OBR;
+// Estamos dentro del while(obxIndex < obxList.length)
+var currentIndex = obxList[obxIndex].childIndex();
+var siblings = xml.children();
 
-var obxIndex = 0; //para recorrer OBX global
-var obxI = 0; //para crear los OBX de TMP
+for (var j = currentIndex + 1; j < siblings.length(); j++) {
+    var next = siblings[j];
+    
+    // Si es un NTE, lo agregamos
+    if (next.name().toString() == 'NTE') {
+        if (typeof(tmp['OBX'][obxI]['NTE']) == 'undefined') {
+            tmp['OBX'][obxI]['NTE'] = [];
+        }
 
-for(var i = 0; i < orcList.length(); i++ ){
-	orc = orcList[i];
-	obr = obrList[i];
-
-//creo xml / voy con la variable que va a recibir 
-            if (typeof(tmp) == 'xml') {
-                if (typeof(tmp['ORC'][i]) == 'undefined') {
-                    createSegment('ORC', tmp, i);
-                }
-                if (typeof(tmp['OBR'][i]) == 'undefined') {
-                    createSegment('OBR', tmp, i);
-                }
-                                       
-              
-            } else {
-                if (typeof(tmp) == 'undefined') {
-                    tmp = {};
-                }
-                if (typeof(tmp['ORC']) == 'undefined') {
-                    tmp['ORC'] = [];
-                }
-                if (typeof(tmp['OBR']) == 'undefined') {
-                    tmp['OBR'] = [];
-                }
-                if (typeof(tmp['ORC'][i]) == 'undefined') {
-                    tmp['ORC'][i] = {};
-                }
-                if (typeof(tmp['OBR'][i]) == 'undefined') {
-                    tmp['OBR'][i] = {};
-                }
-                
-                 
-            }
-		//ORC
-            tmp['ORC'][i]['ORC.1']['ORC.1.1'] = 'RE';
-            tmp['ORC'][i]['ORC.2']['ORC.2.1'] = orc['ORC.4']['ORC.4.1'].toString();
-            tmp['ORC'][i]['ORC.5']['ORC.5.1'] = 'CM'
-
-		//OBR
-		  tmp['OBR'][i]['OBR.2']['OBR.2.1'] = orc['ORC.4']['ORC.4.1'].toString();
-
-		  tmp['OBR'][i]['OBR.4']['OBR.4.1'] = orc['OBR.4']['OBR.4.1'].toString();
-		  tmp['OBR'][i]['OBR.4']['OBR.4.2'] = orc['OBR.4']['OBR.4.2'].toString();
-		  
-
-		  tmp['OBR'][i]['OBR.7']['OBR.7.1'] = orc['ORC.9']['ORC.9.1'].toString()
-
-		//vqmos con los obxs  
-            while(obxIndex < obxList.length()){
-            	var obx = obxList[obxIndex];
-			var testCode = obx['OBX.3']['OBX.3.1'].toString()
-
-	          if (i < orcList.length() - 1) {
-	            if (obx.childIndex() >= orcList[i + 1].childIndex()) {
-	                //logger.info('Fin de OBX para ORC #' + i);
-	                break; // Salir del while, los OBX siguientes ya son del próximo ORC
-	            }
-	        	}
-			//creo xml
-	            if (typeof(tmp) == 'xml') {                
-	                if (typeof(tmp['OBX'][obxI]) == 'undefined') {
-	                    createSegment('OBX', tmp, obxI);
-	                    //obxI++;
-	                    
-	                }                         
-	            } else {               
-	                if (typeof(tmp['OBX'][obxI]) == 'undefined') {
-	                    tmp['OBX'][obxI] = {};
-	                    //obxI++;
-	                   	               
-	                }                  
-	            }
-
-	            //++++++++++++++++++ OBX +++++++++++++++++++++++++++++++
-
-	            tmp['OBX'][obxI]['OBX.3']['OBX.3.4'] = obx['OBX.3']['OBX.3.1'].toString();
-	            tmp['OBX'][obxI]['OBX.3']['OBX.3.5'] = obx['OBX.3']['OBX.3.2'].toString();
-			  tmp['OBX'][obxI]['OBX.5']['OBX.5.1'] = obx['OBX.5']['OBX.5.1'].toString();
-			  tmp['OBX'][obxI]['OBX.6']['OBX.6.1'] = obx['OBX.6']['OBX.6.1'].toString();
-			  tmp['OBX'][obxI]['OBX.7']['OBX.7.1'] = obx['OBX.7']['OBX.7.1'].toString();
-			  tmp['OBX'][obxI]['OBX.8']['OBX.8.1'] = obx['OBX.8']['OBX.8.1'].toString();
-			  tmp['OBX'][obxI]['OBX.11']['OBX.11.1'] = obx['OBX.11']['OBX.11.1'].toString();
-			  tmp['OBX'][obxI]['OBX.14']['OBX.14.1'] = obx['OBX.14']['OBX.14.1'].toString();
-			  tmp['OBX'][obxI]['OBX.16']['OBX.16.1'] = obx['OBX.16']['OBX.16.1'].toString();
-			  tmp['OBX'][obxI]['OBX.19']['OBX.19.1'] = obx['OBX.19']['OBX.19.1'].toString();
-			
-
-	            //++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-
-
-		        // ++++++++++++++ NTEs asociados ++++++++++++++
-
-				var obxParent = obx.parent();
-				logger.info('obxParent' + obxParent);
-				if (obxParent != null && obxParent.parent() != null) {
-				    var startIndex = obxParent.childIndex() + 1;
-				    var allSiblings = obxParent.parent().children();
-				    while (startIndex < allSiblings.length()) {
-				        var nextSeg = allSiblings[startIndex];
-				        if (nextSeg.name().toString() == 'NTE') {
-				            if (typeof(tmp['OBX'][obxI]['NTE']) == 'undefined') {
-				                tmp['OBX'][obxI]['NTE'] = [];
-				            }
-				            var noteIndex = tmp['OBX'][obxI]['NTE'].length;
-				            tmp['OBX'][obxI]['NTE'][noteIndex] = {};
-				            tmp['OBX'][obxI]['NTE'][noteIndex]['NTE.3'] = {};
-				            tmp['OBX'][obxI]['NTE'][noteIndex]['NTE.3']['NTE.3.1'] = nextSeg['NTE.3']['NTE.3.1'].toString();
-				            startIndex++;
-				        } else {
-				            break;
-				        }
-				    }
-				}
-
-		        // ++++++++++++++ Fin NTEs asociados ++++++++++++++
-
-
-	            obxI++;
-	            obxIndex++;
-
-            
-            }        
-	
+        var n = tmp['OBX'][obxI]['NTE'].length;
+        tmp['OBX'][obxI]['NTE'][n] = {};
+        tmp['OBX'][obxI]['NTE'][n]['NTE.3'] = {};
+        tmp['OBX'][obxI]['NTE'][n]['NTE.3']['NTE.3.1'] = next['NTE.3']['NTE.3.1'].toString();
+    } else {
+        break; // si ya no es NTE, salimos
+    }
 }
