@@ -1,29 +1,31 @@
-Transformer error
-ERROR MESSAGE: Error evaluating transformer
-com.mirth.connect.server.MirthJavascriptTransformerException: 
-CHANNEL:	Procesa_CEMDOE
-CONNECTOR:	sourceConnector
-SCRIPT SOURCE:	TRANSFORMER
-SOURCE CODE:	
-246: 						}                  
-247: 					}
-248: 
-249: 					
-250: 					logger.info('Antes de agregar NTE - tmp[OBX][' + obxI + '].NTE.length: ' + tmp['OBX'][obxI]['NTE'].length);
-251: 					tmp['NTE'][obxI]['NTE.3']['NTE.3.1'] = next['NTE.3']['NTE.3.1'].toString();
-252: 					//logger.info('Se agregó NTE en índice ' + nteIndex + ' para OBX ' + obxI);
-253: 
-254: 				    
-255: 				    } else {
-LINE NUMBER:	251
-DETAILS:	TypeError: Cannot read property "NTE.3" from undefined
-	at 954a43cb-bd6e-48ab-8bab-184615a68a21_JavaScript_Filter_Transformer_0:251 (doTransform)
-	at 954a43cb-bd6e-48ab-8bab-184615a68a21_JavaScript_Filter_Transformer_0:293 (doScript)
-	at 954a43cb-bd6e-48ab-8bab-184615a68a21_JavaScript_Filter_Transformer_0:295
-	at com.mirth.connect.server.transformers.JavaScriptFilterTransformer$FilterTransformerTask.doCall(JavaScriptFilterTransformer.java:235)
-	at com.mirth.connect.server.transformers.JavaScriptFilterTransformer$FilterTransformerTask.doCall(JavaScriptFilterTransformer.java:187)
-	at com.mirth.connect.server.util.javascript.JavaScriptTask.call(JavaScriptTask.java:114)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-	at java.base/java.lang.Thread.run(Thread.java:829)
+MSH|^~\&|Modulab|Modulab|Portal|Portal|20250730150015-0400||ORU^R01^ORU_R01|LAB31753902015090|P|2.5|||||RD||ES
+PID|1||828a8c1c-fcaf-4ac2-b745-be0612aebf3b^^^^PI~03300030149^^^^PPN||BUENO ^ROSA MARIA ||19521110120000-0400|F|||||^PRN^PH^^^^^^8095858895 ^^^8095858895 ~^PRN^Internet^PACIENTE@AMADITA.COM|||||||||||||||||N
+PV1|1|A||||||||||||||N
+ORC|SC||14000918^MODULAB|1752973^111124&MODULAB|CM||||20250730150011-0400|||NO^No Especificado|||20250730141908-0400||||||Personal^^^^^^FI^^^PER
+OBR|1|1752973|14000918^MODULAB|1061^Panel Lipídico^MODULAB||||||L014||||||NO^No Especificado||||1||||LAB|F|||RS||||MO29^20250730150011-0400
+OBX|1|NM|3465^Colesterol total^MODULAB||159.0|mg/dL|0.0 - 200.0|N|||F|||20250730150011||MO29|||20250730150010
+NTE|1|O|Deseable:  Menor a 200\X000d\Límite Alto: 200 - 240\X000d\Alto:            Mayor a 240
+OBX|2|NM|4721^Colesterol LDL^MODULAB||96.09|mg/dL|0.0 - 100.0|N|||F|||20250730150011||MO29|||20250730150010
+NTE|1|O|Deseable:  Menor a 100\X000d\Aceptable: 100 - 129\X000d\Límite Alto: 130 - 159\X000d\Alto:            Mayor a 160
+OBX|3|NM|PL3^Colesterol VLDL^MODULAB||26.40|mg/dL|5.0 - 35.0|N|||F|||20250730150011||MO29|||20250730150010
+OBX|4|NM|5478^Triglicéridos^MODULAB||132.00|mg/dL|0.0 - 150.0|N|||F|||20250730150011||MO29|||20250730150010
+NTE|1|O|Normal:      Menos de 150\X000d\Límite alto: 150 - 199\X000d\Alto:            200 - 499\X000d\Muy alto:     500
+
+
+
+
+
+MSH|^~\&|Modulab|Modulab|Portal|Portal|20250730150015-0400||ORU^R01^ORU_R01|LAB31753902015090|P|2.5|||||RD||ES
+PID|1||828a8c1c-fcaf-4ac2-b745-be0612aebf3b^^^^PI~03300030149^^^^PPN||BUENO ^ROSA MARIA ||19521110120000-0400|F|||||^PRN^PH^^^^^^8095858895 ^^^8095858895 ~^PRN^Internet^PACIENTE@AMADITA.COM|||||||||||||||||N
+PV1|1|A||||||||||||||N
+ORC|SC||14000918^MODULAB|1752973^111124&MODULAB|CM||||20250730150011-0400|||NO^No Especificado|||20250730141908-0400||||||Personal^^^^^^FI^^^PER
+OBR|1|1752973|14000918^MODULAB|1061^Panel Lipídico^MODULAB||||||L014||||||NO^No Especificado||||1||||LAB|F|||RS||||MO29^20250730150011-0400
+OBX|1|NM|3465^Colesterol total^MODULAB||159.0|mg/dL|0.0 - 200.0|N|||F|||20250730150011||MO29|||20250730150010
+NTE|1|O|Deseable:  Menor a 200\X000d\Límite Alto: 200 - 240\X000d\Alto:            Mayor a 240
+OBX|2|NM|4721^Colesterol LDL^MODULAB||96.09|mg/dL|0.0 - 100.0|N|||F|||20250730150011||MO29|||20250730150010
+NTE|1|O|Deseable:  Menor a 100\X000d\Aceptable: 100 - 129\X000d\Límite Alto: 130 - 159\X000d\Alto:            Mayor a 160
+OBX|3|NM|PL3^Colesterol VLDL^MODULAB||26.40|mg/dL|5.0 - 35.0|N|||F|||20250730150011||MO29|||20250730150010
+OBX|4|NM|5478^Triglicéridos^MODULAB||132.00|mg/dL|0.0 - 150.0|N|||F|||20250730150011||MO29|||20250730150010
+NTE|1|O|Normal:      Menos de 150\X000d\Límite alto: 150 - 199\X000d\Alto:            200 - 499\X000d\Muy alto:     500
+
+
