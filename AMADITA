@@ -1,3 +1,14 @@
+// Obtener el valor completo de PID.7.1
+var fechaCompleta = msg['PID']['PID.7']['PID.7.1'].toString();  // ejemplo: 19850514120000
+
+// Acortar a solo los primeros 8 caracteres (YYYYMMDD)
+var fechaCorta = fechaCompleta.substring(0, 8);  // resultado: 19850514
+
+// Guardar el valor acortado en el mensaje temporal
+tmp['PID']['PID.7']['PID.7.1'] = fechaCorta;
+
+
+
 
 1362655
 
