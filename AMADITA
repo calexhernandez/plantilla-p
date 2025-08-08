@@ -1,24 +1,178 @@
-MSH|^~\&|Modulab|Amadita|Medicalcore|2434|20250808165213||ORU^R01^ORU_R01||P|2.5|||||RD||ES
-PID|1|2434-00111671210|||RODRIGUEZ MARTINEZ ^LUIS MARIANO ||19560501|M|||^^^^^^^^^^^||8097635830 |||||||||||||||||
-ORC|RE|1313510|01004323^MODULAB|1313510^7257&MODULAB|CM||||20250714112801-0400|||0000000000^TOMA DE MUESTRA 1^TOMA DE MUESTRA 1|||20250714112631-0400||||||CENTRO MEDICO DE DIABETES OBESIDAD Y ESP^^^^^^FI^^^2434
-OBR|1||01004323^MODULAB|3947^Glucosa Basal^MODULAB^^|||20250714112801-0400|||L001||||||0000000000^^TOMA DE MUESTRA 1||||1|^AMADITA LABORATORIO CLINICO^ABELARDO RODRIGUEZ URDANETA NO 102 GAZCUE^STO. DGO.^RD^10205^Dra. Patricia González -Exequatur:5709^99996|||LAB|F||1|CM||||eliazar.mendez^20250714112801-0400
-OBX|1|NM|^^^3947^Glucosa Basal||60.0|mg/dL|60.0 - 100.0|N|||F|||20250714112801||eliazar.mendez|||20250714112801
-OBX|2|NM|^^^3947^Glucosa Basal||60.0|mg/dL|60.0 - 100.0|N|||F|||20250714112801||eliazar.mendez|||20250714112801
-NTE|1||Validado por: EM
-OBR|2||01004323^MODULAB|1061^Panel Lipídico^MODULAB|||20250714112801-0400|||L001||||||^^TOMA DE MUESTRA 1||||1||||LAB|F|||CM||||eliazar.mendez^20250714112801-0400
-OBX|1|NM|^^^3465^Colesterol total||30.0|mg/dL||N|||F|||20250714112801||eliazar.mendez|||20250714112801
-OBX|2|NM|^^^4718^Colesterol HDL||40.0|mg/dL||N|||F|||20250714112801||eliazar.mendez|||20250714112801
-OBX|3|NM|^^^4721^Colesterol LDL||-16.0|mg/dL||N|||F|||20250714112801||eliazar.mendez|||20250714112801
-OBX|4|NM|^^^PL3^Colesterol VLDL||6.00|mg/dL|5.0 - 35.0|N|||F|||20250714112801||eliazar.mendez|||20250714112801
-OBX|5|NM|^^^5478^Triglicéridos||30.0|mg/dL||N|||F|||20250714112801||eliazar.mendez|||20250714112801
-OBX|6|NM|^^^PL1^COL T/ C- HDL||0.75|Ratio|3.7 - 7.7|L|||F|||20250714112801||eliazar.mendez|||20250714112801
-OBX|7|NM|^^^PL2^C - LDL/C - HDL||-0.40|Ratio|1.0 - 4.5|L|||F|||20250714112801||eliazar.mendez|||20250714112801
-NTE|1||Validado por: EM
-OBR|3||01004323^MODULAB|4036^Hemoglobina Glicosilada^MODULAB|||20250714112801-0400|||L001||||||^^TOMA DE MUESTRA 1||||1||||LAB|F|||CM||||eliazar.mendez^20250714112801-0400
-OBX|1|NM|^^^QC39^Hemoglobina Glicosilada||4.00|%|4.0 - 6.0|N|||F|||20250714112801||eliazar.mendez|||20250714112801
-NTE|1||Validado por: EM
-OBR|4||01004323^MODULAB|5154^PSA LIBRE^MODULAB|||20250714112801-0400|||L001||||||^^TOMA DE MUESTRA 1||||5||||LAB|F|||CM||||eliazar.mendez^20250714112801-0400
-OBX|1|NM|^^^5153^PSA Total||10.00|ng/mL|0.0 - 4.0|H|||F|||20250714112801||eliazar.mendez|||20250714112801
-OBX|2|NM|^^^IN217^PSA Libre||10.00|ng/mL||N|||F|||20250714112801||eliazar.mendez|||20250714112801
-OBX|3|NM|^^^PSAR^Ratio (PSA F/PSA T)||100.00|%|9.99 -|N|||F|||20250714112801||eliazar.mendez|||20250714112801
-NTE|1||Validado por: EM
+var sitio = msg['ORC'][0]['ORC.21']['ORC.21.10'].toString();
+
+var hl7Plano;
+if(sitio == "2434"){
+	var hl7Plano =  $('hl7PlanoCemdoe');
+}else{
+	var hl7Plano = SerializerFactory.getSerializer('HL7V2').fromXML(msg);
+}
+
+
+
+***************************************
+
+
+cabeza
+
+var today = DateUtil.getCurrentDate('yyyyMMddHHmmss');
+
+tmp['MSH']['MSH.7']['MSH.7.1'] = today; 
+
+
+tmp['PID']['PID.2']['PID.2.1'] = msg['PID']['PID.3'][1]['PID.3.1'].toString();
+
+//NTE|1||||||||||||||||||||
+// Obtener el valor completo de PID.7.1
+var fechaCompleta = msg['PID']['PID.7']['PID.7.1'].toString();  // ejemplo: 19850514120000
+
+// Acortar a solo los primeros 8 caracteres (YYYYMMDD)
+var fechaCorta = fechaCompleta.substring(0, 8);  // resultado: 19850514
+
+
+tmp['PID']['PID.5']['PID.5.1']= msg['PID']['PID.5']['PID.5.1'].toString();
+
+tmp['PID']['PID.5']['PID.5.2']= msg['PID']['PID.5']['PID.5.2'].toString();
+
+tmp['PID']['PID.7']['PID.7.1'] = fechaCorta;
+
+tmp['PID']['PID.8']['PID.8.1'] = msg['PID']['PID.8']['PID.8.1'].toString();
+
+tmp['PID']['PID.11']['PID.11.12'] = msg['PID']['PID.11']['PID.11.1'].toString();
+
+tmp['PID']['PID.13']['PID.13.1'] = msg['PID']['PID.13'][0]['PID.13.9'].toString()
+
+
+****************************
+
+cuerpo
+
+var xml = msg;
+var orcList = xml..ORC;
+var obxList = xml..OBX;
+var obrList = xml..OBR;
+
+var obxIndex = 0; //para recorrer OBX global
+var obxI = 0; //para crear los OBX de TMP
+var iNTE = 0;
+for (var i = 0; i < orcList.length(); i++) {
+    orc = orcList[i];
+    obr = obrList[i];
+
+    // Crear estructura
+    if (typeof(tmp) == 'xml') {
+        if (typeof(tmp['ORC'][0]) == 'undefined') createSegment('ORC', tmp, 0);
+        if (typeof(tmp['OBR'][i]) == 'undefined') createSegment('OBR', tmp, i);
+    } else {
+        if (typeof(tmp) == 'undefined') tmp = {};
+        if (typeof(tmp['ORC']) == 'undefined') tmp['ORC'] = [];
+        if (typeof(tmp['OBR']) == 'undefined') tmp['OBR'] = [];
+        if (typeof(tmp['ORC'][0]) == 'undefined') tmp['ORC'][0] = {};
+        if (typeof(tmp['OBR'][i]) == 'undefined') tmp['OBR'][i] = {};
+    }
+
+    // ORC[i]
+    tmp['ORC'][0]['ORC.1']['ORC.1.1'] = 'RE';
+    tmp['ORC'][0]['ORC.2']['ORC.2.1'] = orc['ORC.4']['ORC.4.1'].toString();
+    tmp['ORC'][0]['ORC.3']['ORC.3.1'] = orc['ORC.3']['ORC.3.1'].toString();
+    tmp['ORC'][0]['ORC.3']['ORC.3.2'] = orc['ORC.3']['ORC.3.2'].toString();
+    tmp['ORC'][0]['ORC.4']['ORC.4.1'] = orc['ORC.4']['ORC.4.1'].toString();
+    tmp['ORC'][0]['ORC.4']['ORC.4.2']['ORC.4.2.1'] = orc['ORC.4']['ORC.4.2']['ORC.4.2.1'].toString();
+    tmp['ORC'][0]['ORC.4']['ORC.4.2']['ORC.4.2.2'] = orc['ORC.4']['ORC.4.2']['ORC.4.2.2'].toString();
+    tmp['ORC'][0]['ORC.5']['ORC.5.1'] = 'CM';
+    tmp['ORC'][0]['ORC.9']['ORC.9.1'] = orc['ORC.9']['ORC.9.1'].toString();
+    tmp['ORC'][0]['ORC.12']['ORC.12.1'] = '0000000000';
+    tmp['ORC'][0]['ORC.12']['ORC.12.2'] = 'TOMA DE MUESTRA 1';
+    tmp['ORC'][0]['ORC.15']['ORC.15.1'] = orc['ORC.15']['ORC.15.1'].toString();
+    tmp['ORC'][0]['ORC.21']['ORC.21.1'] = orc['ORC.21']['ORC.21.1'].toString();
+    tmp['ORC'][0]['ORC.21']['ORC.21.7'] = orc['ORC.21']['ORC.21.7'].toString();
+    tmp['ORC'][0]['ORC.21']['ORC.21.10'] = orc['ORC.21']['ORC.21.10'].toString();
+
+    // OBR[i]
+    tmp['OBR'][i]['OBR.1']['OBR.1.1'] = obr['OBR.1']['OBR.1.1'].toString();
+    tmp['OBR'][i]['OBR.2']['OBR.2.1'] = obr['ORC.4']['ORC.4.1'].toString();
+    tmp['OBR'][i]['OBR.3']['OBR.3.1'] = obr['OBR.3']['OBR.3.1'].toString();
+    tmp['OBR'][i]['OBR.3']['OBR.3.2'] = obr['OBR.3']['OBR.3.2'].toString();
+    tmp['OBR'][i]['OBR.4']['OBR.4.1'] = obr['OBR.4']['OBR.4.1'].toString();
+    tmp['OBR'][i]['OBR.4']['OBR.4.2'] = obr['OBR.4']['OBR.4.2'].toString();
+    tmp['OBR'][i]['OBR.4']['OBR.4.3'] = obr['OBR.4']['OBR.4.3'].toString();
+    tmp['OBR'][i]['OBR.7']['OBR.7.1'] = orc['ORC.9']['ORC.9.1'].toString();
+    tmp['OBR'][i]['OBR.10']['OBR.10.1'] = obr['OBR.10']['OBR.10.1'].toString();
+    tmp['OBR'][i]['OBR.16']['OBR.16.1'] = '0000000000';
+    tmp['OBR'][i]['OBR.16']['OBR.16.3'] = 'TOMA DE MUESTRA 1';
+    tmp['OBR'][i]['OBR.20']['OBR.20.1'] = obr['OBR.20']['OBR.20.1'].toString();
+    tmp['OBR'][i]['OBR.24']['OBR.24.1'] = obr['OBR.24']['OBR.24.1'].toString();
+    tmp['OBR'][i]['OBR.25']['OBR.25.1'] = obr['OBR.25']['OBR.25.1'].toString();
+    tmp['OBR'][i]['OBR.28']['OBR.28.1'] = obr['OBR.28']['OBR.28.1'].toString();
+    tmp['OBR'][i]['OBR.32']['OBR.32.1'] = obr['OBR.32']['OBR.32.1'].toString();
+    tmp['OBR'][i]['OBR.32']['OBR.32.2'] = obr['OBR.32']['OBR.32.2'].toString();
+
+    // OBX[n] relacionados con ORC[i]
+    while (obxIndex < obxList.length()) {
+        var obx = obxList[obxIndex];
+
+        if (i < orcList.length() - 1) {
+            if (obx.childIndex() >= orcList[i + 1].childIndex()) {
+                break;
+            }
+        }
+
+        if (typeof(tmp) == 'xml') {
+            if (typeof(tmp['OBX'][obxI]) == 'undefined') {
+                createSegment('OBX', tmp, obxI);
+            }
+        } else {
+            if (typeof(tmp['OBX']) == 'undefined') tmp['OBX'] = [];
+            if (typeof(tmp['OBX'][obxI]) == 'undefined') tmp['OBX'][obxI] = {};
+        }
+
+        tmp['OBX'][obxI]['OBX.1']['OBX.1.1'] = obx['OBX.1']['OBX.1.1'].toString();
+        tmp['OBX'][obxI]['OBX.2']['OBX.2.1'] = obx['OBX.2']['OBX.2.1'].toString();
+        tmp['OBX'][obxI]['OBX.3']['OBX.3.4'] = obx['OBX.3']['OBX.3.1'].toString();
+        tmp['OBX'][obxI]['OBX.3']['OBX.3.5'] = obx['OBX.3']['OBX.3.2'].toString();
+        tmp['OBX'][obxI]['OBX.5']['OBX.5.1'] = obx['OBX.5']['OBX.5.1'].toString();
+        tmp['OBX'][obxI]['OBX.6']['OBX.6.1'] = obx['OBX.6']['OBX.6.1'].toString();
+        tmp['OBX'][obxI]['OBX.7']['OBX.7.1'] = obx['OBX.7']['OBX.7.1'].toString();
+        tmp['OBX'][obxI]['OBX.8']['OBX.8.1'] = obx['OBX.8']['OBX.8.1'].toString();
+        tmp['OBX'][obxI]['OBX.11']['OBX.11.1'] = obx['OBX.11']['OBX.11.1'].toString();
+        tmp['OBX'][obxI]['OBX.14']['OBX.14.1'] = obx['OBX.14']['OBX.14.1'].toString();
+        tmp['OBX'][obxI]['OBX.16']['OBX.16.1'] = obx['OBX.16']['OBX.16.1'].toString();
+        tmp['OBX'][obxI]['OBX.19']['OBX.19.1'] = obx['OBX.19']['OBX.19.1'].toString();
+
+        obxI++;
+        obxIndex++;
+    }
+
+    // 🔁 Ahora creamos NTE[i] al final de cada orden
+    //if (typeof(tmp['NTE']) == 'undefined') tmp['NTE'] = [];
+    //if (typeof(tmp['NTE'][i]) == 'undefined') tmp['NTE'][i] = {};
+
+    if (typeof(tmp) == 'xml') {
+        if (typeof(tmp['NTE'][i]) == 'undefined') createSegment('NTE', tmp, i);
+        
+    } else {
+        if (typeof(tmp) == 'undefined') tmp = {};
+        if (typeof(tmp['NTE']) == 'undefined') tmp['NTE'] = [];
+        if (typeof(tmp['NTE'][i]) == 'undefined') tmp['NTE'][i] = {};
+    }
+
+    var rawUser = obr['OBR.32']['OBR.32.1'].toString();
+    var usuarioValida = "";
+
+    if (rawUser.indexOf('.') !== -1) {
+        var parts = rawUser.split('.');
+        if (parts[0].length > 0 && parts[1].length > 0) {
+            usuarioValida = parts[0].charAt(0) + parts[1].charAt(0);
+        }
+    } else {
+        usuarioValida = rawUser.substring(0, 2);
+    }
+
+    usuarioValida = usuarioValida.toUpperCase();
+    tmp['NTE'][i]['NTE.1']['NTE.1.1'] = 1;
+    tmp['NTE'][i]['NTE.3']['NTE.3.1'] = 'Validado por: ' + usuarioValida;
+}
+
+
+var hl7Plano = SerializerFactory.getSerializer('HL7V2').fromXML(tmp);
+channelMap.put('hl7PlanoCemdoe', hl7Plano);
+
