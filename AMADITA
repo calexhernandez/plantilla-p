@@ -1,39 +1,29 @@
-//++++++++++++ NTE asociado al último OBX ++++++++++++
-var lastObxIndex = obxI - 1; // Último OBX que se procesó
-var nteIndex = lastObxIndex + 1; // Para insertarlo justo después
-
-if (typeof(tmp) == 'xml') {
-    if (typeof(tmp['NTE'][nteIndex]) == 'undefined') {
-        createSegment('NTE', tmp, nteIndex);
-    }
-} else {
-    if (typeof(tmp['NTE']) == 'undefined') {
-        tmp['NTE'] = [];
-    }
-    if (typeof(tmp['NTE'][nteIndex]) == 'undefined') {
-        tmp['NTE'][nteIndex] = {};
-    }
-}
-
-// Número secuencial (siempre 1 para este caso)
-tmp['NTE'][nteIndex]['NTE.1']['NTE.1.1'] = 1;
-
-// Obtener usuario de validación desde OBR.32.1
-var rawUser = obr['OBR.32']['OBR.32.1'].toString();
-var usuarioValida = "";
-
-if (rawUser.indexOf('.') !== -1) {
-    var parts = rawUser.split('.');
-    if (parts[0].length > 0 && parts[1].length > 0) {
-        usuarioValida = parts[0].charAt(0) + parts[1].charAt(0);
-    }
-} else {
-    usuarioValida = rawUser.substring(0, 2);
-}
-usuarioValida = usuarioValida.toUpperCase();
-
-// Texto del comentario
-tmp['NTE'][nteIndex]['NTE.3']['NTE.3.1'] = 'Validado por: ' + usuarioValida;
-
-// Avanzar el índice global si es necesario
-obxI++;
+Transformer error
+ERROR MESSAGE: Error evaluating transformer
+com.mirth.connect.server.MirthJavascriptTransformerException: 
+CHANNEL:	procesa_hl7_to_json
+CONNECTOR:	CEMDOE
+SCRIPT SOURCE:	TRANSFORMER
+SOURCE CODE:	
+401:         tmp['NTE'][nteIndex] = {};
+402:     }
+403: }
+404: 
+405: // Número secuencial (siempre 1 para este caso)
+406: tmp['NTE'][nteIndex]['NTE.1']['NTE.1.1'] = 1;
+407: 
+408: // Obtener usuario de validación desde OBR.32.1
+409: var rawUser = obr['OBR.32']['OBR.32.1'].toString();
+410: var usuarioValida = "";
+LINE NUMBER:	406
+DETAILS:	TypeError: Cannot read property "NTE.1" from undefined
+	at 0bddb74a-a834-4c62-9451-66281bbfdc2d_JavaScript_Filter_Transformer_3:406 (doTransform)
+	at 0bddb74a-a834-4c62-9451-66281bbfdc2d_JavaScript_Filter_Transformer_3:454 (doScript)
+	at 0bddb74a-a834-4c62-9451-66281bbfdc2d_JavaScript_Filter_Transformer_3:456
+	at com.mirth.connect.server.transformers.JavaScriptFilterTransformer$FilterTransformerTask.doCall(JavaScriptFilterTransformer.java:235)
+	at com.mirth.connect.server.transformers.JavaScriptFilterTransformer$FilterTransformerTask.doCall(JavaScriptFilterTransformer.java:187)
+	at com.mirth.connect.server.util.javascript.JavaScriptTask.call(JavaScriptTask.java:114)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
