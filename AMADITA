@@ -1,29 +1,20 @@
-Transformer error
-ERROR MESSAGE: Error evaluating transformer
-com.mirth.connect.server.MirthJavascriptTransformerException: 
-CHANNEL:	procesa_hl7_to_json
-CONNECTOR:	CEMDOE
-SCRIPT SOURCE:	TRANSFORMER
-SOURCE CODE:	
-401:         tmp['NTE'][nteIndex] = {};
-402:     }
-403: }
-404: 
-405: // Número secuencial (siempre 1 para este caso)
-406: tmp['NTE'][nteIndex]['NTE.1']['NTE.1.1'] = 1;
-407: 
-408: // Obtener usuario de validación desde OBR.32.1
-409: var rawUser = obr['OBR.32']['OBR.32.1'].toString();
-410: var usuarioValida = "";
-LINE NUMBER:	406
-DETAILS:	TypeError: Cannot read property "NTE.1" from undefined
-	at 0bddb74a-a834-4c62-9451-66281bbfdc2d_JavaScript_Filter_Transformer_3:406 (doTransform)
-	at 0bddb74a-a834-4c62-9451-66281bbfdc2d_JavaScript_Filter_Transformer_3:454 (doScript)
-	at 0bddb74a-a834-4c62-9451-66281bbfdc2d_JavaScript_Filter_Transformer_3:456
-	at com.mirth.connect.server.transformers.JavaScriptFilterTransformer$FilterTransformerTask.doCall(JavaScriptFilterTransformer.java:235)
-	at com.mirth.connect.server.transformers.JavaScriptFilterTransformer$FilterTransformerTask.doCall(JavaScriptFilterTransformer.java:187)
-	at com.mirth.connect.server.util.javascript.JavaScriptTask.call(JavaScriptTask.java:114)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-	at java.base/java.lang.Thread.run(Thread.java:829)
+if (typeof(tmp) == 'xml') {
+    if (typeof(tmp['NTE'][nteIndex]) == 'undefined') {
+        createSegment('NTE', tmp, nteIndex);
+    }
+} else {
+    if (typeof(tmp['NTE']) == 'undefined') {
+        tmp['NTE'] = [];
+    }
+    if (typeof(tmp['NTE'][nteIndex]) == 'undefined') {
+        tmp['NTE'][nteIndex] = {};
+    }
+
+    // Inicializar campos antes de asignarlos
+    if (typeof(tmp['NTE'][nteIndex]['NTE.1']) == 'undefined') {
+        tmp['NTE'][nteIndex]['NTE.1'] = {};
+    }
+    if (typeof(tmp['NTE'][nteIndex]['NTE.3']) == 'undefined') {
+        tmp['NTE'][nteIndex]['NTE.3'] = {};
+    }
+}
