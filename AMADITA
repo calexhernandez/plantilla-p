@@ -3,61 +3,77 @@ var orcList = xml..ORC;
 var obxList = xml..OBX;
 var obrList = xml..OBR;
 
-var obxIndex = 0; //para recorrer OBX global
-var obxI = 0; //para crear los OBX de TMP
-var iNTE = 0;
+var obxIndex = 0;
+var obxI = 0;
+
 for (var i = 0; i < orcList.length(); i++) {
-    orc = orcList[i];
-    obr = obrList[i];
+    var orc = orcList[i];
+    var obr = obrList[i];
 
-    // Crear estructura
-    if (typeof(tmp) == 'xml') {
-        if (typeof(tmp['ORC'][i]) == 'undefined') createSegment('ORC', tmp, i);
-        if (typeof(tmp['OBR'][i]) == 'undefined') createSegment('OBR', tmp, i);
-    } else {
-        if (typeof(tmp) == 'undefined') tmp = {};
-        if (typeof(tmp['ORC']) == 'undefined') tmp['ORC'] = [];
-        if (typeof(tmp['OBR']) == 'undefined') tmp['OBR'] = [];
-        if (typeof(tmp['ORC'][i]) == 'undefined') tmp['ORC'][i] = {};
-        if (typeof(tmp['OBR'][i]) == 'undefined') tmp['OBR'][i] = {};
-    }
+    // Inicializar estructuras
+    if (typeof(tmp) == 'undefined') tmp = {};
+    if (typeof(tmp['ORC']) == 'undefined') tmp['ORC'] = [];
+    if (typeof(tmp['OBR']) == 'undefined') tmp['OBR'] = [];
+    if (typeof(tmp['OBX']) == 'undefined') tmp['OBX'] = [];
+    if (typeof(tmp['NTE']) == 'undefined') tmp['NTE'] = [];
 
-    // ORC[i]
-    tmp['ORC'][i]['ORC.1']['ORC.1.1'] = 'RE';
-    tmp['ORC'][i]['ORC.2']['ORC.2.1'] = orc['ORC.4']['ORC.4.1'].toString();
-    tmp['ORC'][i]['ORC.3']['ORC.3.1'] = orc['ORC.3']['ORC.3.1'].toString();
-    tmp['ORC'][i]['ORC.3']['ORC.3.2'] = orc['ORC.3']['ORC.3.2'].toString();
-    tmp['ORC'][i]['ORC.4']['ORC.4.1'] = orc['ORC.4']['ORC.4.1'].toString();
-    tmp['ORC'][i]['ORC.4']['ORC.4.2']['ORC.4.2.1'] = orc['ORC.4']['ORC.4.2']['ORC.4.2.1'].toString();
-    tmp['ORC'][i]['ORC.4']['ORC.4.2']['ORC.4.2.2'] = orc['ORC.4']['ORC.4.2']['ORC.4.2.2'].toString();
-    tmp['ORC'][i]['ORC.5']['ORC.5.1'] = 'CM';
-    tmp['ORC'][i]['ORC.9']['ORC.9.1'] = orc['ORC.9']['ORC.9.1'].toString();
-    tmp['ORC'][i]['ORC.12']['ORC.12.1'] = '0000000000';
-    tmp['ORC'][i]['ORC.12']['ORC.12.2'] = 'TOMA DE MUESTRA 1';
-    tmp['ORC'][i]['ORC.15']['ORC.15.1'] = orc['ORC.15']['ORC.15.1'].toString();
-    tmp['ORC'][i]['ORC.21']['ORC.21.1'] = orc['ORC.21']['ORC.21.1'].toString();
-    tmp['ORC'][i]['ORC.21']['ORC.21.7'] = orc['ORC.21']['ORC.21.7'].toString();
-    tmp['ORC'][i]['ORC.21']['ORC.21.10'] = orc['ORC.21']['ORC.21.10'].toString();
+    if (typeof(tmp['ORC'][i]) == 'undefined') tmp['ORC'][i] = {};
+    if (typeof(tmp['OBR'][i]) == 'undefined') tmp['OBR'][i] = {};
 
-    // OBR[i]
-    tmp['OBR'][i]['OBR.1']['OBR.1.1'] = obr['OBR.1']['OBR.1.1'].toString();
-    tmp['OBR'][i]['OBR.2']['OBR.2.1'] = obr['ORC.4']['ORC.4.1'].toString();
-    tmp['OBR'][i]['OBR.3']['OBR.3.1'] = obr['OBR.3']['OBR.3.1'].toString();
-    tmp['OBR'][i]['OBR.3']['OBR.3.2'] = obr['OBR.3']['OBR.3.2'].toString();
-    tmp['OBR'][i]['OBR.4']['OBR.4.1'] = obr['OBR.4']['OBR.4.1'].toString();
-    tmp['OBR'][i]['OBR.4']['OBR.4.2'] = obr['OBR.4']['OBR.4.2'].toString();
-    tmp['OBR'][i]['OBR.4']['OBR.4.3'] = obr['OBR.4']['OBR.4.3'].toString();
-    tmp['OBR'][i]['OBR.7']['OBR.7.1'] = orc['ORC.9']['ORC.9.1'].toString();
-    tmp['OBR'][i]['OBR.10']['OBR.10.1'] = obr['OBR.10']['OBR.10.1'].toString();
-    tmp['OBR'][i]['OBR.16']['OBR.16.3'] = 'TOMA DE MUESTRA 1';
-    tmp['OBR'][i]['OBR.20']['OBR.20.1'] = obr['OBR.20']['OBR.20.1'].toString();
-    tmp['OBR'][i]['OBR.24']['OBR.24.1'] = obr['OBR.24']['OBR.24.1'].toString();
-    tmp['OBR'][i]['OBR.25']['OBR.25.1'] = obr['OBR.25']['OBR.25.1'].toString();
-    tmp['OBR'][i]['OBR.28']['OBR.28.1'] = obr['OBR.28']['OBR.28.1'].toString();
-    tmp['OBR'][i]['OBR.32']['OBR.32.1'] = obr['OBR.32']['OBR.32.1'].toString();
-    tmp['OBR'][i]['OBR.32']['OBR.32.2'] = obr['OBR.32']['OBR.32.2'].toString();
+    // ORC
+    tmp['ORC'][i]['ORC.1'] = { 'ORC.1.1': 'RE' };
+    tmp['ORC'][i]['ORC.2'] = { 'ORC.2.1': orc['ORC.4']['ORC.4.1'].toString() };
+    tmp['ORC'][i]['ORC.3'] = {
+        'ORC.3.1': orc['ORC.3']['ORC.3.1'].toString(),
+        'ORC.3.2': orc['ORC.3']['ORC.3.2'].toString()
+    };
+    tmp['ORC'][i]['ORC.4'] = {
+        'ORC.4.1': orc['ORC.4']['ORC.4.1'].toString(),
+        'ORC.4.2': {
+            'ORC.4.2.1': orc['ORC.4']['ORC.4.2']['ORC.4.2.1'].toString(),
+            'ORC.4.2.2': orc['ORC.4']['ORC.4.2']['ORC.4.2.2'].toString()
+        }
+    };
+    tmp['ORC'][i]['ORC.5'] = { 'ORC.5.1': 'CM' };
+    tmp['ORC'][i]['ORC.9'] = { 'ORC.9.1': orc['ORC.9']['ORC.9.1'].toString() };
+    tmp['ORC'][i]['ORC.12'] = {
+        'ORC.12.1': '0000000000',
+        'ORC.12.2': 'TOMA DE MUESTRA 1'
+    };
+    tmp['ORC'][i]['ORC.15'] = { 'ORC.15.1': orc['ORC.15']['ORC.15.1'].toString() };
+    tmp['ORC'][i]['ORC.21'] = {
+        'ORC.21.1': orc['ORC.21']['ORC.21.1'].toString(),
+        'ORC.21.7': orc['ORC.21']['ORC.21.7'].toString(),
+        'ORC.21.10': orc['ORC.21']['ORC.21.10'].toString()
+    };
 
-    // OBX[n] relacionados con ORC[i]
+    // OBR
+    tmp['OBR'][i] = {
+        'OBR.1': { 'OBR.1.1': obr['OBR.1']['OBR.1.1'].toString() },
+        'OBR.2': { 'OBR.2.1': obr['ORC.4']['ORC.4.1'].toString() },
+        'OBR.3': {
+            'OBR.3.1': obr['OBR.3']['OBR.3.1'].toString(),
+            'OBR.3.2': obr['OBR.3']['OBR.3.2'].toString()
+        },
+        'OBR.4': {
+            'OBR.4.1': obr['OBR.4']['OBR.4.1'].toString(),
+            'OBR.4.2': obr['OBR.4']['OBR.4.2'].toString(),
+            'OBR.4.3': obr['OBR.4']['OBR.4.3'].toString()
+        },
+        'OBR.7': { 'OBR.7.1': orc['ORC.9']['ORC.9.1'].toString() },
+        'OBR.10': { 'OBR.10.1': obr['OBR.10']['OBR.10.1'].toString() },
+        'OBR.16': { 'OBR.16.3': 'TOMA DE MUESTRA 1' },
+        'OBR.20': { 'OBR.20.1': obr['OBR.20']['OBR.20.1'].toString() },
+        'OBR.24': { 'OBR.24.1': obr['OBR.24']['OBR.24.1'].toString() },
+        'OBR.25': { 'OBR.25.1': obr['OBR.25']['OBR.25.1'].toString() },
+        'OBR.28': { 'OBR.28.1': obr['OBR.28']['OBR.28.1'].toString() },
+        'OBR.32': {
+            'OBR.32.1': obr['OBR.32']['OBR.32.1'].toString(),
+            'OBR.32.2': obr['OBR.32']['OBR.32.2'].toString()
+        }
+    };
+
+    // OBX asociados al grupo actual
     while (obxIndex < obxList.length()) {
         var obx = obxList[obxIndex];
 
@@ -67,36 +83,30 @@ for (var i = 0; i < orcList.length(); i++) {
             }
         }
 
-        if (typeof(tmp) == 'xml') {
-            if (typeof(tmp['OBX'][obxI]) == 'undefined') {
-                createSegment('OBX', tmp, obxI);
-            }
-        } else {
-            if (typeof(tmp['OBX']) == 'undefined') tmp['OBX'] = [];
-            if (typeof(tmp['OBX'][obxI]) == 'undefined') tmp['OBX'][obxI] = {};
-        }
-
-        tmp['OBX'][obxI]['OBX.1']['OBX.1.1'] = obx['OBX.1']['OBX.1.1'].toString();
-        tmp['OBX'][obxI]['OBX.2']['OBX.2.1'] = obx['OBX.2']['OBX.2.1'].toString();
-        tmp['OBX'][obxI]['OBX.3']['OBX.3.4'] = obx['OBX.3']['OBX.3.1'].toString();
-        tmp['OBX'][obxI]['OBX.3']['OBX.3.5'] = obx['OBX.3']['OBX.3.2'].toString();
-        tmp['OBX'][obxI]['OBX.5']['OBX.5.1'] = obx['OBX.5']['OBX.5.1'].toString();
-        tmp['OBX'][obxI]['OBX.6']['OBX.6.1'] = obx['OBX.6']['OBX.6.1'].toString();
-        tmp['OBX'][obxI]['OBX.7']['OBX.7.1'] = obx['OBX.7']['OBX.7.1'].toString();
-        tmp['OBX'][obxI]['OBX.8']['OBX.8.1'] = obx['OBX.8']['OBX.8.1'].toString();
-        tmp['OBX'][obxI]['OBX.11']['OBX.11.1'] = obx['OBX.11']['OBX.11.1'].toString();
-        tmp['OBX'][obxI]['OBX.14']['OBX.14.1'] = obx['OBX.14']['OBX.14.1'].toString();
-        tmp['OBX'][obxI]['OBX.16']['OBX.16.1'] = obx['OBX.16']['OBX.16.1'].toString();
-        tmp['OBX'][obxI]['OBX.19']['OBX.19.1'] = obx['OBX.19']['OBX.19.1'].toString();
+        tmp['OBX'][obxI] = {
+            'OBX.1': { 'OBX.1.1': obx['OBX.1']['OBX.1.1'].toString() },
+            'OBX.2': { 'OBX.2.1': obx['OBX.2']['OBX.2.1'].toString() },
+            'OBX.3': {
+                'OBX.3.4': obx['OBX.3']['OBX.3.1'].toString(),
+                'OBX.3.5': obx['OBX.3']['OBX.3.2'].toString()
+            },
+            'OBX.5': { 'OBX.5.1': obx['OBX.5']['OBX.5.1'].toString() },
+            'OBX.6': { 'OBX.6.1': obx['OBX.6']['OBX.6.1'].toString() },
+            'OBX.7': { 'OBX.7.1': obx['OBX.7']['OBX.7.1'].toString() },
+            'OBX.8': { 'OBX.8.1': obx['OBX.8']['OBX.8.1'].toString() },
+            'OBX.11': { 'OBX.11.1': obx['OBX.11']['OBX.11.1'].toString() },
+            'OBX.14': { 'OBX.14.1': obx['OBX.14']['OBX.14.1'].toString() },
+            'OBX.16': { 'OBX.16.1': obx['OBX.16']['OBX.16.1'].toString() },
+            'OBX.19': { 'OBX.19.1': obx['OBX.19']['OBX.19.1'].toString() }
+        };
 
         obxI++;
         obxIndex++;
     }
 
-    // 🔁 Ahora creamos NTE[i] al final de cada orden
-    if (typeof(tmp['NTE']) == 'undefined') tmp['NTE'] = [];
-    if (typeof(tmp['NTE'][i]) == 'undefined') tmp['NTE'][i] = {};
-    tmp['NTE'][i]['NTE.1']['NTE.1.1'] = 1;
+    // NTE[i] después de OBX
+    tmp['NTE'][i] = {};
+    tmp['NTE'][i]['NTE.1'] = { 'NTE.1.1': '1' };
 
     var rawUser = obr['OBR.32']['OBR.32.1'].toString();
     var usuarioValida = "";
@@ -111,5 +121,5 @@ for (var i = 0; i < orcList.length(); i++) {
     }
 
     usuarioValida = usuarioValida.toUpperCase();
-    tmp['NTE'][i]['NTE.3']['NTE.3.1'] = 'Validado por: ' + usuarioValida;
+    tmp['NTE'][i]['NTE.3'] = { 'NTE.3.1': 'Validado por: ' + usuarioValida };
 }
