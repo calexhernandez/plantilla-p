@@ -1,33 +1,37 @@
+/**
+ * Revisa si un valor está en la lista y lo reemplaza.
+ * @param {string} value - El valor de OBX-3.2 a revisar
+ * @return {string} - Valor reemplazado o el mismo si no está en la lista
+ */
+function replaceObxValue(value) {
+    // Diccionario de reemplazos
+    var replacements = {
+        "GLU": "GLUCOSA",
+        "CREA": "CREATININA",
+        "UREA": "NITRÓGENO UREICO"
+    };
 
-MSH|^~\&|Modulab|Modulab|Portal|Portal|20250714112827-0400||ORU^R01^ORU_R01|LAB31752506907914|P|2.5|||||RD||ES
-PID|1||2434-236b7a39-6ea3-43ee-8661-689cd0ab22c4^^^^PI~2434-00111671210^^^^PPN||RODRIGUEZ MARTINEZ ^LUIS MARIANO ||19560501120000-0400|M|||||^PRN^PH^^^^^^8097635830 ^^^8097635830 ~^PRN^Internet^marblecup56@gmail.com|||||||||||||||||N
-PV1|1|LC||||||||||||||N
-ORC|SC||01004323^MODULAB|1313510^7257&MODULAB|CM||||20250714112801-0400|||PRUEBA24465^PRUEBA|||20250714112631-0400||||||CENTRO MEDICO DE DIABETES OBESIDAD Y ESP^^^^^^FI^^^2434
-OBR|1|1313510|01004323^MODULAB|3947^Glucosa Basal^MODULAB||||||L001||||||PRUEBA24465^PRUEBA||||1||||LAB|F|||CM||||eliazar.mendez^20250714112801-0400
-TQ1|||||||||S
-OBX|1|NM|3947^Glucosa Basal^MODULAB||60.0|mg/dL|60.0 - 100.0|N|||F|||20250714112801||eliazar.mendez|||20250714112801
-SPM|1|1001004323||3^Suero|||^^MODULAB|^^MODULAB||||||||||20250714112634||Y||||||1
-ORC|SC||01004323^MODULAB|1313510^7257&MODULAB|CM||||20250714112801-0400|||PRUEBA24465^PRUEBA|||20250714112631-0400||||||CENTRO MEDICO DE DIABETES OBESIDAD Y ESP^^^^^^FI^^^2434
-OBR|2|1313510|01004323^MODULAB|1061^Panel Lipídico^MODULAB||||||L001||||||PRUEBA24465^PRUEBA||||1||||LAB|F|||CM||||eliazar.mendez^20250714112801-0400
-TQ1|||||||||S
-OBX|1|NM|3465^Colesterol total^MODULAB||30.0|mg/dL||N|||F|||20250714112801||eliazar.mendez|||20250714112801
-OBX|2|NM|4718^Colesterol HDL^MODULAB||40.0|mg/dL||N|||F|||20250714112801||eliazar.mendez|||20250714112801
-OBX|3|NM|4721^Colesterol LDL^MODULAB||-16.0|mg/dL||N|||F|||20250714112801||eliazar.mendez|||20250714112801
-OBX|4|NM|PL3^Colesterol VLDL^MODULAB||6.00|mg/dL|5.0 - 35.0|N|||F|||20250714112801||eliazar.mendez|||20250714112801
-OBX|5|NM|5478^Triglicéridos^MODULAB||30.0|mg/dL||N|||F|||20250714112801||eliazar.mendez|||20250714112801
-OBX|6|NM|PL1^COL T/ C- HDL^MODULAB||0.75|Ratio|3.7 - 7.7|L|||F|||20250714112801||eliazar.mendez|||20250714112801
-OBX|7|NM|PL2^C - LDL/C - HDL^MODULAB||-0.40|Ratio|1.0 - 4.5|L|||F|||20250714112801||eliazar.mendez|||20250714112801
-SPM|1|1001004323||3^Suero|||^^MODULAB|^^MODULAB||||||||||20250714112634||Y||||||1
-ORC|SC||01004323^MODULAB|1313510^7257&MODULAB|CM||||20250714112801-0400|||PRUEBA24465^PRUEBA|||20250714112631-0400||||||CENTRO MEDICO DE DIABETES OBESIDAD Y ESP^^^^^^FI^^^2434
-OBR|3|1313510|01004323^MODULAB|4036^Hemoglobina Glicosilada^MODULAB||||||L001||||||PRUEBA24465^PRUEBA||||1||||LAB|F|||CM||||eliazar.mendez^20250714112801-0400
-TQ1|||||||||S
-OBX|1|NM|QC39^Hemoglobina Glicosilada^MODULAB||4.00|%|4.0 - 6.0|N|||F|||20250714112801||eliazar.mendez|||20250714112801
-SPM|1|2401004323||5^Sangre Total con EDTA|||^^MODULAB|^^MODULAB||||||||||20250714112637||Y||||||1
-ORC|SC||01004323^MODULAB|1313510^7257&MODULAB|CM||||20250714112801-0400|||PRUEBA24465^PRUEBA|||20250714112631-0400||||||CENTRO MEDICO DE DIABETES OBESIDAD Y ESP^^^^^^FI^^^2434
-OBR|4|1313510|01004323^MODULAB|5154^PSA LIBRE^MODULAB||||||L001||||||PRUEBA24465^PRUEBA||||5||||LAB|F|||CM||||eliazar.mendez^20250714112801-0400
-TQ1|||||||||S
-OBX|1|NM|5153^PSA Total^MODULAB||10.00|ng/mL|0.0 - 4.0|H|||F|||20250714112801||eliazar.mendez|||20250714112801
-OBX|2|NM|IN217^PSA Libre^MODULAB||10.00|ng/mL||N|||F|||20250714112801||eliazar.mendez|||20250714112801
-OBX|3|NM|PSAR^Ratio (PSA F/PSA T)^MODULAB||100.00|%|9.99 -|N|||F|||20250714112801||eliazar.mendez|||20250714112801
-SPM|1|1901004323||3^Suero|||^^MODULAB|^^MODULAB||||||||||20250714112631||Y||||||1
+    if (replacements[value] != undefined) {
+        return replacements[value];
+    }
+
+    return value; // Si no está en la lista, devolver igual
+}
+
+
+***********************
+
+// Ejemplo: tomar OBX-3.2 y pasarlo a la función
+var currentValue = msg['OBX']['OBX.3']['OBX.3.2'].toString();
+
+// Aplicar función
+var newValue = replaceObxValue(currentValue);
+
+// Guardar el nuevo valor en OBX-3.2
+msg['OBX']['OBX.3']['OBX.3.2'] = newValue;
+
+
+
+*************************
+
 
