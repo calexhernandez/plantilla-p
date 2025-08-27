@@ -1,47 +1,23 @@
-/**
- * Revisa si un valor está en la lista y lo reemplaza.
- * @param {string} value - El valor de OBX-3.2 a revisar
- * @return {string} - Valor reemplazado o el mismo si no está en la lista
- */
-function replaceObxValue(value) {
-    // Diccionario de reemplazos
-    var replacements = {
-        "GLU": "GLUCOSA",
-        "CREA": "CREATININA",
-        "UREA": "NITRÓGENO UREICO"
-    };
-
-    if (replacements[value] != undefined) {
-        return replacements[value];
-    }
-
-    return value; // Si no está en la lista, devolver igual
-}
-
-
-***********************
-
-// Ejemplo: tomar OBX-3.2 y pasarlo a la función
-var currentValue = msg['OBX']['OBX.3']['OBX.3.2'].toString();
-
-// Aplicar función
-var newValue = replaceObxValue(currentValue);
-
-// Guardar el nuevo valor en OBX-3.2
-msg['OBX']['OBX.3']['OBX.3.2'] = newValue;
-
-
-
-********************
-
-
-
-
-
-
-*************************
-
-
-Este -> OBX|3|CE|11475-1^MICROORGANISM IDENTIFIED^LN|1|ECO^Escherichia coli^MODULAB||||||F|||20250806104600
-
-
+MSH|^~\&|AMADITA|AMADITA|Modulab|Modulab|||OML^O21^OML_O21||P|2.5||||||8859/1|||
+PID|1|17530937-94af-42ff-bae4-232dc069762b|07800074135^^^^PI~^^^^PPN~^^^^SS||NOVAS ^JUSTA ||19720806|F|||NEIBA LOS RIOS^^^^^^^||8296639548^^^JUSTANOVAS078@GMAIL.COM|||||||||||||||||N
+PV1|1|A|^^||||||||||||||||
+DG1|||||||||||||||||||||||||||||
+IN1|||||||||||||||||||||||||||||
+ORC|NW|||1995283|A||||20250815|||157431^|||||||||PER^PERSONAL||||||
+OBR|1|||12142^3820926||||||L004^María Auxiliadora||||||157431^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|
+TQ1|||||||||R
+ORC|NW|||1995283|||||20250815|||157431^|||||||||PER^PERSONAL
+OBR|2|||12144^3820926||||||L004^María Auxiliadora||||||157431^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente
+TQ1|||||||||R
+ORC|NW|||1995283|||||20250815|||157431^|||||||||PER^PERSONAL
+OBR|3|||12145^3820926||||||L004^María Auxiliadora||||||157431^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente
+TQ1|||||||||R
+ORC|NW|||1995283|||||20250815|||157431^|||||||||PER^PERSONAL
+OBR|4|||12146^3820926||||||L004^María Auxiliadora||||||157431^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente
+TQ1|||||||||R
+ORC|NW|||1995283|||||20250815|||157431^|||||||||PER^PERSONAL
+OBR|5|||12195^3820926||||||L004^María Auxiliadora||||||157431^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente
+TQ1|||||||||R
+ORC|NW|||1995283|||||20250815|||157431^|||||||||PER^PERSONAL
+OBR|6|||12196^3820926||||||L004^María Auxiliadora||||||157431^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente
+TQ1|||||||||R
