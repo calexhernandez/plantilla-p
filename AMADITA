@@ -1,23 +1,146 @@
-MSH|^~\&|AMADITA|AMADITA|Modulab|Modulab|||OML^O21^OML_O21||P|2.5||||||8859/1|||
-PID|1|17530937-94af-42ff-bae4-232dc069762b|07800074135^^^^PI~^^^^PPN~^^^^SS||NOVAS ^JUSTA ||19720806|F|||NEIBA LOS RIOS^^^^^^^||8296639548^^^JUSTANOVAS078@GMAIL.COM|||||||||||||||||N
-PV1|1|A|^^||||||||||||||||
-DG1|||||||||||||||||||||||||||||
-IN1|||||||||||||||||||||||||||||
-ORC|NW|||1995283|A||||20250815|||157431^|||||||||PER^PERSONAL||||||
-OBR|1|||12142^3820926||||||L004^María Auxiliadora||||||157431^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|
-TQ1|||||||||R
-ORC|NW|||1995283|||||20250815|||157431^|||||||||PER^PERSONAL
-OBR|2|||12144^3820926||||||L004^María Auxiliadora||||||157431^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente
-TQ1|||||||||R
-ORC|NW|||1995283|||||20250815|||157431^|||||||||PER^PERSONAL
-OBR|3|||12145^3820926||||||L004^María Auxiliadora||||||157431^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente
-TQ1|||||||||R
-ORC|NW|||1995283|||||20250815|||157431^|||||||||PER^PERSONAL
-OBR|4|||12146^3820926||||||L004^María Auxiliadora||||||157431^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente
-TQ1|||||||||R
-ORC|NW|||1995283|||||20250815|||157431^|||||||||PER^PERSONAL
-OBR|5|||12195^3820926||||||L004^María Auxiliadora||||||157431^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente
-TQ1|||||||||R
-ORC|NW|||1995283|||||20250815|||157431^|||||||||PER^PERSONAL
-OBR|6|||12196^3820926||||||L004^María Auxiliadora||||||157431^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente
-TQ1|||||||||R
+var xml = msg;
+var orcList = xml..ORC;
+var obxList = xml..OBX;
+var obrList = xml..OBR;
+
+var obxIndex = 0; //para recorrer OBX global
+var obxI = 0; //para crear los OBX de TMP
+var iNTE = 0;
+for (var i = 0; i < orcList.length(); i++) {
+    orc = orcList[i];
+    obr = obrList[i];
+
+    // Crear estructura
+    if (typeof(tmp) == 'xml') {
+        if (typeof(tmp['ORC'][0]) == 'undefined') createSegment('ORC', tmp, 0);
+        if (typeof(tmp['OBR'][i]) == 'undefined') createSegment('OBR', tmp, i);
+    } else {
+        if (typeof(tmp) == 'undefined') tmp = {};
+        if (typeof(tmp['ORC']) == 'undefined') tmp['ORC'] = [];
+        if (typeof(tmp['OBR']) == 'undefined') tmp['OBR'] = [];
+        if (typeof(tmp['ORC'][0]) == 'undefined') tmp['ORC'][0] = {};
+        if (typeof(tmp['OBR'][i]) == 'undefined') tmp['OBR'][i] = {};
+    }
+
+    // ORC[i]
+    tmp['ORC'][0]['ORC.1']['ORC.1.1'] = 'RE';
+    tmp['ORC'][0]['ORC.2']['ORC.2.1'] = orc['ORC.4']['ORC.4.1'].toString();
+    tmp['ORC'][0]['ORC.3']['ORC.3.1'] = orc['ORC.3']['ORC.3.1'].toString();
+    tmp['ORC'][0]['ORC.3']['ORC.3.2'] = orc['ORC.3']['ORC.3.2'].toString();
+    tmp['ORC'][0]['ORC.4']['ORC.4.1'] = orc['ORC.4']['ORC.4.1'].toString();
+    tmp['ORC'][0]['ORC.4']['ORC.4.2']['ORC.4.2.1'] = orc['ORC.4']['ORC.4.2']['ORC.4.2.1'].toString();
+    tmp['ORC'][0]['ORC.4']['ORC.4.2']['ORC.4.2.2'] = orc['ORC.4']['ORC.4.2']['ORC.4.2.2'].toString();
+    tmp['ORC'][0]['ORC.5']['ORC.5.1'] = 'CM';
+    tmp['ORC'][0]['ORC.9']['ORC.9.1'] = orc['ORC.9']['ORC.9.1'].toString();
+    tmp['ORC'][0]['ORC.12']['ORC.12.1'] = '0000000000';
+    tmp['ORC'][0]['ORC.12']['ORC.12.2'] = 'TOMA DE MUESTRA 1';
+    tmp['ORC'][0]['ORC.15']['ORC.15.1'] = orc['ORC.15']['ORC.15.1'].toString();
+    tmp['ORC'][0]['ORC.21']['ORC.21.1'] = orc['ORC.21']['ORC.21.1'].toString();
+    tmp['ORC'][0]['ORC.21']['ORC.21.7'] = orc['ORC.21']['ORC.21.7'].toString();
+    tmp['ORC'][0]['ORC.21']['ORC.21.10'] = orc['ORC.21']['ORC.21.10'].toString();
+
+    // OBR[i]
+    tmp['OBR'][i]['OBR.1']['OBR.1.1'] = obr['OBR.1']['OBR.1.1'].toString();
+    tmp['OBR'][i]['OBR.2']['OBR.2.1'] = obr['ORC.4']['ORC.4.1'].toString();
+    tmp['OBR'][i]['OBR.3']['OBR.3.1'] = obr['OBR.3']['OBR.3.1'].toString();
+    tmp['OBR'][i]['OBR.3']['OBR.3.2'] = obr['OBR.3']['OBR.3.2'].toString();
+    tmp['OBR'][i]['OBR.4']['OBR.4.1'] = obr['OBR.4']['OBR.4.1'].toString();
+    tmp['OBR'][i]['OBR.4']['OBR.4.2'] = obr['OBR.4']['OBR.4.2'].toString();
+    tmp['OBR'][i]['OBR.4']['OBR.4.3'] = obr['OBR.4']['OBR.4.3'].toString();
+    tmp['OBR'][i]['OBR.7']['OBR.7.1'] = orc['ORC.9']['ORC.9.1'].toString();
+    tmp['OBR'][i]['OBR.10']['OBR.10.1'] = obr['OBR.10']['OBR.10.1'].toString();
+    tmp['OBR'][i]['OBR.16']['OBR.16.1'] = '0000000000';
+    tmp['OBR'][i]['OBR.16']['OBR.16.3'] = 'TOMA DE MUESTRA 1';
+    tmp['OBR'][i]['OBR.20']['OBR.20.1'] = obr['OBR.20']['OBR.20.1'].toString();
+    tmp['OBR'][i]['OBR.24']['OBR.24.1'] = obr['OBR.24']['OBR.24.1'].toString();
+    tmp['OBR'][i]['OBR.25']['OBR.25.1'] = obr['OBR.25']['OBR.25.1'].toString();
+    tmp['OBR'][i]['OBR.28']['OBR.28.1'] = obr['OBR.28']['OBR.28.1'].toString();
+    tmp['OBR'][i]['OBR.32']['OBR.32.1'] = obr['OBR.32']['OBR.32.1'].toString();
+    tmp['OBR'][i]['OBR.32']['OBR.32.2'] = obr['OBR.32']['OBR.32.2'].toString();
+
+    // OBX[n] relacionados con ORC[i]
+    while (obxIndex < obxList.length()) {
+        var obx = obxList[obxIndex];
+
+        if (i < orcList.length() - 1) {
+            if (obx.childIndex() >= orcList[i + 1].childIndex()) {
+                break;
+            }
+        }
+
+        if (typeof(tmp) == 'xml') {
+            if (typeof(tmp['OBX'][obxI]) == 'undefined') {
+                createSegment('OBX', tmp, obxI);
+            }
+        } else {
+            if (typeof(tmp['OBX']) == 'undefined') tmp['OBX'] = [];
+            if (typeof(tmp['OBX'][obxI]) == 'undefined') tmp['OBX'][obxI] = {};
+        }
+
+        tmp['OBX'][obxI]['OBX.1']['OBX.1.1'] = obx['OBX.1']['OBX.1.1'].toString();
+        tmp['OBX'][obxI]['OBX.2']['OBX.2.1'] = obx['OBX.2']['OBX.2.1'].toString();
+        tmp['OBX'][obxI]['OBX.3']['OBX.3.4'] = obx['OBX.3']['OBX.3.1'].toString();
+
+	   //MICROORGANISM IDENTIFIED
+	   //si encuentra el valor OBX3.5 lo reemplaza, sino deja el mismo valor
+        var obx3_2 = traduceObxValor(obx['OBX.3']['OBX.3.2'].toString());
+        tmp['OBX'][obxI]['OBX.3']['OBX.3.5'] = obx3_2;
+
+	   //si encuentra el valor hace el cambio
+        var obx5_1 = buscaObx5_2Valor(obx['OBX.5']['OBX.5.2'].toString());
+        if(obx5_1==1){
+        	tmp['OBX'][obxI]['OBX.5']['OBX.5.1'] = obx['OBX.5']['OBX.5.2'].toString();
+        	tmp['OBX'][obxI]['OBX.5']['OBX.5.2'] = obx['OBX.5']['OBX.5.2'].toString();
+        
+        }else{
+        	tmp['OBX'][obxI]['OBX.5']['OBX.5.1'] = obx['OBX.5']['OBX.5.1'].toString();
+        	tmp['OBX'][obxI]['OBX.5']['OBX.5.2'] = obx['OBX.5']['OBX.5.2'].toString();
+        
+        }
+        
+        
+        tmp['OBX'][obxI]['OBX.6']['OBX.6.1'] = obx['OBX.6']['OBX.6.1'].toString();
+        tmp['OBX'][obxI]['OBX.7']['OBX.7.1'] = obx['OBX.7']['OBX.7.1'].toString();
+        tmp['OBX'][obxI]['OBX.8']['OBX.8.1'] = obx['OBX.8']['OBX.8.1'].toString();
+        tmp['OBX'][obxI]['OBX.11']['OBX.11.1'] = obx['OBX.11']['OBX.11.1'].toString();
+        tmp['OBX'][obxI]['OBX.14']['OBX.14.1'] = obx['OBX.14']['OBX.14.1'].toString();
+        tmp['OBX'][obxI]['OBX.16']['OBX.16.1'] = obx['OBX.16']['OBX.16.1'].toString();
+        tmp['OBX'][obxI]['OBX.19']['OBX.19.1'] = obx['OBX.19']['OBX.19.1'].toString();
+
+        obxI++;
+        obxIndex++;
+    }
+
+    // 🔁 Ahora creamos NTE[i] al final de cada orden
+    //if (typeof(tmp['NTE']) == 'undefined') tmp['NTE'] = [];
+    //if (typeof(tmp['NTE'][i]) == 'undefined') tmp['NTE'][i] = {};
+
+    if (typeof(tmp) == 'xml') {
+        if (typeof(tmp['NTE'][i]) == 'undefined') createSegment('NTE', tmp, i);
+        
+    } else {
+        if (typeof(tmp) == 'undefined') tmp = {};
+        if (typeof(tmp['NTE']) == 'undefined') tmp['NTE'] = [];
+        if (typeof(tmp['NTE'][i]) == 'undefined') tmp['NTE'][i] = {};
+    }
+
+    var rawUser = obr['OBR.32']['OBR.32.1'].toString();
+    var usuarioValida = "";
+
+    if (rawUser.indexOf('.') !== -1) {
+        var parts = rawUser.split('.');
+        if (parts[0].length > 0 && parts[1].length > 0) {
+            usuarioValida = parts[0].charAt(0) + parts[1].charAt(0);
+        }
+    } else {
+        usuarioValida = rawUser.substring(0, 2);
+    }
+
+    usuarioValida = usuarioValida.toUpperCase();
+    tmp['NTE'][i]['NTE.1']['NTE.1.1'] = 1;
+    tmp['NTE'][i]['NTE.3']['NTE.3.1'] = 'Validado por: ' + usuarioValida;
+}
+
+
+var hl7Plano = SerializerFactory.getSerializer('HL7V2').fromXML(tmp);
+channelMap.put('hl7PlanoCemdoe', hl7Plano);
