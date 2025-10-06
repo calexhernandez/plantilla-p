@@ -1,4 +1,6 @@
-MSH|^~\&|Modulab|Modulab|Portal|Portal|20251006155200-0400||ORU^R01^ORU_R01|LAB31759780320539|P|2.5|||
-PID|1|00113492664^^^^ExternalPatientID|806b1211-e543-4b75-9103-80137459af66^^^^IDCARD||TUCENT TUCENT ^JUANA ^||19800724120000-0400|F|||^^^^^||^^^JUANATUSENT@GMAIL.COM|||
-ORC|SC|481067|27011935-1025||CM||^^^^^|27011935|20251006155155-0400||||||20251006103252-0400||||||Personal^^^^^^FI^^^PER
-OBR|1|||8340^Antígeno de Superficie de Hepatitis B (HBs-Ag)||||||L027^CE Laboratorio Megacentro||||||NO^No Especificado^^^^^^^^^^^^^^&||||||||||||
+MSH|^~\&|Modulab|Modulab|Portal|Portal|20251006170308-0400||ORU^R01^ORU_R01|LAB31759784588651|P|2.5|||
+PID|1|40200432454^^^^ExternalPatientID|b2aa95c7-82cb-47c6-b028-67187a96f966^^^^IDCARD||SVELTI PEREZ ^ABRAHAM ^||19940921120000-0400|M|||^^^^^||^^^ABRAHAMSVELTI@GMAIL.COM|||
+ORC|SC|477900|26006064-1025||CM||^^^^^|26006064|20251006170302-0400||||||20251006080811-0400||||||Personal^^^^^^FI^^^PER
+OBR|1|||7592^RPR (VDRL)||||||L026^CE Laboratorio Los Prados||||||NO^No Especificado^^^^^^^^^^^^^^&||||||||||||
+
+
