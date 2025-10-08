@@ -131,7 +131,13 @@ for (var i = 0; i < LineNumbers.length; i++) {
 	tmp['OBR'][i]['OBR.28']['OBR.28.1'] = $('IdDestino')
 	tmp['OBR'][i]['OBR.28']['OBR.28.2'] = $('Destino')
 	tmp['TQ1'][i]['TQ1.9']['TQ1.9.1'] = Priority;
-	
+
+
+
+MSH|^~\&|SIFANET|32|Modulab|MG|20251008150741||PMU^B01|45f9731c-becd-4dd2-9cb5-c548b2bd6bc3|P|2.5|||||||||
+EVN|B01|20251008150741|
+STF||8190|LEMUS LOPEZ^NERY FERNANDO|D|||A||||||||nerylemus96@gmail.com|||||||||||||||||||||||
+
 	
 }
 
