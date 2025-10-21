@@ -1,144 +1,36 @@
-MSH|^~\&|Modulab|Modulab|Portal|Portal|20251006181021-0400||ORU^R01^ORU_R01|LAB31759788621430|P|2.5|||
-PID|1|2434-00114840788^^^^ExternalPatientID|2434-563e6a9f-cbba-42bf-92e2-3339a47ce04c^^^^IDCARD||PIMENTEL TEJEDA ^EMELY ARACELYS ^||19780303120000-0400|F|||^^^^^||^^^|||
-ORC|SC|474520|01124261-1025||CM||^^^^^|01124261|20251006181016-0400||||||20251004110732-0400||||||CENTRO MEDICO DE DIABETES OBESIDAD Y ESP^^^^^^FI^^^2434
-OBR|1|||7301^CA 19-9||||||L051^CE Laboratorio Cemdoe||||||NO^No Especificado^^^^^^^^^^^^^^&||||||||||||
+// Import Java classes
+var StringReader = Packages.java.io.StringReader;
+var ByteArrayOutputStream = Packages.java.io.ByteArrayOutputStream;
+var Document = Packages.com.lowagie.text.Document;
+var RtfWriter2 = Packages.com.lowagie.text.rtf.RtfWriter2;
+var HTMLWorker = Packages.com.lowagie.text.html.simpleparser.HTMLWorker;
 
+// HTML de entrada
+var htmlContent = msg['HTML_CONTENT'].toString(); // Aquí debes ajustar el nodo según tu mensaje
 
+// Preparar salida
+var outputStream = new ByteArrayOutputStream();
+var document = new Document();
 
+try {
+    // Crear documento RTF
+    RtfWriter2.getInstance(document, outputStream);
+    document.open();
 
+    // Convertir HTML a RTF
+    var reader = new StringReader(htmlContent);
+    HTMLWorker.parseToList(reader, null).forEach(function(element) {
+        document.add(element);
+    });
 
-logger.info("Destination: ");
+    document.close();
 
-// Set Patient Name in HL7 PID segment
-tmp['PID']['PID.5']['PID.5.1'] = $('PatientLastName');
-tmp['PID']['PID.5']['PID.5.2'] = $('PatientName'); // Given name
-
-// Set Patient Identification
-tmp['PID']['PID.2']['PID.2.1'] = $('IdMedicalCore'); // National ID
-tmp['PID']['PID.3'][0]['PID.3.1'] = $('Cedula'); // National ID
-//tmp['PID']['PID.3'][1]['PID.3.2'] = $('NumberRFC'); // RFC Number
-tmp['PID']['PID.3'][1]['PID.3.1'] = $('IdFamiliar');
-//tmp['PID']['PID.3'][1]['PID.3.2'] = 
-
-// Set Birth Date and Sex
-
-
-var dateBirth = convertirFechas($('DateBirth'));
-
-tmp['PID']['PID.7'] = dateBirth; // Date of Birth
-tmp['PID']['PID.8'] = $('Sex'); // Gender
-
-tmp['PID']['PID.11']['PID.11.1'] = $('PostalAddress1');
-logger.info($('PostalAddress1'));
-// Contact Information
-tmp['PID']['PID.13']['PID.13.1'] = $('TelMovil'); // Mobile Phone
-tmp['PID']['PID.13']['PID.13.4'] = $('eMail'); // Email Address
-
-tmp['PV1']['PV1.2']['PV1.2.1'] = $('PatientClass');
-tmp['PV1']['PV1.3']['PV1.3.3'] = $('AssignedPatientLocation');
-
-// Insurance Information (IN1 Segment)
-//tmp['IN1']['IN1.3']['IN1.3.1'] = $('PatientIns')['InsPolicyNo']; // Policy Number
-//tmp['IN1']['IN1.4'] = $('InsCompanyNo'); // Insurance Company
-//tmp['IN1']['IN1.5'] = $('InsPolicyType'); // Policy Type
-//tmp['IN1']['IN1.6'] = $('InsPolicyGroup'); // Policy Group
-
-// Diagnosis Codes (DG1 Segment)
-//tmp['DG1']['DG1.3'] = $('ICDCode01'); // ICD Code
-
-
-// Procedure Details (OBR Segment)
-var LineNumbers = $('LineNumber');
-var ProcNumber = $('ProcNumber');
-var ProcName = $('ProcName');
-var QtyProcedures = $('QtyProcedures');
-var Priority = $('Priority');
-
-
-for (var i = 0; i < LineNumbers.length; i++) {
-//creo xml
-            if (typeof(tmp) == 'xml') {
-                if (typeof(tmp['ORC'][i]) == 'undefined') {
-                    createSegment('ORC', tmp, i);
-                }
-                if (typeof(tmp['OBR'][i]) == 'undefined') {
-                    createSegment('OBR', tmp, i);
-                }
-                if (typeof(tmp['TQ1'][i]) == 'undefined') {
-                    createSegment('TQ1', tmp, i);
-                }
-
-              
-            } else {
-                if (typeof(tmp) == 'undefined') {
-                    tmp = {};
-                }
-                if (typeof(tmp['ORC']) == 'undefined') {
-                    tmp['ORC'] = [];
-                }
-                if (typeof(tmp['OBR']) == 'undefined') {
-                    tmp['OBR'] = [];
-                }
-                if (typeof(tmp['ORC'][i]) == 'undefined') {
-                    tmp['ORC'][i] = {};
-                }
-                if (typeof(tmp['OBR'][i]) == 'undefined') {
-                    tmp['OBR'][i] = {};
-                }
-                if (typeof(tmp['TQ1'][i]) == 'undefined') {
-                    tmp['TQ1'][i] = {};
-                }
-            }
-
-
-	
-	tmp['ORC'][i]['ORC.1']['ORC.1.1'] = "NW";
-	// Requisition Details (ORC Segment)
-	//tmp['ORC'][i]['ORC.2'] = $('AccountNumber'); // Account Number
-	//tmp['ORC'][i]['ORC.3'] = $('PatientNumber'); // Patient Number
-	tmp['ORC'][i]['ORC.4']['ORC.4.1'] = $('AccountNumber');
-	var RequisitionDate = convertirFechas($('RequisitionDate'))
-	tmp['ORC'][i]['ORC.9'] = RequisitionDate; // Requisition Date
-	//tmp['ORC'][i]['ORC.10'] = $('RequisitionTime'); // Requisition Time
-	
-	tmp['ORC'][i]['ORC.12']['ORC.12.1'] =$('IDDoctor');
-	tmp['ORC'][i]['ORC.12']['ORC.12.2'] =$('Doctor');
-
-	
-	//tmp['ORC'][i]['ORC.21']['ORC.21.1'] = $('ServicePlace');
-	tmp['ORC'][i]['ORC.21']['ORC.21.1'] = $('IdServicio');
-	tmp['ORC'][i]['ORC.21']['ORC.21.2'] = $('Servicio');
-	
-	tmp['OBR'][i]['OBR.1'] = LineNumbers[i]; // Line Number
-	tmp['OBR'][i]['OBR.4']['OBR.4.1'] = ProcNumber[i]; // Procedure Code
-	tmp['OBR'][i]['OBR.4']['OBR.4.2'] = ProcName[i];
-	//tmp['OBR'][i]['OBR.7'] = QtyProcedures[i]; // Quantity
-	tmp['OBR'][i]['OBR.10']['OBR.10.1'] = $('IDCentroExtraccion');
-	tmp['OBR'][i]['OBR.10']['OBR.10.2'] = $('CentroExtraccion');
-
-	
-	//tmp['OBR'][i]['OBR.11'] = Priority[i]; // Priority
-	//tmp['OBR'][i]['OBR.16'] = 
-	tmp['OBR'][i]['OBR.16']['OBR.16.1'] = $('IDDoctor');
-	tmp['OBR'][i]['OBR.16']['OBR.16.2'] = $('Doctor');
-	
-	//tmp['OBR'][i]['OBR.24'] = $('ServiceReason');
-	
-	tmp['OBR'][i]['OBR.24']['OBR.24.1'] = $('IDDiagnostico');
-	tmp['OBR'][i]['OBR.24']['OBR.24.2'] = $('Diagnostico');
-	
-	//tmp['OBR'][i]['OBR.28']['OBR.28.1'] = $('ServiceReason');
-	tmp['OBR'][i]['OBR.28']['OBR.28.1'] = $('IdDestino')
-	tmp['OBR'][i]['OBR.28']['OBR.28.2'] = $('Destino')
-	tmp['TQ1'][i]['TQ1.9']['TQ1.9.1'] = Priority;
-
-
-
-MSH|^~\&|SIFANET|32|Modulab|MG|20251008150741||PMU^B01|45f9731c-becd-4dd2-9cb5-c548b2bd6bc3|P|2.5|||||||||
-EVN|B01|20251008150741|
-STF||8190|LEMUS LOPEZ^NERY FERNANDO|D|||A||||||||nerylemus96@gmail.com|||||||||||||||||||||||
-
-	
+    // Convertir a texto RTF final
+    var rtfContent = outputStream.toString();
+    
+    // Guardar o asignar el resultado
+    msg['RTF_CONTENT'] = rtfContent; // Puedes enviarlo a algún campo OBX u otro destino
+    
+} catch (e) {
+    logger.error("Error al convertir HTML a RTF: " + e);
 }
-
-logger.info("HL7 Message Constructed Successfully");
