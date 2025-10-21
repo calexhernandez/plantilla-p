@@ -1,36 +1,6 @@
-// Import Java classes
-var StringReader = Packages.java.io.StringReader;
-var ByteArrayOutputStream = Packages.java.io.ByteArrayOutputStream;
-var Document = Packages.com.lowagie.text.Document;
-var RtfWriter2 = Packages.com.lowagie.text.rtf.RtfWriter2;
-var HTMLWorker = Packages.com.lowagie.text.html.simpleparser.HTMLWorker;
-
-// HTML de entrada
-var htmlContent = msg['HTML_CONTENT'].toString(); // Aquí debes ajustar el nodo según tu mensaje
-
-// Preparar salida
-var outputStream = new ByteArrayOutputStream();
-var document = new Document();
-
-try {
-    // Crear documento RTF
-    RtfWriter2.getInstance(document, outputStream);
-    document.open();
-
-    // Convertir HTML a RTF
-    var reader = new StringReader(htmlContent);
-    HTMLWorker.parseToList(reader, null).forEach(function(element) {
-        document.add(element);
-    });
-
-    document.close();
-
-    // Convertir a texto RTF final
-    var rtfContent = outputStream.toString();
-    
-    // Guardar o asignar el resultado
-    msg['RTF_CONTENT'] = rtfContent; // Puedes enviarlo a algún campo OBX u otro destino
-    
-} catch (e) {
-    logger.error("Error al convertir HTML a RTF: " + e);
-}
+<p style="margin-bottom: 0.0001pt; line-height: normal; text-align: justify;"><strong><span style="font-size: 12.0pt; font-family: 'Times New Roman',serif;">MOTIVO: CONTROL&nbsp; ANUAL</span></strong><strong><span style="font-size: 12.0pt; font-family: 'Times New Roman',serif;">PROTOCOLO</span></strong><span style="font-size: 12.0pt; font-family: 'Times New Roman',serif;">Se realiza estudio de mamograf&iacute;a bilateral en equipo Pristina Digital GE, se obtienen proyecciones cefalocaudal, oblicuo-mediolateral de ambas mamas; no se cuenta con estudios previos para comparar.</span><strong><span style="font-size: 12.0pt; font-family: 'Times New Roman',serif;"></span></strong><strong><span style="font-size: 12.0pt; font-family: 'Times New Roman',serif;">DESCRIPCI&Oacute;N</span></strong><span style="font-size: 12pt; font-family: 'Times New Roman', serif; text-align: justify;">Se identifican mamas</span><span style="font-size: 12pt; font-family: 'Times New Roman', serif; text-align: justify;">&nbsp; </span><span style="font-size: 12pt; font-family: 'Times New Roman', serif; text-align: justify;">con patr&oacute;n de tipo mixto; tejido glandular de densidad intermedia-baja</span><span style="font-size: 12pt; font-family: 'Times New Roman', serif; text-align: justify;">&nbsp;</span><span style="font-size: 12pt; font-family: 'Times New Roman', serif; text-align: justify;">el cual se distribuye en forma sim&eacute;trica en ambas mamas.&nbsp;Calcificaciones, densas, redondeadas, puntiformes en ambas mamas de tipo benigno.Ganglios axilares benignos.</span><span style="text-align: justify; font-size: 12pt; font-family: 'Times New Roman', serif;">No se identifican &aacute;reas de</span><span style="text-align: justify; font-size: 12pt; font-family: 'Times New Roman', serif;">&nbsp; </span><span style="text-align: justify; font-size: 12pt; font-family: 'Times New Roman', serif;">asimetr&iacute;a o retracci&oacute;n patol&oacute;gica, im&aacute;genes espiculadas-estelares ni conglomerados de calcificaciones que sugieran patolog&iacute;a.</span><span style="font-family: 'Times New Roman', serif; font-size: 12pt; text-align: justify;">Las caracter&iacute;sticas de la piel, areola y pez&oacute;n no muestran alteraciones.</span></p>
+<p style="margin-bottom: 0.0001pt; line-height: normal; text-align: justify;"><strong><span style="font-size: 12.0pt; font-family: 'Times New Roman',serif;">CONCLUSI&Oacute;N:</span></strong><strong><span style="font-size: 12.0pt; font-family: 'Times New Roman',serif;">MAMOGRAF&Iacute;A BILATERAL SIN SIGNOS APARENTES DE MALIGNIDAD. </span></strong><strong><span style="font-size: 12.0pt; font-family: 'Times New Roman',serif;">BIRADS 2.</span></strong><strong><span style="font-size: 12.0pt; font-family: 'Times New Roman',serif;">RECOMENDACI&Oacute;N GENERAL: CONTROL ANUAL Y DE ACUERDO A VALORACI&Ograve;N CL&Igrave;NICA. TRAER ESTUDIOS EN SU PR&Oacute;XIMA CITA PARA COMPARACI&Oacute;N Y MEJOR CORRELACI&Oacute;N DE LOS HALLAZGOS.</span></strong></p>
+<p style="margin-bottom: 0.0001pt; line-height: normal; text-align: justify;"><strong><span style="font-size: 12.0pt; font-family: 'Times New Roman',serif;">OBSERVACIONES GENERALES</span></strong><strong><span style="font-size: 12.0pt; font-family: 'Times New Roman',serif;">5-10% de las neoplasias mamarias no son visibles por mamograf&iacute;a</span></strong><strong><span style="font-size: 12.0pt; font-family: 'Times New Roman',serif;">Especificidad de la mamograf&iacute;a es 85-87% y sensibilidad de 95%</span></strong><strong><span style="font-size: 12.0pt; font-family: 'Times New Roman',serif;">Un reporte negativo no deber&aacute; posponer la biopsia si existe sospecha cl&iacute;nica</span></strong></p>
+<p style="margin-bottom: .0001pt; line-height: normal; mso-layout-grid-align: none; text-autospace: none;">&nbsp;</p>
+<p style="margin-bottom: .0001pt; line-height: normal; mso-layout-grid-align: none; text-autospace: none;"><strong><span style="font-size: 12.0pt; font-family: 'Times New Roman',serif;">&nbsp;</span></strong></p>
+<p style="margin-bottom: .0001pt; line-height: normal; mso-layout-grid-align: none; text-autospace: none;"><span style="font-size: 12.0pt; font-family: 'Times New Roman',serif;">&nbsp;</span></p>
