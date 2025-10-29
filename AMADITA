@@ -1,200 +1,129 @@
-// Step: "nuevo" - construir OML^O21 completo en hl7Message
+logger.info("Destination: ");
 
-var TipoMensaje = msg['TipoMensaje'];
+// Set Patient Name in HL7 PID segment
+tmp['PID']['PID.5']['PID.5.1'] = $('PatientLastName');
+tmp['PID']['PID.5']['PID.5.2'] = $('PatientName'); // Given name
 
-if (TipoMensaje == "nuevo") {
+// Set Patient Identification
+tmp['PID']['PID.2']['PID.2.1'] = $('IdMedicalCore'); // National ID
+tmp['PID']['PID.3'][0]['PID.3.1'] = $('Cedula'); // National ID
+//tmp['PID']['PID.3'][1]['PID.3.2'] = $('NumberRFC'); // RFC Number
+tmp['PID']['PID.3'][1]['PID.3.1'] = $('IdFamiliar');
+//tmp['PID']['PID.3'][1]['PID.3.2'] = 
 
-    // ---------- utilidades ----------
-    function toArray(v) {
-        if (typeof v === 'undefined' || v === null) return [];
-        // En Mirth a veces un campo simple no tiene .length, envuelve en array
-        if (typeof v.length === 'undefined' || typeof v === 'string') return [v];
-        return v;
-    }
+// Set Birth Date and Sex
 
-    // Formateador de fecha: intenta usar convertirFechas si existe; si no, formatea simple yyyyMMdd
-    function fmtFecha(f) {
-        try {
-            if (typeof convertirFechas === 'function') return convertirFechas(f);
-        } catch (e) {}
-        if (!f) return "";
-        var d = new Date(f);
-        if (isNaN(d.getTime())) {
-            // si vino ya en formato HL7 esperado, devuélvelo
-            return f + "";
-        }
-        function pad(n, len) { n = n + ""; while (n.length < len) n = "0" + n; return n; }
-        return d.getFullYear() + pad(d.getMonth() + 1, 2) + pad(d.getDate(), 2);
-    }
 
-    // Fecha/hora actual HL7-ish
-    function nowYYYYMMDDHHMMSS() {
-        try {
-            if (typeof DateUtil !== 'undefined' && DateUtil.getCurrentDate) {
-                return DateUtil.getCurrentDate("yyyyMMddHHmmss");
+var dateBirth = convertirFechas($('DateBirth'));
+
+tmp['PID']['PID.7'] = dateBirth; // Date of Birth
+tmp['PID']['PID.8'] = $('Sex'); // Gender
+
+tmp['PID']['PID.11']['PID.11.1'] = $('PostalAddress1');
+logger.info($('PostalAddress1'));
+// Contact Information
+tmp['PID']['PID.13']['PID.13.1'] = $('TelMovil'); // Mobile Phone
+tmp['PID']['PID.13']['PID.13.4'] = $('eMail'); // Email Address
+
+tmp['PV1']['PV1.2']['PV1.2.1'] = $('PatientClass');
+tmp['PV1']['PV1.3']['PV1.3.3'] = $('AssignedPatientLocation');
+
+// Insurance Information (IN1 Segment)
+//tmp['IN1']['IN1.3']['IN1.3.1'] = $('PatientIns')['InsPolicyNo']; // Policy Number
+//tmp['IN1']['IN1.4'] = $('InsCompanyNo'); // Insurance Company
+//tmp['IN1']['IN1.5'] = $('InsPolicyType'); // Policy Type
+//tmp['IN1']['IN1.6'] = $('InsPolicyGroup'); // Policy Group
+
+// Diagnosis Codes (DG1 Segment)
+//tmp['DG1']['DG1.3'] = $('ICDCode01'); // ICD Code
+
+
+// Procedure Details (OBR Segment)
+var LineNumbers = $('LineNumber');
+var ProcNumber = $('ProcNumber');
+var ProcName = $('ProcName');
+var QtyProcedures = $('QtyProcedures');
+var Priority = $('Priority');
+
+
+for (var i = 0; i < LineNumbers.length; i++) {
+//creo xml
+            if (typeof(tmp) == 'xml') {
+                if (typeof(tmp['ORC'][i]) == 'undefined') {
+                    createSegment('ORC', tmp, i);
+                }
+                if (typeof(tmp['OBR'][i]) == 'undefined') {
+                    createSegment('OBR', tmp, i);
+                }
+                if (typeof(tmp['TQ1'][i]) == 'undefined') {
+                    createSegment('TQ1', tmp, i);
+                }
+
+              
+            } else {
+                if (typeof(tmp) == 'undefined') {
+                    tmp = {};
+                }
+                if (typeof(tmp['ORC']) == 'undefined') {
+                    tmp['ORC'] = [];
+                }
+                if (typeof(tmp['OBR']) == 'undefined') {
+                    tmp['OBR'] = [];
+                }
+                if (typeof(tmp['ORC'][i]) == 'undefined') {
+                    tmp['ORC'][i] = {};
+                }
+                if (typeof(tmp['OBR'][i]) == 'undefined') {
+                    tmp['OBR'][i] = {};
+                }
+                if (typeof(tmp['TQ1'][i]) == 'undefined') {
+                    tmp['TQ1'][i] = {};
+                }
             }
-        } catch (e) {}
-        var d = new Date();
-        function pad(n){ return (n<10?'0':'')+n; }
-        return d.getFullYear() + "" + pad(d.getMonth()+1) + "" + pad(d.getDate())
-               + "" + pad(d.getHours()) + "" + pad(d.getMinutes()) + "" + pad(d.getSeconds());
-    }
 
-    // UUID fallback
-    function genUUID() {
-        try {
-            if (typeof UUIDGenerator !== 'undefined' && UUIDGenerator.getUUID) return UUIDGenerator.getUUID();
-        } catch (e) {}
-        // simple fallback (no garantiza RFC but sirve de controlId)
-        return 'id-' + (new Date().getTime()) + '-' + Math.floor(Math.random()*100000);
-    }
 
-    // ---------- recuperar campos (se usan exactamente los nombres que diste) ----------
-    var PatientLastName = $('PatientLastName');
-    var PatientName = $('PatientName');
-    var IdMedicalCore = $('IdMedicalCore');
-    var Cedula = $('Cedula');
-    var IdFamiliar = $('IdFamiliar');
-    var DateBirth = $('DateBirth');
-    var Sex = $('Sex');
-    var PostalAddress1 = $('PostalAddress1');
-    var TelMovil = $('TelMovil');
-    var eMail = $('eMail');
-    var PatientClass = $('PatientClass');
-    var AssignedPatientLocation = $('AssignedPatientLocation');
-    // Arrays/Procedimientos
-    var LineNumbers = toArray($('LineNumber'));
-    var ProcNumber = toArray($('ProcNumber'));
-    var ProcName = toArray($('ProcName'));
-    var QtyProcedures = toArray($('QtyProcedures'));
-    var Priority = toArray($('Priority'));
-    var RequisitionDate_raw = $('RequisitionDate');
-    var AccountNumber = $('AccountNumber');
-    var IDDoctor = $('IDDoctor');
-    var Doctor = $('Doctor');
-    var IdServicio = $('IdServicio');
-    var Servicio = $('Servicio');
-    var IDCentroExtraccion = $('IDCentroExtraccion');
-    var CentroExtraccion = $('CentroExtraccion');
-    var IDDiagnostico = $('IDDiagnostico');
-    var Diagnostico = $('Diagnostico');
-    var IdDestino = $('IdDestino');
-    var Destino = $('Destino');
+	
+	tmp['ORC'][i]['ORC.1']['ORC.1.1'] = "NW";
+	// Requisition Details (ORC Segment)
+	//tmp['ORC'][i]['ORC.2'] = $('AccountNumber'); // Account Number
+	//tmp['ORC'][i]['ORC.3'] = $('PatientNumber'); // Patient Number
+	tmp['ORC'][i]['ORC.4']['ORC.4.1'] = $('AccountNumber');
+	var RequisitionDate = convertirFechas($('RequisitionDate'))
+	tmp['ORC'][i]['ORC.9'] = RequisitionDate; // Requisition Date
+	//tmp['ORC'][i]['ORC.10'] = $('RequisitionTime'); // Requisition Time
+	
+	tmp['ORC'][i]['ORC.12']['ORC.12.1'] =$('IDDoctor');
+	tmp['ORC'][i]['ORC.12']['ORC.12.2'] =$('Doctor');
 
-    // Variables comunes
-    var fechaMsg = nowYYYYMMDDHHMMSS();
-    var controlId = genUUID();
+	
+	//tmp['ORC'][i]['ORC.21']['ORC.21.1'] = $('ServicePlace');
+	tmp['ORC'][i]['ORC.21']['ORC.21.1'] = $('IdServicio');
+	tmp['ORC'][i]['ORC.21']['ORC.21.2'] = $('Servicio');
+	
+	tmp['OBR'][i]['OBR.1'] = LineNumbers[i]; // Line Number
+	tmp['OBR'][i]['OBR.4']['OBR.4.1'] = ProcNumber[i]; // Procedure Code
+	tmp['OBR'][i]['OBR.4']['OBR.4.2'] = ProcName[i];
+	//tmp['OBR'][i]['OBR.7'] = QtyProcedures[i]; // Quantity
+	tmp['OBR'][i]['OBR.10']['OBR.10.1'] = $('IDCentroExtraccion');
+	tmp['OBR'][i]['OBR.10']['OBR.10.2'] = $('CentroExtraccion');
 
-    // ---------- construir mensaje HL7 ----------
-    var CR = String.fromCharCode(13);
-    var hl7Message = "";
-
-    // MSH
-    hl7Message += "MSH|^~\\&|AMADITA|AMADITA|Modulab|Modulab|" 
-                + fechaMsg
-                + "||OML^O21^OML_O21|" + controlId + "|P|2.5||||||8859/1|||" + CR;
-
-    // PID
-    // Mantengo los id placeholder tal como tu plantilla inicial y agrego nombre dinámico
-    var pidName = "";
-    if (PatientLastName || PatientName) {
-        pidName = (PatientLastName?PatientLastName:"") + "^" + (PatientName?PatientName:"");
-    }
-    hl7Message += "PID|1||^^^^PI~^^^^PPN~^^^^SS||" 
-                + pidName + "||||||^^^^^^^||^^^|||||||||||||||||N" + CR;
-
-    // PV1
-    hl7Message += "PV1|1|" + (PatientClass?PatientClass:"U") + "|^^" 
-                + (AssignedPatientLocation?AssignedPatientLocation:"01") + "||||||||||||||||" + CR;
-
-    // DG1 (vacío como en plantilla)
-    hl7Message += "DG1|||||||||||||||||||||||||||||" + CR;
-
-    // IN1 (vacío como en plantilla)
-    hl7Message += "IN1|||||||||||||||||||||||||||||" + CR;
-
-    // Ahora los segmentos repetitivos por procedimiento: ORC, OBR, TQ1
-    // Normalizamos longitud del bucle: si LineNumbers vacío pero hay ProcNumber, intentamos usar ProcNumber length
-    var loopCount = LineNumbers.length;
-    if (loopCount === 0) {
-        loopCount = Math.max(ProcNumber.length, ProcName.length, QtyProcedures.length, Priority.length);
-        if (loopCount === 0) loopCount = 1; // al menos uno para generar un OBR simple
-    }
-
-    // Pre-calcular fecha requisicion
-    var RequisitionDate = fmtFecha(RequisitionDate_raw);
-
-    for (var i = 0; i < loopCount; i++) {
-        // obtener valores por índice (si no existe, quedará vacío)
-        var line = (i < LineNumbers.length ? LineNumbers[i] : "");
-        var procNum = (i < ProcNumber.length ? ProcNumber[i] : "");
-        var procNom = (i < ProcName.length ? ProcName[i] : "");
-        var qty = (i < QtyProcedures.length ? QtyProcedures[i] : "");
-        var prio = (i < Priority.length ? Priority[i] : "");
-
-        // ORC: según tu plantilla y tu código original
-        // ORC|NW||||A|||||||^|||||||||^||||||
-        // pero añadimos ORC.4 accountNumber, ORC.9 requisition date, ORC.12 doctor, ORC.21 service (ID/Name)
-        var orc = "ORC|NW|"; // ORC.1 y ORC.2 (dejamos ORC.2 vacío)
-        orc += "|"; // ORC.2 placeholder (ya que en plantilla estaban vacíos)
-        orc += "|"; // ORC.3 placeholder
-        orc += "|" + (AccountNumber?AccountNumber:""); // ORC.4 (requisition/account)
-        orc += "||" ; // ORC.5-6 placeholder
-        orc += "A" ; // en tu plantilla había "A" posicionado (ORC.5/6/7?), conservalo
-        orc += "|||||||"; // keep placeholders to align with original as many pipes
-        // ORC.9 Requisition Date
-        orc += (RequisitionDate?RequisitionDate:"") + "||||"; // keep some pipes
-        // ORC.12 Ordering Provider (ID^Name)
-        var orc12 = (IDDoctor?IDDoctor:"") + "^" + (Doctor?Doctor:"");
-        orc += orc12 + "|||||^||||||";
-        // ORC.21 Service
-        orc += (IdServicio?IdServicio:"") + "^" + (Servicio?Servicio:"") + "|||||" + CR;
-
-        hl7Message += orc;
-
-        // OBR: según plantilla: OBR|1|||^||||||^||||||^||||||||^||||^|
-        // adaptamos: OBR.1 = line, OBR.4 = procNum^procNom, OBR.10 centro extracción, OBR.16 doctor, OBR.24 diagnostico, OBR.28 destino
-        var obr = "OBR|";
-        obr += (line?line:(i+1)) + "|"; // OBR.1 - set to provided line or sequence
-        obr += "|"; // OBR.2 placeholder (fue vacío en plantilla)
-        // OBR.3 (placer) leave empty
-        obr += "|"; 
-        // OBR.4 (un campo compuesto: code^text)
-        obr += (procNum?procNum:"") + "^" + (procNom?procNom:"") + "|";
-        // OBR.5-9 placeholders
-        obr += "||||||";
-        // OBR.10 centro extraccion (OBR.10.1 and .2? you used OBR.10.1 earlier)
-        obr += (IDCentroExtraccion?IDCentroExtraccion:"") + "^" + (CentroExtraccion?CentroExtraccion:"") + "|||||";
-        // OBR.16 attending doctor (we'll put ID^Name)
-        obr += (IDDoctor?IDDoctor:"") + "^" + (Doctor?Doctor:"") + "|||||";
-        // OBR.24 Diagnosis (ID^Text)
-        obr += (IDDiagnostico?IDDiagnostico:"") + "^" + (Diagnostico?Diagnostico:"") + "|";
-        // OBR.28 destination
-        obr += (IdDestino?IdDestino:"") + "^" + (Destino?Destino:"") + "||||" + CR;
-
-        hl7Message += obr;
-
-        // TQ1: plantilla TQ1|||||||||
-        // insert priority maybe in TQ1.9
-        var tq1 = "TQ1|";
-        // TQ1 fields upto .9 placeholders
-        tq1 += "|||||||||";
-        if (prio) {
-            // replace last pipe group with priority in field 9 position
-            // Since we appended 9 pipes as placeholders, set content after prefix:
-            tq1 = "TQ1|||||||||" + prio;
-        }
-        tq1 += CR;
-
-        hl7Message += tq1;
-    } // fin loop procedimientos
-
-    logger.info("HL7 Message (nuevo) construido correctamente:");
-    logger.info(hl7Message);
-
-    // devolver mensaje listo para enviar al siguiente conector o al destino
-    return hl7Message;
+	
+	//tmp['OBR'][i]['OBR.11'] = Priority[i]; // Priority
+	//tmp['OBR'][i]['OBR.16'] = 
+	tmp['OBR'][i]['OBR.16']['OBR.16.1'] = $('IDDoctor');
+	tmp['OBR'][i]['OBR.16']['OBR.16.2'] = $('Doctor');
+	
+	//tmp['OBR'][i]['OBR.24'] = $('ServiceReason');
+	
+	tmp['OBR'][i]['OBR.24']['OBR.24.1'] = $('IDDiagnostico');
+	tmp['OBR'][i]['OBR.24']['OBR.24.2'] = $('Diagnostico');
+	
+	//tmp['OBR'][i]['OBR.28']['OBR.28.1'] = $('ServiceReason');
+	tmp['OBR'][i]['OBR.28']['OBR.28.1'] = $('IdDestino')
+	tmp['OBR'][i]['OBR.28']['OBR.28.2'] = $('Destino')
+	tmp['TQ1'][i]['TQ1.9']['TQ1.9.1'] = Priority;
+	
+	
 }
 
-// Si no es 'nuevo', devolvemos null para que otros steps manejen
-return null;
+logger.info("HL7 Message Constructed Successfully");
