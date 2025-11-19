@@ -1,8 +1,145 @@
-REMOTE ADDRESS: 172.16.122.209:19017
-
-[CONTENT]
-MSH|^~\&|SIFANET|TecniScan La Noria|Modulab|Modulab|20251104171222-0600||OML^O21^OML_O21|16686c80-4e2e-4cc4-bde6-6f5610cd7b94|P|2.5|||||||||
-PID|1|2022-03-8933|2022-03-8933^^^^PI~2992587180101^^^^PPN||NORIEGA SALAZAR^VALLERY DIANE||19960801|F|||. .  .||^PRN^PH^^^^^^48751413~^PRN^Internet^valleryns096@gmail.com|||||||||||||||||N
-PV1|1|PRIV|^^01||||||||||||||||
-ORC|NW|33-60322||33-60322|A||||||||||||||||^^^^^^FI^^^||||||
-OBR|1|||84703^Prueba de Embarazo en Sangre||||||33^TecniScan La Noria||||||199^MEDICO||||||||LAB||||CE^CORREO ELECTRONICO PX Y DR
+{
+    "IDTipoPaciente": "A",
+    "TipoPaciente": "Ambulatorio",
+    "NumeroRequisicionPedido": "2147635",
+    "FechaAtencion": "13/11/2025",
+    "IDServicio": "PER",
+    "Servicio": "PERSONAL",
+    "UbicacionPaciente": "",
+    "IDCentroExtraccion": "L002",
+    "CentroExtraccion": "Ozama",
+    "IDDoctor": "34535",
+    "CedulaDoctor": "",
+    "Doctor": "",
+    "IDDiagnostico": "z017",
+    "Diagnostico": "NO ESPECIFICADO",
+    "IDDestino": "CP",
+    "Destino": "Correo Paciente",
+    "Prioridad": "R",
+    "ImagenOrdenMedica": [],
+    "ConsultaResultados": "Paciente",
+    "Apellidos": "FLORENTINO ",
+    "Nombres": "MARY PILI ",
+    "IdPrincipalNuevo": "",
+    "IdPaciente": "369f17e8-2d21-41f5-b984-f5d44d1499f9asdafadsf",
+    "IdFamiliar": "",
+    "FechaNacimiento": "28/11/2003",
+    "Sexo": "F",
+    "Embarazo": "",
+    "CorreoElectronico": "CARMENFLORENTINOT@HOTMAIL.COM",
+    "Direccion": {
+        "Fisica": {
+            "Calle": "",
+            "Ciudad": "",
+            "Estado": "",
+            "CodigoPostal": "",
+            "Pais": ""
+        },
+        "Postal": {
+            "Calle": "",
+            "Ciudad": "",
+            "Estado": "",
+            "CodigoPostal": "",
+            "Pais": ""
+        }
+    },
+    "Telefono": "",
+    "TipoMensaje": "nuevo",
+    "Procedures": [
+        {
+            "NumeroLinea": "1",
+            "IDProcedimiento": "6651",
+            "Procedimiento": "4434992"
+        },
+        {
+            "NumeroLinea": "2",
+            "IDProcedimiento": "4036",
+            "Procedimiento": "4434992"
+        },
+        {
+            "NumeroLinea": "3",
+            "IDProcedimiento": "10330",
+            "Procedimiento": "4434992"
+        },
+        {
+            "NumeroLinea": "4",
+            "IDProcedimiento": "4721",
+            "Procedimiento": "4434992"
+        },
+        {
+            "NumeroLinea": "5",
+            "IDProcedimiento": "4718",
+            "Procedimiento": "4434992"
+        },
+        {
+            "NumeroLinea": "6",
+            "IDProcedimiento": "5478",
+            "Procedimiento": "4434992"
+        },
+        {
+            "NumeroLinea": "7",
+            "IDProcedimiento": "3465",
+            "Procedimiento": "4434992"
+        },
+        {
+            "NumeroLinea": "8",
+            "IDProcedimiento": "7140",
+            "Procedimiento": "4434992"
+        },
+        {
+            "NumeroLinea": "9",
+            "IDProcedimiento": "5520",
+            "Procedimiento": "4434992"
+        },
+        {
+            "NumeroLinea": "10",
+            "IDProcedimiento": "3728",
+            "Procedimiento": "4434992"
+        },
+        {
+            "NumeroLinea": "11",
+            "IDProcedimiento": "5075",
+            "Procedimiento": "4434992"
+        },
+        {
+            "NumeroLinea": "12",
+            "IDProcedimiento": "6002",
+            "Procedimiento": "4434992"
+        },
+        {
+            "NumeroLinea": "13",
+            "IDProcedimiento": "6345",
+            "Procedimiento": "4434992"
+        },
+        {
+            "NumeroLinea": "14",
+            "IDProcedimiento": "5480",
+            "Procedimiento": "4434992"
+        },
+        {
+            "NumeroLinea": "15",
+            "IDProcedimiento": "5436",
+            "Procedimiento": "4434992"
+        },
+        {
+            "NumeroLinea": "16",
+            "IDProcedimiento": "5443",
+            "Procedimiento": "4434992"
+        },
+        {
+            "NumeroLinea": "17",
+            "IDProcedimiento": "4540",
+            "Procedimiento": "4434992"
+        },
+        {
+            "NumeroLinea": "18",
+            "IDProcedimiento": "3575",
+            "Procedimiento": "4434992"
+        },
+        {
+            "NumeroLinea": "19",
+            "IDProcedimiento": "2000",
+            "Procedimiento": "4434992"
+        }
+    ]
+}
