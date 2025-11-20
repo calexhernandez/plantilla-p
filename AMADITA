@@ -1,7 +1,7 @@
-MSH|^~\&|SIFANET|3|Modulab|Tecniscan Z. 15|20250819235245-0600||ADT^A40|accf14e4-12ca-4856-9af4-bf599cbad8ba|P|2.5|||||||||
+MSH|^~\&|Medicalcore||Modulab||20250819235245-0600||ADT^A40|accf14e4-12ca-4856-9af4-bf599cbad8ba|P|2.5|||||||||
 EVN|A40|20250819235245-0600|||||
-PID|1|2016-15-3016|2016-15-3016^^^^PI~||EVELYN BETSABE CONDE SALCEDO ^||1980-03-14||||||^PRN^PH^^^^^^|||||||||||||||||N
-MRG|2015-03-16405|4527|||||
+PID|1|prueba123321|prueba123321^^^^PI~||PruNOMBRE1 PruNOMBRE2 ^||1980-03-14||||||^PRN^PH^^^^^^|||||||||||||||||N
+MRG|270355715||||||
 
 
 
