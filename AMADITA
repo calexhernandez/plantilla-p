@@ -1,74 +1,82 @@
-import requests
+from flask import Flask
+import base64
+from datetime import datetime, timedelta, timezone
 import jwt
 import xml.etree.ElementTree as ET
 
-# ================================================
-# 1. CREAR JWT
-# ================================================
-SECRET_KEY = "MI_SECRETO_123"
-jwt_payload = {
-    "user": "mirth",
-    "role": "system"
+#datos de JWT
+username = "AMADITAMC"
+request_ID = "12987"
+secret_base64URL = ""
+
+#decodificar el base64
+secret = base64.urlsafe_b64decode(secret_base64URL + "==")
+
+##creo payload
+payload = {
+    "username": username,
+    "requestID": request_ID,
+    "iat": datetime.now(timezone.utc),
+    "exp": datetime.now(timezone.utc) + timedelta(minutes=5)
 }
 
-token = jwt.encode(jwt_payload, SECRET_KEY, algorithm="HS256")
-print("JWT generado:", token)
+#generar JWT
+jwt_token = jwt.encode(payload, secret, algorithm="HS256")
+print("JWT generado")
+print(jwt_token)
 
-# ================================================
-# 2. LLAMAR AL ENDPOINT XML
-# ================================================
-url = f"https://localhost/modulab/servlet/getxmlrequestservlet?jwt={token}"
+## ======================================================================================
+# =====LLamar al endpoint  XML
 
-# Deshabilitamos verify porque probablemente usas certificado self-signed
-response = requests.get(url, verify=False)
+## ======================================================================================
+
+url  = f"https://localhost/modulab/servlet/GetXMLRequestServlet?jwt={jwt_token}"
+
+response = requests.get(url, verify=false)
 
 if response.status_code != 200:
-    print("Error al llamar el endpoint:", response.status_code)
+    print("error al llamar el endpoint", response.status_code)
     exit()
 
-xml_text = response.text
-print("XML recibido correctamente\n")
+xml_text = response.xml_text
+print("XML recibido correctamente \n")
 
-# ================================================
-# 3. PARSEAR EL XML
-# ================================================
+# ==========================================================
+
+# ====parsear el XML ========
+# ==========================================================
+
 root = ET.fromstring(xml_text)
 
-# ================================================
-# 4. FUNCIÓN PARA BUSCAR UNA PRUEBA POR NOMBRE
-# ================================================
+
+#==========================================================
+#buscar una prueba por nombre
+#==========================================================
+
 def buscar_prueba(nombre_prueba):
     """
-    Busca una prueba por coincidencia parcial en RPRTDESC o TESTDESC.
-    Devuelve información detallada.
+    busca una prueba por coincidencia parcial en RPRTDESC o TESTDESC
+    devuelve informacion detallada
     """
     resultados = []
 
     for result in root.findall(".//RESULT"):
-        test_desc = result.attrib.get("RPRTDESC", "")
-        long_desc = result.attrib.get("TESTDESC", "")
+        test_desc = result.attrib.get("RPRDESC", "")
+        long_desc = result.attrib.get("TESTDESC","")
 
-        if nombre_prueba.lower() in test_desc.lower() or nombre_prueba.lower() in long_desc.lower():
+        if nombre_prueba.lower() in test_desc.lower() in test_desc.lower() or nombre_prueba.lower() in long_desc.lower():
             info = {
                 "TESTID": result.attrib.get("TESTID"),
-                "TESTCODE": result.attrib.get("TESTCODE"),
-                "TESTDESC": long_desc,
-                "RPRTDESC": test_desc,
-                "RESULTADO": result.attrib.get("RSVALREP", ""),
-                "UNIDADES": result.attrib.get("UCS", ""),
-                "FECHA_RESULTADO": result.attrib.get("RSDATE", ""),
-                "RECIBIDO": result.attrib.get("ISRCV", "N"),
-                "FECHA_RECEPCION": result.attrib.get("RCPTDATE", ""),
-                "PROFID": result.attrib.get("PROFID", None)
+                "TESTCODE": result.attrib.get("TESTCODE")
+                
             }
             resultados.append(info)
-
     return resultados
 
+#======================================================================
+#=========== funcion para obtener todas las pruebas de un perfil
+#======================================================================
 
-# ================================================
-# 5. FUNCIÓN PARA OBTENER TODAS LAS PRUEBAS DE UN PERFIL
-# ================================================
 def pruebas_de_perfil(profid):
     pruebas = []
     for result in root.findall(".//RESULT"):
@@ -77,38 +85,40 @@ def pruebas_de_perfil(profid):
                 "TESTID": result.attrib.get("TESTID"),
                 "TESTCODE": result.attrib.get("TESTCODE"),
                 "TESTDESC": result.attrib.get("TESTDESC"),
-                "RPRTDESC": result.attrib.get("RPRTDESC"),
-                "RESULTADO": result.attrib.get("RSVALREP", ""),
-                "UNIDADES": result.attrib.get("UCS", "")
+                "RPRTDESC": result.attrib.get("RPRTDESC")
             })
     return pruebas
 
+#================================================================
+#==Ejemplo de uso ===============================================
+#================================================================
 
-# ================================================
-# 6. EJEMPLO DE USO
-# ================================================
-nombre_buscar = "Glóbulos Blancos"
+nombre_buscar = "Globulos blancos"
 
 encontradas = buscar_prueba(nombre_buscar)
 
 if not encontradas:
-    print(f"No se encontró la prueba '{nombre_buscar}'")
+    print(f"No se encontro la prueba '{nombre_buscar}'")
 else:
     for prueba in encontradas:
-        print("==== PRUEBA ENCONTRADA ====")
-        print("Código:", prueba["TESTCODE"])
+        print("==== PRUEBA ENCONTRADA ======")
+        print("Codigo:", prueba["TESTCODE"])
         print("Nombre:", prueba["RPRTDESC"])
-        print("Resultado:", prueba["RESULTADO"], prueba["UNIDADES"])
-        print("Recibida:", "Sí" if prueba["RECIBIDO"] == "Y" else "No")
-        print("Fecha recepción:", prueba["FECHA_RECEPCION"])
-        print("Fecha resultado:", prueba["FECHA_RESULTADO"])
-        print("PROFID:", prueba["PROFID"])
         print()
 
-        # Si pertenece a un perfil, obtenemos las demás pruebas
+        #Si pertenece a un perfil obtenemos las demas pruebas
         if prueba["PROFID"]:
-            print(f"=== PRUEBAS DEL PERFIL {prueba['PROFID']} ===")
+            print(f"=== Pruebas del perfil {prueba['PROFID']} ===")
             p = pruebas_de_perfil(prueba["PROFID"])
             for item in p:
                 print(" -", item["RPRTDESC"], "=", item["RESULTADO"], item["UNIDADES"])
-            print()
+            print()                
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "flask esta instalado y funcionando"
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0',port=9001,debug=True)
