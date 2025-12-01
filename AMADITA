@@ -1,124 +1,16 @@
-from flask import Flask
-import base64
-from datetime import datetime, timedelta, timezone
-import jwt
-import xml.etree.ElementTree as ET
-
-#datos de JWT
-username = "AMADITAMC"
-request_ID = "12987"
-secret_base64URL = ""
-
-#decodificar el base64
-secret = base64.urlsafe_b64decode(secret_base64URL + "==")
-
-##creo payload
-payload = {
-    "username": username,
-    "requestID": request_ID,
-    "iat": datetime.now(timezone.utc),
-    "exp": datetime.now(timezone.utc) + timedelta(minutes=5)
-}
-
-#generar JWT
-jwt_token = jwt.encode(payload, secret, algorithm="HS256")
-print("JWT generado")
-print(jwt_token)
-
-## ======================================================================================
-# =====LLamar al endpoint  XML
-
-## ======================================================================================
-
-url  = f"https://localhost/modulab/servlet/GetXMLRequestServlet?jwt={jwt_token}"
-
-response = requests.get(url, verify=false)
-
-if response.status_code != 200:
-    print("error al llamar el endpoint", response.status_code)
-    exit()
-
-xml_text = response.xml_text
-print("XML recibido correctamente \n")
-
-# ==========================================================
-
-# ====parsear el XML ========
-# ==========================================================
-
-root = ET.fromstring(xml_text)
+ PS C:\endpointConsultaXML> python app.py
+JWT generado
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkFNQURJVEFNQyIsInJlcXVlc3RJRCI6IjEyOTg3IiwiaWF0IjoxNzY0NjIyMzgzLCJleHAiOjE3NjQ2MjI2ODN9.9P7_mEhvnvScLiKWkm6SBstOPpxD4BS9WTm5N7GjT8I
+Traceback (most recent call last):
+  File "C:\endpointConsultaXML\app.py", line 35, in <module>
+    response = requests.get(url, verify=false)
+               ^^^^^^^^
+NameError: name 'requests' is not defined. Did you mean: 'request_ID'?
+(venv) PS C:\endpointConsultaXML>
 
 
-#==========================================================
-#buscar una prueba por nombre
-#==========================================================
 
-def buscar_prueba(nombre_prueba):
-    """
-    busca una prueba por coincidencia parcial en RPRTDESC o TESTDESC
-    devuelve informacion detallada
-    """
-    resultados = []
 
-    for result in root.findall(".//RESULT"):
-        test_desc = result.attrib.get("RPRDESC", "")
-        long_desc = result.attrib.get("TESTDESC","")
 
-        if nombre_prueba.lower() in test_desc.lower() in test_desc.lower() or nombre_prueba.lower() in long_desc.lower():
-            info = {
-                "TESTID": result.attrib.get("TESTID"),
-                "TESTCODE": result.attrib.get("TESTCODE")
-                
-            }
-            resultados.append(info)
-    return resultados
 
-#======================================================================
-#=========== funcion para obtener todas las pruebas de un perfil
-#======================================================================
 
-def pruebas_de_perfil(profid):
-    pruebas = []
-    for result in root.findall(".//RESULT"):
-        if result.attrib.get("PROFID") == str(profid):
-            pruebas.append({
-                "TESTID": result.attrib.get("TESTID"),
-                "TESTCODE": result.attrib.get("TESTCODE"),
-                "TESTDESC": result.attrib.get("TESTDESC"),
-                "RPRTDESC": result.attrib.get("RPRTDESC")
-            })
-    return pruebas
-
-#================================================================
-#==Ejemplo de uso ===============================================
-#================================================================
-
-nombre_buscar = "Globulos blancos"
-
-encontradas = buscar_prueba(nombre_buscar)
-
-if not encontradas:
-    print(f"No se encontro la prueba '{nombre_buscar}'")
-else:
-    for prueba in encontradas:
-        print("==== PRUEBA ENCONTRADA ======")
-        print("Codigo:", prueba["TESTCODE"])
-        print("Nombre:", prueba["RPRTDESC"])
-        print()
-
-        #Si pertenece a un perfil obtenemos las demas pruebas
-        if prueba["PROFID"]:
-            print(f"=== Pruebas del perfil {prueba['PROFID']} ===")
-            p = pruebas_de_perfil(prueba["PROFID"])
-            for item in p:
-                print(" -", item["RPRTDESC"], "=", item["RESULTADO"], item["UNIDADES"])
-            print()                
-
-app = Flask(__name__)
-
-@app.route("/")
-def home():
-    return "flask esta instalado y funcionando"
-
-if __name__ == '__main__':
-    app.run(host='0.0.0.0',port=9001,debug=True)
