@@ -1,16 +1,19 @@
- PS C:\endpointConsultaXML> python app.py
+(venv) PS C:\endpointConsultaXML> python app.py
 JWT generado
-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkFNQURJVEFNQyIsInJlcXVlc3RJRCI6IjEyOTg3IiwiaWF0IjoxNzY0NjIyMzgzLCJleHAiOjE3NjQ2MjI2ODN9.9P7_mEhvnvScLiKWkm6SBstOPpxD4BS9WTm5N7GjT8I
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkFNQURJVEFNQyIsInJlcXVlc3RJRCI6IjEyOTg3IiwiaWF0IjoxNzY0NjI2MTA5LCJleHAiOjE3NjQ2MjY0MDl9.9VhYVz4cA4_0fpV3yRIZB8DmO43_k6uVbrFEmxT186I
+C:\endpointConsultaXML\venv\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'localhost'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+XML recibido correctamente
+
+Prueba
+Glóbulos Blancos
+
+
+
+==== PRUEBA ENCONTRADA ======
+Codigo: H200
 Traceback (most recent call last):
-  File "C:\endpointConsultaXML\app.py", line 35, in <module>
-    response = requests.get(url, verify=false)
-               ^^^^^^^^
-NameError: name 'requests' is not defined. Did you mean: 'request_ID'?
-(venv) PS C:\endpointConsultaXML>
-
-
-
-
-
-
-
+  File "C:\endpointConsultaXML\app.py", line 109, in <module>
+    print("Nombre:", prueba["RPRTDESC"])
+                     ~~~~~~^^^^^^^^^^^^
+KeyError: 'RPRTDESC'
