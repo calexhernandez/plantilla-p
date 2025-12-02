@@ -8,7 +8,7 @@ import requests
 #datos de JWT
 username = "AMADITAMC"
 request_ID = "18467"
-secret_base64URL = "HJ230KY8FDAEZL6X"
+secret_base64URL = ""
 
 #decodificar el base64
 secret = base64.urlsafe_b64decode(secret_base64URL + "==")
