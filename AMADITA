@@ -1,142 +1,14 @@
-from flask import Flask
-import base64
-from datetime import datetime, timedelta, timezone
-import jwt
-import xml.etree.ElementTree as ET
-import requests
 
-#datos de JWT
-username = "AMADITAMC"
-request_ID = "18471"
-secret_base64URL = ""
-
-nombre_buscar = "Hemograma"
-
-#decodificar el base64
-secret = base64.urlsafe_b64decode(secret_base64URL + "==")
-
-##creo payload
-payload = {
-    "username": username,
-    "requestID": request_ID,
-    "iat": datetime.now(timezone.utc),
-    "exp": datetime.now(timezone.utc) + timedelta(minutes=5)
-}
-
-#generar JWT
-jwt_token = jwt.encode(payload, secret, algorithm="HS256")
-print("JWT generado")
-print(jwt_token)
-
-## ======================================================================================
-# =====LLamar al endpoint  XML
-
-## ======================================================================================
-
-url  = f"https://localhost/modulab/servlet/GetXMLRequestServlet?jwt={jwt_token}"
-
-response = requests.get(url, verify=False)
-
-if response.status_code != 200:
-    print("error al llamar el endpoint", response.status_code)
-    exit()
-
-xml_text = response.text
-print("XML recibido correctamente \n")
-
-# ==========================================================
-
-# ====parsear el XML ========
-# ==========================================================
-
-root = ET.fromstring(xml_text)
-
-
-#==========================================================
-#buscar una prueba por nombre
-#==========================================================
-
-def buscar_prueba(nombre_prueba):
-    """
-    busca una prueba por coincidencia parcial en RPRTDESC o TESTDESC
-    devuelve informacion detallada
-    """
-    resultados = []
-
-    for result in root.findall(".//RESULT"):
-        test_desc = result.attrib.get("RPRTDESC", "")
-        long_desc = result.attrib.get("TESTDESC","")
-        if (nombre_prueba.lower() in test_desc.lower()) or (nombre_prueba.lower() in long_desc.lower()):
-            info = {
-                "TESTID": result.attrib.get("TESTID"),
-                "TESTCODE": result.attrib.get("TESTCODE"),  
-                "PROFID": result.attrib.get("PROFID"),
-                "CONTID": result.attrib.get("CONTID")
-            }
-            resultados.append(info)
-    return resultados
-
-
-#======================================================================
-#========Revisar en el contenedor
-#======================================================================
-
-def fn_container(conid):
-    """
-    Devuelve valores del container
-    """
-
-    for container in root.findall(".//REQUESTCONTAINERLIST/REQUESTCONTAINER"):
-        
-        container_id = container.findtext("CONTAINERID")
-
-        if container_id == str(conid):
-
-            reception_date = container.findtext("RECEPTIONDATE")
-            is_received = container.findtext("ISRECEIVED")
-
-            return {
-                "RECEPTIONDATE": reception_date,
-                "ISRECEIVED": is_received
-            }
-    return None
-
-
-#======================================================================
-#=========== funcion para obtener todas las pruebas de un perfil
-#======================================================================
-
-def pruebas_de_perfil(profid):
-    pruebas = []
-    for result in root.findall(".//RESULT"):
-        if result.attrib.get("PROFID") == str(profid):
-            pruebas.append({
-                "TESTID": result.attrib.get("TESTID"),
-                "TESTCODE": result.attrib.get("TESTCODE"),
-                "TESTDESC": result.attrib.get("TESTDESC"),
-                "RPRTDESC": result.attrib.get("RPRTDESC"),
-                "RESULTADO": result.attrib.get("RESULTADO"),
-                "UNIDADES": result.attrib.get("UNIDADES")
-                #"RPRTDESC": result.attrib.get("RPRTDESC")
-            })
-    return pruebas
-
-#================================================================
-#==Ejemplo de uso ===============================================
-#================================================================
-
-#nombre a buscar esta arriba
-
-encontradas = buscar_prueba(nombre_buscar)
+buscaPrueba = buscar_prueba_unica(nombre_buscar)
 
 #=====================================================================
 #==============Resultados
 #=====================================================================
 
-if not encontradas:
+if not buscaPrueba:
     print(f"No se encontro la prueba '{nombre_buscar}'.")
 else:
-    for prueba in encontradas:
+    for prueba in buscaPrueba:
         print("\n===Orden")
         print(request_ID)
         print("\n==== PRUEBA ENCONTRADA ======")
@@ -171,12 +43,3 @@ else:
 
             #print()
         break
-
-app = Flask(__name__)
-
-@app.route("/")
-def home():
-    return "flask esta instalado y funcionando"
-
-if __name__ == '__main__':
-    app.run(host='0.0.0.0',port=9001,debug=True)
