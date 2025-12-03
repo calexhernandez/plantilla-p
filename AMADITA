@@ -18,7 +18,7 @@ def resultado():
 
 #datos de JWT
 username = "AMADITAMC"
-secret_base64URL = "HJ230KY8FDAEZL6X"
+secret_base64URL = ""
 
 codigoPrueba = ""
 RECEIVED = ""
