@@ -7,12 +7,22 @@ import requests
 
 from fnAyudas import  buscar_prueba_unica, fn_container, pruebas_de_perfil
 
+
+
+app = Flask(__name__)
+
+@app.route("/resultado", methods=['GET'])
+def resultado():
+    nombre_buscar = request.args.get("prueba")
+    request_ID = request.args.get("requestid")
+
 #datos de JWT
 username = "AMADITAMC"
-request_ID = "18470"
-secret_base64URL = ""
+secret_base64URL = "HJ230KY8FDAEZL6X"
 
-nombre_buscar = "% Actividad"
+codigoPrueba = ""
+RECEIVED = ""
+ReceptionDate = ""
 
 #decodificar el base64
 secret = base64.urlsafe_b64decode(secret_base64URL + "==")
@@ -108,10 +118,7 @@ else:
 
 
 
-app = Flask(__name__)
 
-@app.route("/resultado", methods=['GET'])
-def resultado():
     data = {
         "REQUESTID": request_ID,
         "PRUEBA": codigoPrueba,
@@ -119,6 +126,7 @@ def resultado():
         "ISRECEIVED": RECEIVED,
         "RECEPTIONDATE": RECEPTIONDATE
     }
+    
     return jsonify(data)
 
 if __name__ == '__main__':
