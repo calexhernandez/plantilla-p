@@ -1,6 +1,7 @@
-(venv) PS C:\endpointConsultaXML> python app.py
-Traceback (most recent call last):
-  File "C:\endpointConsultaXML\app.py", line 8, in <module>
-    from fnAyudas import buscar_pruebas, buscar_prueba_unica, fn_container, pruebas_de_perfil
-ModuleNotFoundError: No module named 'fnAyudas'
-(venv) PS C:\endpointConsultaXML>
+ {
+    "REQUESTID":"18471",
+    "Prueba":"H49",
+    "Procedimiento":"% Actividad",
+    "ISRECEIVED":"Y",
+    "RECEPTIONDATE":""
+  }
