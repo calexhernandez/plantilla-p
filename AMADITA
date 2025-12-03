@@ -8,7 +8,7 @@ import requests
 #datos de JWT
 username = "AMADITAMC"
 request_ID = "18471"
-secret_base64URL = "HJ230KY8FDAEZL6X"
+secret_base64URL = ""
 
 nombre_buscar = "Hemograma"
 
