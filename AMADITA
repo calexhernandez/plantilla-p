@@ -1,45 +1,6 @@
-
-buscaPrueba = buscar_prueba_unica(nombre_buscar)
-
-#=====================================================================
-#==============Resultados
-#=====================================================================
-
-if not buscaPrueba:
-    print(f"No se encontro la prueba '{nombre_buscar}'.")
-else:
-    for prueba in buscaPrueba:
-        print("\n===Orden")
-        print(request_ID)
-        print("\n==== PRUEBA ENCONTRADA ======")
-        print("Codigo:", prueba["TESTCODE"])
-        print("CONTID:", prueba["CONTID"])
-
-        #print("Nombre:", prueba["RPRTDESC"])
-        #print()
-        arrContenedor = fn_container(prueba["CONTID"])
-
-        if arrContenedor:   # validar que no sea None
-            print("\n==== Contenedor ======")
-            print("ReceptionDate:", arrContenedor["RECEPTIONDATE"])
-            print("ISRECEIVED:", arrContenedor["ISRECEIVED"])
-            #print()
-        else:
-            print("No se encontró el contenedor")
-
-
-
-        profid = prueba.get("PROFID")
-
-        # validamos PROFID seguro
-        if profid and profid != "0":
-            #print(f"=== pruebas del perfil {profid} ===")
-            print(f"=== Es perfil {profid} ===")
-
-            p = pruebas_de_perfil(profid)
-
-            #for item in p:
-                #print(f" - {item['RPRTDESC']} = {item['RESULTADO']} {item['UNIDADES']}")
-
-            #print()
-        break
+(venv) PS C:\endpointConsultaXML> python app.py
+Traceback (most recent call last):
+  File "C:\endpointConsultaXML\app.py", line 8, in <module>
+    from fnAyudas import buscar_pruebas, buscar_prueba_unica, fn_container, pruebas_de_perfil
+ModuleNotFoundError: No module named 'fnAyudas'
+(venv) PS C:\endpointConsultaXML>
