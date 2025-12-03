@@ -1,133 +1,34 @@
-from flask import Flask, jsonify
-import base64
-from datetime import datetime, timedelta, timezone
-import jwt
-import xml.etree.ElementTree as ET
-import requests
-
-from fnAyudas import  buscar_prueba_unica, fn_container, pruebas_de_perfil
-
-
-
-app = Flask(__name__)
-
-@app.route("/resultado", methods=['GET'])
-def resultado():
+(venv) PS C:\endpointConsultaXML> python app.py
+ * Serving Flask app 'app'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:9001
+ * Running on http://192.168.0.118:9001
+Press CTRL+C to quit
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 111-776-326
+127.0.0.1 - - [03/Dec/2025 18:37:06] "GET /resultado?prueba=%%20Actividad&requestid=18471 HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "C:\endpointConsultaXML\venv\Lib\site-packages\flask\app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\endpointConsultaXML\venv\Lib\site-packages\flask\app.py", line 1514, in wsgi_app
+    response = self.handle_exception(e)
+  File "C:\endpointConsultaXML\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\endpointConsultaXML\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\endpointConsultaXML\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\endpointConsultaXML\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\endpointConsultaXML\app.py", line 16, in resultado
     nombre_buscar = request.args.get("prueba")
-    request_ID = request.args.get("requestid")
-
-#datos de JWT
-username = "AMADITAMC"
-secret_base64URL = ""
-
-codigoPrueba = ""
-RECEIVED = ""
-ReceptionDate = ""
-
-#decodificar el base64
-secret = base64.urlsafe_b64decode(secret_base64URL + "==")
-
-##creo payload
-payload = {
-    "username": username,
-    "requestID": request_ID,
-    "iat": datetime.now(timezone.utc),
-    "exp": datetime.now(timezone.utc) + timedelta(minutes=5)
-}
-
-#generar JWT
-jwt_token = jwt.encode(payload, secret, algorithm="HS256")
-print("JWT generado")
-print(jwt_token)
-
-## ======================================================================================
-# =====LLamar al endpoint  XML
-
-## ======================================================================================
-
-url  = f"https://localhost/modulab/servlet/GetXMLRequestServlet?jwt={jwt_token}"
-
-response = requests.get(url, verify=False)
-
-if response.status_code != 200:
-    print("error al llamar el endpoint", response.status_code)
-    exit()
-
-xml_text = response.text
-print("XML recibido correctamente \n")
-
-# ==========================================================
-
-# ====parsear el XML ========
-# ==========================================================
-
-root = ET.fromstring(xml_text)
-
-
-#================================================================
-#==Ejemplo de uso ===============================================
-#================================================================
-
-#nombre a buscar esta arriba
-
-#encontradas = buscar_prueba(nombre_buscar)
-
-buscaPrueba = buscar_prueba_unica(root,nombre_buscar)
-
-#=====================================================================
-#==============Resultados
-#=====================================================================
-
-if not buscaPrueba:
-    print(f"No se encontro la prueba '{nombre_buscar}'.")
-else:
-    prueba = buscaPrueba
-    print("\n===Orden")
-    print(request_ID)
-    print("\n==== PRUEBA ENCONTRADA ======")
-    print("Codigo:", prueba["TESTCODE"])
-    print("CONTID:", prueba["CONTID"])
-    codigoPrueba = prueba["TESTCODE"]
-    #print("Nombre:", prueba["RPRTDESC"])
-    #print()
-    arrContenedor = fn_container(root,prueba["CONTID"])
-
-    if arrContenedor:   # validar que no sea None
-        print("\n==== Contenedor ======")
-        print("ReceptionDate:", arrContenedor["RECEPTIONDATE"])
-        print("ISRECEIVED:", arrContenedor["ISRECEIVED"])
-        RECEIVED = arrContenedor["ISRECEIVED"]
-        RECEPTIONDATE = arrContenedor["RECEPTIONDATE"]
-        #print()
-    else:
-        print("No se encontró el contenedor")
-
-    profid = prueba.get("PROFID")
-
-    # validamos PROFID seguro
-    if profid and profid != "0":
-        #print(f"=== pruebas del perfil {profid} ===")
-        print(f"=== Es perfil {profid} ===")
-
-        p = pruebas_de_perfil(root,profid)
-
-        #for item in p:
-            #print(f" - {item['RPRTDESC']} = {item['RESULTADO']} {item['UNIDADES']}")
-
-        #print()
-
-
-
-
-    data = {
-        "REQUESTID": request_ID,
-        "PRUEBA": codigoPrueba,
-        "PROCEDIMIENTO": nombre_buscar,
-        "ISRECEIVED": RECEIVED,
-        "RECEPTIONDATE": RECEPTIONDATE
-    }
-    
-    return jsonify(data)
-
-if __name__ == '__main__':
-    app.run(host='0.0.0.0',port=9001,debug=True)
+                    ^^^^^^^
+NameError: name 'request' is not defined. Did you mean: 'requests'?
+127.0.0.1 - - [03/Dec/2025 18:37:06] "GET /resultado?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 304 -
+127.0.0.1 - - [03/Dec/2025 18:37:06] "GET /resultado?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 304 -
+127.0.0.1 - - [03/Dec/2025 18:37:06] "GET /resultado?__debugger__=yes&cmd=resource&f=console.png&s=mVRzhry7O7C51N7ckkWd HTTP/1.1" 200 -
