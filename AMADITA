@@ -1,34 +1,87 @@
-(venv) PS C:\endpointConsultaXML> python app.py
- * Serving Flask app 'app'
- * Debug mode: on
-WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
- * Running on all addresses (0.0.0.0)
- * Running on http://127.0.0.1:9001
- * Running on http://192.168.0.118:9001
-Press CTRL+C to quit
- * Restarting with stat
- * Debugger is active!
- * Debugger PIN: 111-776-326
-127.0.0.1 - - [03/Dec/2025 18:37:06] "GET /resultado?prueba=%%20Actividad&requestid=18471 HTTP/1.1" 500 -
-Traceback (most recent call last):
-  File "C:\endpointConsultaXML\venv\Lib\site-packages\flask\app.py", line 1536, in __call__
-    return self.wsgi_app(environ, start_response)
-           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\endpointConsultaXML\venv\Lib\site-packages\flask\app.py", line 1514, in wsgi_app
-    response = self.handle_exception(e)
-  File "C:\endpointConsultaXML\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
-    response = self.full_dispatch_request()
-  File "C:\endpointConsultaXML\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "C:\endpointConsultaXML\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "C:\endpointConsultaXML\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "C:\endpointConsultaXML\app.py", line 16, in resultado
-    nombre_buscar = request.args.get("prueba")
-                    ^^^^^^^
-NameError: name 'request' is not defined. Did you mean: 'requests'?
-127.0.0.1 - - [03/Dec/2025 18:37:06] "GET /resultado?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 304 -
-127.0.0.1 - - [03/Dec/2025 18:37:06] "GET /resultado?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 304 -
-127.0.0.1 - - [03/Dec/2025 18:37:06] "GET /resultado?__debugger__=yes&cmd=resource&f=console.png&s=mVRzhry7O7C51N7ckkWd HTTP/1.1" 200 -
+import xml.etree.ElementTree as ET
+
+#==========================================================
+#buscar pruebas por nombre
+#==========================================================
+
+def buscar_pruebas(root,nombre_prueba):
+    """
+    busca una prueba por coincidencia parcial en RPRTDESC o TESTDESC
+    devuelve informacion detallada
+    """
+    resultados = []
+
+    for result in root.findall(".//RESULT"):
+        test_desc = result.attrib.get("RPRTDESC", "")
+        long_desc = result.attrib.get("TESTDESC","")
+        if (nombre_prueba.lower() in test_desc.lower()) or (nombre_prueba.lower() in long_desc.lower()):
+            info = {
+                "TESTID": result.attrib.get("TESTID"),
+                "TESTCODE": result.attrib.get("TESTCODE"),  
+                "PROFID": result.attrib.get("PROFID"),
+                "CONTID": result.attrib.get("CONTID")
+            }
+            resultados.append(info)
+    return resultados
+
+
+#==========================================================
+#buscar prueba por nombre (solo una)
+#==========================================================
+
+def buscar_prueba_unica(root,nombre_prueba):
+    """
+    busca una prueba 
+    """
+
+    for result in root.findall(".//RESULT"):
+        test_desc = result.attrib.get("RPRTDESC", "")
+        long_desc = result.attrib.get("TESTDESC","")
+        if (nombre_prueba.lower() in test_desc.lower()) or (nombre_prueba.lower() in long_desc.lower()):
+            return {
+                "TESTID": result.attrib.get("TESTID"),
+                "TESTCODE": result.attrib.get("TESTCODE"),  
+                "PROFID": result.attrib.get("PROFID"),
+                "CONTID": result.attrib.get("CONTID")
+            }
+            
+    return None
+
+
+#======================================================================
+#========Revisar en el contenedor
+#======================================================================
+
+def fn_container(root,conid):
+    """
+    Devuelve valores del container
+    """
+
+    for container in root.findall(".//REQUESTCONTAINERLIST/REQUESTCONTAINER"):
+        container_id = container.findtext("CONTAINERID")
+        if container_id == str(conid):
+
+            reception_date = container.findtext("RECEPTIONDATE")
+            is_received = container.findtext("ISRECEIVED")
+
+            return {
+                "RECEPTIONDATE": reception_date,
+                "ISRECEIVED": is_received
+            }
+    return None
+#======================================================================
+#=========== funcion para obtener todas las pruebas de un perfil
+#======================================================================
+
+def pruebas_de_perfil(root,profid):
+    for result in root.findall(".//RSPROFILE/RESULT"):
+        PROF_ID = result.findtext("PROFID")
+        if PROF_ID == str(profid):
+            PROFCODE = result.findtext("PROFCODE")
+            PROFDESC = result.findtext("PROFDESC")
+            return {
+                "PROFCODE": PROFCODE,
+                "PROFDESC": PROFDESC
+                #"RPRTDESC": result.attrib.get("RPRTDESC")
+            }
+    return None
