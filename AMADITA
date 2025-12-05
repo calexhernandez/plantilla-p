@@ -1,20 +1,20 @@
-t'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+C:\endpointConsultaXML\venv\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'localhost'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(
 XML recibido correctamente
 
 
 ===Orden
-18479
+18482
 
 ==== PRUEBA ENCONTRADA ======
 Codigo: H24
 CONTID: 20
 
 ==== Contenedor ======
-ReceptionDate: 2025-12-04T21:38:27.00Z
+ReceptionDate: 2025-12-05T20:29:04.00Z
 ISRECEIVED: Y
 === Es perfil 624 ===
-127.0.0.1 - - [05/Dec/2025 16:23:07] "GET /resultado?prueba=Hemograma&requestid=18479 HTTP/1.1" 500 -
+127.0.0.1 - - [05/Dec/2025 16:30:01] "GET /resultado?prueba=Hemograma&requestid=18482 HTTP/1.1" 500 -
 Traceback (most recent call last):
   File "C:\endpointConsultaXML\venv\Lib\site-packages\flask\app.py", line 1536, in __call__
     return self.wsgi_app(environ, start_response)
@@ -32,8 +32,3 @@ Traceback (most recent call last):
            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
   File "C:\endpointConsultaXML\app.py", line 117, in resultado
     PROFDESC = perfil["PROFDESC"]
-               ~~~~~~^^^^^^^^^^^^
-TypeError: 'NoneType' object is not subscriptable
-127.0.0.1 - - [05/Dec/2025 16:23:08] "GET /resultado?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 304 -
-127.0.0.1 - - [05/Dec/2025 16:23:08] "GET /resultado?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 304 -
-127.0.0.1 - - [05/Dec/2025 16:23:08] "GET /resultado?__debugger__=yes&cmd=resource&f=console.png&s=EIrbBVcv5KLYiYM025tE HTTP/1.1" 200 -
