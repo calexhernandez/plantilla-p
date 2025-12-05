@@ -1,34 +1,229 @@
-C:\endpointConsultaXML\venv\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'localhost'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
-  warnings.warn(
-XML recibido correctamente
+from flask import Flask, jsonify, request
+import base64
+from datetime import datetime, timedelta, timezone
+import jwt
+import xml.etree.ElementTree as ET
+import requests
+
+from fnAyudas import  buscar_prueba_unica, fn_container, pruebas_de_perfil
 
 
-===Orden
-18482
+app = Flask(__name__)
 
-==== PRUEBA ENCONTRADA ======
-Codigo: H24
-CONTID: 20
+@app.route("/resultado", methods=['GET'])
+def resultado():
 
-==== Contenedor ======
-ReceptionDate: 2025-12-05T20:29:04.00Z
-ISRECEIVED: Y
-=== Es perfil 624 ===
-127.0.0.1 - - [05/Dec/2025 16:30:01] "GET /resultado?prueba=Hemograma&requestid=18482 HTTP/1.1" 500 -
-Traceback (most recent call last):
-  File "C:\endpointConsultaXML\venv\Lib\site-packages\flask\app.py", line 1536, in __call__
-    return self.wsgi_app(environ, start_response)
-           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\endpointConsultaXML\venv\Lib\site-packages\flask\app.py", line 1514, in wsgi_app
-    response = self.handle_exception(e)
-  File "C:\endpointConsultaXML\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
-    response = self.full_dispatch_request()
-  File "C:\endpointConsultaXML\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "C:\endpointConsultaXML\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "C:\endpointConsultaXML\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "C:\endpointConsultaXML\app.py", line 117, in resultado
-    PROFDESC = perfil["PROFDESC"]
+    nombre_buscar = request.args.get("prueba")
+    request_ID = request.args.get("requestid")
+
+    if not nombre_buscar or not request_ID:
+        return jsonify({"error":"debe enviar prueba y request ID"}), 400
+
+    #datos de JWT
+    username = "AMADITAMC"
+    secret_base64URL = ""
+
+    codigoPrueba = ""
+    RECEIVED = ""
+    RECEPTIONDATE = ""
+    profid = ""
+
+    #decodificar el base64
+    secret = base64.urlsafe_b64decode(secret_base64URL + "==")
+
+    ##creo payload
+    payload = {
+        "username": username,
+        "requestID": request_ID,
+        "iat": datetime.now(timezone.utc),
+        "exp": datetime.now(timezone.utc) + timedelta(minutes=5)
+    }
+
+    #generar JWT
+    jwt_token = jwt.encode(payload, secret, algorithm="HS256")
+    print("JWT generado")
+    print(jwt_token)
+
+    ## ======================================================================================
+    # =====LLamar al endpoint  XML
+
+    ## ======================================================================================
+
+    url  = f"https://localhost/modulab/servlet/GetXMLRequestServlet?jwt={jwt_token}"
+
+    response = requests.get(url, verify=False)
+
+    if response.status_code != 200:
+        print("error al llamar el endpoint", response.status_code)
+        exit()
+
+    xml_text = response.text
+    print("XML recibido correctamente \n")
+
+    # ==========================================================
+
+    # ====parsear el XML ========
+    # ==========================================================
+
+    root = ET.fromstring(xml_text)
+
+
+    #================================================================
+    #==Ejemplo de uso ===============================================
+    #================================================================
+
+    #nombre a buscar esta arriba
+
+    #encontradas = buscar_prueba(nombre_buscar)
+
+    buscaPrueba = buscar_prueba_unica(root,nombre_buscar)
+
+    #=====================================================================
+    #==============Resultados
+    #=====================================================================
+
+    if not buscaPrueba:
+        print(f"No se encontro la prueba '{nombre_buscar}'.")
+    else:
+        prueba = buscaPrueba
+        print("\n===Orden")
+        print(request_ID)
+        print("\n==== PRUEBA ENCONTRADA ======")
+        print("Codigo:", prueba["TESTCODE"])
+        print("CONTID:", prueba["CONTID"])
+        codigoPrueba = prueba["TESTCODE"]
+        #print("Nombre:", prueba["RPRTDESC"])
+        #print()
+        arrContenedor = fn_container(root,prueba["CONTID"])
+
+        if arrContenedor:   # validar que no sea None
+            print("\n==== Contenedor ======")
+            print("ReceptionDate:", arrContenedor["RECEPTIONDATE"])
+            print("ISRECEIVED:", arrContenedor["ISRECEIVED"])
+            RECEIVED = arrContenedor["ISRECEIVED"]
+            RECEPTIONDATE = arrContenedor["RECEPTIONDATE"]
+            #print()
+        else:
+            print("No se encontró el contenedor")
+
+        profid = prueba.get("PROFID")
+
+        # validamos PROFID seguro
+        if profid and profid != "0":
+            #print(f"=== pruebas del perfil {profid} ===")
+            print(f"=== Es perfil {profid} ===")
+
+            perfil = pruebas_de_perfil(root,624)
+            PROFDESC = perfil["PROFDESC"]
+            #for item in p:
+                #print(f" - {item['RPRTDESC']} = {item['RESULTADO']} {item['UNIDADES']}")
+
+            #print()
+
+
+
+
+    data = {
+        "REQUESTID": request_ID,
+        "PERFIL": PROFDESC,
+        "PRUEBA": codigoPrueba,
+        "PROCEDIMIENTO": nombre_buscar,
+        "ISRECEIVED": RECEIVED,
+        "RECEPTIONDATE": RECEPTIONDATE
+    }
+
+    return jsonify(data)
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0',port=9001,debug=True)
+
+
+*************funciones
+
+import xml.etree.ElementTree as ET
+
+#==========================================================
+#buscar pruebas por nombre
+#==========================================================
+
+def buscar_pruebas(root,nombre_prueba):
+    """
+    busca una prueba por coincidencia parcial en RPRTDESC o TESTDESC
+    devuelve informacion detallada
+    """
+    resultados = []
+
+    for result in root.findall(".//RESULT"):
+        test_desc = result.attrib.get("RPRTDESC", "")
+        long_desc = result.attrib.get("TESTDESC","")
+        if (nombre_prueba.lower() in test_desc.lower()) or (nombre_prueba.lower() in long_desc.lower()):
+            info = {
+                "TESTID": result.attrib.get("TESTID"),
+                "TESTCODE": result.attrib.get("TESTCODE"),  
+                "PROFID": result.attrib.get("PROFID"),
+                "CONTID": result.attrib.get("CONTID")
+            }
+            resultados.append(info)
+    return resultados
+
+
+#==========================================================
+#buscar prueba por nombre (solo una)
+#==========================================================
+
+def buscar_prueba_unica(root,nombre_prueba):
+    """
+    busca una prueba 
+    """
+
+    for result in root.findall(".//RESULT"):
+        test_desc = result.attrib.get("RPRTDESC", "")
+        long_desc = result.attrib.get("TESTDESC","")
+        if (nombre_prueba.lower() in test_desc.lower()) or (nombre_prueba.lower() in long_desc.lower()):
+            return {
+                "TESTID": result.attrib.get("TESTID"),
+                "TESTCODE": result.attrib.get("TESTCODE"),  
+                "PROFID": result.attrib.get("PROFID"),
+                "CONTID": result.attrib.get("CONTID")
+            }
+            
+    return None
+
+
+#======================================================================
+#========Revisar en el contenedor
+#======================================================================
+
+def fn_container(root,conid):
+    """
+    Devuelve valores del container
+    """
+
+    for container in root.findall(".//REQUESTCONTAINERLIST/REQUESTCONTAINER"):
+        container_id = container.findtext("CONTAINERID")
+        if container_id == str(conid):
+
+            reception_date = container.findtext("RECEPTIONDATE")
+            is_received = container.findtext("ISRECEIVED")
+
+            return {
+                "RECEPTIONDATE": reception_date,
+                "ISRECEIVED": is_received
+            }
+    return None
+#======================================================================
+#=========== funcion para obtener todas las pruebas de un perfil
+#======================================================================
+
+def pruebas_de_perfil(root,profid):
+    for result in root.findall(".//RSPROFILE/RESULT"):
+        PROF_ID = result.findtext("PROFID")
+        if PROF_ID == str(profid):
+            PROFCODE = result.findtext("PROFCODE")
+            PROFDESC = result.findtext("PROFDESC")
+            return {
+                "PROFCODE": PROFCODE,
+                "PROFDESC": PROFDESC
+                #"RPRTDESC": result.attrib.get("RPRTDESC")
+            }
+    return None
