@@ -1,29 +1,28 @@
 
-	
-var dbConn;
-
-try {
-	dbConn = DatabaseConnectionFactory.createDatabaseConnection('com.microsoft.sqlserver.jdbc.SQLServerDriver',configurationMap.get('DB_HL7_JDBC'),configurationMap.get('DB_HL7_USER'),configurationMap.get('DB_HL7_PASSWORD'));
-	var result = dbConn.executeCachedQuery("SELECT top 100 im_order_log.id AS id, im_order_log.center_id AS center_id, im_order_log.order_id AS order_id, im_order_log.patient_id AS patient_id, im_order_log.service_type_id AS service_type_id, im_order_log.order_status_id AS status_id,  im_order_log.trans_status_id AS trans_status_id FROM im_order_log WHERE im_order_log.trans_status_id = 0 ORDER BY im_order_log.id ASC");
-	return result;
-} finally {
-	if (dbConn) { 
-		dbConn.close();
-	}
-}
 
 
+adt
+MSH|^~\&|SIFANET|2|Modulab|Tecniscan Z. 15|20251223150500-0600||ADT^A08|a8591624-21d5-4802-8398-38d7f3c39223|P|2.5|||||||||
+EVN|A08|20251223150500-0600|||||
+PID|1|2025-02-5490|2025-02-5490^^^^PI||SACALXOT PINEDA^ABNER SAUL||19890727|M|||3 LAS GOLONDRINAS||^PRN^PH^^^^^^47468907~^PRN^Internet^correonulo@tecniscan.com^^^^^|||||||||||||||||N
 
 
-// This update script will be executed once for every result returned from the above query.
-var dbConn;
+OML
+MSH|^~\&|SIFANET|Tecniscan Plaza Magdalena|Modulab|Modulab|20251223150403-0600||OML^O21^OML_O21|5c72e89e-3d94-4552-98d8-49b92ba1a595|P|2.5|||||||||
+PID|1|2025-29-3131|2025-29-3131^^^^PI||SAMAYOA VELIZ^EVIE DAENERYS||20200922|F|||SAMALA, BAJA VERAPAZ .  .||^PRN^PH^^^^^^49442322~^PRN^Internet^dayanavel3@hotmail.com                                                                              |||||||||||||||||N
+PV1|1|PRIV|^^01||||||||||||||||
+ORC|NW|24-227559||24-227559|A||||||||||||||||^^^^^^FI^^^||||||
+OBR|1|||85002^Tiempo de Coagulación y Sangría||||||24^Tecniscan Plaza Magdalena||||||5227^FRANCISCO ARTURO||||||||LAB||||CE^CORREO ELECTRONICO PX Y DR
+ORC|NW|24-227559||24-227559|A||||||||||||||||^^^^^^FI^^^||||||
+OBR|2|||85007^Hematología Completa con VS||||||24^Tecniscan Plaza Magdalena||||||5227^FRANCISCO ARTURO||||||||LAB||||CE^CORREO ELECTRONICO PX Y DR
+ORC|NW|24-227559||24-227559|A||||||||||||||||^^^^^^FI^^^||||||
+OBR|3|||85610^Tiempo de Protrombina / TP||||||24^Tecniscan Plaza Magdalena||||||5227^FRANCISCO ARTURO||||||||LAB||||CE^CORREO ELECTRONICO PX Y DR
+ORC|NW|24-227559||24-227559|A||||||||||||||||^^^^^^FI^^^||||||
+OBR|4|||85730^Tiempo Parcial de Tromboplastina / TPT||||||24^Tecniscan Plaza Magdalena||||||5227^FRANCISCO ARTURO||||||||LAB||||CE^CORREO ELECTRONICO PX Y DR
 
-try {
-	dbConn = DatabaseConnectionFactory.createDatabaseConnection('com.microsoft.sqlserver.jdbc.SQLServerDriver',configurationMap.get('DB_HL7_JDBC'),configurationMap.get('DB_HL7_USER'),configurationMap.get('DB_HL7_PASSWORD'));
-	
-	var result = dbConn.executeUpdate("UPDATE im_order_log SET trans_status_id = 1 WHERE id = " + $('id'));
-} finally {
-	if (dbConn) { 
-		dbConn.close();
-	}
-}
+PMU
+MSH|^~\&|SIFANET|24|Modulab|MG|20251223150400||PMU^B01|b926def0-8645-4749-acb2-46824f2792a4|P|2.5|||||||||
+EVN|B01|20251223150400|
+STF||5227|CASTELLANOS VALLADARES^FRANCISCO ARTURO|D|||A||||||||nunino100@hotmail.com|||||||||||||||||||||||
+
+
