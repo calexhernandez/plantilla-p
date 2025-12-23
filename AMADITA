@@ -1,9 +1,29 @@
-MSH|^~\&|SIFANET|Tecniscan de Guatemala (Majadas Zona 11)|Modulab|Modulab|20251217093608-0600||OML^O21^OML_O21|dc0d15d8-68e0-46ad-bf0b-26bba87c486d|P|2.5|||||||||
-PID|1|2018-09-3576|2018-09-3576^^^^PI~1801112640116^^^^PPN||PEREIRA MARROQUIN^GILDA MARISOL||19770202|F|||3AV 622 1 BOCA DEL MONTE||^PRN^PH^^^^^^44988037~^PRN^Internet^marisol.pereira.m@gmail.com                                                                         |||||||||||||||||N
-PV1|1|PRIV|^^01||||||||||||||||
-ORC|NW|06-1081067||06-1081067|A||||||||||||||||Pan-American Life de Guatemala^^^^^^FI^^^A39||||||
-OBR|1|||82307^Vitamina D / 25 Hidroxi||||||06^Tecniscan de Guatemala (Majadas Zona 11)||||||693^MARIA DOLORES||||||||LAB||||CE^CORREO ELECTRONICO PX Y DR
-ORC|NW|06-1081067||06-1081067|A||||||||||||||||Pan-American Life de Guatemala^^^^^^FI^^^A39||||||
-OBR|2|||83525^Insulina Ayunas ||||||06^Tecniscan de Guatemala (Majadas Zona 11)||||||693^MARIA DOLORES||||||||LAB||||CE^CORREO ELECTRONICO PX Y DR
-ORC|NW|06-1081067||06-1081067|A||||||||||||||||Pan-American Life de Guatemala^^^^^^FI^^^A39||||||
-OBR|3|||90.63^Insulina 2 hpp||||||06^Tecniscan de Guatemala (Majadas Zona 11)||||||693^MARIA DOLORES||||||||LAB||||CE^CORREO ELECTRONICO PX Y DR
+
+	
+var dbConn;
+
+try {
+	dbConn = DatabaseConnectionFactory.createDatabaseConnection('com.microsoft.sqlserver.jdbc.SQLServerDriver',configurationMap.get('DB_HL7_JDBC'),configurationMap.get('DB_HL7_USER'),configurationMap.get('DB_HL7_PASSWORD'));
+	var result = dbConn.executeCachedQuery("SELECT top 100 im_order_log.id AS id, im_order_log.center_id AS center_id, im_order_log.order_id AS order_id, im_order_log.patient_id AS patient_id, im_order_log.service_type_id AS service_type_id, im_order_log.order_status_id AS status_id,  im_order_log.trans_status_id AS trans_status_id FROM im_order_log WHERE im_order_log.trans_status_id = 0 ORDER BY im_order_log.id ASC");
+	return result;
+} finally {
+	if (dbConn) { 
+		dbConn.close();
+	}
+}
+
+
+
+
+// This update script will be executed once for every result returned from the above query.
+var dbConn;
+
+try {
+	dbConn = DatabaseConnectionFactory.createDatabaseConnection('com.microsoft.sqlserver.jdbc.SQLServerDriver',configurationMap.get('DB_HL7_JDBC'),configurationMap.get('DB_HL7_USER'),configurationMap.get('DB_HL7_PASSWORD'));
+	
+	var result = dbConn.executeUpdate("UPDATE im_order_log SET trans_status_id = 1 WHERE id = " + $('id'));
+} finally {
+	if (dbConn) { 
+		dbConn.close();
+	}
+}
