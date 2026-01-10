@@ -1,28 +1,31 @@
 
 
-
-adt
-MSH|^~\&|SIFANET|2|Modulab|Tecniscan Z. 15|20251223150500-0600||ADT^A08|a8591624-21d5-4802-8398-38d7f3c39223|P|2.5|||||||||
-EVN|A08|20251223150500-0600|||||
-PID|1|2025-02-5490|2025-02-5490^^^^PI||SACALXOT PINEDA^ABNER SAUL||19890727|M|||3 LAS GOLONDRINAS||^PRN^PH^^^^^^47468907~^PRN^Internet^correonulo@tecniscan.com^^^^^|||||||||||||||||N
-
-
-OML
-MSH|^~\&|SIFANET|Tecniscan Plaza Magdalena|Modulab|Modulab|20251223150403-0600||OML^O21^OML_O21|5c72e89e-3d94-4552-98d8-49b92ba1a595|P|2.5|||||||||
-PID|1|2025-29-3131|2025-29-3131^^^^PI||SAMAYOA VELIZ^EVIE DAENERYS||20200922|F|||SAMALA, BAJA VERAPAZ .  .||^PRN^PH^^^^^^49442322~^PRN^Internet^dayanavel3@hotmail.com                                                                              |||||||||||||||||N
-PV1|1|PRIV|^^01||||||||||||||||
-ORC|NW|24-227559||24-227559|A||||||||||||||||^^^^^^FI^^^||||||
-OBR|1|||85002^Tiempo de Coagulación y Sangría||||||24^Tecniscan Plaza Magdalena||||||5227^FRANCISCO ARTURO||||||||LAB||||CE^CORREO ELECTRONICO PX Y DR
-ORC|NW|24-227559||24-227559|A||||||||||||||||^^^^^^FI^^^||||||
-OBR|2|||85007^Hematología Completa con VS||||||24^Tecniscan Plaza Magdalena||||||5227^FRANCISCO ARTURO||||||||LAB||||CE^CORREO ELECTRONICO PX Y DR
-ORC|NW|24-227559||24-227559|A||||||||||||||||^^^^^^FI^^^||||||
-OBR|3|||85610^Tiempo de Protrombina / TP||||||24^Tecniscan Plaza Magdalena||||||5227^FRANCISCO ARTURO||||||||LAB||||CE^CORREO ELECTRONICO PX Y DR
-ORC|NW|24-227559||24-227559|A||||||||||||||||^^^^^^FI^^^||||||
-OBR|4|||85730^Tiempo Parcial de Tromboplastina / TPT||||||24^Tecniscan Plaza Magdalena||||||5227^FRANCISCO ARTURO||||||||LAB||||CE^CORREO ELECTRONICO PX Y DR
-
-PMU
-MSH|^~\&|SIFANET|24|Modulab|MG|20251223150400||PMU^B01|b926def0-8645-4749-acb2-46824f2792a4|P|2.5|||||||||
-EVN|B01|20251223150400|
-STF||5227|CASTELLANOS VALLADARES^FRANCISCO ARTURO|D|||A||||||||nunino100@hotmail.com|||||||||||||||||||||||
-
-
+MSH|^~\&|AMADITA|AMADITA|Modulab|Modulab|||OML^O21^OML_O21||P|2.5||||||8859/1|||
+PID|1|2434-00800301095|2434-00800301095^^^^PI~^^^^PPN~^^^^SS||RODRIGUEZ DIAZ^PAMELA MILAGROS||19860629|F|||^^^^^^^||.^^^|||||||||||||||||N
+PV1|1|LC|^^||||||||||||||||
+DG1|||||||||||||||||||||||||||||
+IN1|||||||||||||||||||||||||||||
+ORC|NW|||3424023|A||||20251227|||24465^PRUEBA|||||||||2434^CENTRO MEDICO DE DIABETES OBESIDAD Y ESP||||||
+OBR|1|||2000^||||||L001^Laboratorio Principal (Gazcue)||||||24465^PRUEBA||||||||NE^NO ESPECIFICADO||||RS^Recoger en Sucursal|
+TQ1|||||||||S
+ORC|NW|||3424023|||||20251227|||24465^PRUEBA|||||||||2434^CENTRO MEDICO DE DIABETES OBESIDAD Y ESP
+OBR|2|||5460^||||||L001^Laboratorio Principal (Gazcue)||||||24465^PRUEBA||||||||NE^NO ESPECIFICADO||||RS^Recoger en Sucursal
+TQ1|||||||||S
+ORC|NW|||3424023|||||20251227|||24465^PRUEBA|||||||||2434^CENTRO MEDICO DE DIABETES OBESIDAD Y ESP
+OBR|3|||3550^||||||L001^Laboratorio Principal (Gazcue)||||||24465^PRUEBA||||||||NE^NO ESPECIFICADO||||RS^Recoger en Sucursal
+TQ1|||||||||S
+ORC|NW|||3424023|||||20251227|||24465^PRUEBA|||||||||2434^CENTRO MEDICO DE DIABETES OBESIDAD Y ESP
+OBR|4|||8086^||||||L001^Laboratorio Principal (Gazcue)||||||24465^PRUEBA||||||||NE^NO ESPECIFICADO||||RS^Recoger en Sucursal
+TQ1|||||||||S
+ORC|NW|||3424023|||||20251227|||24465^PRUEBA|||||||||2434^CENTRO MEDICO DE DIABETES OBESIDAD Y ESP
+OBR|5|||5450^||||||L001^Laboratorio Principal (Gazcue)||||||24465^PRUEBA||||||||NE^NO ESPECIFICADO||||RS^Recoger en Sucursal
+TQ1|||||||||S
+ORC|NW|||3424023|||||20251227|||24465^PRUEBA|||||||||2434^CENTRO MEDICO DE DIABETES OBESIDAD Y ESP
+OBR|6|||6651^||||||L001^Laboratorio Principal (Gazcue)||||||24465^PRUEBA||||||||NE^NO ESPECIFICADO||||RS^Recoger en Sucursal
+TQ1|||||||||S
+ORC|NW|||3424023|||||20251227|||24465^PRUEBA|||||||||2434^CENTRO MEDICO DE DIABETES OBESIDAD Y ESP
+OBR|7|||6025^||||||L001^Laboratorio Principal (Gazcue)||||||24465^PRUEBA||||||||NE^NO ESPECIFICADO||||RS^Recoger en Sucursal
+TQ1|||||||||S
+ORC|NW|||3424023|||||20251227|||24465^PRUEBA|||||||||2434^CENTRO MEDICO DE DIABETES OBESIDAD Y ESP
+OBR|8|||7141^||||||L001^Laboratorio Principal (Gazcue)||||||24465^PRUEBA||||||||NE^NO ESPECIFICADO||||RS^Recoger en Sucursal
+TQ1|||||||||S
