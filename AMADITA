@@ -1,209 +1,174 @@
-MSH|^~\&|Modulab|Modulab|Portal|Portal|20251230093301-0400||ORU^R01^ORU_R01|LAB31767101581922|P|2.5|||||RD||ES
-PID|1||2434-00800301095^^^^PI~2434-00800301095^^^^PPN||RODRIGUEZ DIAZ^PAMELA MILAGROS||19860629120000-0400|F|||||^PRN^PH^^^^^^. ^^^. |||||||||||||||||N
-PV1|1|LC||||||||||||||N
-ORC|SC||01236628^MODULAB|3424023^916406&MODULAB|CM||||20251230093256-0400|||NO^No Especificado|||20251227105019-0400||||||CENTRO MEDICO DE DIABETES OBESIDAD Y ESP^^^^^^FI^^^2434
-OBR|1|3424023|01236628^MODULAB|8086^Urocultivo^MODULAB||||||L051||||||NO^No Especificado|||154942|8||||MB|F|||RS||||andy.jorge^20251230093256-0400
-TQ1|||||||||S
-OBX|1|ST|MC1^Urocultivo^MODULAB||Conteo mayor a 100,000 ufc/mL||||||F|||20251230093256
-OBX|2|ST|CULTUREID^Culture Id^MODULAB|154942|154942||||||F|||20251230093256
-OBX|3|CE|11475-1^MICROORGANISM IDENTIFIED^LN|1|SFL^Enterococcus faecalis^MODULAB||||||F|||20251230093256
-OBX|4|NM|564-5^COLONY COUNT^LN|1|||||||F|||20251230093256
-OBX|5|CE|RES_MECH^Mecanismo de resistencia^MODULAB|1|||||||F|||20251230093256||andy.jorge
-OBX|6|NM|CIP^Ciprofloxacina^MODULAB|1|<=0.5|µg/ml||S|||F|||20251230093256
-OBX|7|NM|LEV^Levofloxacina^MODULAB|1|1|µg/ml||S|||F|||20251230093256
-OBX|8|NM|HLS^Estreptomicina Alta Carga (SYN)^MODULAB|1||||S|||F|||20251230093256
-OBX|9|NM|HLG^Gentamicina Alta Carga (SYN)^MODULAB|1||||R|||F|||20251230093256
-OBX|10|NM|AM^Ampicilina^MODULAB|1|<=2|µg/ml||S|||F|||20251230093256
-OBX|11|NM|P^Benzylpenicilina^MODULAB|1|4|µg/ml||S|||F|||20251230093256
-OBX|12|NM|E^Eritromicina^MODULAB|1|>=8|µg/ml||R|||F|||20251230093256
-OBX|13|NM|DAP^Daptomicina^MODULAB|1|4|µg/ml||S|||F|||20251230093256
-OBX|14|NM|VA^Vancomicina^MODULAB|1|1|µg/ml||S|||F|||20251230093256
-OBX|15|NM|TE^Tetraciclina^MODULAB|1|>=16|µg/ml||R|||F|||20251230093256
-OBX|16|NM|LNZ^Linezolid^MODULAB|1|2|µg/ml||S|||F|||20251230093256
-OBX|17|NM|FT^Nitrofurantoina^MODULAB|1|<=16|µg/ml||S|||F|||20251230093256
-SPM|1|7801236628||2^Orina|||^Chorro medio^MODULAB|^Orina^MODULAB|||||||||20251227111815|20251227112348||Y||||||1
-
-************************* convertido ******************************
-
-MSH|^~\&|Modulab|Amadita|Medicalcore|2434|20251230093302||ORU^R01^ORU_R01||P|2.5|||||RD||ES
-PID|1|2434-00800301095|||RODRIGUEZ DIAZ^PAMELA MILAGROS||19860629|F|||^^^^^^^^^^^||. |||||||||||||||||
-ORC|RE|3424023|01236628^MODULAB|3424023^916406&MODULAB|CM||||20251230093256-0400|||0000000000^TOMA DE MUESTRA 1^TOMA DE MUESTRA 1|||20251227105019-0400||||||CENTRO MEDICO DE DIABETES OBESIDAD Y ESP^^^^^^FI^^^2434
-OBR|1||01236628^MODULAB|8086^Urocultivo^MODULAB^^|||20251230093256-0400|||L051||||||0000000000^^TOMA DE MUESTRA 1||||8|^AMADITA LABORATORIO CLINICO^ABELARDO RODRIGUEZ URDANETA NO 102 GAZCUE^STO. DGO.^RD^10205^Dra. Patricia González -Exequatur:5709^99996|||MB|F||1|RS||||andy.jorge^20251230093256-0400
-OBX|1|ST|^^^MC1^Urocultivo||Conteo mayor a 100,000 ufc/mL^||||||F|||20251230093256|||||
-OBX|2|ST|^^^CULTUREID^Culture Id||154942^||||||F|||20251230093256|||||
-OBX|3|CE|^^^11475-1^Microorganismo Identificado||SFL^Enterococcus faecalis||||||F|||20251230093256|||||
-OBX|4|NM|^^^564-5^COLONY COUNT||^||||||F|||20251230093256|||||
-OBX|5|CE|^^^RES_MECH^Mecanismo de resistencia||^||||||F|||20251230093256||andy.jorge|||
-OBX|6|NM|^^^CIP^Ciprofloxacina||<=0.5^|µg/ml||S|||F|||20251230093256|||||
-OBX|7|NM|^^^LEV^Levofloxacina||1^|µg/ml||S|||F|||20251230093256|||||
-OBX|8|NM|^^^HLS^Estreptomicina Alta Carga (SYN)||^|||S|||F|||20251230093256|||||
-OBX|9|NM|^^^HLG^Gentamicina Alta Carga (SYN)||^|||R|||F|||20251230093256|||||
-OBX|10|NM|^^^AM^Ampicilina||<=2^|µg/ml||S|||F|||20251230093256|||||
-OBX|11|NM|^^^P^Benzylpenicilina||4^|µg/ml||S|||F|||20251230093256|||||
-OBX|12|NM|^^^E^Eritromicina||>=8^|µg/ml||R|||F|||20251230093256|||||
-OBX|13|NM|^^^DAP^Daptomicina||4^|µg/ml||S|||F|||20251230093256|||||
-OBX|14|NM|^^^VA^Vancomicina||1^|µg/ml||S|||F|||20251230093256|||||
-OBX|15|NM|^^^TE^Tetraciclina||>=16^|µg/ml||R|||F|||20251230093256|||||
-OBX|16|NM|^^^LNZ^Linezolid||2^|µg/ml||S|||F|||20251230093256|||||
-OBX|17|NM|^^^FT^Nitrofurantoina||<=16^|µg/ml||S|||F|||20251230093256|||||
-NTE|1||Validado por: AJ
-
-*********************************************************************************************
-
-
-
-MSH|^~\&|Modulab|Modulab|Portal|Portal|20251229144703-0400||ORU^R01^ORU_R01|LAB31767034023354|P|2.5|||||RD||ES
-PID|1||2434-00800301095^^^^PI~2434-00800301095^^^^PPN||RODRIGUEZ DIAZ^PAMELA MILAGROS||19860629120000-0400|F|||||^PRN^PH^^^^^^. ^^^. |||||||||||||||||N
-PV1|1|LC||||||||||||||N
-ORC|SC||01236628^MODULAB|3424023^916406&MODULAB|CM||||20251229144651-0400|||NO^No Especificado|||20251227105019-0400||||||CENTRO MEDICO DE DIABETES OBESIDAD Y ESP^^^^^^FI^^^2434
-OBR|1|3424023|01236628^MODULAB|2000^Examen Fisico^MODULAB||||||L051||||||NO^No Especificado||||17||||LAB|F|||RS||||rafaela.benitez^20251229144651-0400
-TQ1|||||||||S
-OBX|1|ST|EO1^Color^MODULAB||Amarillo Claro|||N|||F|||20251229144651||rafaela.benitez|||20251227114902
-OBX|2|ST|EO2^Aspecto^MODULAB||Ligero Turbio|||N|||F|||20251229144651||rafaela.benitez|||20251229144651
-OBX|3|NM|EO3^Gravedad Específica^MODULAB||1.020||1.0 - 1.03|N|||F|||20251229144651||rafaela.benitez|||20251227114902
-OBX|4|NM|EO4^pH^MODULAB||7.5||4.5 - 7.5|N|||F|||20251229144651||rafaela.benitez|||20251227114901
-SPM|1|10901236628||2^Orina|||^^MODULAB|^^MODULAB|||||||||20251227111815|20251227112255||Y||||||1
-
-
-
-MSH|^~\&|Modulab|Modulab|Portal|Portal|20251227145834-0400||ORU^R01^ORU_R01|LAB31766861914328|P|2.5|||||RD||ES
-PID|1||2434-00800301095^^^^PI~2434-00800301095^^^^PPN||RODRIGUEZ DIAZ^PAMELA MILAGROS||19860629120000-0400|F|||||^PRN^PH^^^^^^. ^^^. |||||||||||||||||N
-PV1|1|LC||||||||||||||N
-ORC|SC||01236628^MODULAB|3424023^916406&MODULAB|CM||||20251227145830-0400|||NO^No Especificado|||20251227105019-0400||||||CENTRO MEDICO DE DIABETES OBESIDAD Y ESP^^^^^^FI^^^2434
-OBR|1|3424023|01236628^MODULAB|7141^Proteína C Reactiva Ultrasensible^MODULAB||||||L051||||||NO^No Especificado||||1||||LAB|F|||RS||||jocelyn.delacruz^20251227145830-0400
-TQ1|||||||||S
-OBX|1|NM|7141^Proteína C Reactiva Ultrasensible^MODULAB||0.23|mg/dL|0.0 - 0.1|H|||F|||20251227145830||jocelyn.delacruz|||20251227145829
-SPM|1|1001236628||3^Suero|||^^MODULAB|^^MODULAB|||||||||20251227104700|20251227105019||Y||||||1
-
-
-
-MSH|^~\&|Modulab|Modulab|Portal|Portal|20251227125412-0400||ORU^R01^ORU_R01|LAB31766854452404|P|2.5|||||RD||ES
-PID|1||2434-00800301095^^^^PI~2434-00800301095^^^^PPN||RODRIGUEZ DIAZ^PAMELA MILAGROS||19860629120000-0400|F|||||^PRN^PH^^^^^^. ^^^. |||||||||||||||||N
-PV1|1|LC||||||||||||||N
-ORC|SC||01236628^MODULAB|3424023^916406&MODULAB|CM||||20251227125355-0400|||NO^No Especificado|||20251227105019-0400||||||CENTRO MEDICO DE DIABETES OBESIDAD Y ESP^^^^^^FI^^^2434
-OBR|1|3424023|01236628^MODULAB|2000^Partículas/Microscopio^MODULAB||||||L051||||||NO^No Especificado||||17||||LAB|F|||RS||||MO51^20251227125355-0400
-TQ1|||||||||S
-OBX|1|NM|EO19^Leucocitos^MODULAB||14|/c||N|||F|||20251227125355||MO51|||20251227125345
-OBX|2|NM|EO21^Hematíes^MODULAB||2|/c||N|||F|||20251227125355||MO51|||20251227125345
-OBX|3|NM|EO25^Células Escamosas^MODULAB||0|||N|||F|||20251227125355||MO51|||20251227125352
-OBX|4|ST|EO25^Células Escamosas^MODULAB|1|Ausente|||N|||F|||20251227125355||MO51|||20251227125352
-OBX|5|NM|EO27^Células No Escamosas^MODULAB||50|||N|||F|||20251227125355||MO51|||20251227125352
-OBX|6|ST|EO27^Células No Escamosas^MODULAB|1|Moderadas|||N|||F|||20251227125355||MO51|||20251227125352
-OBX|7|NM|EO41^Células Renales^MODULAB||0|/c||N|||F|||20251227125355||MO51|||20251227125346
-OBX|8|NM|EO22^Células Epiteliales^MODULAB||50|||N|||F|||20251227125355||MO51|||20251227125354
-OBX|9|ST|EO22^Células Epiteliales^MODULAB|1|Moderadas|||N|||F|||20251227125355||MO51|||20251227125354
-OBX|10|NM|EO24^Células Transicionales^MODULAB||0|||N|||F|||20251227125355||MO51|||20251227125352
-OBX|11|ST|EO24^Células Transicionales^MODULAB|1|Ausente|||N|||F|||20251227125355||MO51|||20251227125352
-OBX|12|NM|EO30^Bacterias^MODULAB||1600|||N|||F|||20251227125355||MO51|||20251227125352
-OBX|13|ST|EO30^Bacterias^MODULAB|1|Moderadas|||N|||F|||20251227125355||MO51|||20251227125352
-OBX|14|NM|EO31^Fibras Mucosas^MODULAB||10|||N|||F|||20251227125355||MO51|||20251227125354
-OBX|15|ST|EO31^Fibras Mucosas^MODULAB|1|Escasas|||N|||F|||20251227125355||MO51|||20251227125354
-OBX|16|NM|EO35^Levaduras^MODULAB||0|||N|||F|||20251227125355||MO51|||20251227125355
-OBX|17|ST|EO35^Levaduras^MODULAB|1|Ausente|||N|||F|||20251227125355||MO51|||20251227125355
-OBX|18|NM|EO38^Cristales^MODULAB||0|||N|||F|||20251227125355||MO51|||20251227125354
-OBX|19|ST|EO38^Cristales^MODULAB|1|Ausente|||N|||F|||20251227125355||MO51|||20251227125354
-OBX|20|NM|EO48^Cilindros^MODULAB||0|||N|||F|||20251227125355||MO51|||20251227125352
-OBX|21|ST|EO48^Cilindros^MODULAB|1|Ausente|||N|||F|||20251227125355||MO51|||20251227125352
-OBX|22|NM|EO18^Leucocitos^MODULAB||80|µL|- 30.0|H|||F|||20251227125355||MO51|||20251227125345
-OBX|23|NM|EO20^Hematíes^MODULAB||10|µL|0.0 - 22.99|N|||F|||20251227125355||MO51|||20251227125345
-OBX|24|NM|EO26^Células Escamosas^MODULAB||0|µL|0.0 - 30.99|N|||F|||20251227125355||MO51|||20251227125346
-OBX|25|NM|EO42^Células No Escamosas^MODULAB||50|µL|0.0 - 30.99|H|||F|||20251227125355||MO51|||20251227125350
-OBX|26|NM|EO40^Células Renales^MODULAB||0|µL|0.0 - 11.0|N|||F|||20251227125355||MO51|||20251227125346
-OBX|27|NM|EO23^Células Epiteliales^MODULAB||50|µL|0.0 - 30.99|H|||F|||20251227125355||MO51|||20251227125345
-OBX|28|NM|EO47^Células Transicionales^MODULAB||0|µL|0.0 - 30.99|N|||F|||20251227125355||MO51|||20251227125346
-OBX|29|NM|EO29^Bacterias^MODULAB||1600|µL|0.0 - 1200.0|H|||F|||20251227125355||MO51|||20251227125348
-OBX|30|NM|EO32^Fibras Mucosas^MODULAB||10|µL|0.0 - 9.99|H|||F|||20251227125355||MO51|||20251227125347
-OBX|31|NM|EO37^Cristales^MODULAB||0|µL|0.0 - 9.99|N|||F|||20251227125355||MO51|||20251227125350
-OBX|32|NM|EO36^Levaduras^MODULAB||0|µL|0.0 - 9.9|N|||F|||20251227125355||MO51|||20251227125348
-OBX|33|NM|EO33^Cilindros^MODULAB||0|µL|0.0 - 1.0|N|||F|||20251227125355||MO51|||20251227125350
-SPM|1|10901236628||2^Orina|||^^MODULAB|^^MODULAB|||||||||20251227111815|20251227112255||Y||||||1
+ellos
+{
+  "IDTipoPaciente" : "A",
+  "TipoPaciente" : "Ambulatorio",
+  "NumeroRequisicionPedido" : "3148351",
+  "FechaAtencion" : "14/01/2026",
+  "IDServicio" : "PER",
+  "Servicio" : "PERSONAL",
+  "UbicacionPaciente" : "",
+  "IDCentroExtraccion" : "L002",
+  "CentroExtraccion" : "Ozama",
+  "IDDoctor" : "34529",
+  "CedulaDoctor" : "",
+  "Doctor" : "",
+  "IDDiagnostico" : "z017",
+  "Diagnostico" : "NO ESPECIFICADO",
+  "IDDestino" : "CP",
+  "Destino" : "Correo Paciente",
+  "Prioridad" : "R",
+  "ImagenOrdenMedica" : [ ],
+  "ConsultaResultados" : "Paciente",
+  "Apellidos" : "GERMOSEN ",
+  "Nombres" : "ELIZABETH ",
+  "IDPrincipalActual" : "RD896541",
+  "IdPrincipalNuevo" : "",
+  "IdPaciente" : "744c0281-35f6-4681-a629-e4acc17cca45",
+  "IdFamiliar" : "",
+  "FechaNacimiento" : "13/08/1969",
+  "Sexo" : "F",
+  "Embarazo" : "",
+  "CorreoElectronico" : "ELIZAGERM@GMAIL.COM",
+  "Direccion" : {
+    "Fisica" : {
+      "Calle" : "calle principal no. 8",
+      "Ciudad" : "María Trinidad Sánchez",
+      "Estado" : "Las Gordas (Zona urbana)",
+      "CodigoPostal" : "",
+      "Pais" : "República Dominicana"
+    },
+    "Postal" : {
+      "Calle" : "calle principal no. 8",
+      "Ciudad" : "María Trinidad Sánchez",
+      "Estado" : "Las Gordas (Zona urbana)",
+      "CodigoPostal" : "",
+      "Pais" : "República Dominicana"
+    }
+  },
+  "Telefono" : "8296541235",
+  "TipoMensaje" : "nuevo",
+  "Procedures" : [
+    {
+      "NumeroLinea" : "1",
+      "IDProcedimiento" : "6610",
+      "Procedimiento" : "4838285"
+    },
+    {
+      "NumeroLinea" : "2",
+      "IDProcedimiento" : "6730",
+      "Procedimiento" : "4838285"
+    },
+    {
+      "NumeroLinea" : "3",
+      "IDProcedimiento" : "7592",
+      "Procedimiento" : "4838285"
+    },
+    {
+      "NumeroLinea" : "4",
+      "IDProcedimiento" : "8177",
+      "Procedimiento" : "4838285"
+    },
+    {
+      "NumeroLinea" : "5",
+      "IDProcedimiento" : "3947",
+      "Procedimiento" : "4838285"
+    },
+    {
+      "NumeroLinea" : "6",
+      "IDProcedimiento" : "5480",
+      "Procedimiento" : "4838285"
+    },
+    {
+      "NumeroLinea" : "7",
+      "IDProcedimiento" : "12194",
+      "Procedimiento" : "4838285"
+    },
+    {
+      "NumeroLinea" : "8",
+      "IDProcedimiento" : "5154",
+      "Procedimiento" : "4838285"
+    }
+  ]
+}
 
 
+funciona
+
+{
+	"IDTipoPaciente": "A",
+	"TipoPaciente": "Ambulatorio",
+	"NumeroRequisicionPedido": "PruHIS1243CH92",
+	"TipoMensaje": "nuevo",
+	"FechaAtencion": "11/12/2025",
+	"IDServicio": "2434",
+	"Servicio": "CENTRO MEDICO",
+	"UbicacionPaciente": "Sala A",
+	"IDCentroExtraccion": "L001",
+	"CentroExtraccion": "Laboratorio Principal",
+	"IDDoctor": "24465",
+	"CedulaDoctor": "123-4567890-1",
+	"Doctor": "PRUEBA",
+	"IDDiagnostico": "NE",
+	"Diagnostico": "No Especificado",
+	"IDDestino": "RS",
+	"Destino": "Retirar en Sucursal",
+	"Prioridad": "",
+	"ImagenOrdenMedica": [
+		{
+			"NombreArchivo": "indicacion1.png",
+			"Base64": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUg..."
+		},
+		{
+			"NombreArchivo": "indicacion2.jpg",
+			"Base64": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD..."
+		}
+	],
+	"ConsultaResultados": "Paciente",
+	"Apellidos": "ahh chis",
+	"Nombres": "PruNOMBRE1 PruNOMBRE2",
+	"IDPrincipalActual": "testtestPruDNI12345679",
+	"IdPrincipalNuevo": "",
+	"IdPaciente": "testtesTPruHC12345678",
+	"IdFamiliar": "testPruSSN12345678",
+	"FechaNacimiento": "23/05/2020",
+	"Sexo": "M",
+	"Embarazo": "",
+	"CorreoElectronico": "chernandez1@promed-sa.com",
+	"Direccion": {
+		"Fisica": {
+			"Calle": "",
+			"Ciudad": "",
+			"Estado": "",
+			"CodigoPostal": "",
+			"Pais": ""
+		},
+		"Postal": {
+			"Calle": "",
+			"Ciudad": "",
+			"Estado": "",
+			"CodigoPostal": "",
+			"Pais": ""
+		}
+	},
+	"Telefono": "0987654321",
+	"Procedures": [
+		{
+			"NumeroLinea": "1",
+			"IDProcedimiento": "H49",
+			"Procedimiento": ""
+		},
+		{
+      "NumeroLinea" : "3",
+      "IDProcedimiento" : "4615",
+      "Procedimiento" : ""
+    },
+		{
+      "NumeroLinea" : "3",
+      "IDProcedimiento" : "6025",
+      "Procedimiento" : ""
+    }
+
+	]
+}
 
 
-MSH|^~\&|Modulab|Modulab|Portal|Portal|20251227124327-0400||ORU^R01^ORU_R01|LAB31766853807574|P|2.5|||||RD||ES
-PID|1||2434-00800301095^^^^PI~2434-00800301095^^^^PPN||RODRIGUEZ DIAZ^PAMELA MILAGROS||19860629120000-0400|F|||||^PRN^PH^^^^^^. ^^^. |||||||||||||||||N
-PV1|1|LC||||||||||||||N
-ORC|SC||01236628^MODULAB|3424023^916406&MODULAB|CM||||20251227124304-0400|||NO^No Especificado|||20251227105019-0400||||||CENTRO MEDICO DE DIABETES OBESIDAD Y ESP^^^^^^FI^^^2434
-OBR|1|3424023|01236628^MODULAB|5450^Aspartato  Aminotransferasa (AST)^MODULAB||||||L051||||||NO^No Especificado||||1||||LAB|F|||RS||||crismerlin.vargas^20251227124304-0400
-TQ1|||||||||S
-OBX|1|NM|5450^Aspartato  Aminotransferasa (AST)^MODULAB||16.70|U/L|13.0 - 39.0|N|||F|||20251227124304||crismerlin.vargas|||20251227124114
-SPM|1|1001236628||3^Suero|||^^MODULAB|^^MODULAB|||||||||20251227104700|20251227105019||Y||||||1
-ORC|SC||01236628^MODULAB|3424023^916406&MODULAB|CM||||20251227124304-0400|||NO^No Especificado|||20251227105019-0400||||||CENTRO MEDICO DE DIABETES OBESIDAD Y ESP^^^^^^FI^^^2434
-OBR|2|3424023|01236628^MODULAB|5460^Alanina  Aminotransferasa ( ALT )^MODULAB||||||L051||||||NO^No Especificado||||1||||LAB|F|||RS||||crismerlin.vargas^20251227124304-0400
-TQ1|||||||||S
-OBX|1|NM|5460^Alanina  Aminotransferasa ( ALT )^MODULAB||13.00|U/L|7.0 - 52.0|N|||F|||20251227124304||crismerlin.vargas|||20251227124104
-SPM|1|1001236628||3^Suero|||^^MODULAB|^^MODULAB|||||||||20251227104700|20251227105019||Y||||||1
-ORC|SC||01236628^MODULAB|3424023^916406&MODULAB|CM||||20251227124304-0400|||NO^No Especificado|||20251227105019-0400||||||CENTRO MEDICO DE DIABETES OBESIDAD Y ESP^^^^^^FI^^^2434
-OBR|3|3424023|01236628^MODULAB|3550^CPK Total - Creatina Fosfoquinasa^MODULAB||||||L051||||||NO^No Especificado||||1||||LAB|F|||RS||||crismerlin.vargas^20251227124304-0400
-TQ1|||||||||S
-OBX|1|NM|3550^CPK Total - Creatina Fosfoquinasa^MODULAB||58.10|U/L|30.0 - 223.0|N|||F|||20251227124304||crismerlin.vargas|||20251227124123
-SPM|1|1001236628||3^Suero|||^^MODULAB|^^MODULAB|||||||||20251227104700|20251227105019||Y||||||1
-
-
-
-MSH|^~\&|Modulab|Modulab|Portal|Portal|20251227114914-0400||ORU^R01^ORU_R01|LAB31766850554736|P|2.5|||||RD||ES
-PID|1||2434-00800301095^^^^PI~2434-00800301095^^^^PPN||RODRIGUEZ DIAZ^PAMELA MILAGROS||19860629120000-0400|F|||||^PRN^PH^^^^^^. ^^^. |||||||||||||||||N
-PV1|1|LC||||||||||||||N
-ORC|SC||01236628^MODULAB|3424023^916406&MODULAB|CM||||20251227114904-0400|||NO^No Especificado|||20251227105019-0400||||||CENTRO MEDICO DE DIABETES OBESIDAD Y ESP^^^^^^FI^^^2434
-OBR|1|3424023|01236628^MODULAB|2000^Examen Fisico^MODULAB||||||L051||||||NO^No Especificado||||17||||LAB|F|||RS||||MO51^20251227114904-0400
-TQ1|||||||||S
-OBX|1|ST|EO1^Color^MODULAB||Amarillo Claro|||N|||F|||20251227114904||MO51|||20251227114902
-OBX|2|ST|EO2^Aspecto^MODULAB||Claro|||N|||F|||20251227114904||MO51|||20251227114903
-OBX|3|NM|EO3^Gravedad Específica^MODULAB||1.020||1.0 - 1.03|N|||F|||20251227114904||MO51|||20251227114902
-OBX|4|NM|EO4^pH^MODULAB||7.5||4.5 - 7.5|N|||F|||20251227114904||MO51|||20251227114901
-OBX|5|ST|EO6^Glucosa^MODULAB||Negativo|||N|||F|||20251227114904||MO51|||20251227114903
-OBX|6|NM|EO7^Creatinina^MODULAB||100|mg/dL||N|||F|||20251227114904||MO51|||20251227114902
-OBX|7|NM|EO8^Albúmina^MODULAB||30.0|mg/L|0.0 - 30.0|N|||F|||20251227114904||MO51|||20251227114902
-OBX|8|NM|EO10^Proteínas^MODULAB||0|mg/dL|0.0 - 30.0|N|||F|||20251227114904||MO51|||20251227114903
-OBX|9|ST|EO10^Proteínas^MODULAB|1|Negativo|||N|||F|||20251227114904||MO51|||20251227114903
-OBX|10|ST|EO12^Hemoglobina^MODULAB||Negativo|||N|||F|||20251227114904||MO51|||20251227114903
-OBX|11|ST|EO14^Urobilinógeno^MODULAB||Normal|||N|||F|||20251227114904||MO51|||20251227114900
-OBX|12|ST|EO13^Bilirrubina^MODULAB||Negativo|||N|||F|||20251227114904||MO51|||20251227114903
-OBX|13|ST|EO9^Cetonas^MODULAB||Negativo|||N|||F|||20251227114904||MO51|||20251227114903
-OBX|14|ST|EO5^Nitrito^MODULAB||Negativo|||N|||F|||20251227114904||MO51|||20251227114903
-OBX|15|NM|EO15^Relación A/C^MODULAB||30.0|mg/gCr|- 30.0|N|||F|||20251227114904||MO51|||20251227114903
-OBX|16|NM|EO17^Relación P/C^MODULAB||0.0|g/gCr|- 150.0|N|||F|||20251227114904||MO51|||20251227114904
-SPM|1|10901236628||2^Orina|||^^MODULAB|^^MODULAB|||||||||20251227111815|20251227112255||Y||||||1
-
-
-
-MSH|^~\&|Modulab|Modulab|Portal|Portal|20251227114759-0400||ORU^R01^ORU_R01|LAB31766850479832|P|2.5|||||RD||ES
-PID|1||2434-00800301095^^^^PI~2434-00800301095^^^^PPN||RODRIGUEZ DIAZ^PAMELA MILAGROS||19860629120000-0400|F|||||^PRN^PH^^^^^^. ^^^. |||||||||||||||||N
-PV1|1|LC||||||||||||||N
-ORC|SC||01236628^MODULAB|3424023^916406&MODULAB|CM||||20251227114757-0400|||NO^No Especificado|||20251227105019-0400||||||CENTRO MEDICO DE DIABETES OBESIDAD Y ESP^^^^^^FI^^^2434
-OBR|1|3424023|01236628^MODULAB|6025^Hemograma^MODULAB||||||L051||||||NO^No Especificado||||2||||LAB|F|||RS||||miguelina.rodriguez^20251227114757-0400
-TQ1|||||||||S
-OBX|1|NM|H24^Glóbulos Blancos^MODULAB||9.01|K/µL|3.8 - 10.8|N|||F|||20251227114757||miguelina.rodriguez|||20251227112245
-OBX|2|NM|H25^Glóbulos Rojos^MODULAB||4.38|M/µL|3.93 - 5.22|N|||F|||20251227114757||miguelina.rodriguez|||20251227112245
-OBX|3|NM|H27^Hemoglobina^MODULAB||13.20|g/dL|11.2 - 15.7|N|||F|||20251227114757||miguelina.rodriguez|||20251227112245
-OBX|4|NM|H26^Hematocrito^MODULAB||38.10|%|34.1 - 44.9|N|||F|||20251227114757||miguelina.rodriguez|||20251227112245
-OBX|5|NM|H29^VCM^MODULAB||87.00|fL|81.0 - 99.0|N|||F|||20251227114757||miguelina.rodriguez|||20251227112245
-OBX|6|NM|H30^HCM^MODULAB||30.10|pg|27.0 - 31.0|N|||F|||20251227114757||miguelina.rodriguez|||20251227112246
-OBX|7|NM|H31^CHCM^MODULAB||34.60|g/dL|31.5 - 36.5|N|||F|||20251227114757||miguelina.rodriguez|||20251227112246
-OBX|8|NM|H32^RDW^MODULAB||11.80|%|11.6 - 14.6|N|||F|||20251227114757||miguelina.rodriguez|||20251227112247
-OBX|9|NM|H28^Plaquetas^MODULAB||309.00|K/µL|150.0 - 450.0|N|||F|||20251227114757||miguelina.rodriguez|||20251227112246
-OBX|10|NM|H33^MPV^MODULAB||9.20|f/L|0.9 - 99.0|N|||F|||20251227114757||miguelina.rodriguez|||20251227112247
-OBX|11|NM|H34^PDW^MODULAB||38.10|GSD|0.9 - 99.0|N|||F|||20251227114757||miguelina.rodriguez|||20251227112247
-OBX|12|NM|H35^Neutrófilos #^MODULAB||6.18|K/µL|1.5 - 6.9|N|||F|||20251227114757||miguelina.rodriguez|||20251227112246
-OBX|13|NM|H36^Neutrófilos %^MODULAB||68.70|%|40.0 - 70.0|N|||F|||20251227114757||miguelina.rodriguez|||20251227112246
-OBX|14|NM|H37^Linfocitos #^MODULAB||2.12|K/µL|0.5 - 3.4|N|||F|||20251227114757||miguelina.rodriguez|||20251227112247
-OBX|15|NM|H38^Linfocitos %^MODULAB||23.50|%|20.5 - 50.0|N|||F|||20251227114757||miguelina.rodriguez|||20251227112246
-OBX|16|NM|H39^Monocitos #^MODULAB||0.58|K/µL|0.0 - 0.9|N|||F|||20251227114757||miguelina.rodriguez|||20251227112247
-OBX|17|NM|H40^Monocitos %^MODULAB||6.40|%|5.5 - 13.5|N|||F|||20251227114757||miguelina.rodriguez|||20251227112246
-OBX|18|NM|H41^Eosinófilos #^MODULAB||0.12|K/µL|0.0 - 0.9|N|||F|||20251227114757||miguelina.rodriguez|||20251227112247
-OBX|19|NM|H42^Eosinófilos %^MODULAB||1.30|%|0.0 - 9.0|N|||F|||20251227114757||miguelina.rodriguez|||20251227112246
-OBX|20|NM|H43^Basófilos #^MODULAB||0.01|K/µL|0.0 - 0.2|N|||F|||20251227114757||miguelina.rodriguez|||20251227112247
-OBX|21|NM|H44^Basófilos %^MODULAB||0.10|%|0.0 - 2.0|N|||F|||20251227114757||miguelina.rodriguez|||20251227112246
-SPM|1|2201236628||5^Sangre Total con EDTA|||^^MODULAB|^^MODULAB|||||||||20251227104700|20251227105032||Y||||||1
-
-
-
-MSH|^~\&|Modulab|Modulab|Portal|Portal|20251227105952-0400||ORU^R01^ORU_R01|LAB31766847592216|P|2.5|||||RD||ES
-PID|1||2434-00800301095^^^^PI~2434-00800301095^^^^PPN||RODRIGUEZ DIAZ^PAMELA MILAGROS||19860629120000-0400|F|||||^PRN^PH^^^^^^. ^^^. |||||||||||||||||N
-PV1|1|LC||||||||||||||N
-ORC|SC||01236628^MODULAB|3424023^916406&MODULAB|CM||||20251227105928-0400|||NO^No Especificado|||20251227105019-0400||||||CENTRO MEDICO DE DIABETES OBESIDAD Y ESP^^^^^^FI^^^2434
-OBR|1|3424023|01236628^MODULAB|6651^Eritrosedimentación^MODULAB||||||L051||||||NO^No Especificado||||15||||LAB|F|||RS||||MO51^20251227105928-0400
-TQ1|||||||||S
-OBX|1|NM|6651^Eritrosedimentación^MODULAB||3|mm/h|0.0 - 20.0|N|||F|||20251227105928||MO51|||20251227105928
-SPM|1|26601236628||5^Sangre Total con EDTA|||^^MODULAB|^^MODULAB|||||||||20251227104700|20251227105035||Y||||||1
