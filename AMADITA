@@ -1,24 +1,11 @@
+var cmd = [
+    "java",
+    "-jar",
+    "C:\\mirth\\converter.jar",
+    "C:\\temp\\input.txt",
+    "C:\\temp\\output.txt",
+    "C:\\Program Files\\LibreOffice\\program\\soffice.exe"
+];
 
-cancelaciones
-completa
-MSH|^~\&|Modulab|Modulab|Portal|Portal|20251208113552-0400||OML^O21^OML_O21|LAB11765208152416|P|2.5|||||RD||ES
-PID|||testtesTPruHC12345678^^^^PI~testtestPruDNI12345679^^^^PPN~testPruSSN12345678^^^^SS||AHH CHIS^PRUNOMBRE1 PRUNOMBRE2||20200523120000-0400|M|||||^PRN^PH^^^^^^0987654321 ^^^0987654321 ~^PRN^Internet^chernandez1@promed-sa.com|||||||||||||||||N
-PV1||A||||||||||||||N
-ORC|CA||01004716^MODULAB|PruHIS1243CH82|CA||||20251208113535-0400||||||20251205120000-0400||||||CENTRO MEDICO DE DIABETES OBESIDAD Y ESP^^^^^^FI^^^2434
-OBR|1|||6025^Hemograma|||||||A|||||24465^PRUEBA ||||||||LAB|X|||RS
-NTE|1||REASON=Error de MEDICAL CORE
-SPM|1|2201004716||5^Sangre Total con EDTA|||^^MODULAB|^^MODULAB|||||||||20251205162830|20251205162904||Y||||||1
-ORC|CA||01004716^MODULAB|PruHIS1243CH82|CA||||20251208113535-0400||||||20251205120000-0400||||||CENTRO MEDICO DE DIABETES OBESIDAD Y ESP^^^^^^FI^^^2434
-OBR|2|||H49^% Actividad|||||||A|||||24465^PRUEBA ||||||||LAB|X|||RS
-NTE|1||REASON=Error de MEDICAL CORE
-SPM|1|3201004716||31^Plasma Citratado|||^^MODULAB|^^MODULAB|||||||||20251205162830|20251205170639||Y||||||1
-
-
-individual
-
-MSH|^~\&|Modulab|Modulab|Portal|Portal|20251212161915-0400||OML^O21^OML_O21|LAB11765570755358|P|2.5|||||RD||ES
-PID|||testtesTPruHC12345678^^^^PI~testtestPruDNI12345679^^^^PPN~testPruSSN12345678^^^^SS||AHH CHIS^PRUNOMBRE1 PRUNOMBRE2||20200523120000-0400|M|||||^PRN^PH^^^^^^0987654321 ^^^0987654321 ~^PRN^Internet^chernandez1@promed-sa.com|||||||||||||||||N
-PV1||A||||||||||||||N
-ORC|OC||01004731^MODULAB|PruHIS1243CH91|CA||||20251212161903-0400||||||20251212120000-0400||||||CENTRO MEDICO DE DIABETES OBESIDAD Y ESP^^^^^^FI^^^2434
-OBR|1|||4615^LDH|||||||A|||||24465^PRUEBA ||||||||LAB|X|||RS
-SPM|1|1001004731||3^Suero|||^^MODULAB|^^MODULAB|||||||||20251212161447|20251212161518||Y||||||1
+var process = new java.lang.ProcessBuilder(cmd).start();
+process.waitFor();
