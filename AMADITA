@@ -1,7 +1,7 @@
 Authorized remote IP 127.0.0.1
 NetworkSerialServerProtocol terminated:true
-R: <VT>MSH|^~\&|AMADITA|AMADITA|Modulab|Modulab|20260505165528||OML^O21^OML_O21|id-1778014528020-66035|P|2.5||||||8859/1|||<CR>PID|1|acb1b897-05e3-4c5b-a91e-829c3e70662a|40220195362^^^^PI~^^^^PPN~^^^^SS||GEREZ JEREZ^NIURKA JOSEFINA||19900605|F|||Sector de prueba^^Distrito Nacional^^^República Dominicana^^^Distrito Nacional||8095024055^^^NIUKAGEREZJEREZ@GMAIL.COM|||||||||||||||||N<CR>PV1|1|A|^^||||||||||||||||<CR>DG1|||||||||||||||||||||||||||||<CR>IN1|||||||||||||||||||||||||||||<CR>ORC|NW|||P3150078|A||||20260504|||^|||||||||PER^PERSONAL||||||<CR>OBR|1|||3947^4516051||||||L002^Ozama||||||^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR>ORC|NW|||P3150078|A||||20260504|||^|||||||||PER^PERSONAL||||||<CR>OBR|2|||10959^Microbiologia molecular||||||L002^Ozama||||||^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR>ORC|NW|||P3150078|A||||20260504|||^|||||||||PER^PERSONAL||||||<CR>OBR|3|||8040^Hemocultivo||||||L002^Ozama||||||^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR><FS><CR>
-L: MSH|^~\&|AMADITA|AMADITA|Modulab|Modulab|20260505165528||OML^O21^OML_O21|id-1778014528020-66035|P|2.5||||||8859/1|||
+R: <VT>MSH|^~\&|AMADITA|AMADITA|Modulab|Modulab|20260505170007||OML^O21^OML_O21|id-1778014807655-48067|P|2.5||||||8859/1|||<CR>PID|1|acb1b897-05e3-4c5b-a91e-829c3e70662a|40220195362^^^^PI~^^^^PPN~^^^^SS||GEREZ JEREZ^NIURKA JOSEFINA||19900605|F|||Sector de prueba^^Distrito Nacional^^^República Dominicana^^^Distrito Nacional||8095024055^^^NIUKAGEREZJEREZ@GMAIL.COM|||||||||||||||||N<CR>PV1|1|A|^^||||||||||||||||<CR>DG1|||||||||||||||||||||||||||||<CR>IN1|||||||||||||||||||||||||||||<CR>ORC|NW|||P3150078|A||||20260504|||^|||||||||PER^PERSONAL||||||<CR>OBR|1|||3947^4516051||||||L002^Ozama||||||^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR>ORC|NW|||P3150078|A||||20260504|||^|||||||||PER^PERSONAL||||||<CR>OBR|2|||10959^Microbiologia molecular||||||L002^Ozama||||||^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR>ORC|NW|||P3150078|A||||20260504|||^|||||||||PER^PERSONAL||||||<CR>OBR|3|||8040^Hemocultivo||||||L002^Ozama||||||^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR><FS><CR>
+L: MSH|^~\&|AMADITA|AMADITA|Modulab|Modulab|20260505170007||OML^O21^OML_O21|id-1778014807655-48067|P|2.5||||||8859/1|||
 L: PID|1|acb1b897-05e3-4c5b-a91e-829c3e70662a|40220195362^^^^PI~^^^^PPN~^^^^SS||GEREZ JEREZ^NIURKA JOSEFINA||19900605|F|||Sector de prueba^^Distrito Nacional^^^República Dominicana^^^Distrito Nacional||8095024055^^^NIUKAGEREZJEREZ@GMAIL.COM|||||||||||||||||N
 L: PV1|1|A|^^||||||||||||||||
 L: DG1|||||||||||||||||||||||||||||
@@ -21,14 +21,12 @@ TEST TO ADD 10959
 TEST TO ADD 8040
 Creating New Request...
 Patient found.
-Request Sent to Modulab
-<?xml version='1.0' encoding='UTF-8' ?>
-<GETREQUESTFORHOST REQUESTID='25388' CONNECTIONID='1'  SHOWCVCOMMENTS='Y' SHOWPRELIMINARYCULTUREVALUES='Y'/>
-GetSampleResults 25388 OK
-GetSampleResults Couldn't get request from Modulab
+Request NOT Sent to Modulab (ERR_XREQU_044: Host number must be unique)
+Application Error:ERR_XREQU_044: Host number must be unique
 Patient GEREZ JEREZ, NIURKA JOSEFINA Modified
 Updating or inserting add info on the patientid: 6605
-E: MSH|^~\&|||||20260505165534||ACK|MSG-20260505165534-6|D|2.5|||
-E: MSA|AA|id-1778014528020-66035|Acknowledgment
-data=<VT>MSH|^~\&|||||20260505165534||ACK|MSG-20260505165534-6|D|2.5|||<CR>MSA|AA|id-1778014528020-66035|Acknowledgment<CR><FS><CR>
-S: <VT>MSH|^~\&|||||20260505165534||ACK|MSG-20260505165534-6|D|2.5|||<CR>MSA|AA|id-1778014528020-66035|Acknowledgment<CR><FS><CR>
+E: MSH|^~\&|||||20260505170009||ACK|MSG-20260505170009-7|D|2.5|||
+E: MSA|AE|id-1778014807655-48067|NO Acknowledgment
+E: ERR||||||||ERR_XREQU_044: Host number must be unique
+data=<VT>MSH|^~\&|||||20260505170009||ACK|MSG-20260505170009-7|D|2.5|||<CR>MSA|AE|id-1778014807655-48067|NO Acknowledgment<CR>ERR||||||||ERR_XREQU_044: Host number must be unique<CR><FS><CR>
+S: <VT>MSH|^~\&|||||20260505170009||ACK|MSG-20260505170009-7|D|2.5|||<CR>MSA|AE|id-1778014807655-48067|NO Acknowledgment<CR>ERR||||||||ERR_XREQU_044: Host number must be unique<CR><FS><CR>
