@@ -1,2 +1,444 @@
+mirth recibe ***
 MSH|^~\&|||||20260422175549||ACK|MSG-20260422175549-138251|D|2.5|||
 MSA|AA||Acknowledgment
+
+mensaje de modulab ******
+
+9^Puerto Plata||||||^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente<CR>TQ1|||||||||R<CR>ORC|NW|||4376724|||||20260505|||^|||||||||PER^PERSONAL<CR>OBR|9|||5450^5729150||||||L089^Puerto Plata||||||^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente<CR>TQ1|||||||||R<CR>ORC|NW|||4376724|||||20260505|||^|||||||||PER^PERSONAL<CR>OBR|10|||5460^5729150||||||L089^Puerto Plata||||||^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente<CR>TQ1|||||||||R<CR>ORC|NW|||4376724|||||20260505|||^|||||||||PER^PERSONAL<CR>OBR|11|||5520^5729150||||||L089^Puerto Plata||||||^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente<CR>TQ1|||||||||R<CR><FS><CR>
+R: <VT>MSH|^~\&|AMADITA|AMADITA|Modulab|Modulab|||OML^O21^OML_O21||P|2.5||||||8859/1|||<CR>PID|1|19b5aab9-f7c5-4a5e-8f81-c50b90dc9e7f|03700664224^^^^PI~^^^^PPN~^^^^SS||DEL ROSARIO ROMAN^ALBERMIS ARABELLA||19771029|F|||URBANIZACION  PLATATION,KM 7 PUERTO PLATA SOSUA^^Puerto Plata^^^República Dominicana^^^San Felipe de Puerto Plata (Zona urbana)^^||8299028408^^^ARABELLADELROSARIO@GMAIL.COM|||||||||||||||||N<CR>PV1|1|A|^^||||||||||||||||<CR>DG1|||||||||||||||||||||||||||||<CR>IN1|||||||||||||||||||||||||||||<CR>ORC|NW|||4376724|A||||20260505|||^|||||||||PER^PERSONAL||||||<CR>OBR|1|||6025^5729150||||||L089^Puerto Plata||||||^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR>ORC|NW|||4376724|||||20260505|||^|||||||||PER^PERSONAL<CR>OBR|2|||5550^5729150||||||L089^Puerto Plata||||||^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente<CR>TQ1|||||||||R<CR>ORC|NW|||4376724|||||20260505|||^|||||||||PER^PERSONAL<CR>OBR|3|||3465^5729150||||||L089^Puerto Plata||||||^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente<CR>TQ1|||||||||R<CR>ORC|NW|||4376724|||||20260505|||^|||||||||PER^PERSONAL<CR>OBR|4|||4718^5729150||||||L089^Puerto Plata||||||^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente<CR>TQ1|||||||||R<CR>ORC|NW|||4376724|||||20260505|||^|||||||||PER^PERSONAL<CR>OBR|5|||4721^5729150||||||L089^Puerto Plata||||||^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente<CR>TQ1|||||||||R<CR>ORC|NW|||4376724|||||20260505|||^|||||||||PER^PERSONAL<CR>OBR|6|||5478^5729150||||||L089^Puerto Plata||||||^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente<CR>TQ1|||||||||R<CR>ORC|NW|||4376724|||||20260505|||^|||||||||PER^PERSONAL<CR>OBR|7|||3947^5729150||||||L089^Puerto Plata||||||^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente<CR>TQ1|||||||||R<CR>ORC|NW|||4376724|||||20260505|||^|||||||||PER^PERSONAL<CR>OBR|8|||4036^5729150||||||L089^Puerto Plata||||||^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente<CR>TQ1|||||||||R<CR>ORC|NW|||4376724|||||20260505|||^|||||||||PER^PERSONAL<CR>OBR|9|||5450^5729150||||||L089^Puerto Plata||||||^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente<CR>TQ1|||||||||R<CR>ORC|NW|||4376724|||||20260505|||^|||||||||PER^PERSONAL<CR>OBR|10|||5460^5729150||||||L089^Puerto Plata||||||^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente<CR>TQ1|||||||||R<CR>ORC|NW|||4376724|||||20260505|||^|||||||||PER^PERSONAL<CR>OBR|11|||5520^5729150||||||L089^Puerto Plata||||||^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente<CR>TQ1|||||||||R<CR><FS><CR>
+L: MSH|^~\&|AMADITA|AMADITA|Modulab|Modulab|||OML^O21^OML_O21||P|2.5||||||8859/1|||
+L: PID|1|19b5aab9-f7c5-4a5e-8f81-c50b90dc9e7f|03700664224^^^^PI~^^^^PPN~^^^^SS||DEL ROSARIO ROMAN^ALBERMIS ARABELLA||19771029|F|||URBANIZACION  PLATATION,KM 7 PUERTO PLATA SOSUA^^Puerto Plata^^^República Dominicana^^^San Felipe de Puerto Plata (Zona urbana)^^||8299028408^^^ARABELLADELROSARIO@GMAIL.COM|||||||||||||||||N
+L: PV1|1|A|^^||||||||||||||||
+L: DG1|||||||||||||||||||||||||||||
+L: IN1|||||||||||||||||||||||||||||
+L: ORC|NW|||4376724|A||||20260505|||^|||||||||PER^PERSONAL||||||
+L: OBR|1|||6025^5729150||||||L089^Puerto Plata||||||^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente|
+L: TQ1|||||||||R
+L: ORC|NW|||4376724|||||20260505|||^|||||||||PER^PERSONAL
+L: OBR|2|||5550^5729150||||||L089^Puerto Plata||||||^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente
+L: TQ1|||||||||R
+L: ORC|NW|||4376724|||||20260505|||^|||||||||PER^PERSONAL
+L: OBR|3|||3465^5729150||||||L089^Puerto Plata||||||^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente
+L: TQ1|||||||||R
+L: ORC|NW|||4376724|||||20260505|||^|||||||||PER^PERSONAL
+L: OBR|4|||4718^5729150||||||L089^Puerto Plata||||||^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente
+L: TQ1|||||||||R
+L: ORC|NW|||4376724|||||20260505|||^|||||||||PER^PERSONAL
+L: OBR|5|||4721^5729150||||||L089^Puerto Plata||||||^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente
+L: TQ1|||||||||R
+L: ORC|NW|||4376724|||||20260505|||^|||||||||PER^PERSONAL
+L: OBR|6|||5478^5729150||||||L089^Puerto Plata||||||^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente
+L: TQ1|||||||||R
+L: ORC|NW|||4376724|||||20260505|||^|||||||||PER^PERSONAL
+L: OBR|7|||3947^5729150||||||L089^Puerto Plata||||||^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente
+L: TQ1|||||||||R
+L: ORC|NW|||4376724|||||20260505|||^|||||||||PER^PERSONAL
+L: OBR|8|||4036^5729150||||||L089^Puerto Plata||||||^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente
+L: TQ1|||||||||R
+L: ORC|NW|||4376724|||||20260505|||^|||||||||PER^PERSONAL
+L: OBR|9|||5450^5729150||||||L089^Puerto Plata||||||^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente
+L: TQ1|||||||||R
+L: ORC|NW|||4376724|||||20260505|||^|||||||||PER^PERSONAL
+L: OBR|10|||5460^5729150||||||L089^Puerto Plata||||||^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente
+L: TQ1|||||||||R
+L: ORC|NW|||4376724|||||20260505|||^|||||||||PER^PERSONAL
+L: OBR|11|||5520^5729150||||||L089^Puerto Plata||||||^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente
+L: TQ1|||||||||R
+Blocked in accept() awaiting connections 
+OML Message Found: New Request
+Creating New Request...
+Creating patient...
+<?xml version='1.0' encoding='UTF-8' ?>
+<CREATEPATIENT CONNECTIONID='1'><PATIENT>
+	<PATIENTNAME>ALBERMIS ARABELLA</PATIENTNAME>
+	<PATIENTSURNAME>DEL ROSARIO ROMAN</PATIENTSURNAME>
+	<SSN></SSN>
+	<EXTERNALID>19b5aab9-f7c5-4a5e-8f81-c50b90dc9e7f</EXTERNALID>
+	<IDENTITYCARD>03700664224</IDENTITYCARD>
+	<GENDER>F</GENDER>
+	<DOB>1977-10-29T16:00:00.00Z</DOB>
+	<ADDRESS>URBANIZACION  PLATATION,KM 7 PUERTO PLATA SOSUA</ADDRESS>
+	<CITY>Puerto Plata</CITY>
+	<STATE>San Felipe de Puerto Plata (Zona urbana)</STATE>
+	<COUNTRY>República Dominicana</COUNTRY>
+	<POSTALCODE></POSTALCODE>
+	<PHONE>8299028408 </PHONE>
+	<EMAIL>ARABELLADELROSARIO@GMAIL.COM</EMAIL>
+	<COMMENTS></COMMENTS>
+	<EXITUS>N</EXITUS>
+	<ACTIVE>Y</ACTIVE>
+	
+	<ISVIP>N</ISVIP>
+	
+</PATIENT>
+</CREATEPATIENT>
+Request Sent to Modulab
+<?xml version='1.0' encoding='UTF-8' ?>
+<GETREQUESTFORHOST REQUESTID='1685059' CONNECTIONID='1'  SHOWCVCOMMENTS='Y' SHOWPRELIMINARYCULTUREVALUES='Y'/>
+GetSampleResults 1685059 OK
+GetSampleResults Couldn't get request from Modulab
+Patient DEL ROSARIO ROMAN, ALBERMIS ARABELLA Modified
+Updating or inserting add info on the patientid: 1036348
+E: MSH|^~\&|||||20260505111456||ACK|MSG-20260505111456-14|D|2.5|||
+E: MSA|AA||Acknowledgment
+data=<VT>MSH|^~\&|||||20260505111456||ACK|MSG-20260505111456-14|D|2.5|||<LF>MSA|AA||Acknowledgment<LF><FS><LF>
+S: <VT>MSH|^~\&|||||20260505111456||ACK|MSG-20260505111456-14|D|2.5|||<CR>MSA|AA||Acknowledgment<CR><FS><CR>
+SEND(<VT>MSH|^~\&|||||20260505111456||ACK|MSG-20260505111456-14|D|2.5|||<CR>MSA|AA||Acknowledgment<CR><FS><CR>)
+Authorized remote IP 127.0.0.1
+Connection ACCEPTed from /127.0.0.1:59509
+ALREADY CONNECTED
+SAFETY on
+Getting streams
+NetworkSerialServerProtocol terminated:true
+TX: <VT>MSH|^~\&|AMADITA|AMADITA|Modulab|Modulab|||OML^O21^OML_O21||P|2.5||||||8859/1|||<CR>PID|1|7419b611-636b-46a4-bbc8-bc51c206ae84|00300697216^^^^PI~^^^^PPN~^^^^SS||MARTINEZ GUZMAN^JORGE LUIS||19790408|M|||C/ RESPALDO NICOLAS HEREDIA NO 11^^Peravia^^^República Dominicana^^^Baní (Zona urbana)^^||8294999704^^^PACIENTEAMADITA@GMAIL.COM|||||||||||||||||N<CR>PV1|1|A|^^||||||||||||||||<CR>DG1|||||||||||||||||||||||||||||<CR>IN1|||||||||||||||||||||||||||||<CR>ORC|NW|||4376725|A||||20260505|||118435^|||||||||PER^PERSONAL||||||<CR>OBR|1|||5900^5729168||||||L052^Galerías Baní||||||118435^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR>ORC|NW|||4376725|||||20260505|||118435^|||||||||PER^PERSONAL<CR>OBR|2|||5154^5729168||||||L052^Galerías Baní||||||118435^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente<CR>TQ1|||||||||R<CR>ORC|NW|||4376725|||||20260505|||118435^|||||||||PER^PERSONAL<CR>OBR|3|||8340^5729168||||||L052^Galerías Baní||||||118435^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente<CR>TQ1|||||||||R<CR>ORC|NW|||4376725|||||20260505|||118435^|||||||||PER^PERSONAL<CR>OBR|4|||7302^5729168||||||L052^Galerías Baní||||||118435^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente<CR>TQ1|||||||||R<CR>ORC|NW|||4376725|||||20260505|||118435^|||||||||PER^PERSONAL<CR>OBR|5|||12194^5729168||||||L052^Galerías Baní||||||118435^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente<CR>TQ1|||||||||R<CR>ORC|NW|||4376725|||||20260505|||118435^|||||||||PER^PERSONAL<CR>OBR|6|||2000^5729168||||||L052^Galerías Baní||||||118435^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente<CR>TQ1|||||||||R<CR>ORC|NW|||4376725|||||20260505|||118435^|||||||||PER^PERSONAL<CR>OBR|7|||3465^5729168||||||L052^Galerías Baní||||||118435^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente<CR>TQ1|||||||||R<CR>ORC|NW|||4376725|||||20260505|||118435^|||||||||PER^PERSONAL<CR>OBR|8|||5478^5729168||||||L052^Galerías Baní||||||118435^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente<CR>TQ1|||||||||R<CR>ORC|NW|||4376725|||||20260505|||118435^|||||||||PER^PERSONAL<CR>OBR|9|||6025^5729168||||||L052^Galerías Baní||||||118435^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente<CR>TQ1|||||||||R<CR>ORC|NW|||4376725|||||20260505|||118435^|||||||||PER^PERSONAL<CR>OBR|10|||4036^5729168||||||L052^Galerías Baní||||||118435^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente<CR>TQ1|||||||||R<CR>ORC|NW|||4376725|||||20260505|||118435^|||||||||PER^PERSONAL<CR>OBR|11|||7592^5729168||||||L052^Galerías Baní||||||118435^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente<CR>TQ1|||||||||R<CR>ORC|NW|||4376725|||||20260505|||118435^|||||||||PER^PERSONAL<CR>OBR|12|||5550^5729168||||||L052^Galerías Baní||||||118435^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente<CR>TQ1|||||||||R<CR>ORC|NW|||4376725|||||20260505|||118435^|||||||||PER^PERSONAL<CR>OBR|13|||1073^5729168||||||L052^Galerías Baní||||||118435^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente<CR>TQ1|||||||||R<CR><FS><CR>
+R: <VT>MSH|^~\&|AMADITA|AMADITA|Modulab|Modulab|||OML^O21^OML_O21||P|2.5||||||8859/1|||<CR>PID|1|7419b611-636b-46a4-bbc8-bc51c206ae84|00300697216^^^^PI~^^^^PPN~^^^^SS||MARTINEZ GUZMAN^JORGE LUIS||19790408|M|||C/ RESPALDO NICOLAS HEREDIA NO 11^^Peravia^^^República Dominicana^^^Baní (Zona urbana)^^||8294999704^^^PACIENTEAMADITA@GMAIL.COM|||||||||||||||||N<CR>PV1|1|A|^^||||||||||||||||<CR>DG1|||||||||||||||||||||||||||||<CR>IN1|||||||||||||||||||||||||||||<CR>ORC|NW|||4376725|A||||20260505|||118435^|||||||||PER^PERSONAL||||||<CR>OBR|1|||5900^5729168||||||L052^Galerías Baní||||||118435^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR>ORC|NW|||4376725|||||20260505|||118435^|||||||||PER^PERSONAL<CR>OBR|2|||5154^5729168||||||L052^Galerías Baní||||||118435^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente<CR>TQ1|||||||||R<CR>ORC|NW|||4376725|||||20260505|||118435^|||||||||PER^PERSONAL<CR>OBR|3|||8340^5729168||||||L052^Galerías Baní||||||118435^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente<CR>TQ1|||||||||R<CR>ORC|NW|||4376725|||||20260505|||118435^|||||||||PER^PERSONAL<CR>OBR|4|||7302^5729168||||||L052^Galerías Baní||||||118435^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente<CR>TQ1|||||||||R<CR>ORC|NW|||4376725|||||20260505|||118435^|||||||||PER^PERSONAL<CR>OBR|5|||12194^5729168||||||L052^Galerías Baní||||||118435^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente<CR>TQ1|||||||||R<CR>ORC|NW|||4376725|||||20260505|||118435^|||||||||PER^PERSONAL<CR>OBR|6|||2000^5729168||||||L052^Galerías Baní||||||118435^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente<CR>TQ1|||||||||R<CR>ORC|NW|||4376725|||||20260505|||118435^|||||||||PER^PERSONAL<CR>OBR|7|||3465^5729168||||||L052^Galerías Baní||||||118435^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente<CR>TQ1|||||||||R<CR>ORC|NW|||4376725|||||20260505|||118435^|||||||||PER^PERSONAL<CR>OBR|8|||5478^5729168||||||L052^Galerías Baní||||||118435^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente<CR>TQ1|||||||||R<CR>ORC|NW|||4376725|||||20260505|||118435^|||||||||PER^PERSONAL<CR>OBR|9|||6025^5729168||||||L052^Galerías Baní||||||118435^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente<CR>TQ1|||||||||R<CR>ORC|NW|||4376725|||||20260505|||118435^|||||||||PER^PERSONAL<CR>OBR|10|||4036^5729168||||||L052^Galerías Baní||||||118435^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente<CR>TQ1|||||||||R<CR>ORC|NW|||4376725|||||20260505|||118435^|||||||||PER^PERSONAL<CR>OBR|11|||7592^5729168||||||L052^Galerías Baní||||||118435^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente<CR>TQ1|||||||||R<CR>ORC|NW|||4376725|||||20260505|||118435^|||||||||PER^PERSONAL<CR>OBR|12|||5550^5729168||||||L052^Galerías Baní||||||118435^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente<CR>TQ1|||||||||R<CR>ORC|NW|||4376725|||||20260505|||118435^|||||||||PER^PERSONAL<CR>OBR|13|||1073^5729168||||||L052^Galerías Baní||||||118435^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente<CR>TQ1|||||||||R<CR><FS><CR>
+L: MSH|^~\&|AMADITA|AMADITA|Modulab|Modulab|||OML^O21^OML_O21||P|2.5||||||8859/1|||
+L: PID|1|7419b611-636b-46a4-bbc8-bc51c206ae84|00300697216^^^^PI~^^^^PPN~^^^^SS||MARTINEZ GUZMAN^JORGE LUIS||19790408|M|||C/ RESPALDO NICOLAS HEREDIA NO 11^^Peravia^^^República Dominicana^^^Baní (Zona urbana)^^||8294999704^^^PACIENTEAMADITA@GMAIL.COM|||||||||||||||||N
+L: PV1|1|A|^^||||||||||||||||
+L: DG1|||||||||||||||||||||||||||||
+L: IN1|||||||||||||||||||||||||||||
+L: ORC|NW|||4376725|A||||20260505|||118435^|||||||||PER^PERSONAL||||||
+L: OBR|1|||5900^5729168||||||L052^Galerías Baní||||||118435^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|
+L: TQ1|||||||||R
+L: ORC|NW|||4376725|||||20260505|||118435^|||||||||PER^PERSONAL
+L: OBR|2|||5154^5729168||||||L052^Galerías Baní||||||118435^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente
+L: TQ1|||||||||R
+L: ORC|NW|||4376725|||||20260505|||118435^|||||||||PER^PERSONAL
+L: OBR|3|||8340^5729168||||||L052^Galerías Baní||||||118435^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente
+L: TQ1|||||||||R
+L: ORC|NW|||4376725|||||20260505|||118435^|||||||||PER^PERSONAL
+L: OBR|4|||7302^5729168||||||L052^Galerías Baní||||||118435^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente
+L: TQ1|||||||||R
+L: ORC|NW|||4376725|||||20260505|||118435^|||||||||PER^PERSONAL
+L: OBR|5|||12194^5729168||||||L052^Galerías Baní||||||118435^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente
+L: TQ1|||||||||R
+L: ORC|NW|||4376725|||||20260505|||118435^|||||||||PER^PERSONAL
+L: OBR|6|||2000^5729168||||||L052^Galerías Baní||||||118435^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente
+L: TQ1|||||||||R
+L: ORC|NW|||4376725|||||20260505|||118435^|||||||||PER^PERSONAL
+L: OBR|7|||3465^5729168||||||L052^Galerías Baní||||||118435^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente
+L: TQ1|||||||||R
+L: ORC|NW|||4376725|||||20260505|||118435^|||||||||PER^PERSONAL
+L: OBR|8|||5478^5729168||||||L052^Galerías Baní||||||118435^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente
+L: TQ1|||||||||R
+L: ORC|NW|||4376725|||||20260505|||118435^|||||||||PER^PERSONAL
+L: OBR|9|||6025^5729168||||||L052^Galerías Baní||||||118435^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente
+L: TQ1|||||||||R
+L: ORC|NW|||4376725|||||20260505|||118435^|||||||||PER^PERSONAL
+L: OBR|10|||4036^5729168||||||L052^Galerías Baní||||||118435^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente
+L: TQ1|||||||||R
+L: ORC|NW|||4376725|||||20260505|||118435^|||||||||PER^PERSONAL
+L: OBR|11|||7592^5729168||||||L052^Galerías Baní||||||118435^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente
+L: TQ1|||||||||R
+L: ORC|NW|||4376725|||||20260505|||118435^|||||||||PER^PERSONAL
+L: OBR|12|||5550^5729168||||||L052^Galerías Baní||||||118435^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente
+L: TQ1|||||||||R
+L: ORC|NW|||4376725|||||20260505|||118435^|||||||||PER^PERSONAL
+L: OBR|13|||1073^5729168||||||L052^Galerías Baní||||||118435^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente
+L: TQ1|||||||||R
+Blocked in accept() awaiting connections 
+OML Message Found: New Request
+Creating New Request...
+Creating patient...
+<?xml version='1.0' encoding='UTF-8' ?>
+<CREATEPATIENT CONNECTIONID='1'><PATIENT>
+	<PATIENTNAME>JORGE LUIS</PATIENTNAME>
+	<PATIENTSURNAME>MARTINEZ GUZMAN</PATIENTSURNAME>
+	<SSN></SSN>
+	<EXTERNALID>7419b611-636b-46a4-bbc8-bc51c206ae84</EXTERNALID>
+	<IDENTITYCARD>00300697216</IDENTITYCARD>
+	<GENDER>M</GENDER>
+	<DOB>1979-04-08T16:00:00.00Z</DOB>
+	<ADDRESS>C/ RESPALDO NICOLAS HEREDIA NO 11</ADDRESS>
+	<CITY>Peravia</CITY>
+	<STATE>Baní (Zona urbana)</STATE>
+	<COUNTRY>República Dominicana</COUNTRY>
+	<POSTALCODE></POSTALCODE>
+	<PHONE>8294999704 </PHONE>
+	<EMAIL>PACIENTEAMADITA@GMAIL.COM</EMAIL>
+	<COMMENTS></COMMENTS>
+	<EXITUS>N</EXITUS>
+	<ACTIVE>Y</ACTIVE>
+	
+	<ISVIP>N</ISVIP>
+	
+</PATIENT>
+</CREATEPATIENT>
+Request Sent to Modulab
+<?xml version='1.0' encoding='UTF-8' ?>
+<GETREQUESTFORHOST REQUESTID='1685060' CONNECTIONID='1'  SHOWCVCOMMENTS='Y' SHOWPRELIMINARYCULTUREVALUES='Y'/>
+GetSampleResults 1685060 OK
+GetSampleResults Couldn't get request from Modulab
+Patient MARTINEZ GUZMAN, JORGE LUIS Modified
+Updating or inserting add info on the patientid: 1036349
+E: MSH|^~\&|||||20260505111458||ACK|MSG-20260505111458-15|D|2.5|||
+E: MSA|AA||Acknowledgment
+data=<VT>MSH|^~\&|||||20260505111458||ACK|MSG-20260505111458-15|D|2.5|||<LF>MSA|AA||Acknowledgment<LF><FS><LF>
+S: <VT>MSH|^~\&|||||20260505111458||ACK|MSG-20260505111458-15|D|2.5|||<CR>MSA|AA||Acknowledgment<CR><FS><CR>
+SEND(<VT>MSH|^~\&|||||20260505111458||ACK|MSG-20260505111458-15|D|2.5|||<CR>MSA|AA||Acknowledgment<CR><FS><CR>)
+Authorized remote IP 127.0.0.1
+Connection ACCEPTed from /127.0.0.1:59575
+ALREADY CONNECTED
+SAFETY on
+Getting streams
+NetworkSerialServerProtocol terminated:true
+TX: <VT>MSH|^~\&|AMADITA|AMADITA|Modulab|Modulab|||OML^O21^OML_O21||P|2.5||||||8859/1|||<CR>PID|1|8c4eceb8-ad04-4d58-8d03-83da83c8a6a2|8C4ECEB8AD^^^^PI~^^^^PPN~^^^^SS||TAVAREZ VENTURA^JHOSMARY||20201005|F|||AV. HATUEY,APTO. B-3, EDIF. 9^^Santiago^^^República Dominicana^^^Santiago de los Caballeros (Zona urbana)^^||8297221106^^^MARIA.VENTURA.RODRIGUEZ@GMAIL.COM|||||||||||||||||N<CR>PV1|1|A|^^||||||||||||||||<CR>DG1|||||||||||||||||||||||||||||<CR>IN1|||||||||||||||||||||||||||||<CR>ORC|NW|||4376726|A||||20260505|||^|||||||||PER^PERSONAL||||||<CR>OBR|1|||3140^5729179||||||L014^Santiago Plaza Texas||||||^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR><FS><CR>
+R: <VT>MSH|^~\&|AMADITA|AMADITA|Modulab|Modulab|||OML^O21^OML_O21||P|2.5||||||8859/1|||<CR>PID|1|8c4eceb8-ad04-4d58-8d03-83da83c8a6a2|8C4ECEB8AD^^^^PI~^^^^PPN~^^^^SS||TAVAREZ VENTURA^JHOSMARY||20201005|F|||AV. HATUEY,APTO. B-3, EDIF. 9^^Santiago^^^República Dominicana^^^Santiago de los Caballeros (Zona urbana)^^||8297221106^^^MARIA.VENTURA.RODRIGUEZ@GMAIL.COM|||||||||||||||||N<CR>PV1|1|A|^^||||||||||||||||<CR>DG1|||||||||||||||||||||||||||||<CR>IN1|||||||||||||||||||||||||||||<CR>ORC|NW|||4376726|A||||20260505|||^|||||||||PER^PERSONAL||||||<CR>OBR|1|||3140^5729179||||||L014^Santiago Plaza Texas||||||^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR><FS><CR>
+L: MSH|^~\&|AMADITA|AMADITA|Modulab|Modulab|||OML^O21^OML_O21||P|2.5||||||8859/1|||
+L: PID|1|8c4eceb8-ad04-4d58-8d03-83da83c8a6a2|8C4ECEB8AD^^^^PI~^^^^PPN~^^^^SS||TAVAREZ VENTURA^JHOSMARY||20201005|F|||AV. HATUEY,APTO. B-3, EDIF. 9^^Santiago^^^República Dominicana^^^Santiago de los Caballeros (Zona urbana)^^||8297221106^^^MARIA.VENTURA.RODRIGUEZ@GMAIL.COM|||||||||||||||||N
+L: PV1|1|A|^^||||||||||||||||
+L: DG1|||||||||||||||||||||||||||||
+L: IN1|||||||||||||||||||||||||||||
+L: ORC|NW|||4376726|A||||20260505|||^|||||||||PER^PERSONAL||||||
+L: OBR|1|||3140^5729179||||||L014^Santiago Plaza Texas||||||^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|
+L: TQ1|||||||||R
+OML Message Found: New Request
+Creating New Request...
+Creating patient...
+<?xml version='1.0' encoding='UTF-8' ?>
+<CREATEPATIENT CONNECTIONID='1'><PATIENT>
+	<PATIENTNAME>JHOSMARY</PATIENTNAME>
+	<PATIENTSURNAME>TAVAREZ VENTURA</PATIENTSURNAME>
+	<SSN></SSN>
+	<EXTERNALID>8c4eceb8-ad04-4d58-8d03-83da83c8a6a2</EXTERNALID>
+	<IDENTITYCARD>8C4ECEB8AD</IDENTITYCARD>
+	<GENDER>F</GENDER>
+	<DOB>2020-10-05T16:00:00.00Z</DOB>
+	<ADDRESS>AV. HATUEY,APTO. B-3, EDIF. 9</ADDRESS>
+	<CITY>Santiago</CITY>
+	<STATE>Santiago de los Caballeros (Zona urbana)</STATE>
+	<COUNTRY>República Dominicana</COUNTRY>
+	<POSTALCODE></POSTALCODE>
+	<PHONE>8297221106 </PHONE>
+	<EMAIL>MARIA.VENTURA.RODRIGUEZ@GMAIL.COM</EMAIL>
+	<COMMENTS></COMMENTS>
+	<EXITUS>N</EXITUS>
+	<ACTIVE>Y</ACTIVE>
+	
+	<ISVIP>N</ISVIP>
+	
+</PATIENT>
+</CREATEPATIENT>
+Blocked in accept() awaiting connections 
+Request Sent to Modulab
+<?xml version='1.0' encoding='UTF-8' ?>
+<GETREQUESTFORHOST REQUESTID='1685061' CONNECTIONID='1'  SHOWCVCOMMENTS='Y' SHOWPRELIMINARYCULTUREVALUES='Y'/>
+GetSampleResults 1685061 OK
+GetSampleResults Couldn't get request from Modulab
+Patient TAVAREZ VENTURA, JHOSMARY Modified
+Updating or inserting add info on the patientid: 1036350
+E: MSH|^~\&|||||20260505111511||ACK|MSG-20260505111511-16|D|2.5|||
+E: MSA|AA||Acknowledgment
+data=<VT>MSH|^~\&|||||20260505111511||ACK|MSG-20260505111511-16|D|2.5|||<LF>MSA|AA||Acknowledgment<LF><FS><LF>
+S: <VT>MSH|^~\&|||||20260505111511||ACK|MSG-20260505111511-16|D|2.5|||<CR>MSA|AA||Acknowledgment<CR><FS><CR>
+SEND(<VT>MSH|^~\&|||||20260505111511||ACK|MSG-20260505111511-16|D|2.5|||<CR>MSA|AA||Acknowledgment<CR><FS><CR>)
+Authorized remote IP 127.0.0.1
+Connection ACCEPTed from /127.0.0.1:59607
+ALREADY CONNECTED
+SAFETY on
+Getting streams
+NetworkSerialServerProtocol terminated:true
+TX: <VT>MSH|^~\&|AMADITA|AMADITA|Modulab|Modulab|||OML^O21^OML_O21||P|2.5||||||8859/1|||<CR>PID|1|8ff2d727-498b-443e-811c-e6a8d318441d|00111808481^^^^PI~^^^^PPN~^^^^SS||HERNANDEZ PLASENCIA^PALMENIO||19500706|M|||^^^^^^^^^^||.^^^PACIENTEAMADITA@GMAIL.COM|||||||||||||||||N<CR>PV1|1|A|^^||||||||||||||||<CR>DG1|||||||||||||||||||||||||||||<CR>IN1|||||||||||||||||||||||||||||<CR>ORC|NW|||4376727|A||||20260505|||100999^|||||||||PER^PERSONAL||||||<CR>OBR|1|||2000^5729170||||||L039^San Isidro Plaza Cuadra||||||100999^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR>ORC|NW|||4376727|||||20260505|||100999^|||||||||PER^PERSONAL<CR>OBR|2|||8086^5729170||||||L039^San Isidro Plaza Cuadra||||||100999^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente<CR>TQ1|||||||||R<CR><FS><CR>
+R: <VT>MSH|^~\&|AMADITA|AMADITA|Modulab|Modulab|||OML^O21^OML_O21||P|2.5||||||8859/1|||<CR>PID|1|8ff2d727-498b-443e-811c-e6a8d318441d|00111808481^^^^PI~^^^^PPN~^^^^SS||HERNANDEZ PLASENCIA^PALMENIO||19500706|M|||^^^^^^^^^^||.^^^PACIENTEAMADITA@GMAIL.COM|||||||||||||||||N<CR>PV1|1|A|^^||||||||||||||||<CR>DG1|||||||||||||||||||||||||||||<CR>IN1|||||||||||||||||||||||||||||<CR>ORC|NW|||4376727|A||||20260505|||100999^|||||||||PER^PERSONAL||||||<CR>OBR|1|||2000^5729170||||||L039^San Isidro Plaza Cuadra||||||100999^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR>ORC|NW|||4376727|||||20260505|||100999^|||||||||PER^PERSONAL<CR>OBR|2|||8086^5729170||||||L039^San Isidro Plaza Cuadra||||||100999^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente<CR>TQ1|||||||||R<CR><FS><CR>
+L: MSH|^~\&|AMADITA|AMADITA|Modulab|Modulab|||OML^O21^OML_O21||P|2.5||||||8859/1|||
+L: PID|1|8ff2d727-498b-443e-811c-e6a8d318441d|00111808481^^^^PI~^^^^PPN~^^^^SS||HERNANDEZ PLASENCIA^PALMENIO||19500706|M|||^^^^^^^^^^||.^^^PACIENTEAMADITA@GMAIL.COM|||||||||||||||||N
+L: PV1|1|A|^^||||||||||||||||
+L: DG1|||||||||||||||||||||||||||||
+L: IN1|||||||||||||||||||||||||||||
+L: ORC|NW|||4376727|A||||20260505|||100999^|||||||||PER^PERSONAL||||||
+L: OBR|1|||2000^5729170||||||L039^San Isidro Plaza Cuadra||||||100999^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente|
+L: TQ1|||||||||R
+L: ORC|NW|||4376727|||||20260505|||100999^|||||||||PER^PERSONAL
+L: OBR|2|||8086^5729170||||||L039^San Isidro Plaza Cuadra||||||100999^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente
+L: TQ1|||||||||R
+OML Message Found: New Request
+Creating New Request...
+Blocked in accept() awaiting connections 
+Patient found.
+Request Sent to Modulab
+<?xml version='1.0' encoding='UTF-8' ?>
+<GETREQUESTFORHOST REQUESTID='1685062' CONNECTIONID='1'  SHOWCVCOMMENTS='Y' SHOWPRELIMINARYCULTUREVALUES='Y'/>
+GetSampleResults 1685062 OK
+GetSampleResults Couldn't get request from Modulab
+Patient HERNANDEZ PLASENCIA, PALMENIO Modified
+Updating or inserting add info on the patientid: 581009
+E: MSH|^~\&|||||20260505111515||ACK|MSG-20260505111515-17|D|2.5|||
+E: MSA|AA||Acknowledgment
+data=<VT>MSH|^~\&|||||20260505111515||ACK|MSG-20260505111515-17|D|2.5|||<LF>MSA|AA||Acknowledgment<LF><FS><LF>
+S: <VT>MSH|^~\&|||||20260505111515||ACK|MSG-20260505111515-17|D|2.5|||<CR>MSA|AA||Acknowledgment<CR><FS><CR>
+SEND(<VT>MSH|^~\&|||||20260505111515||ACK|MSG-20260505111515-17|D|2.5|||<CR>MSA|AA||Acknowledgment<CR><FS><CR>)
+Authorized remote IP 127.0.0.1
+Connection ACCEPTed from /127.0.0.1:59613
+ALREADY CONNECTED
+SAFETY on
+Getting streams
+NetworkSerialServerProtocol terminated:true
+TX: <VT>MSH|^~\&|AMADITA|AMADITA|Modulab|Modulab|||OML^O21^OML_O21||P|2.5||||||8859/1|||<CR>PID|1|2214357d-305c-4014-a2c9-186f48d6f0fe|00117747519^^^^PI~^^^^PPN~^^^^SS||GERMAN MU?OZ^EKATERINA||19860617|F|||^^^^^^^^^^||.^^^GERMAN17.EG@GMAIL.COM|||||||||||||||||N<CR>PV1|1|A|^^||||||||||||||||<CR>DG1|||||||||||||||||||||||||||||<CR>IN1|||||||||||||||||||||||||||||<CR>ORC|NW|||4376728|A||||20260505|||^|||||||||PER^PERSONAL||||||<CR>OBR|1|||3670^5729182||||||L001^Laboratorio Principal (Gazcue)||||||^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR>ORC|NW|||4376728|||||20260505|||^|||||||||PER^PERSONAL<CR>OBR|2|||5144^5729182||||||L001^Laboratorio Principal (Gazcue)||||||^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente<CR>TQ1|||||||||R<CR><FS><CR>
+R: <VT>MSH|^~\&|AMADITA|AMADITA|Modulab|Modulab|||OML^O21^OML_O21||P|2.5||||||8859/1|||<CR>PID|1|2214357d-305c-4014-a2c9-186f48d6f0fe|00117747519^^^^PI~^^^^PPN~^^^^SS||GERMAN MU?OZ^EKATERINA||19860617|F|||^^^^^^^^^^||.^^^GERMAN17.EG@GMAIL.COM|||||||||||||||||N<CR>PV1|1|A|^^||||||||||||||||<CR>DG1|||||||||||||||||||||||||||||<CR>IN1|||||||||||||||||||||||||||||<CR>ORC|NW|||4376728|A||||20260505|||^|||||||||PER^PERSONAL||||||<CR>OBR|1|||3670^5729182||||||L001^Laboratorio Principal (Gazcue)||||||^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR>ORC|NW|||4376728|||||20260505|||^|||||||||PER^PERSONAL<CR>OBR|2|||5144^5729182||||||L001^Laboratorio Principal (Gazcue)||||||^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente<CR>TQ1|||||||||R<CR><FS><CR>
+L: MSH|^~\&|AMADITA|AMADITA|Modulab|Modulab|||OML^O21^OML_O21||P|2.5||||||8859/1|||
+L: PID|1|2214357d-305c-4014-a2c9-186f48d6f0fe|00117747519^^^^PI~^^^^PPN~^^^^SS||GERMAN MU?OZ^EKATERINA||19860617|F|||^^^^^^^^^^||.^^^GERMAN17.EG@GMAIL.COM|||||||||||||||||N
+L: PV1|1|A|^^||||||||||||||||
+L: DG1|||||||||||||||||||||||||||||
+L: IN1|||||||||||||||||||||||||||||
+L: ORC|NW|||4376728|A||||20260505|||^|||||||||PER^PERSONAL||||||
+L: OBR|1|||3670^5729182||||||L001^Laboratorio Principal (Gazcue)||||||^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|
+L: TQ1|||||||||R
+L: ORC|NW|||4376728|||||20260505|||^|||||||||PER^PERSONAL
+L: OBR|2|||5144^5729182||||||L001^Laboratorio Principal (Gazcue)||||||^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente
+L: TQ1|||||||||R
+Blocked in accept() awaiting connections 
+OML Message Found: New Request
+Creating New Request...
+Patient found.
+Request Sent to Modulab
+<?xml version='1.0' encoding='UTF-8' ?>
+<GETREQUESTFORHOST REQUESTID='1685063' CONNECTIONID='1'  SHOWCVCOMMENTS='Y' SHOWPRELIMINARYCULTUREVALUES='Y'/>
+GetSampleResults 1685063 OK
+GetSampleResults Couldn't get request from Modulab
+Patient GERMAN MU?OZ, EKATERINA Modified
+Updating or inserting add info on the patientid: 988418
+E: MSH|^~\&|||||20260505111516||ACK|MSG-20260505111516-18|D|2.5|||
+E: MSA|AA||Acknowledgment
+data=<VT>MSH|^~\&|||||20260505111516||ACK|MSG-20260505111516-18|D|2.5|||<LF>MSA|AA||Acknowledgment<LF><FS><LF>
+S: <VT>MSH|^~\&|||||20260505111516||ACK|MSG-20260505111516-18|D|2.5|||<CR>MSA|AA||Acknowledgment<CR><FS><CR>
+SEND(<VT>MSH|^~\&|||||20260505111516||ACK|MSG-20260505111516-18|D|2.5|||<CR>MSA|AA||Acknowledgment<CR><FS><CR>)
+Authorized remote IP 127.0.0.1
+Connection ACCEPTed from /127.0.0.1:59622
+ALREADY CONNECTED
+SAFETY on
+socket closed
+socket closed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
+socket closed
+socket closed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
+socket closed
+socket closed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
+socket closed
+socket closed:java.net.SocketInputStream.socketRead0(Native Method)<CR><LF>java.net.SocketInputStream.socketRead(SocketInputStream.java:116)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:171)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:141)<CR><LF>java.net.SocketInputStream.read(SocketInputStream.java:127)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol$ConnectionAttendant.run(NetworkSerialServerProtocol.java:403)<CR><LF>
+Getting streams
+NetworkSerialServerProtocol terminated:true
+TX: <VT>MSH|^~\&|AMADITA|AMADITA|Modulab|Modulab|||OML^O21^OML_O21||P|2.5||||||8859/1|||<CR>PID|1|dbab5a44-954f-49bd-9690-443aec267679|DBAB5A4495^^^^PI~^^^^PPN~^^^^SS||CUEVAS GAMBOA^RN RAISY MALENNY||20260504|F|||.^^Distrito Nacional^^^República Dominicana^^^Santo Domingo de Guzmán (Zona urbana)^^||8295636616^^^RAISY69@GMAIL.COM|||||||||||||||||N<CR>PV1|1|A|^^||||||||||||||||<CR>DG1|||||||||||||||||||||||||||||<CR>IN1|||||||||||||||||||||||||||||<CR>ORC|NW|||4376729|A||||20260505|||157431^|||||||||PER^PERSONAL||||||<CR>OBR|1|||12182^5729173||||||L305^||||||157431^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR>ORC|NW|||4376729|||||20260505|||157431^|||||||||PER^PERSONAL<CR>OBR|2|||25^5729173||||||L305^||||||157431^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente<CR>TQ1|||||||||R<CR><FS><CR>
+R: <VT>MSH|^~\&|AMADITA|AMADITA|Modulab|Modulab|||OML^O21^OML_O21||P|2.5||||||8859/1|||<CR>PID|1|dbab5a44-954f-49bd-9690-443aec267679|DBAB5A4495^^^^PI~^^^^PPN~^^^^SS||CUEVAS GAMBOA^RN RAISY MALENNY||20260504|F|||.^^Distrito Nacional^^^República Dominicana^^^Santo Domingo de Guzmán (Zona urbana)^^||8295636616^^^RAISY69@GMAIL.COM|||||||||||||||||N<CR>PV1|1|A|^^||||||||||||||||<CR>DG1|||||||||||||||||||||||||||||<CR>IN1|||||||||||||||||||||||||||||<CR>ORC|NW|||4376729|A||||20260505|||157431^|||||||||PER^PERSONAL||||||<CR>OBR|1|||12182^5729173||||||L305^||||||157431^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR>ORC|NW|||4376729|||||20260505|||157431^|||||||||PER^PERSONAL<CR>OBR|2|||25^5729173||||||L305^||||||157431^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente<CR>TQ1|||||||||R<CR><FS><CR>
+L: MSH|^~\&|AMADITA|AMADITA|Modulab|Modulab|||OML^O21^OML_O21||P|2.5||||||8859/1|||
+L: PID|1|dbab5a44-954f-49bd-9690-443aec267679|DBAB5A4495^^^^PI~^^^^PPN~^^^^SS||CUEVAS GAMBOA^RN RAISY MALENNY||20260504|F|||.^^Distrito Nacional^^^República Dominicana^^^Santo Domingo de Guzmán (Zona urbana)^^||8295636616^^^RAISY69@GMAIL.COM|||||||||||||||||N
+L: PV1|1|A|^^||||||||||||||||
+L: DG1|||||||||||||||||||||||||||||
+L: IN1|||||||||||||||||||||||||||||
+L: ORC|NW|||4376729|A||||20260505|||157431^|||||||||PER^PERSONAL||||||
+L: OBR|1|||12182^5729173||||||L305^||||||157431^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|
+L: TQ1|||||||||R
+L: ORC|NW|||4376729|||||20260505|||157431^|||||||||PER^PERSONAL
+L: OBR|2|||25^5729173||||||L305^||||||157431^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente
+L: TQ1|||||||||R
+OML Message Found: New Request
+Creating New Request...
+Creating patient...
+<?xml version='1.0' encoding='UTF-8' ?>
+<CREATEPATIENT CONNECTIONID='1'><PATIENT>
+	<PATIENTNAME>RN RAISY MALENNY</PATIENTNAME>
+	<PATIENTSURNAME>CUEVAS GAMBOA</PATIENTSURNAME>
+	<SSN></SSN>
+	<EXTERNALID>dbab5a44-954f-49bd-9690-443aec267679</EXTERNALID>
+	<IDENTITYCARD>DBAB5A4495</IDENTITYCARD>
+	<GENDER>F</GENDER>
+	<DOB>2026-05-04T16:00:00.00Z</DOB>
+	<ADDRESS>.</ADDRESS>
+	<CITY>Distrito Nacional</CITY>
+	<STATE>Santo Domingo de Guzmán (Zona urbana)</STATE>
+	<COUNTRY>República Dominicana</COUNTRY>
+	<POSTALCODE></POSTALCODE>
+	<PHONE>8295636616 </PHONE>
+	<EMAIL>RAISY69@GMAIL.COM</EMAIL>
+	<COMMENTS></COMMENTS>
+	<EXITUS>N</EXITUS>
+	<ACTIVE>Y</ACTIVE>
+	
+	<ISVIP>N</ISVIP>
+	
+</PATIENT>
+</CREATEPATIENT>
+Blocked in accept() awaiting connections 
+Request Sent to Modulab
+<?xml version='1.0' encoding='UTF-8' ?>
+<GETREQUESTFORHOST REQUESTID='1685064' CONNECTIONID='1'  SHOWCVCOMMENTS='Y' SHOWPRELIMINARYCULTUREVALUES='Y'/>
+GetSampleResults 1685064 OK
+GetSampleResults Couldn't get request from Modulab
+Patient CUEVAS GAMBOA, RN RAISY MALENNY Modified
+Updating or inserting add info on the patientid: 1036351
+E: MSH|^~\&|||||20260505111518||ACK|MSG-20260505111518-19|D|2.5|||
+E: MSA|AA||Acknowledgment
+data=<VT>MSH|^~\&|||||20260505111518||ACK|MSG-20260505111518-19|D|2.5|||<LF>MSA|AA||Acknowledgment<LF><FS><LF>
+S: <VT>MSH|^~\&|||||20260505111518||ACK|MSG-20260505111518-19|D|2.5|||<CR>MSA|AA||Acknowledgment<CR><FS><CR>
+SEND(<VT>MSH|^~\&|||||20260505111518||ACK|MSG-20260505111518-19|D|2.5|||<CR>MSA|AA||Acknowledgment<CR><FS><CR>)
+Authorized remote IP 127.0.0.1
+Connection ACCEPTed from /127.0.0.1:59629
+ALREADY CONNECTED
+SAFETY on
+Getting streams
+NetworkSerialServerProtocol terminated:true
+TX: <VT>MSH|^~\&|AMADITA|AMADITA|Modulab|Modulab|||OML^O21^OML_O21||P|2.5||||||8859/1|||<CR>PID|1|60ed75b7-6600-461e-a024-e438eb8dec27|00116461203^^^^PI~^^^^PPN~^^^^SS||NAVARRO VELAZQUEZ^NATHALIE ANGELICA||19821015|F|||^^^^^^^^^^||.^^^NANETION@GMAIL.COM|||||||||||||||||N<CR>PV1|1|A|^^||||||||||||||||<CR>DG1|||||||||||||||||||||||||||||<CR>IN1|||||||||||||||||||||||||||||<CR>ORC|NW|||4376730|A||||20260505|||^|||||||||PER^PERSONAL||||||<CR>OBR|1|||62057^5729178||||||L026^Los Prados||||||^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR>ORC|NW|||4376730|||||20260505|||^|||||||||PER^PERSONAL<CR>OBR|2|||3672^5729178||||||L026^Los Prados||||||^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente<CR>TQ1|||||||||R<CR><FS><CR>
+R: <VT>MSH|^~\&|AMADITA|AMADITA|Modulab|Modulab|||OML^O21^OML_O21||P|2.5||||||8859/1|||<CR>PID|1|60ed75b7-6600-461e-a024-e438eb8dec27|00116461203^^^^PI~^^^^PPN~^^^^SS||NAVARRO VELAZQUEZ^NATHALIE ANGELICA||19821015|F|||^^^^^^^^^^||.^^^NANETION@GMAIL.COM|||||||||||||||||N<CR>PV1|1|A|^^||||||||||||||||<CR>DG1|||||||||||||||||||||||||||||<CR>IN1|||||||||||||||||||||||||||||<CR>ORC|NW|||4376730|A||||20260505|||^|||||||||PER^PERSONAL||||||<CR>OBR|1|||62057^5729178||||||L026^Los Prados||||||^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR>ORC|NW|||4376730|||||20260505|||^|||||||||PER^PERSONAL<CR>OBR|2|||3672^5729178||||||L026^Los Prados||||||^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente<CR>TQ1|||||||||R<CR><FS><CR>
+L: MSH|^~\&|AMADITA|AMADITA|Modulab|Modulab|||OML^O21^OML_O21||P|2.5||||||8859/1|||
+L: PID|1|60ed75b7-6600-461e-a024-e438eb8dec27|00116461203^^^^PI~^^^^PPN~^^^^SS||NAVARRO VELAZQUEZ^NATHALIE ANGELICA||19821015|F|||^^^^^^^^^^||.^^^NANETION@GMAIL.COM|||||||||||||||||N
+L: PV1|1|A|^^||||||||||||||||
+L: DG1|||||||||||||||||||||||||||||
+L: IN1|||||||||||||||||||||||||||||
+L: ORC|NW|||4376730|A||||20260505|||^|||||||||PER^PERSONAL||||||
+L: OBR|1|||62057^5729178||||||L026^Los Prados||||||^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|
+L: TQ1|||||||||R
+L: ORC|NW|||4376730|||||20260505|||^|||||||||PER^PERSONAL
+L: OBR|2|||3672^5729178||||||L026^Los Prados||||||^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente
+L: TQ1|||||||||R
+OML Message Found: New Request
+Creating New Request...
+Creating patient...
+<?xml version='1.0' encoding='UTF-8' ?>
+<CREATEPATIENT CONNECTIONID='1'><PATIENT>
+	<PATIENTNAME>NATHALIE ANGELICA</PATIENTNAME>
+	<PATIENTSURNAME>NAVARRO VELAZQUEZ</PATIENTSURNAME>
+	<SSN></SSN>
+	<EXTERNALID>60ed75b7-6600-461e-a024-e438eb8dec27</EXTERNALID>
+	<IDENTITYCARD>00116461203</IDENTITYCARD>
+	<GENDER>F</GENDER>
+	<DOB>1982-10-15T16:00:00.00Z</DOB>
+	<ADDRESS></ADDRESS>
+	<CITY></CITY>
+	<STATE></STATE>
+	<COUNTRY></COUNTRY>
+	<POSTALCODE></POSTALCODE>
+	<PHONE>. </PHONE>
+	<EMAIL>NANETION@GMAIL.COM</EMAIL>
+	<COMMENTS></COMMENTS>
+	<EXITUS>N</EXITUS>
+	<ACTIVE>Y</ACTIVE>
+	
+	<ISVIP>N</ISVIP>
+	
+</PATIENT>
+</CREATEPATIENT>
+Blocked in accept() awaiting connections 
+Request Sent to Modulab
+<?xml version='1.0' encoding='UTF-8' ?>
+<GETREQUESTFORHOST REQUESTID='1685065' CONNECTIONID='1'  SHOWCVCOMMENTS='Y' SHOWPRELIMINARYCULTUREVALUES='Y'/>
+GetSampleResults 1685065 OK
+GetSampleResults Couldn't get request from Modulab
+Patient NAVARRO VELAZQUEZ, NATHALIE ANGELICA Modified
+Updating or inserting add info on the patientid: 1036352
+E: MSH|^~\&|||||20260505111520||ACK|MSG-20260505111520-20|D|2.5|||
+E: MSA|AA||Acknowledgment
+data=<VT>MSH|^~\&|||||20260505111520||ACK|MSG-20260505111520-20|D|2.5|||<LF>MSA|AA||Acknowledgment<LF><FS><LF>
+S: <VT>MSH|^~\&|||||20260505111520||ACK|MSG-20260505111520-20|D|2.5|||<CR>MSA|AA||Acknowledgment<CR><FS><CR>
+SEND(<VT>MSH|^~\&|||||20260505111520||ACK|MSG-20260505111520-20|D|2.5|||<CR>MSA|AA||Acknowledgment<CR><FS><CR>)
+Scheduling protocol termination...
+Scheduling termination of attendant execution...
+Unaccepting connections on ServerSocket
+Closing ServerSocket
+ServerSocket closed
+TERMINATED
+socket closed:java.net.DualStackPlainSocketImpl.accept0(Native Method)<CR><LF>java.net.DualStackPlainSocketImpl.socketAccept(DualStackPlainSocketImpl.java:131)<CR><LF>java.net.AbstractPlainSocketImpl.accept(AbstractPlainSocketImpl.java:409)<CR><LF>java.net.PlainSocketImpl.accept(PlainSocketImpl.java:199)<CR><LF>java.net.ServerSocket.implAccept(ServerSocket.java:545)<CR><LF>java.net.ServerSocket.accept(ServerSocket.java:513)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol.acceptSocket(NetworkSerialServerProtocol.java:166)<CR><LF>com.systelab.modulabgold.client.multionline.datatransmission.NetworkSerialServerProtocol.run(NetworkSerialServerProtocol.java:193)<CR><LF>java.lang.Thread.run(Thread.java:748)<CR><LF>
+NetworkSerialServerProtocol terminated:false
+Attendant execution terminated
+Scheduling protocol termination...
+Unaccepting connections on ServerSocket
+Closing ServerSocket
+ServerSocket closed
+TERMINATED
