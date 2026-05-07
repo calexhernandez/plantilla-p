@@ -8,35 +8,133 @@ TAOLink.jar\com\systelab\modulabgold\client\multionline\drivers - ZIP archive, u
 
 ModulabGoldClient2.jar\com\systelab\modulabgold\client\multionline\drivers - ZIP archive, unpacked size 242,903,109 bytes
 
+
+License OK
+Communication started with driver ModulabGoldBasicHL7 2.66
+Authorized remote IP 127.0.0.1
+soLinger<-500
+NetworkSerialServerProtocol terminated:true
 Authorized remote IP 127.0.0.1
 NetworkSerialServerProtocol terminated:true
-R: <VT>MSH|^~\&|AMADITA|AMADITA|Modulab|Modulab|20260505170007||OML^O21^OML_O21|id-1778014807655-48067|P|2.5||||||8859/1|||<CR>PID|1|acb1b897-05e3-4c5b-a91e-829c3e70662a|40220195362^^^^PI~^^^^PPN~^^^^SS||GEREZ JEREZ^NIURKA JOSEFINA||19900605|F|||Sector de prueba^^Distrito Nacional^^^República Dominicana^^^Distrito Nacional||8095024055^^^NIUKAGEREZJEREZ@GMAIL.COM|||||||||||||||||N<CR>PV1|1|A|^^||||||||||||||||<CR>DG1|||||||||||||||||||||||||||||<CR>IN1|||||||||||||||||||||||||||||<CR>ORC|NW|||P3150078|A||||20260504|||^|||||||||PER^PERSONAL||||||<CR>OBR|1|||3947^4516051||||||L002^Ozama||||||^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR>ORC|NW|||P3150078|A||||20260504|||^|||||||||PER^PERSONAL||||||<CR>OBR|2|||10959^Microbiologia molecular||||||L002^Ozama||||||^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR>ORC|NW|||P3150078|A||||20260504|||^|||||||||PER^PERSONAL||||||<CR>OBR|3|||8040^Hemocultivo||||||L002^Ozama||||||^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR><FS><CR>
-L: MSH|^~\&|AMADITA|AMADITA|Modulab|Modulab|20260505170007||OML^O21^OML_O21|id-1778014807655-48067|P|2.5||||||8859/1|||
-L: PID|1|acb1b897-05e3-4c5b-a91e-829c3e70662a|40220195362^^^^PI~^^^^PPN~^^^^SS||GEREZ JEREZ^NIURKA JOSEFINA||19900605|F|||Sector de prueba^^Distrito Nacional^^^República Dominicana^^^Distrito Nacional||8095024055^^^NIUKAGEREZJEREZ@GMAIL.COM|||||||||||||||||N
+R: <VT>MSH|^~\&|AMADITA|AMADITA|Modulab|Modulab|20260507130035||OML^O21^OML_O21|id-1778173235236-92195|P|2.5||||||8859/1|||<CR>PID|1|58f07248-fc52-49fc-b23d-095630e66069|09300683811^^^^PI~^^^^PPN~^^^^SS||PEREZ GUZMAN^ELIZABETH||19890826|F|||C/ manzana # 9,Altos de Arroyo Hondo,altos de arroyo Hondo,Santo Domingo de GuzmÃ¡n (Zona urbana),Santo Domingo de GuzmÃ¡n,Santo Domingo de GuzmÃ¡n,Distrito Nacional^^Santo Domingo de GuzmÃ¡n^^^RepÃºblica Dominicana^^^Distrito Nacional||849-885-1942^^^PACIENTE@GMAIL.COM|||||||||||||||||N<CR>PV1|1|A|^^||||||||||||||||<CR>DG1|||||||||||||||||||||||||||||<CR>IN1|||||||||||||||||||||||||||||<CR>ORC|NW|||3156782|A||||20260507|||34530^|||||||||PER^PERSONAL||||||<CR>OBR|1|||12279^5753203||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR>ORC|NW|||3156782|A||||20260507|||34530^|||||||||PER^PERSONAL||||||<CR>OBR|2|||3785^5753203||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR>ORC|NW|||3156782|A||||20260507|||34530^|||||||||PER^PERSONAL||||||<CR>OBR|3|||6378^5753203||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR>ORC|NW|||3156782|A||||20260507|||34530^|||||||||PER^PERSONAL||||||<CR>OBR|4|||5550^5753203||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR>ORC|NW|||3156782|A||||20260507|||34530^|||||||||PER^PERSONAL||||||<CR>OBR|5|||6025^5753203||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR>ORC|NW|||3156782|A||||20260507|||34530^|||||||||PER^PERSONAL||||||<CR>OBR|6|||7778^5753203||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR>ORC|NW|||3156782|A||||20260507|||34530^|||||||||PER^PERSONAL||||||<CR>OBR|7|||7777^5753203||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR>ORC|NW|||3156782|A||||20260507|||34530^|||||||||PER^PERSONAL||||||<CR>OBR|8|||3747^5753203||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR>ORC|NW|||3156782|A||||20260507|||34530^|||||||||PER^PERSONAL||||||<CR>OBR|9|||6012^5753203||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR>ORC|NW|||3156782|A||||20260507|||34530^|||||||||PER^PERSONAL||||||<CR>OBR|10|||3783^5753203||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR><FS><CR>
+L: MSH|^~\&|AMADITA|AMADITA|Modulab|Modulab|20260507130035||OML^O21^OML_O21|id-1778173235236-92195|P|2.5||||||8859/1|||
+L: PID|1|58f07248-fc52-49fc-b23d-095630e66069|09300683811^^^^PI~^^^^PPN~^^^^SS||PEREZ GUZMAN^ELIZABETH||19890826|F|||C/ manzana # 9,Altos de Arroyo Hondo,altos de arroyo Hondo,Santo Domingo de GuzmÃ¡n (Zona urbana),Santo Domingo de GuzmÃ¡n,Santo Domingo de GuzmÃ¡n,Distrito Nacional^^Santo Domingo de GuzmÃ¡n^^^RepÃºblica Dominicana^^^Distrito Nacional||849-885-1942^^^PACIENTE@GMAIL.COM|||||||||||||||||N
 L: PV1|1|A|^^||||||||||||||||
 L: DG1|||||||||||||||||||||||||||||
 L: IN1|||||||||||||||||||||||||||||
-L: ORC|NW|||P3150078|A||||20260504|||^|||||||||PER^PERSONAL||||||
-L: OBR|1|||3947^4516051||||||L002^Ozama||||||^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|
+L: ORC|NW|||3156782|A||||20260507|||34530^|||||||||PER^PERSONAL||||||
+L: OBR|1|||12279^5753203||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|
 L: TQ1|||||||||R
-L: ORC|NW|||P3150078|A||||20260504|||^|||||||||PER^PERSONAL||||||
-L: OBR|2|||10959^Microbiologia molecular||||||L002^Ozama||||||^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|
+L: ORC|NW|||3156782|A||||20260507|||34530^|||||||||PER^PERSONAL||||||
+L: OBR|2|||3785^5753203||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|
 L: TQ1|||||||||R
-L: ORC|NW|||P3150078|A||||20260504|||^|||||||||PER^PERSONAL||||||
-L: OBR|3|||8040^Hemocultivo||||||L002^Ozama||||||^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|
+L: ORC|NW|||3156782|A||||20260507|||34530^|||||||||PER^PERSONAL||||||
+L: OBR|3|||6378^5753203||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|
+L: TQ1|||||||||R
+L: ORC|NW|||3156782|A||||20260507|||34530^|||||||||PER^PERSONAL||||||
+L: OBR|4|||5550^5753203||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|
+L: TQ1|||||||||R
+L: ORC|NW|||3156782|A||||20260507|||34530^|||||||||PER^PERSONAL||||||
+L: OBR|5|||6025^5753203||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|
+L: TQ1|||||||||R
+L: ORC|NW|||3156782|A||||20260507|||34530^|||||||||PER^PERSONAL||||||
+L: OBR|6|||7778^5753203||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|
+L: TQ1|||||||||R
+L: ORC|NW|||3156782|A||||20260507|||34530^|||||||||PER^PERSONAL||||||
+L: OBR|7|||7777^5753203||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|
+L: TQ1|||||||||R
+L: ORC|NW|||3156782|A||||20260507|||34530^|||||||||PER^PERSONAL||||||
+L: OBR|8|||3747^5753203||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|
+L: TQ1|||||||||R
+L: ORC|NW|||3156782|A||||20260507|||34530^|||||||||PER^PERSONAL||||||
+L: OBR|9|||6012^5753203||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|
+L: TQ1|||||||||R
+L: ORC|NW|||3156782|A||||20260507|||34530^|||||||||PER^PERSONAL||||||
+L: OBR|10|||3783^5753203||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|
 L: TQ1|||||||||R
 OML Message Found: New Request
-TEST TO ADD 3947
-TEST TO ADD 10959
-TEST TO ADD 8040
+TEST TO ADD 12279
+TEST TO ADD 3785
+TEST TO ADD 6378
+TEST TO ADD 5550
+TEST TO ADD 6025
+TEST TO ADD 7778
+TEST TO ADD 7777
+TEST TO ADD 3747
+TEST TO ADD 6012
+TEST TO ADD 3783
 Creating New Request...
 Patient found.
-Request NOT Sent to Modulab (ERR_XREQU_044: Host number must be unique)
-Application Error:ERR_XREQU_044: Host number must be unique
-Patient GEREZ JEREZ, NIURKA JOSEFINA Modified
-Updating or inserting add info on the patientid: 6605
-E: MSH|^~\&|||||20260505170009||ACK|MSG-20260505170009-7|D|2.5|||
-E: MSA|AE|id-1778014807655-48067|NO Acknowledgment
-E: ERR||||||||ERR_XREQU_044: Host number must be unique
-data=<VT>MSH|^~\&|||||20260505170009||ACK|MSG-20260505170009-7|D|2.5|||<CR>MSA|AE|id-1778014807655-48067|NO Acknowledgment<CR>ERR||||||||ERR_XREQU_044: Host number must be unique<CR><FS><CR>
-S: <VT>MSH|^~\&|||||20260505170009||ACK|MSG-20260505170009-7|D|2.5|||<CR>MSA|AE|id-1778014807655-48067|NO Acknowledgment<CR>ERR||||||||ERR_XREQU_044: Host number must be unique<CR><FS><CR>
+Request Sent to Modulab
+<?xml version='1.0' encoding='UTF-8' ?>
+<GETREQUESTFORHOST REQUESTID='25645' CONNECTIONID='1'  SHOWCVCOMMENTS='Y' SHOWPRELIMINARYCULTUREVALUES='Y'/>
+GetSampleResults 25645 OK
+GetSampleResults Couldn't get request from Modulab
+Patient PEREZ GUZMAN, ELIZABETH Modified
+Updating or inserting add info on the patientid: 7572
+E: MSH|^~\&|||||20260507134213||ACK|MSG-20260507134213-1|D|2.5|||
+E: MSA|AA|id-1778173235236-92195|Acknowledgment
+data=<VT>MSH|^~\&|||||20260507134213||ACK|MSG-20260507134213-1|D|2.5|||<CR>MSA|AA|id-1778173235236-92195|Acknowledgment<CR><FS><CR>
+S: <VT>MSH|^~\&|||||20260507134213||ACK|MSG-20260507134213-1|D|2.5|||<CR>MSA|AA|id-1778173235236-92195|Acknowledgment<CR><FS><CR>
+Authorized remote IP 127.0.0.1
+NetworkSerialServerProtocol terminated:true
+R: <VT>MSH|^~\&|AMADITA|AMADITA|Modulab|Modulab|20260507141127||OML^O21^OML_O21|id-1778177487497-96671|P|2.5||||||8859/1|||<CR>PID|1|58f07248-fc52-49fc-b23d-095630e66069|09300683811^^^^PI~^^^^PPN~^^^^SS||PEREZ GUZMAN^ELIZABETH||19890826|F|||C/ manzana # 9,Altos de Arroyo Hondo,altos de arroyo Hondo,Santo Domingo de GuzmÃ¡n (Zona urbana),Santo Domingo de GuzmÃ¡n,Santo Domingo de GuzmÃ¡n,Distrito Nacional^^Santo Domingo de GuzmÃ¡n^^^RepÃºblica Dominicana^^^Distrito Nacional||849-885-1942^^^PACIENTE@GMAIL.COM|||||||||||||||||N<CR>PV1|1|A|^^||||||||||||||||<CR>DG1|||||||||||||||||||||||||||||<CR>IN1|||||||||||||||||||||||||||||<CR>ORC|NW|||3156784|A||||20260507|||34530^|||||||||PER^PERSONAL||||||<CR>OBR|1|||7039^5753801||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR>ORC|NW|||3156784|A||||20260507|||34530^|||||||||PER^PERSONAL||||||<CR>OBR|2|||3105^5753801||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR>ORC|NW|||3156784|A||||20260507|||34530^|||||||||PER^PERSONAL||||||<CR>OBR|3|||8338^5753801||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR>ORC|NW|||3156784|A||||20260507|||34530^|||||||||PER^PERSONAL||||||<CR>OBR|4|||5900^5753801||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR>ORC|NW|||3156784|A||||20260507|||34530^|||||||||PER^PERSONAL||||||<CR>OBR|5|||7644^5753801||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR>ORC|NW|||3156784|A||||20260507|||34530^|||||||||PER^PERSONAL||||||<CR>OBR|6|||7645^5753801||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR>ORC|NW|||3156784|A||||20260507|||34530^|||||||||PER^PERSONAL||||||<CR>OBR|7|||7631^5753801||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR>ORC|NW|||3156784|A||||20260507|||34530^|||||||||PER^PERSONAL||||||<CR>OBR|8|||7632^5753801||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR>ORC|NW|||3156784|A||||20260507|||34530^|||||||||PER^PERSONAL||||||<CR>OBR|9|||7693^5753801||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR>ORC|NW|||3156784|A||||20260507|||34530^|||||||||PER^PERSONAL||||||<CR>OBR|10|||7695^5753801||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR><FS><CR>
+L: MSH|^~\&|AMADITA|AMADITA|Modulab|Modulab|20260507141127||OML^O21^OML_O21|id-1778177487497-96671|P|2.5||||||8859/1|||
+L: PID|1|58f07248-fc52-49fc-b23d-095630e66069|09300683811^^^^PI~^^^^PPN~^^^^SS||PEREZ GUZMAN^ELIZABETH||19890826|F|||C/ manzana # 9,Altos de Arroyo Hondo,altos de arroyo Hondo,Santo Domingo de GuzmÃ¡n (Zona urbana),Santo Domingo de GuzmÃ¡n,Santo Domingo de GuzmÃ¡n,Distrito Nacional^^Santo Domingo de GuzmÃ¡n^^^RepÃºblica Dominicana^^^Distrito Nacional||849-885-1942^^^PACIENTE@GMAIL.COM|||||||||||||||||N
+L: PV1|1|A|^^||||||||||||||||
+L: DG1|||||||||||||||||||||||||||||
+L: IN1|||||||||||||||||||||||||||||
+L: ORC|NW|||3156784|A||||20260507|||34530^|||||||||PER^PERSONAL||||||
+L: OBR|1|||7039^5753801||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|
+L: TQ1|||||||||R
+L: ORC|NW|||3156784|A||||20260507|||34530^|||||||||PER^PERSONAL||||||
+L: OBR|2|||3105^5753801||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|
+L: TQ1|||||||||R
+L: ORC|NW|||3156784|A||||20260507|||34530^|||||||||PER^PERSONAL||||||
+L: OBR|3|||8338^5753801||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|
+L: TQ1|||||||||R
+L: ORC|NW|||3156784|A||||20260507|||34530^|||||||||PER^PERSONAL||||||
+L: OBR|4|||5900^5753801||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|
+L: TQ1|||||||||R
+L: ORC|NW|||3156784|A||||20260507|||34530^|||||||||PER^PERSONAL||||||
+L: OBR|5|||7644^5753801||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|
+L: TQ1|||||||||R
+L: ORC|NW|||3156784|A||||20260507|||34530^|||||||||PER^PERSONAL||||||
+L: OBR|6|||7645^5753801||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|
+L: TQ1|||||||||R
+L: ORC|NW|||3156784|A||||20260507|||34530^|||||||||PER^PERSONAL||||||
+L: OBR|7|||7631^5753801||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|
+L: TQ1|||||||||R
+L: ORC|NW|||3156784|A||||20260507|||34530^|||||||||PER^PERSONAL||||||
+L: OBR|8|||7632^5753801||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|
+L: TQ1|||||||||R
+L: ORC|NW|||3156784|A||||20260507|||34530^|||||||||PER^PERSONAL||||||
+L: OBR|9|||7693^5753801||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|
+L: TQ1|||||||||R
+L: ORC|NW|||3156784|A||||20260507|||34530^|||||||||PER^PERSONAL||||||
+L: OBR|10|||7695^5753801||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|
+L: TQ1|||||||||R
+OML Message Found: New Request
+TEST TO ADD 7039
+TEST TO ADD 3105
+TEST TO ADD 8338
+TEST TO ADD 5900
+TEST TO ADD 7644
+TEST TO ADD 7645
+TEST TO ADD 7631
+TEST TO ADD 7632
+TEST TO ADD 7693
+TEST TO ADD 7695
+Creating New Request...
+Patient found.
+Request Sent to Modulab
+<?xml version='1.0' encoding='UTF-8' ?>
+<GETREQUESTFORHOST REQUESTID='25646' CONNECTIONID='1'  SHOWCVCOMMENTS='Y' SHOWPRELIMINARYCULTUREVALUES='Y'/>
+GetSampleResults 25646 OK
+GetSampleResults Couldn't get request from Modulab
+Patient PEREZ GUZMAN, ELIZABETH Modified
+Updating or inserting add info on the patientid: 7572
+E: MSH|^~\&|||||20260507141132||ACK|MSG-20260507141132-2|D|2.5|||
+E: MSA|AA|id-1778177487497-96671|Acknowledgment
+data=<VT>MSH|^~\&|||||20260507141132||ACK|MSG-20260507141132-2|D|2.5|||<CR>MSA|AA|id-1778177487497-96671|Acknowledgment<CR><FS><CR>
+S: <VT>MSH|^~\&|||||20260507141132||ACK|MSG-20260507141132-2|D|2.5|||<CR>MSA|AA|id-1778177487497-96671|Acknowledgment<CR><FS><CR>
