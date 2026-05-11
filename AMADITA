@@ -138,3 +138,82 @@ E: MSH|^~\&|||||20260507141132||ACK|MSG-20260507141132-2|D|2.5|||
 E: MSA|AA|id-1778177487497-96671|Acknowledgment
 data=<VT>MSH|^~\&|||||20260507141132||ACK|MSG-20260507141132-2|D|2.5|||<CR>MSA|AA|id-1778177487497-96671|Acknowledgment<CR><FS><CR>
 S: <VT>MSH|^~\&|||||20260507141132||ACK|MSG-20260507141132-2|D|2.5|||<CR>MSA|AA|id-1778177487497-96671|Acknowledgment<CR><FS><CR>
+
+
+MSH|^~\&|AMADITA|AMADITA|Modulab|Modulab|||OML^O21^OML_O21||P|2.5||||||8859/1|||
+PID|1|6042a2ea-c89c-4720-a35a-9b5ff3ef89bd|00301171070^^^^PI~^^^^PPN~^^^^SS||CASTILLO ROMERO^YISSEL||19921010|F|||RESIDENCIAL GENESIS, ARROYO HONDo C/ PROLONGACION LOS TRINITARIOS,Altos de Arroyo Hondo II,Nuevo arroyo Hondo,Santo Domingo de Guzmán (Zona urbana),Santo Domingo de Guzmán,Santo Domingo de Guzmán,Distrito Nacional^^Santo Domingo de Guzmán^^^República Dominicana^^^Distrito Nacional^^||.^^^yisselcastillo3@gmail.com|||||||||||||||||N
+PV1|1|A|^^||||||||||||||||
+DG1|||||||||||||||||||||||||||||
+IN1|||||||||||||||||||||||||||||
+ORC|NW|||4412677|A||||20260508|||161612^|||||||||PER^PERSONAL||||||
+OBR|1|||6025^5768096||||||L305^||||||161612^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente|
+TQ1|||||||||R
+ORC|NW|||4412677|||||20260508|||161612^|||||||||PER^PERSONAL
+OBR|2|||3947^5768096||||||L305^||||||161612^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente
+TQ1|||||||||R
+ORC|NW|||4412677|||||20260508|||161612^|||||||||PER^PERSONAL
+OBR|3|||6002^5768096||||||L305^||||||161612^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente
+TQ1|||||||||R
+ORC|NW|||4412677|||||20260508|||161612^|||||||||PER^PERSONAL
+OBR|4|||6345^5768096||||||L305^||||||161612^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente
+TQ1|||||||||R
+ORC|NW|||4412677|||||20260508|||161612^|||||||||PER^PERSONAL
+OBR|5|||6610^5768096||||||L305^||||||161612^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente
+TQ1|||||||||R
+ORC|NW|||4412677|||||20260508|||161612^|||||||||PER^PERSONAL
+OBR|6|||6730^5768096||||||L305^||||||161612^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente
+TQ1|||||||||R
+ORC|NW|||4412677|||||20260508|||161612^|||||||||PER^PERSONAL
+OBR|7|||7592^5768096||||||L305^||||||161612^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente
+TQ1|||||||||R
+ORC|NW|||4412677|||||20260508|||161612^|||||||||PER^PERSONAL
+OBR|8|||7302^5768096||||||L305^||||||161612^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente
+TQ1|||||||||R
+ORC|NW|||4412677|||||20260508|||161612^|||||||||PER^PERSONAL
+OBR|9|||8340^5768096||||||L305^||||||161612^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente
+TQ1|||||||||R
+ORC|NW|||4412677|||||20260508|||161612^|||||||||PER^PERSONAL
+OBR|10|||12194^5768096||||||L305^||||||161612^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente
+TQ1|||||||||R
+ORC|NW|||4412677|||||20260508|||161612^|||||||||PER^PERSONAL
+OBR|11|||4036^5768096||||||L305^||||||161612^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente
+TQ1|||||||||R
+ORC|NW|||4412677|||||20260508|||161612^|||||||||PER^PERSONAL
+OBR|12|||3378^5768096||||||L305^||||||161612^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente
+TQ1|||||||||R
+ORC|NW|||4412677|||||20260508|||161612^|||||||||PER^PERSONAL
+OBR|13|||7312^5768096||||||L305^||||||161612^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente
+TQ1|||||||||R
+ORC|NW|||4412677|||||20260508|||161612^|||||||||PER^PERSONAL
+OBR|14|||7315^5768096||||||L305^||||||161612^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente
+TQ1|||||||||R
+ORC|NW|||4412677|||||20260508|||161612^|||||||||PER^PERSONAL
+OBR|15|||10667^5768096||||||L305^||||||161612^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente
+TQ1|||||||||R
+ORC|NW|||4412677|||||20260508|||161612^|||||||||PER^PERSONAL
+OBR|16|||5450^5768096||||||L305^||||||161612^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente
+TQ1|||||||||R
+ORC|NW|||4412677|||||20260508|||161612^|||||||||PER^PERSONAL
+OBR|17|||5460^5768096||||||L305^||||||161612^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente
+TQ1|||||||||R
+ORC|NW|||4412677|||||20260508|||161612^|||||||||PER^PERSONAL
+OBR|18|||5480^5768096||||||L305^||||||161612^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente
+TQ1|||||||||R
+ORC|NW|||4412677|||||20260508|||161612^|||||||||PER^PERSONAL
+OBR|19|||5436^5768096||||||L305^||||||161612^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente
+TQ1|||||||||R
+ORC|NW|||4412677|||||20260508|||161612^|||||||||PER^PERSONAL
+OBR|20|||5439^5768096||||||L305^||||||161612^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente
+TQ1|||||||||R
+ORC|NW|||4412677|||||20260508|||161612^|||||||||PER^PERSONAL
+OBR|21|||5443^5768096||||||L305^||||||161612^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente
+TQ1|||||||||R
+ORC|NW|||4412677|||||20260508|||161612^|||||||||PER^PERSONAL
+OBR|22|||2000^5768096||||||L305^||||||161612^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente
+TQ1|||||||||R
+ORC|NW|||4412677|||||20260508|||161612^|||||||||PER^PERSONAL
+OBR|23|||1073^5768096||||||L305^||||||161612^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente
+TQ1|||||||||R
+ORC|NW|||4412677|||||20260508|||161612^|||||||||PER^PERSONAL
+OBR|24|||1061^5768096||||||L305^||||||161612^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente
+TQ1|||||||||R
