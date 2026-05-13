@@ -263,3 +263,16 @@ OBX|19|NM|H42^Eosinófilos %^MODULAB||2.30|%|0.0 - 9.0|N|||F|||20260511162151||j
 OBX|20|NM|H43^Basófilos #^MODULAB||0.05|K/µL|0.0 - 0.2|N|||F|||20260511162151||jocelyn.delacruz|||20260511162149
 OBX|21|NM|H44^Basófilos %^MODULAB||0.80|%|0.0 - 2.0|N|||F|||20260511162151||jocelyn.delacruz|||20260511162148
 SPM|1|43111039422||5^Sangre Total con EDTA|||^^MODULAB|^^MODULAB|||||||||20260511124049|20260511124549||Y||||||1
+
+
+MSH|^~\&|AMADITA|AMADITA|Modulab|Modulab|20260512160849||OML^O21^OML_O21|id-1778616529749-45119|P|2.5||||||8859/1|||
+PID|1|P922-P40231789948|P922-P40231789948^^^^PI~^^^^PPN~^^^^SS||Apellido33^Nombre33||20030602|M|||P11.1^P11.2^P11.3^P11.4^P11.5^P11.6^P11.7^P11.8^P11.9||.^^^|||||||||||||||||N
+PV1|1|LC|^^||||||||||||||||
+DG1|||||||||||||||||||||||||||||
+IN1|||||||||||||||||||||||||||||
+ORC|NW|||3157724|A||||20260512|||24465^PRUEBA|||||||||922^BALTIMORE DOMICANA (BALDOM) PRE-EMP.||||||
+OBR|1|||6025^||||||L001^Laboratorio Principal (Gazcue)||||||24465^PRUEBA||||||||NE^||||RS^Recoger en Sucursal|
+TQ1|||||||||
+ORC|NW|||3157724|A||||20260512|||24465^PRUEBA|||||||||922^BALTIMORE DOMICANA (BALDOM) PRE-EMP.||||||
+OBR|2|||2000^||||||L001^Laboratorio Principal (Gazcue)||||||24465^PRUEBA||||||||NE^||||RS^Recoger en Sucursal|
+TQ1|||||||||
