@@ -1,323 +1,46 @@
-https://wetransfer.com/downloads/dbbaa19574b1b715356e4e7d25dcfa8b20260506144842/9c0b17a7f245b5780e0598a82fedbba720260506145004/1ac6d3
-
-ModulabGoldClient2.jar\com\systelab\modulabgold\client\multionline\drivers - ZIP archive, unpacked size 242,903,109 bytes
-
-MultiOnlineINSTRUMENTS.jar\com\systelab\modulabgold\client\multionline\drivers - ZIP archive, unpacked size 12,741,795 bytes
-
-TAOLink.jar\com\systelab\modulabgold\client\multionline\drivers - ZIP archive, unpacked size 1,005,845 bytes
-
-ModulabGoldClient2.jar\com\systelab\modulabgold\client\multionline\drivers - ZIP archive, unpacked size 242,903,109 bytes
-
-
-License OK
-Communication started with driver ModulabGoldBasicHL7 2.66
-Authorized remote IP 127.0.0.1
-soLinger<-500
-NetworkSerialServerProtocol terminated:true
-Authorized remote IP 127.0.0.1
-NetworkSerialServerProtocol terminated:true
-R: <VT>MSH|^~\&|AMADITA|AMADITA|Modulab|Modulab|20260507130035||OML^O21^OML_O21|id-1778173235236-92195|P|2.5||||||8859/1|||<CR>PID|1|58f07248-fc52-49fc-b23d-095630e66069|09300683811^^^^PI~^^^^PPN~^^^^SS||PEREZ GUZMAN^ELIZABETH||19890826|F|||C/ manzana # 9,Altos de Arroyo Hondo,altos de arroyo Hondo,Santo Domingo de GuzmÃ¡n (Zona urbana),Santo Domingo de GuzmÃ¡n,Santo Domingo de GuzmÃ¡n,Distrito Nacional^^Santo Domingo de GuzmÃ¡n^^^RepÃºblica Dominicana^^^Distrito Nacional||849-885-1942^^^PACIENTE@GMAIL.COM|||||||||||||||||N<CR>PV1|1|A|^^||||||||||||||||<CR>DG1|||||||||||||||||||||||||||||<CR>IN1|||||||||||||||||||||||||||||<CR>ORC|NW|||3156782|A||||20260507|||34530^|||||||||PER^PERSONAL||||||<CR>OBR|1|||12279^5753203||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR>ORC|NW|||3156782|A||||20260507|||34530^|||||||||PER^PERSONAL||||||<CR>OBR|2|||3785^5753203||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR>ORC|NW|||3156782|A||||20260507|||34530^|||||||||PER^PERSONAL||||||<CR>OBR|3|||6378^5753203||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR>ORC|NW|||3156782|A||||20260507|||34530^|||||||||PER^PERSONAL||||||<CR>OBR|4|||5550^5753203||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR>ORC|NW|||3156782|A||||20260507|||34530^|||||||||PER^PERSONAL||||||<CR>OBR|5|||6025^5753203||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR>ORC|NW|||3156782|A||||20260507|||34530^|||||||||PER^PERSONAL||||||<CR>OBR|6|||7778^5753203||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR>ORC|NW|||3156782|A||||20260507|||34530^|||||||||PER^PERSONAL||||||<CR>OBR|7|||7777^5753203||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR>ORC|NW|||3156782|A||||20260507|||34530^|||||||||PER^PERSONAL||||||<CR>OBR|8|||3747^5753203||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR>ORC|NW|||3156782|A||||20260507|||34530^|||||||||PER^PERSONAL||||||<CR>OBR|9|||6012^5753203||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR>ORC|NW|||3156782|A||||20260507|||34530^|||||||||PER^PERSONAL||||||<CR>OBR|10|||3783^5753203||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR><FS><CR>
-L: MSH|^~\&|AMADITA|AMADITA|Modulab|Modulab|20260507130035||OML^O21^OML_O21|id-1778173235236-92195|P|2.5||||||8859/1|||
-L: PID|1|58f07248-fc52-49fc-b23d-095630e66069|09300683811^^^^PI~^^^^PPN~^^^^SS||PEREZ GUZMAN^ELIZABETH||19890826|F|||C/ manzana # 9,Altos de Arroyo Hondo,altos de arroyo Hondo,Santo Domingo de GuzmÃ¡n (Zona urbana),Santo Domingo de GuzmÃ¡n,Santo Domingo de GuzmÃ¡n,Distrito Nacional^^Santo Domingo de GuzmÃ¡n^^^RepÃºblica Dominicana^^^Distrito Nacional||849-885-1942^^^PACIENTE@GMAIL.COM|||||||||||||||||N
-L: PV1|1|A|^^||||||||||||||||
-L: DG1|||||||||||||||||||||||||||||
-L: IN1|||||||||||||||||||||||||||||
-L: ORC|NW|||3156782|A||||20260507|||34530^|||||||||PER^PERSONAL||||||
-L: OBR|1|||12279^5753203||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|
-L: TQ1|||||||||R
-L: ORC|NW|||3156782|A||||20260507|||34530^|||||||||PER^PERSONAL||||||
-L: OBR|2|||3785^5753203||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|
-L: TQ1|||||||||R
-L: ORC|NW|||3156782|A||||20260507|||34530^|||||||||PER^PERSONAL||||||
-L: OBR|3|||6378^5753203||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|
-L: TQ1|||||||||R
-L: ORC|NW|||3156782|A||||20260507|||34530^|||||||||PER^PERSONAL||||||
-L: OBR|4|||5550^5753203||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|
-L: TQ1|||||||||R
-L: ORC|NW|||3156782|A||||20260507|||34530^|||||||||PER^PERSONAL||||||
-L: OBR|5|||6025^5753203||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|
-L: TQ1|||||||||R
-L: ORC|NW|||3156782|A||||20260507|||34530^|||||||||PER^PERSONAL||||||
-L: OBR|6|||7778^5753203||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|
-L: TQ1|||||||||R
-L: ORC|NW|||3156782|A||||20260507|||34530^|||||||||PER^PERSONAL||||||
-L: OBR|7|||7777^5753203||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|
-L: TQ1|||||||||R
-L: ORC|NW|||3156782|A||||20260507|||34530^|||||||||PER^PERSONAL||||||
-L: OBR|8|||3747^5753203||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|
-L: TQ1|||||||||R
-L: ORC|NW|||3156782|A||||20260507|||34530^|||||||||PER^PERSONAL||||||
-L: OBR|9|||6012^5753203||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|
-L: TQ1|||||||||R
-L: ORC|NW|||3156782|A||||20260507|||34530^|||||||||PER^PERSONAL||||||
-L: OBR|10|||3783^5753203||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|
-L: TQ1|||||||||R
-OML Message Found: New Request
-TEST TO ADD 12279
-TEST TO ADD 3785
-TEST TO ADD 6378
-TEST TO ADD 5550
-TEST TO ADD 6025
-TEST TO ADD 7778
-TEST TO ADD 7777
-TEST TO ADD 3747
-TEST TO ADD 6012
-TEST TO ADD 3783
-Creating New Request...
-Patient found.
-Request Sent to Modulab
-<?xml version='1.0' encoding='UTF-8' ?>
-<GETREQUESTFORHOST REQUESTID='25645' CONNECTIONID='1'  SHOWCVCOMMENTS='Y' SHOWPRELIMINARYCULTUREVALUES='Y'/>
-GetSampleResults 25645 OK
-GetSampleResults Couldn't get request from Modulab
-Patient PEREZ GUZMAN, ELIZABETH Modified
-Updating or inserting add info on the patientid: 7572
-E: MSH|^~\&|||||20260507134213||ACK|MSG-20260507134213-1|D|2.5|||
-E: MSA|AA|id-1778173235236-92195|Acknowledgment
-data=<VT>MSH|^~\&|||||20260507134213||ACK|MSG-20260507134213-1|D|2.5|||<CR>MSA|AA|id-1778173235236-92195|Acknowledgment<CR><FS><CR>
-S: <VT>MSH|^~\&|||||20260507134213||ACK|MSG-20260507134213-1|D|2.5|||<CR>MSA|AA|id-1778173235236-92195|Acknowledgment<CR><FS><CR>
-Authorized remote IP 127.0.0.1
-NetworkSerialServerProtocol terminated:true
-R: <VT>MSH|^~\&|AMADITA|AMADITA|Modulab|Modulab|20260507141127||OML^O21^OML_O21|id-1778177487497-96671|P|2.5||||||8859/1|||<CR>PID|1|58f07248-fc52-49fc-b23d-095630e66069|09300683811^^^^PI~^^^^PPN~^^^^SS||PEREZ GUZMAN^ELIZABETH||19890826|F|||C/ manzana # 9,Altos de Arroyo Hondo,altos de arroyo Hondo,Santo Domingo de GuzmÃ¡n (Zona urbana),Santo Domingo de GuzmÃ¡n,Santo Domingo de GuzmÃ¡n,Distrito Nacional^^Santo Domingo de GuzmÃ¡n^^^RepÃºblica Dominicana^^^Distrito Nacional||849-885-1942^^^PACIENTE@GMAIL.COM|||||||||||||||||N<CR>PV1|1|A|^^||||||||||||||||<CR>DG1|||||||||||||||||||||||||||||<CR>IN1|||||||||||||||||||||||||||||<CR>ORC|NW|||3156784|A||||20260507|||34530^|||||||||PER^PERSONAL||||||<CR>OBR|1|||7039^5753801||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR>ORC|NW|||3156784|A||||20260507|||34530^|||||||||PER^PERSONAL||||||<CR>OBR|2|||3105^5753801||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR>ORC|NW|||3156784|A||||20260507|||34530^|||||||||PER^PERSONAL||||||<CR>OBR|3|||8338^5753801||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR>ORC|NW|||3156784|A||||20260507|||34530^|||||||||PER^PERSONAL||||||<CR>OBR|4|||5900^5753801||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR>ORC|NW|||3156784|A||||20260507|||34530^|||||||||PER^PERSONAL||||||<CR>OBR|5|||7644^5753801||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR>ORC|NW|||3156784|A||||20260507|||34530^|||||||||PER^PERSONAL||||||<CR>OBR|6|||7645^5753801||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR>ORC|NW|||3156784|A||||20260507|||34530^|||||||||PER^PERSONAL||||||<CR>OBR|7|||7631^5753801||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR>ORC|NW|||3156784|A||||20260507|||34530^|||||||||PER^PERSONAL||||||<CR>OBR|8|||7632^5753801||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR>ORC|NW|||3156784|A||||20260507|||34530^|||||||||PER^PERSONAL||||||<CR>OBR|9|||7693^5753801||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR>ORC|NW|||3156784|A||||20260507|||34530^|||||||||PER^PERSONAL||||||<CR>OBR|10|||7695^5753801||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|<CR>TQ1|||||||||R<CR><FS><CR>
-L: MSH|^~\&|AMADITA|AMADITA|Modulab|Modulab|20260507141127||OML^O21^OML_O21|id-1778177487497-96671|P|2.5||||||8859/1|||
-L: PID|1|58f07248-fc52-49fc-b23d-095630e66069|09300683811^^^^PI~^^^^PPN~^^^^SS||PEREZ GUZMAN^ELIZABETH||19890826|F|||C/ manzana # 9,Altos de Arroyo Hondo,altos de arroyo Hondo,Santo Domingo de GuzmÃ¡n (Zona urbana),Santo Domingo de GuzmÃ¡n,Santo Domingo de GuzmÃ¡n,Distrito Nacional^^Santo Domingo de GuzmÃ¡n^^^RepÃºblica Dominicana^^^Distrito Nacional||849-885-1942^^^PACIENTE@GMAIL.COM|||||||||||||||||N
-L: PV1|1|A|^^||||||||||||||||
-L: DG1|||||||||||||||||||||||||||||
-L: IN1|||||||||||||||||||||||||||||
-L: ORC|NW|||3156784|A||||20260507|||34530^|||||||||PER^PERSONAL||||||
-L: OBR|1|||7039^5753801||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|
-L: TQ1|||||||||R
-L: ORC|NW|||3156784|A||||20260507|||34530^|||||||||PER^PERSONAL||||||
-L: OBR|2|||3105^5753801||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|
-L: TQ1|||||||||R
-L: ORC|NW|||3156784|A||||20260507|||34530^|||||||||PER^PERSONAL||||||
-L: OBR|3|||8338^5753801||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|
-L: TQ1|||||||||R
-L: ORC|NW|||3156784|A||||20260507|||34530^|||||||||PER^PERSONAL||||||
-L: OBR|4|||5900^5753801||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|
-L: TQ1|||||||||R
-L: ORC|NW|||3156784|A||||20260507|||34530^|||||||||PER^PERSONAL||||||
-L: OBR|5|||7644^5753801||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|
-L: TQ1|||||||||R
-L: ORC|NW|||3156784|A||||20260507|||34530^|||||||||PER^PERSONAL||||||
-L: OBR|6|||7645^5753801||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|
-L: TQ1|||||||||R
-L: ORC|NW|||3156784|A||||20260507|||34530^|||||||||PER^PERSONAL||||||
-L: OBR|7|||7631^5753801||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|
-L: TQ1|||||||||R
-L: ORC|NW|||3156784|A||||20260507|||34530^|||||||||PER^PERSONAL||||||
-L: OBR|8|||7632^5753801||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|
-L: TQ1|||||||||R
-L: ORC|NW|||3156784|A||||20260507|||34530^|||||||||PER^PERSONAL||||||
-L: OBR|9|||7693^5753801||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|
-L: TQ1|||||||||R
-L: ORC|NW|||3156784|A||||20260507|||34530^|||||||||PER^PERSONAL||||||
-L: OBR|10|||7695^5753801||||||L002^Ozama||||||34530^||||||||z017^NO ESPECIFICADO||||CP^Correo Paciente|
-L: TQ1|||||||||R
-OML Message Found: New Request
-TEST TO ADD 7039
-TEST TO ADD 3105
-TEST TO ADD 8338
-TEST TO ADD 5900
-TEST TO ADD 7644
-TEST TO ADD 7645
-TEST TO ADD 7631
-TEST TO ADD 7632
-TEST TO ADD 7693
-TEST TO ADD 7695
-Creating New Request...
-Patient found.
-Request Sent to Modulab
-<?xml version='1.0' encoding='UTF-8' ?>
-<GETREQUESTFORHOST REQUESTID='25646' CONNECTIONID='1'  SHOWCVCOMMENTS='Y' SHOWPRELIMINARYCULTUREVALUES='Y'/>
-GetSampleResults 25646 OK
-GetSampleResults Couldn't get request from Modulab
-Patient PEREZ GUZMAN, ELIZABETH Modified
-Updating or inserting add info on the patientid: 7572
-E: MSH|^~\&|||||20260507141132||ACK|MSG-20260507141132-2|D|2.5|||
-E: MSA|AA|id-1778177487497-96671|Acknowledgment
-data=<VT>MSH|^~\&|||||20260507141132||ACK|MSG-20260507141132-2|D|2.5|||<CR>MSA|AA|id-1778177487497-96671|Acknowledgment<CR><FS><CR>
-S: <VT>MSH|^~\&|||||20260507141132||ACK|MSG-20260507141132-2|D|2.5|||<CR>MSA|AA|id-1778177487497-96671|Acknowledgment<CR><FS><CR>
+MSH|^~\&|SIFANET|Tecniscan SantaLu|Modulab|Modulab|20260523101705-0600||OML^O21^OML_O21|0c3aec32-a9f9-4065-9a57-4ce606bbaedb|P|2.5|||||||||
+PID|1|2026-28-3280|2026-28-3280^^^^PI||GONZALEZ CELADA^SANTIAGO DARIEL||20150813|M|||* *||^PRN^PH^^^^^^54415533~^PRN^Internet^wendyceladamendez@gmail.com                                                                         |||||||||||||||||N
+PV1|1|PRIV|^^01||||||||||||||||
+ORC|NW|35-50759||35-50759|A||||||||||||||||^^^^^^FI^^^||||||
+OBR|1|||80.36^Lípidos Totales||||||35^Tecniscan SantaLu||||||994^MAYA VIRGINIA XIOMARA||||||||LAB||||CE^CORREO ELECTRONICO PX Y DR
+ORC|NW|35-50759||35-50759|A||||||||||||||||^^^^^^FI^^^||||||
+OBR|2|||82307^Vitamina D / 25 Hidroxi||||||35^Tecniscan SantaLu||||||994^MAYA VIRGINIA XIOMARA||||||||LAB||||CE^CORREO ELECTRONICO PX Y DR
+ORC|NW|35-50759||35-50759|A||||||||||||||||^^^^^^FI^^^||||||
+OBR|3|||82465^Colesterol Total||||||35^Tecniscan SantaLu||||||994^MAYA VIRGINIA XIOMARA||||||||LAB||||CE^CORREO ELECTRONICO PX Y DR
+ORC|NW|35-50759||35-50759|A||||||||||||||||^^^^^^FI^^^||||||
+OBR|4|||82627^Dehidroepiandrosterona sulfato (DHEA-SO4)||||||35^Tecniscan SantaLu||||||994^MAYA VIRGINIA XIOMARA||||||||LAB||||CE^CORREO ELECTRONICO PX Y DR
+ORC|NW|35-50759||35-50759|A||||||||||||||||^^^^^^FI^^^||||||
+OBR|5|||82947^Glucosa, Ayunas||||||35^Tecniscan SantaLu||||||994^MAYA VIRGINIA XIOMARA||||||||LAB||||CE^CORREO ELECTRONICO PX Y DR
+ORC|NW|35-50759||35-50759|A||||||||||||||||^^^^^^FI^^^||||||
+OBR|6|||83001^Hormona Folículo Estimulante (FSH)||||||35^Tecniscan SantaLu||||||994^MAYA VIRGINIA XIOMARA||||||||LAB||||CE^CORREO ELECTRONICO PX Y DR
+ORC|NW|35-50759||35-50759|A||||||||||||||||^^^^^^FI^^^||||||
+OBR|7|||83002^Hormona Luteinizante (LH)||||||35^Tecniscan SantaLu||||||994^MAYA VIRGINIA XIOMARA||||||||LAB||||CE^CORREO ELECTRONICO PX Y DR
+ORC|NW|35-50759||35-50759|A||||||||||||||||^^^^^^FI^^^||||||
+OBR|8|||83498^17 - Hidroxiprogesterona||||||35^Tecniscan SantaLu||||||994^MAYA VIRGINIA XIOMARA||||||||LAB||||CE^CORREO ELECTRONICO PX Y DR
+ORC|NW|35-50759||35-50759|A||||||||||||||||^^^^^^FI^^^||||||
+OBR|9|||83525^Insulina Ayunas ||||||35^Tecniscan SantaLu||||||994^MAYA VIRGINIA XIOMARA||||||||LAB||||CE^CORREO ELECTRONICO PX Y DR
+ORC|NW|35-50759||35-50759|A||||||||||||||||^^^^^^FI^^^||||||
+OBR|10|||83718^Colesterol HDL||||||35^Tecniscan SantaLu||||||994^MAYA VIRGINIA XIOMARA||||||||LAB||||CE^CORREO ELECTRONICO PX Y DR
+ORC|NW|35-50759||35-50759|A||||||||||||||||^^^^^^FI^^^||||||
+OBR|11|||83721^Colesterol LDL||||||35^Tecniscan SantaLu||||||994^MAYA VIRGINIA XIOMARA||||||||LAB||||CE^CORREO ELECTRONICO PX Y DR
+ORC|NW|35-50759||35-50759|A||||||||||||||||^^^^^^FI^^^||||||
+OBR|12|||84146^Prolactina ||||||35^Tecniscan SantaLu||||||994^MAYA VIRGINIA XIOMARA||||||||LAB||||CE^CORREO ELECTRONICO PX Y DR
+ORC|NW|35-50759||35-50759|A||||||||||||||||^^^^^^FI^^^||||||
+OBR|13|||84404^Testosterona Total y Libre||||||35^Tecniscan SantaLu||||||994^MAYA VIRGINIA XIOMARA||||||||LAB||||CE^CORREO ELECTRONICO PX Y DR
+ORC|NW|35-50759||35-50759|A||||||||||||||||^^^^^^FI^^^||||||
+OBR|14|||84450^TGO / SGOT / ASAT||||||35^Tecniscan SantaLu||||||994^MAYA VIRGINIA XIOMARA||||||||LAB||||CE^CORREO ELECTRONICO PX Y DR
+ORC|NW|35-50759||35-50759|A||||||||||||||||^^^^^^FI^^^||||||
+OBR|15|||84460^TGP / SGPT / ALAT||||||35^Tecniscan SantaLu||||||994^MAYA VIRGINIA XIOMARA||||||||LAB||||CE^CORREO ELECTRONICO PX Y DR
+ORC|NW|35-50759||35-50759|A||||||||||||||||^^^^^^FI^^^||||||
+OBR|16|||84478^Triglicéridos||||||35^Tecniscan SantaLu||||||994^MAYA VIRGINIA XIOMARA||||||||LAB||||CE^CORREO ELECTRONICO PX Y DR
+ORC|NW|35-50759||35-50759|A||||||||||||||||^^^^^^FI^^^||||||
+OBR|17|||84555^Acido Urico||||||35^Tecniscan SantaLu||||||994^MAYA VIRGINIA XIOMARA||||||||LAB||||CE^CORREO ELECTRONICO PX Y DR
+ORC|NW|35-50759||35-50759|A||||||||||||||||^^^^^^FI^^^||||||
+OBR|18|||86140^Proteína C Reactiva (PCR)||||||35^Tecniscan SantaLu||||||994^MAYA VIRGINIA XIOMARA||||||||LAB||||CE^CORREO ELECTRONICO PX Y DR
+ORC|NW|35-50759||35-50759|A||||||||||||||||^^^^^^FI^^^||||||
+OBR|19|||86900^Grupo Sanguíneo (Grupo y Rh)||||||35^Tecniscan SantaLu||||||994^MAYA VIRGINIA XIOMARA||||||||LAB||||CE^CORREO ELECTRONICO PX Y DR
 
 
-MSH|^~\&|AMADITA|AMADITA|Modulab|Modulab|||OML^O21^OML_O21||P|2.5||||||8859/1|||
-PID|1|6042a2ea-c89c-4720-a35a-9b5ff3ef89bd|00301171070^^^^PI~^^^^PPN~^^^^SS||CASTILLO ROMERO^YISSEL||19921010|F|||RESIDENCIAL GENESIS, ARROYO HONDo C/ PROLONGACION LOS TRINITARIOS,Altos de Arroyo Hondo II,Nuevo arroyo Hondo,Santo Domingo de Guzmán (Zona urbana),Santo Domingo de Guzmán,Santo Domingo de Guzmán,Distrito Nacional^^Santo Domingo de Guzmán^^^República Dominicana^^^Distrito Nacional^^||.^^^yisselcastillo3@gmail.com|||||||||||||||||N
-PV1|1|A|^^||||||||||||||||
-DG1|||||||||||||||||||||||||||||
-IN1|||||||||||||||||||||||||||||
-ORC|NW|||4412677|A||||20260508|||161612^|||||||||PER^PERSONAL||||||
-OBR|1|||6025^5768096||||||L305^||||||161612^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente|
-TQ1|||||||||R
-ORC|NW|||4412677|||||20260508|||161612^|||||||||PER^PERSONAL
-OBR|2|||3947^5768096||||||L305^||||||161612^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente
-TQ1|||||||||R
-ORC|NW|||4412677|||||20260508|||161612^|||||||||PER^PERSONAL
-OBR|3|||6002^5768096||||||L305^||||||161612^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente
-TQ1|||||||||R
-ORC|NW|||4412677|||||20260508|||161612^|||||||||PER^PERSONAL
-OBR|4|||6345^5768096||||||L305^||||||161612^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente
-TQ1|||||||||R
-ORC|NW|||4412677|||||20260508|||161612^|||||||||PER^PERSONAL
-OBR|5|||6610^5768096||||||L305^||||||161612^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente
-TQ1|||||||||R
-ORC|NW|||4412677|||||20260508|||161612^|||||||||PER^PERSONAL
-OBR|6|||6730^5768096||||||L305^||||||161612^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente
-TQ1|||||||||R
-ORC|NW|||4412677|||||20260508|||161612^|||||||||PER^PERSONAL
-OBR|7|||7592^5768096||||||L305^||||||161612^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente
-TQ1|||||||||R
-ORC|NW|||4412677|||||20260508|||161612^|||||||||PER^PERSONAL
-OBR|8|||7302^5768096||||||L305^||||||161612^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente
-TQ1|||||||||R
-ORC|NW|||4412677|||||20260508|||161612^|||||||||PER^PERSONAL
-OBR|9|||8340^5768096||||||L305^||||||161612^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente
-TQ1|||||||||R
-ORC|NW|||4412677|||||20260508|||161612^|||||||||PER^PERSONAL
-OBR|10|||12194^5768096||||||L305^||||||161612^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente
-TQ1|||||||||R
-ORC|NW|||4412677|||||20260508|||161612^|||||||||PER^PERSONAL
-OBR|11|||4036^5768096||||||L305^||||||161612^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente
-TQ1|||||||||R
-ORC|NW|||4412677|||||20260508|||161612^|||||||||PER^PERSONAL
-OBR|12|||3378^5768096||||||L305^||||||161612^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente
-TQ1|||||||||R
-ORC|NW|||4412677|||||20260508|||161612^|||||||||PER^PERSONAL
-OBR|13|||7312^5768096||||||L305^||||||161612^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente
-TQ1|||||||||R
-ORC|NW|||4412677|||||20260508|||161612^|||||||||PER^PERSONAL
-OBR|14|||7315^5768096||||||L305^||||||161612^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente
-TQ1|||||||||R
-ORC|NW|||4412677|||||20260508|||161612^|||||||||PER^PERSONAL
-OBR|15|||10667^5768096||||||L305^||||||161612^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente
-TQ1|||||||||R
-ORC|NW|||4412677|||||20260508|||161612^|||||||||PER^PERSONAL
-OBR|16|||5450^5768096||||||L305^||||||161612^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente
-TQ1|||||||||R
-ORC|NW|||4412677|||||20260508|||161612^|||||||||PER^PERSONAL
-OBR|17|||5460^5768096||||||L305^||||||161612^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente
-TQ1|||||||||R
-ORC|NW|||4412677|||||20260508|||161612^|||||||||PER^PERSONAL
-OBR|18|||5480^5768096||||||L305^||||||161612^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente
-TQ1|||||||||R
-ORC|NW|||4412677|||||20260508|||161612^|||||||||PER^PERSONAL
-OBR|19|||5436^5768096||||||L305^||||||161612^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente
-TQ1|||||||||R
-ORC|NW|||4412677|||||20260508|||161612^|||||||||PER^PERSONAL
-OBR|20|||5439^5768096||||||L305^||||||161612^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente
-TQ1|||||||||R
-ORC|NW|||4412677|||||20260508|||161612^|||||||||PER^PERSONAL
-OBR|21|||5443^5768096||||||L305^||||||161612^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente
-TQ1|||||||||R
-ORC|NW|||4412677|||||20260508|||161612^|||||||||PER^PERSONAL
-OBR|22|||2000^5768096||||||L305^||||||161612^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente
-TQ1|||||||||R
-ORC|NW|||4412677|||||20260508|||161612^|||||||||PER^PERSONAL
-OBR|23|||1073^5768096||||||L305^||||||161612^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente
-TQ1|||||||||R
-ORC|NW|||4412677|||||20260508|||161612^|||||||||PER^PERSONAL
-OBR|24|||1061^5768096||||||L305^||||||161612^||||||||Z000^NO ESPECIFICADO||||CP^Correo Paciente
-TQ1|||||||||R
-
-
-MSH|^~\&|Modulab|Modulab|Portal|Portal|20260511125619-0400||ORU^R01^ORU_R01|LAB31778518579172|P|2.5|||||RD||ES
-PID|1||173121a7-c448-4d30-a9d3-e3fe2ea905e8^^^^PI~40233450382^^^^PPN||ROJAS NICOLAS^MICHELLE PAOLA||20010105120000-0400|F|||CALLE PROFESORA CAMILA HENRIQUEZ NO 3,TORRE DE PALM TOWER,Bella Vista,Bella Vista,Santo Domingo de GuzmÃ¡n (Zona urbana),Santo Domingo de GuzmÃ¡n,Santo Domingo de GuzmÃ¡n,Distrito Nacional^^Santo Domingo de GuzmÃ¡n^Distrito Nacional||^PRN^PH^^^^^^809-630-9162 ^^^809-630-9162 ~^PRN^Internet^MICHELLEROJASNICOLAS2001@GMAIL.COM|||||||||||||||||N
-PV1|1|A||||||||||||||N
-ORC|SC||02008631^MODULAB|2148357^16484&MODULAB|SC||||20260511125549-0400|||PRUEBA24465^PRUEBA|||||||||Personal^^^^^^FI^^^PER
-OBR|1|2148357|02008631^MODULAB|4036^Hemoglobina Glicosilada^MODULAB||||||L400||||||PRUEBA24465^PRUEBA||||1||||LAB|S|||CP
-SPM|1|29502008631||5^Sangre Total con EDTA|||^^MODULAB|^^MODULAB|||||||||20260511125549|||N||||||1
-MSH|^~\&|Modulab|Modulab|Portal|Portal|20260511125619-0400||ORU^R01^ORU_R01|LAB31778518579172|P|2.5|||||RD||ES
-PID|1||173121a7-c448-4d30-a9d3-e3fe2ea905e8^^^^PI~40233450382^^^^PPN||ROJAS NICOLAS^MICHELLE PAOLA||20010105120000-0400|F|||CALLE PROFESORA CAMILA HENRIQUEZ NO 3,TORRE DE PALM TOWER,Bella Vista,Bella Vista,Santo Domingo de GuzmÃ¡n (Zona urbana),Santo Domingo de GuzmÃ¡n,Santo Domingo de GuzmÃ¡n,Distrito Nacional^^Santo Domingo de GuzmÃ¡n^Distrito Nacional||^PRN^PH^^^^^^809-630-9162 ^^^809-630-9162 ~^PRN^Internet^MICHELLEROJASNICOLAS2001@GMAIL.COM|||||||||||||||||N
-PV1|1|A||||||||||||||N
-ORC|SC||02008631^MODULAB|2148357^16484&MODULAB|SC||||20260511125549-0400|||PRUEBA24465^PRUEBA|||||||||Personal^^^^^^FI^^^PER
-OBR|1|2148357|02008631^MODULAB|4036^Hemoglobina Glicosilada^MODULAB||||||L400||||||PRUEBA24465^PRUEBA||||1||||LAB|S|||CP
-SPM|1|29502008631||5^Sangre Total con EDTA|||^^MODULAB|^^MODULAB|||||||||20260511125549|||N||||||1
-
-
-
-
-
-MSH|^~\&|Modulab|Modulab|Portal|Portal|20260511162216-0400||ORU^R01^ORU_R01|LAB31778530936043|P|2.5|||||RD||ES
-PID|1||2052a306-9caf-4724-aeb1-679977112fe2^^^^PI~40226359095^^^^PPN||MEDINA PAREDES^YESSICA||19971123120000-0400|F|||c/ el eden no. 17 los mameyes,Los Mameyes,los Mameyes,Santo Domingo Este (Zona urbana),Santo Domingo Este,Santo Domingo Este,Santo Domingo^^Santo Domingo Este^Santo Domingo^^República Dominicana||^PRN^PH^^^^^^. ^^^. ~^PRN^Internet^YESSIMEDINA023@GMAIL.COM|||||||||||||||||N
-PV1|1|A||||||||||||||N
-ORC|SC||11039422^MODULAB|4428941^1725201&MODULAB|CM||||20260511162151-0400|||NO^No Especificado|||20260511124545-0400||||||Personal^^^^^^FI^^^PER
-OBR|1|4428941|11039422^MODULAB|6025^Hemograma^MODULAB||||||L011||||||NO^No Especificado||||2||||LAB|F|||CP||||jocelyn.delacruz^20260511162151-0400
-OBX|1|NM|H24^Glóbulos Blancos^MODULAB||6.59|K/µL|3.8 - 10.8|N|||F|||20260511162151||jocelyn.delacruz|||20260511162147
-OBX|2|NM|H25^Glóbulos Rojos^MODULAB||4.70|M/µL|3.93 - 5.22|N|||F|||20260511162151||jocelyn.delacruz|||20260511162147
-OBX|3|NM|H27^Hemoglobina^MODULAB||12.30|g/dL|11.2 - 15.7|N|||F|||20260511162151||jocelyn.delacruz|||20260511162147
-OBX|4|NM|H26^Hematocrito^MODULAB||37.10|%|34.1 - 44.9|N|||F|||20260511162151||jocelyn.delacruz|||20260511162147
-OBX|5|NM|H29^VCM^MODULAB||78.90|fL|81.0 - 99.0|L|||F|||20260511162151||jocelyn.delacruz|||20260511162147
-OBX|6|NM|H30^HCM^MODULAB||26.20|pg|27.0 - 31.0|L|||F|||20260511162151||jocelyn.delacruz|||20260511162147
-OBX|7|NM|H31^CHCM^MODULAB||33.20|g/dL|31.5 - 36.5|N|||F|||20260511162151||jocelyn.delacruz|||20260511162147
-OBX|8|NM|H32^RDW^MODULAB||12.30|%|11.6 - 14.6|N|||F|||20260511162151||jocelyn.delacruz|||20260511162149
-OBX|9|NM|H28^Plaquetas^MODULAB||309.00|K/µL|150.0 - 450.0|N|||F|||20260511162151||jocelyn.delacruz|||20260511162147
-OBX|10|NM|H33^MPV^MODULAB||9.90|f/L|0.9 - 99.0|N|||F|||20260511162151||jocelyn.delacruz|||20260511162149
-OBX|11|NM|H34^PDW^MODULAB||35.80|GSD|0.9 - 99.0|N|||F|||20260511162151||jocelyn.delacruz|||20260511162149
-OBX|12|NM|H35^Neutrófilos #^MODULAB||3.28|K/µL|1.5 - 6.9|N|||F|||20260511162151||jocelyn.delacruz|||20260511162148
-OBX|13|NM|H36^Neutrófilos %^MODULAB||49.70|%|40.0 - 70.0|N|||F|||20260511162151||jocelyn.delacruz|||20260511162148
-OBX|14|NM|H37^Linfocitos #^MODULAB||2.74|K/µL|0.5 - 3.4|N|||F|||20260511162151||jocelyn.delacruz|||20260511162148
-OBX|15|NM|H38^Linfocitos %^MODULAB||41.60|%|20.5 - 50.0|N|||F|||20260511162151||jocelyn.delacruz|||20260511162148
-OBX|16|NM|H39^Monocitos #^MODULAB||0.37|K/µL|0.0 - 0.9|N|||F|||20260511162151||jocelyn.delacruz|||20260511162148
-OBX|17|NM|H40^Monocitos %^MODULAB||5.60|%|5.5 - 13.5|N|||F|||20260511162151||jocelyn.delacruz|||20260511162148
-OBX|18|NM|H41^Eosinófilos #^MODULAB||0.15|K/µL|0.0 - 0.9|N|||F|||20260511162151||jocelyn.delacruz|||20260511162148
-OBX|19|NM|H42^Eosinófilos %^MODULAB||2.30|%|0.0 - 9.0|N|||F|||20260511162151||jocelyn.delacruz|||20260511162148
-OBX|20|NM|H43^Basófilos #^MODULAB||0.05|K/µL|0.0 - 0.2|N|||F|||20260511162151||jocelyn.delacruz|||20260511162149
-OBX|21|NM|H44^Basófilos %^MODULAB||0.80|%|0.0 - 2.0|N|||F|||20260511162151||jocelyn.delacruz|||20260511162148
-SPM|1|43111039422||5^Sangre Total con EDTA|||^^MODULAB|^^MODULAB|||||||||20260511124049|20260511124549||Y||||||1
-
-
-MSH|^~\&|AMADITA|AMADITA|Modulab|Modulab|20260512160849||OML^O21^OML_O21|id-1778616529749-45119|P|2.5||||||8859/1|||
-PID|1|P922-P40231789948|P922-P40231789948^^^^PI~^^^^PPN~^^^^SS||Apellido33^Nombre33||20030602|M|||P11.1^P11.2^P11.3^P11.4^P11.5^P11.6^P11.7^P11.8^P11.9||.^^^|||||||||||||||||N
-PV1|1|LC|^^||||||||||||||||
-DG1|||||||||||||||||||||||||||||
-IN1|||||||||||||||||||||||||||||
-ORC|NW|||3157724|A||||20260512|||24465^PRUEBA|||||||||922^BALTIMORE DOMICANA (BALDOM) PRE-EMP.||||||
-OBR|1|||6025^||||||L001^Laboratorio Principal (Gazcue)||||||24465^PRUEBA||||||||NE^||||RS^Recoger en Sucursal|
-TQ1|||||||||
-ORC|NW|||3157724|A||||20260512|||24465^PRUEBA|||||||||922^BALTIMORE DOMICANA (BALDOM) PRE-EMP.||||||
-OBR|2|||2000^||||||L001^Laboratorio Principal (Gazcue)||||||24465^PRUEBA||||||||NE^||||RS^Recoger en Sucursal|
-TQ1|||||||||
-
-
-MSH|^~\&|AMADITA|AMADITA|Modulab|Modulab|20260512160849||OML^O21^OML_O21|id-1778616529749-45119|P|2.5||||||8859/1|||
-PID|1|P922-P40231789948|P922-P40231789948^^^^PI~^^^^PPN~^^^^SS||Apellido33^Nombre33||20030602|M|||P11.1^P11.2^P11.3^P11.4^P11.5^P11.6^P11.7^P11.8^P11.9||P11.1^P11.2^P11.3^P11.4^P11.5^P11.6^P11.7^P11.8^934011041^PRN^PH^P11.12^P11.13^P11.14^P11.15^P11.16^934010101^P11.18^P11.19^934010101~^PRN^Internet^dnebot@myway.com|P14|P15|P16|P17|P18|P19|P20|P21|P22|P23|P24|P25|P26|P27|P28|P29|N|P31|P32|P33|P34|P35|P36|
-PV1|1|LC|^^|PV1.4|PV1.5|PV1.6|PV1.7|PV1.8|PV1.9|PV1.10|^PV1.11||||||||PV1.19
-DG1|||||||||||||||||||||||||||||
-IN1|||||||||||||||||||||||||||||
-IN1|1|ASEG001|SEGURO01|ASEGURADORA CENTRAL|||||||||||||||||PLAN_PREMIUM
-ORC|NW|||3157724|A||||20260512|||24465^PRUEBA|||||||||922^BALTIMORE DOMICANA (BALDOM) PRE-EMP.||||||
-OBR|1|||6025^||||||L001^Laboratorio Principal (Gazcue)||||||24465^PRUEBA||||||||NE^||||RS^Recoger en Sucursal|
-NTE|1|L|Paciente en ayunas de 8 horas
-NTE|2|L|Muestra urgente
-TQ1|||||||||
-MSH|^~\&|Modulab|Modulab|Portal|Portal|20260513150128-0400||ORU^R01^ORU_R01|LAB31778698888486|P|2.5|||||RD||ES
-PID|1||P922-P40231789948^^^^PI~P922-P40231789948^^^^PPN||APELLIDO33^NOMBRE33||20030602120000-0400|M|||P11.1^^P11.3^P11.9^P11.5^P11.6||^PRN^PH^^^^^^P11.1 P11.12^^^P11.1 P11.12~^PRN^Internet^P11.4||||||||||P23|||P26||||N
-PV1|1|LC||||||||||||||N|||PV1.19
-ORC|SC||01004876^MODULAB|P3157724^26562&MODULAB|IP||||20260513150108-0400|||24465^PRUEBA |||20260513150108-0400||||||BALTIMORE DOMICANA (BALDOM) PRE-EMP.^^^^^^FI^^^922
-OBR|1|P3157724|01004876^MODULAB|6025^Hemograma^MODULAB||||||L008||||||24465^PRUEBA ||||2||||LAB|R|||RS
-SPM|1|2201004876||5^Sangre Total con EDTA|||^^MODULAB|^^MODULAB|||||||||20260513130252|20260513150108||Y||||||1
-OBX|1|TX|77202-0^Laboratory comment [Text] in Report Narrative^LN||Muestra urgente||||||P||||||||20260513150108
-
-
-MSH|^~\&|Modulab|Modulab|Portal|Portal|20260513150128-0400||ORU^R01^ORU_R01|LAB31778698888486|P|2.5|||||RD||ES
-PID|1||P922-P40231789948^^^^PI~P922-P40231789948^^^^PPN||APELLIDO33^NOMBRE33||20030602120000-0400|M|||P11.1^^P11.3^P11.9^P11.5^P11.6||^PRN^PH^^^^^^P11.1 P11.12^^^P11.1 P11.12~^PRN^Internet^P11.4||||||||||P23|||P26||||N
-PV1|1|LC||||||||||||||N|||PV1.19
-ORC|SC||01004876^MODULAB|P3157724^26562&MODULAB|IP||||20260513150108-0400|||24465^PRUEBA |||20260513150108-0400||||||BALTIMORE DOMICANA (BALDOM) PRE-EMP.^^^^^^FI^^^922
-OBR|1|P3157724|01004876^MODULAB|6025^Hemograma^MODULAB||||||L008||||||24465^PRUEBA ||||2||||LAB|R|||RS
-SPM|1|2201004876||5^Sangre Total con EDTA|||^^MODULAB|^^MODULAB|||||||||20260513130252|20260513150108||Y||||||1
-OBX|1|TX|77202-0^Laboratory comment [Text] in Report Narrative^LN||Muestra urgente||||||P||||||||20260513150108
-
-
-
-ampliar
-
-MSH|^~\&|AMADITA|AMADITA|Modulab|Modulab|||OML^O21^OML_O21||P|2.5||||||8859/1|||
-PID|1||^^^^PI~^^^^PPN~^^^^SS||^||||||^^^^^^^||^^^|||||||||||||||||N
-PV1|1|U|^^01||||||||||||||||
-DG1|||||||||||||||||||||||||||||
-IN1|||||||||||||||||||||||||||||
-ORC|XO||||A|||||||^|||||||||^||||||
-OBR|1|||^||||||^||||||^||||||||^||||^|
-TQ1|||||||||
-
-
-
+MSH|^~\&|SIFANET|35|Modulab|Tecniscan Z. 15|20260523101706-0600||ADT^A08|edf258b4-7189-4f97-8f29-bb7cbf2b5cbd|P|2.5|||||||||
+EVN|A08|20260523101706-0600|||||
+PID|1|2026-28-3280|2026-28-3280^^^^PI||GONZALEZ CELADA^SANTIAGO DARIEL||20150813|M|||* *||^PRN^PH^^^^^^54415533~^PRN^Internet^wendyceladamendez@gmail.com^^^^^|||||||||||||||||N
