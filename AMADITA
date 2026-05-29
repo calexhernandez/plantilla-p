@@ -44,3 +44,14 @@ OBR|19|||86900^Grupo Sanguíneo (Grupo y Rh)||||||35^Tecniscan SantaLu||||||994^
 MSH|^~\&|SIFANET|35|Modulab|Tecniscan Z. 15|20260523101706-0600||ADT^A08|edf258b4-7189-4f97-8f29-bb7cbf2b5cbd|P|2.5|||||||||
 EVN|A08|20260523101706-0600|||||
 PID|1|2026-28-3280|2026-28-3280^^^^PI||GONZALEZ CELADA^SANTIAGO DARIEL||20150813|M|||* *||^PRN^PH^^^^^^54415533~^PRN^Internet^wendyceladamendez@gmail.com^^^^^|||||||||||||||||N
+
+
+
+MSH|^~\&|AMADITA|AMADITA|Modulab|Modulab|||OML^O21^OML_O21||P|2.5||||||8859/1|||
+PID|1|0000-00000|0000-00000^^^^PI~^^^^PPN~^^^^SS||Apellido Prueba^Nombre Prueba1||19900714|F|||^^^^^^^^^^||.^^^|||||||||||||||||N
+PV1|1|LC|^^||||||||||||||||
+DG1|||||||||||||||||||||||||||||
+IN1|||||||||||||||||||||||||||||
+ORC|NW|p00001||p00001|A||||20260529|||24465^PRUEBA|||||||||1214^LAB. CLINICA DE FAMILIA LA ROMANA||||||
+OBR|1|||8206^||||||L001^Laboratorio Principal (Gazcue)||||||24465^PRUEBA||||||||NE^||||RS^Recoger en Sucursal|
+TQ1|||||||||
