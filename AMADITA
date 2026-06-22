@@ -1,63 +1,6 @@
-MSH|^~\&|SIFANET|Tecniscan SantaLu|Modulab|Modulab|20260523101705-0600||OML^O21^OML_O21|0c3aec32-a9f9-4065-9a57-4ce606bbaedb|P|2.5|||||||||
-PID|1|2026-28-3280|2026-28-3280^^^^PI||GONZALEZ CELADA^SANTIAGO DARIEL||20150813|M|||* *||^PRN^PH^^^^^^54415533~^PRN^Internet^wendyceladamendez@gmail.com                                                                         |||||||||||||||||N
-PV1|1|PRIV|^^01||||||||||||||||
-ORC|NW|35-50759||35-50759|A||||||||||||||||^^^^^^FI^^^||||||
-OBR|1|||80.36^Lípidos Totales||||||35^Tecniscan SantaLu||||||994^MAYA VIRGINIA XIOMARA||||||||LAB||||CE^CORREO ELECTRONICO PX Y DR
-ORC|NW|35-50759||35-50759|A||||||||||||||||^^^^^^FI^^^||||||
-OBR|2|||82307^Vitamina D / 25 Hidroxi||||||35^Tecniscan SantaLu||||||994^MAYA VIRGINIA XIOMARA||||||||LAB||||CE^CORREO ELECTRONICO PX Y DR
-ORC|NW|35-50759||35-50759|A||||||||||||||||^^^^^^FI^^^||||||
-OBR|3|||82465^Colesterol Total||||||35^Tecniscan SantaLu||||||994^MAYA VIRGINIA XIOMARA||||||||LAB||||CE^CORREO ELECTRONICO PX Y DR
-ORC|NW|35-50759||35-50759|A||||||||||||||||^^^^^^FI^^^||||||
-OBR|4|||82627^Dehidroepiandrosterona sulfato (DHEA-SO4)||||||35^Tecniscan SantaLu||||||994^MAYA VIRGINIA XIOMARA||||||||LAB||||CE^CORREO ELECTRONICO PX Y DR
-ORC|NW|35-50759||35-50759|A||||||||||||||||^^^^^^FI^^^||||||
-OBR|5|||82947^Glucosa, Ayunas||||||35^Tecniscan SantaLu||||||994^MAYA VIRGINIA XIOMARA||||||||LAB||||CE^CORREO ELECTRONICO PX Y DR
-ORC|NW|35-50759||35-50759|A||||||||||||||||^^^^^^FI^^^||||||
-OBR|6|||83001^Hormona Folículo Estimulante (FSH)||||||35^Tecniscan SantaLu||||||994^MAYA VIRGINIA XIOMARA||||||||LAB||||CE^CORREO ELECTRONICO PX Y DR
-ORC|NW|35-50759||35-50759|A||||||||||||||||^^^^^^FI^^^||||||
-OBR|7|||83002^Hormona Luteinizante (LH)||||||35^Tecniscan SantaLu||||||994^MAYA VIRGINIA XIOMARA||||||||LAB||||CE^CORREO ELECTRONICO PX Y DR
-ORC|NW|35-50759||35-50759|A||||||||||||||||^^^^^^FI^^^||||||
-OBR|8|||83498^17 - Hidroxiprogesterona||||||35^Tecniscan SantaLu||||||994^MAYA VIRGINIA XIOMARA||||||||LAB||||CE^CORREO ELECTRONICO PX Y DR
-ORC|NW|35-50759||35-50759|A||||||||||||||||^^^^^^FI^^^||||||
-OBR|9|||83525^Insulina Ayunas ||||||35^Tecniscan SantaLu||||||994^MAYA VIRGINIA XIOMARA||||||||LAB||||CE^CORREO ELECTRONICO PX Y DR
-ORC|NW|35-50759||35-50759|A||||||||||||||||^^^^^^FI^^^||||||
-OBR|10|||83718^Colesterol HDL||||||35^Tecniscan SantaLu||||||994^MAYA VIRGINIA XIOMARA||||||||LAB||||CE^CORREO ELECTRONICO PX Y DR
-ORC|NW|35-50759||35-50759|A||||||||||||||||^^^^^^FI^^^||||||
-OBR|11|||83721^Colesterol LDL||||||35^Tecniscan SantaLu||||||994^MAYA VIRGINIA XIOMARA||||||||LAB||||CE^CORREO ELECTRONICO PX Y DR
-ORC|NW|35-50759||35-50759|A||||||||||||||||^^^^^^FI^^^||||||
-OBR|12|||84146^Prolactina ||||||35^Tecniscan SantaLu||||||994^MAYA VIRGINIA XIOMARA||||||||LAB||||CE^CORREO ELECTRONICO PX Y DR
-ORC|NW|35-50759||35-50759|A||||||||||||||||^^^^^^FI^^^||||||
-OBR|13|||84404^Testosterona Total y Libre||||||35^Tecniscan SantaLu||||||994^MAYA VIRGINIA XIOMARA||||||||LAB||||CE^CORREO ELECTRONICO PX Y DR
-ORC|NW|35-50759||35-50759|A||||||||||||||||^^^^^^FI^^^||||||
-OBR|14|||84450^TGO / SGOT / ASAT||||||35^Tecniscan SantaLu||||||994^MAYA VIRGINIA XIOMARA||||||||LAB||||CE^CORREO ELECTRONICO PX Y DR
-ORC|NW|35-50759||35-50759|A||||||||||||||||^^^^^^FI^^^||||||
-OBR|15|||84460^TGP / SGPT / ALAT||||||35^Tecniscan SantaLu||||||994^MAYA VIRGINIA XIOMARA||||||||LAB||||CE^CORREO ELECTRONICO PX Y DR
-ORC|NW|35-50759||35-50759|A||||||||||||||||^^^^^^FI^^^||||||
-OBR|16|||84478^Triglicéridos||||||35^Tecniscan SantaLu||||||994^MAYA VIRGINIA XIOMARA||||||||LAB||||CE^CORREO ELECTRONICO PX Y DR
-ORC|NW|35-50759||35-50759|A||||||||||||||||^^^^^^FI^^^||||||
-OBR|17|||84555^Acido Urico||||||35^Tecniscan SantaLu||||||994^MAYA VIRGINIA XIOMARA||||||||LAB||||CE^CORREO ELECTRONICO PX Y DR
-ORC|NW|35-50759||35-50759|A||||||||||||||||^^^^^^FI^^^||||||
-OBR|18|||86140^Proteína C Reactiva (PCR)||||||35^Tecniscan SantaLu||||||994^MAYA VIRGINIA XIOMARA||||||||LAB||||CE^CORREO ELECTRONICO PX Y DR
-ORC|NW|35-50759||35-50759|A||||||||||||||||^^^^^^FI^^^||||||
-OBR|19|||86900^Grupo Sanguíneo (Grupo y Rh)||||||35^Tecniscan SantaLu||||||994^MAYA VIRGINIA XIOMARA||||||||LAB||||CE^CORREO ELECTRONICO PX Y DR
-
-
-MSH|^~\&|SIFANET|35|Modulab|Tecniscan Z. 15|20260523101706-0600||ADT^A08|edf258b4-7189-4f97-8f29-bb7cbf2b5cbd|P|2.5|||||||||
-EVN|A08|20260523101706-0600|||||
-PID|1|2026-28-3280|2026-28-3280^^^^PI||GONZALEZ CELADA^SANTIAGO DARIEL||20150813|M|||* *||^PRN^PH^^^^^^54415533~^PRN^Internet^wendyceladamendez@gmail.com^^^^^|||||||||||||||||N
-
-
-
-MSH|^~\&|AMADITA|AMADITA|Modulab|Modulab|||OML^O21^OML_O21||P|2.5||||||8859/1|||
-PID|1|0000-00000|0000-00000^^^^PI~^^^^PPN~^^^^SS||Apellido Prueba^Nombre Prueba1||19900714|F|||^^^^^^^^^^||.^^^|||||||||||||||||N
-PV1|1|LC|^^||||||||||||||||
-DG1|||||||||||||||||||||||||||||
-IN1|||||||||||||||||||||||||||||
-ORC|NW|p00001||p00001|A||||20260529|||24465^PRUEBA|||||||||1214^LAB. CLINICA DE FAMILIA LA ROMANA||||||
-OBR|1|||8206^||||||L001^Laboratorio Principal (Gazcue)||||||24465^PRUEBA||||||||NE^||||RS^Recoger en Sucursal|
-TQ1|||||||||
-
-MSH|^~\&|SIFANET|03|Modulab|MG|20260611092745||PMU^B01|38f2b56a-4390-4e2c-84f5-76ccf04557e1|P|2.5|||||||||
-EVN|B01|20260611092745|
-STF||8159|RODAS GUZMAN^MADELYN EUNICE|D|||A||||||||.|||||||||||||||||||||||
-
-
+Preparando para desempaquetar .../dbeaver-ce-26.1.1-linux-x86_64.deb ...
+Desempaquetando dbeaver-ce (26.1.1) ...
+Configurando dbeaver-ce (26.1.1) ...
+Procesando disparadores para gnome-menus (3.36.0-1.1ubuntu3) ...
+Procesando disparadores para desktop-file-utils (0.27-2build1) ...
+N: La descarga está siendo realizada en un sandbox como superusuario, ya que el archivo «/home/promed/Descargas/dbeaver-ce-26.1.1-linux-x86_64.deb» no es accesible por el usuario «_apt». - pkgAcquire::Run (13: Permiso denegado)
