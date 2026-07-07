@@ -41,3 +41,16 @@ OBR|1|03-1240334^03-1240334-0||76815^USG de Abdomen superior|||20260707071000|20
 
 MSH|^~\&|RIS||TECNISCAN|Tecniscan de Guatemala (Multimedica)|20260707071035.506||ACK|20260707071035.506|P|2.3
 MSA|AA|d6141e3b-8d63-4aa6-be43-0b3b76f9e3d8
+
+
+MSH|^~\&|TECNISCAN|Tecniscan de Guatemala (Multimedica)|RIS||20260707071033-0600||ORM^O01|b895927c-a679-42d0-bf76-6e29b93b1667|P|2.3|||||
+PID|||2007-03-49371|1829529160101|ARIAS MEJICANOS^GUILLERMO MARTIN||19570811|M|||26 AVE 2-28 14 CIUDAD||59661064||garias@fama.com.gt                                                                                  
+PV1||A|TCSN3||||||||||||||||03-1240333||A23^Seguros Agromercantil, S.A.||||
+ORC|NW|03-1240333||03^Tecniscan de Guatemala (Multimedica)|A|MM-US1|1|TCSN3||||5471^5471^GUSTAVO EDUARDO^GONZALEZ REYNOSO|||||
+OBR|2|03-1240333^03-1240333-1||76872.3^USG Prostatico Abdominal|||20260707071000|20260707071000||||||||||||||||US
+
+
+MSH|^~\&|RIS||TECNISCAN|Tecniscan de Guatemala (Multimedica)|20260707071034.291||ACK|20260707071034.291|P|2.3
+MSA|AA|b895927c-a679-42d0-bf76-6e29b93b1667
+
+
