@@ -1,3 +1,43 @@
-MSH|^~\&|SIFANET|03|Modulab|MG|20260703204340||PMU^B01|01d48aef-00c5-4002-83a4-0ce735853439|P|2.5|||||||||
-EVN|B01|20260703204340|
-STF||2807|AVILA BARRERA^ALLISON JEANNETTE|D|||A||||||||alydecont@gmail.com|||||||||||||||||||||||
+MSH|^~\&|TECNISCAN|Tecniscan de Guatemala (Multimedica)|RIS||20260707071026-0600||ORM^O01|b6447276-07ff-4bff-ae93-accf98e87a9b|P|2.3|||||
+PID|||2026-03-5033|1647064100901|TUY ORTEGA^YAQUELINE ROCSANA||19890813|F|||. .  .||46616251||coordinadorasp@tecniscan.com                                                                        
+PV1||A|TCSN3||||||||||||||||03-1240330||^||||
+ORC|NW|03-1240330||03^Tecniscan de Guatemala (Multimedica)|A|MM-DENSI|1|TCSN3||||212^212^SALUD^PREVENTIVA|||||
+OBR|5|03-1240330^03-1240330-4||99987^Densitometria de Cadera y Columna|||20260707071000|20260707071000||||||||||||||||OT
+
+
+MSH|^~\&|RIS||TECNISCAN|Tecniscan de Guatemala (Multimedica)|20260707071027.585||ACK|20260707071027.585|P|2.3
+MSA|AA|b6447276-07ff-4bff-ae93-accf98e87a9b
+
+
+
+MSH|^~\&|TECNISCAN|Tecniscan de Guatemala (Multimedica)|RIS||20260707071028-0600||ORM^O01|d4dc7990-5e51-41e8-94bb-8820c2dbd4bb|P|2.3|||||
+PID|||2025-03-4386|2498055960914|TIZOL CUC^MARVIN EMETERIO||19860820|M|||. .  .||53218969||coordinadorasp@tecniscan.com                                                                        
+PV1||A|TCSN3||||||||||||||||03-1240332||^||||
+ORC|NW|03-1240332||03^Tecniscan de Guatemala (Multimedica)|A|MM-DENSI|1|TCSN3||||212^212^SALUD^PREVENTIVA|||||
+OBR|4|03-1240332^03-1240332-3||99987^Densitometria de Cadera y Columna|||20260707071000|20260707071000||||||||||||||||OT
+
+
+MSH|^~\&|RIS||TECNISCAN|Tecniscan de Guatemala (Multimedica)|20260707071029.491||ACK|20260707071029.491|P|2.3
+MSA|AA|d4dc7990-5e51-41e8-94bb-8820c2dbd4bb
+
+
+MSH|^~\&|TECNISCAN|Tecniscan de Guatemala (Multimedica)|RIS||20260707071027-0600||ORM^O01|6728af52-ecba-42ad-8b4f-4328f5df3cb7|P|2.3|||||
+PID|||2025-03-4696|1951506430902|SANIC YAC^FRANCISCA SURAMA||19891221|F|||. .  .||39925867||coordinadorasp@tecniscan.com                                                                        
+PV1||A|TCSN3||||||||||||||||03-1240331||^||||
+ORC|NW|03-1240331||03^Tecniscan de Guatemala (Multimedica)|A|MM-DENSI|1|TCSN3||||212^212^SALUD^PREVENTIVA|||||
+OBR|5|03-1240331^03-1240331-4||99987^Densitometria de Cadera y Columna|||20260707071000|20260707071000||||||||||||||||OT
+
+
+MSH|^~\&|RIS||TECNISCAN|Tecniscan de Guatemala (Multimedica)|20260707071028.641||ACK|20260707071028.641|P|2.3
+MSA|AA|6728af52-ecba-42ad-8b4f-4328f5df3cb7
+
+
+MSH|^~\&|TECNISCAN|Tecniscan de Guatemala (Multimedica)|RIS||20260707071035-0600||ORM^O01|d6141e3b-8d63-4aa6-be43-0b3b76f9e3d8|P|2.3|||||
+PID|||2026-03-5038|2686235541413|RAYMUNDO SANTIAGO^MIGUEL NICOLAS||19940910|M|||. .  .||30826138||miguelraymundo470@gmail.com                                                                         
+PV1||A|TCSN3||||||||||||||||03-1240334||^||||
+ORC|NW|03-1240334||03^Tecniscan de Guatemala (Multimedica)|A|MM-US1|1|TCSN3||||6^6^ALEJANDRO^HERNANDEZ MONROY|||||
+OBR|1|03-1240334^03-1240334-0||76815^USG de Abdomen superior|||20260707071000|20260707071000||||||||||||||||US
+
+
+MSH|^~\&|RIS||TECNISCAN|Tecniscan de Guatemala (Multimedica)|20260707071035.506||ACK|20260707071035.506|P|2.3
+MSA|AA|d6141e3b-8d63-4aa6-be43-0b3b76f9e3d8
