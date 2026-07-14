@@ -1,56 +1,7 @@
-MSH|^~\&|TECNISCAN|Tecniscan de Guatemala (Multimedica)|RIS||20260707071026-0600||ORM^O01|b6447276-07ff-4bff-ae93-accf98e87a9b|P|2.3|||||
-PID|||2026-03-5033|1647064100901|TUY ORTEGA^YAQUELINE ROCSANA||19890813|F|||. .  .||46616251||coordinadorasp@tecniscan.com                                                                        
-PV1||A|TCSN3||||||||||||||||03-1240330||^||||
-ORC|NW|03-1240330||03^Tecniscan de Guatemala (Multimedica)|A|MM-DENSI|1|TCSN3||||212^212^SALUD^PREVENTIVA|||||
-OBR|5|03-1240330^03-1240330-4||99987^Densitometria de Cadera y Columna|||20260707071000|20260707071000||||||||||||||||OT
-
-
-MSH|^~\&|RIS||TECNISCAN|Tecniscan de Guatemala (Multimedica)|20260707071027.585||ACK|20260707071027.585|P|2.3
-MSA|AA|b6447276-07ff-4bff-ae93-accf98e87a9b
-
-
-
-MSH|^~\&|TECNISCAN|Tecniscan de Guatemala (Multimedica)|RIS||20260707071028-0600||ORM^O01|d4dc7990-5e51-41e8-94bb-8820c2dbd4bb|P|2.3|||||
-PID|||2025-03-4386|2498055960914|TIZOL CUC^MARVIN EMETERIO||19860820|M|||. .  .||53218969||coordinadorasp@tecniscan.com                                                                        
-PV1||A|TCSN3||||||||||||||||03-1240332||^||||
-ORC|NW|03-1240332||03^Tecniscan de Guatemala (Multimedica)|A|MM-DENSI|1|TCSN3||||212^212^SALUD^PREVENTIVA|||||
-OBR|4|03-1240332^03-1240332-3||99987^Densitometria de Cadera y Columna|||20260707071000|20260707071000||||||||||||||||OT
-
-
-MSH|^~\&|RIS||TECNISCAN|Tecniscan de Guatemala (Multimedica)|20260707071029.491||ACK|20260707071029.491|P|2.3
-MSA|AA|d4dc7990-5e51-41e8-94bb-8820c2dbd4bb
-
-
-MSH|^~\&|TECNISCAN|Tecniscan de Guatemala (Multimedica)|RIS||20260707071027-0600||ORM^O01|6728af52-ecba-42ad-8b4f-4328f5df3cb7|P|2.3|||||
-PID|||2025-03-4696|1951506430902|SANIC YAC^FRANCISCA SURAMA||19891221|F|||. .  .||39925867||coordinadorasp@tecniscan.com                                                                        
-PV1||A|TCSN3||||||||||||||||03-1240331||^||||
-ORC|NW|03-1240331||03^Tecniscan de Guatemala (Multimedica)|A|MM-DENSI|1|TCSN3||||212^212^SALUD^PREVENTIVA|||||
-OBR|5|03-1240331^03-1240331-4||99987^Densitometria de Cadera y Columna|||20260707071000|20260707071000||||||||||||||||OT
-
-
-MSH|^~\&|RIS||TECNISCAN|Tecniscan de Guatemala (Multimedica)|20260707071028.641||ACK|20260707071028.641|P|2.3
-MSA|AA|6728af52-ecba-42ad-8b4f-4328f5df3cb7
-
-
-MSH|^~\&|TECNISCAN|Tecniscan de Guatemala (Multimedica)|RIS||20260707071035-0600||ORM^O01|d6141e3b-8d63-4aa6-be43-0b3b76f9e3d8|P|2.3|||||
-PID|||2026-03-5038|2686235541413|RAYMUNDO SANTIAGO^MIGUEL NICOLAS||19940910|M|||. .  .||30826138||miguelraymundo470@gmail.com                                                                         
-PV1||A|TCSN3||||||||||||||||03-1240334||^||||
-ORC|NW|03-1240334||03^Tecniscan de Guatemala (Multimedica)|A|MM-US1|1|TCSN3||||6^6^ALEJANDRO^HERNANDEZ MONROY|||||
-OBR|1|03-1240334^03-1240334-0||76815^USG de Abdomen superior|||20260707071000|20260707071000||||||||||||||||US
-
-
-MSH|^~\&|RIS||TECNISCAN|Tecniscan de Guatemala (Multimedica)|20260707071035.506||ACK|20260707071035.506|P|2.3
-MSA|AA|d6141e3b-8d63-4aa6-be43-0b3b76f9e3d8
-
-
-MSH|^~\&|TECNISCAN|Tecniscan de Guatemala (Multimedica)|RIS||20260707071033-0600||ORM^O01|b895927c-a679-42d0-bf76-6e29b93b1667|P|2.3|||||
-PID|||2007-03-49371|1829529160101|ARIAS MEJICANOS^GUILLERMO MARTIN||19570811|M|||26 AVE 2-28 14 CIUDAD||59661064||garias@fama.com.gt                                                                                  
-PV1||A|TCSN3||||||||||||||||03-1240333||A23^Seguros Agromercantil, S.A.||||
-ORC|NW|03-1240333||03^Tecniscan de Guatemala (Multimedica)|A|MM-US1|1|TCSN3||||5471^5471^GUSTAVO EDUARDO^GONZALEZ REYNOSO|||||
-OBR|2|03-1240333^03-1240333-1||76872.3^USG Prostatico Abdominal|||20260707071000|20260707071000||||||||||||||||US
-
-
-MSH|^~\&|RIS||TECNISCAN|Tecniscan de Guatemala (Multimedica)|20260707071034.291||ACK|20260707071034.291|P|2.3
-MSA|AA|b895927c-a679-42d0-bf76-6e29b93b1667
-
+MSH|^~\&|AMADITA|AMADITA|Modulab|Modulab|||OML^O21^OML_O21||P|2.5|||||||||
+PID|1||^^^^PI~^^^^PPN~^^^^SS||^||||||^^^^^^^||^^^|||||||||||||||||N
+PV1|1|U|^^01||||||||||||||||
+ORC|CA||||CA|||||||^|||||||||^||||||
+OBR|1|||^||||||^||||||^||||||||^||||^|
+NTE|1||REASON=Orden se cancela desde Medicloud
 
