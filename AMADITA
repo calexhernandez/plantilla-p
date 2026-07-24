@@ -1,1 +1,12 @@
-HJ230KY8FDAEZL6X
+{
+echo "===== VERSION DE UBUNTU ====="
+lsb_release -a
+
+echo
+echo "===== ACTUALIZACION APT ====="
+sudo apt update
+
+echo
+echo "===== PAQUETES ACTUALIZABLES ====="
+apt list --upgradable
+} > revision_ubuntu.txt 2>&1
