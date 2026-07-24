@@ -1,12 +1,392 @@
-{
-echo "===== VERSION DE UBUNTU ====="
-lsb_release -a
+===== VERSION DE UBUNTU =====
+Distributor ID:	Ubuntu
+Description:	Ubuntu 24.04.3 LTS
+Release:	24.04
+Codename:	noble
 
-echo
-echo "===== ACTUALIZACION APT ====="
-sudo apt update
+===== ACTUALIZACION APT =====
 
-echo
-echo "===== PAQUETES ACTUALIZABLES ====="
-apt list --upgradable
-} > revision_ubuntu.txt 2>&1
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Obj:1 http://archive.ubuntu.com/ubuntu noble InRelease
+Obj:2 http://archive.ubuntu.com/ubuntu noble-updates InRelease
+Obj:3 http://archive.ubuntu.com/ubuntu noble-backports InRelease
+Obj:4 http://security.ubuntu.com/ubuntu noble-security InRelease
+Obj:5 https://dl.google.com/linux/chrome/deb stable InRelease
+Obj:6 https://linux.teamviewer.com/deb stable InRelease
+Ign:7 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release InRelease
+Ign:8 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release Release
+Ign:9 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main i386 Packages
+Ign:10 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main all Packages
+Ign:11 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main amd64 Packages
+Ign:12 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main Translation-es_ES
+Ign:13 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main Translation-es
+Ign:14 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main Translation-en
+Ign:15 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main amd64 Components
+Ign:16 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main all Components
+Ign:17 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main Icons (48x48)
+Ign:18 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main Icons (64x64)
+Ign:19 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main Icons (64x64@2)
+Ign:20 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main amd64 c-n-f Metadata
+Ign:21 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main all c-n-f Metadata
+Ign:9 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main i386 Packages
+Ign:10 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main all Packages
+Ign:11 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main amd64 Packages
+Ign:12 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main Translation-es_ES
+Ign:13 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main Translation-es
+Ign:14 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main Translation-en
+Ign:15 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main amd64 Components
+Ign:16 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main all Components
+Ign:17 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main Icons (48x48)
+Ign:18 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main Icons (64x64)
+Ign:19 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main Icons (64x64@2)
+Ign:20 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main amd64 c-n-f Metadata
+Ign:21 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main all c-n-f Metadata
+Ign:9 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main i386 Packages
+Ign:10 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main all Packages
+Ign:11 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main amd64 Packages
+Ign:12 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main Translation-es_ES
+Ign:13 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main Translation-es
+Ign:14 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main Translation-en
+Ign:15 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main amd64 Components
+Ign:16 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main all Components
+Ign:17 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main Icons (48x48)
+Ign:18 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main Icons (64x64)
+Ign:19 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main Icons (64x64@2)
+Ign:20 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main amd64 c-n-f Metadata
+Ign:21 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main all c-n-f Metadata
+Ign:9 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main i386 Packages
+Ign:10 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main all Packages
+Ign:11 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main amd64 Packages
+Ign:12 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main Translation-es_ES
+Ign:13 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main Translation-es
+Ign:14 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main Translation-en
+Ign:15 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main amd64 Components
+Ign:16 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main all Components
+Ign:17 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main Icons (48x48)
+Ign:18 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main Icons (64x64)
+Ign:19 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main Icons (64x64@2)
+Ign:20 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main amd64 c-n-f Metadata
+Ign:21 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main all c-n-f Metadata
+Ign:9 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main i386 Packages
+Ign:10 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main all Packages
+Ign:11 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main amd64 Packages
+Ign:12 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main Translation-es_ES
+Ign:13 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main Translation-es
+Ign:14 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main Translation-en
+Ign:15 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main amd64 Components
+Ign:16 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main all Components
+Ign:17 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main Icons (48x48)
+Ign:18 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main Icons (64x64)
+Ign:19 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main Icons (64x64@2)
+Ign:20 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main amd64 c-n-f Metadata
+Ign:21 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main all c-n-f Metadata
+Ign:9 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main i386 Packages
+Ign:11 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main amd64 Packages
+Ign:12 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main Translation-es_ES
+Ign:14 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main Translation-en
+Ign:15 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main amd64 Components
+Ign:16 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main all Components
+Ign:17 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main Icons (48x48)
+Ign:18 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main Icons (64x64)
+Ign:19 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main Icons (64x64@2)
+Ign:20 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main amd64 c-n-f Metadata
+Ign:21 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main all c-n-f Metadata
+Err:9 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main i386 Packages
+  404  Not Found [IP: 23.32.116.111 443]
+Ign:11 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main amd64 Packages
+Ign:12 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main Translation-es_ES
+Ign:14 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main Translation-en
+Ign:15 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main amd64 Components
+Ign:16 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main all Components
+Ign:17 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main Icons (48x48)
+Ign:18 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main Icons (64x64)
+Ign:19 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main Icons (64x64@2)
+Ign:20 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main amd64 c-n-f Metadata
+Ign:21 https://download.oracle.com/otn_software/linux/instantclient oracle-instantclient-release/main all c-n-f Metadata
+Leyendo lista de paquetes...
+E: Fallo al obtener https://download.oracle.com/otn_software/linux/instantclient/dists/oracle-instantclient-release/main/binary-i386/Packages  404  Not Found [IP: 23.32.116.111 443]
+E: No se han podido descargar algunos archivos de índice, se han omitido, o se han utilizado unos antiguos en su lugar.
+
+===== PAQUETES ACTUALIZABLES =====
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Listando...
+accountsservice/noble-updates,noble-security 23.13.9-2ubuntu6.1 amd64 [actualizable desde: 23.13.9-2ubuntu6]
+alsa-ucm-conf/noble-updates,noble-updates 1.2.10-1ubuntu5.13 all [actualizable desde: 1.2.10-1ubuntu5.7]
+apparmor/noble-updates 4.0.1really4.0.1-0ubuntu0.24.04.7 amd64 [actualizable desde: 4.0.1really4.0.1-0ubuntu0.24.04.4]
+apport-core-dump-handler/noble-updates,noble-updates 2.28.2-0ubuntu0.1 all [actualizable desde: 2.28.1-0ubuntu3.8]
+apport-gtk/noble-updates,noble-updates 2.28.2-0ubuntu0.1 all [actualizable desde: 2.28.1-0ubuntu3.8]
+apport/noble-updates,noble-updates 2.28.2-0ubuntu0.1 all [actualizable desde: 2.28.1-0ubuntu3.8]
+base-files/noble-updates 13ubuntu10.4 amd64 [actualizable desde: 13ubuntu10.3]
+binutils-common/noble-updates 2.42-4ubuntu2.10 amd64 [actualizable desde: 2.42-4ubuntu2.8]
+binutils-x86-64-linux-gnu/noble-updates 2.42-4ubuntu2.10 amd64 [actualizable desde: 2.42-4ubuntu2.8]
+binutils/noble-updates 2.42-4ubuntu2.10 amd64 [actualizable desde: 2.42-4ubuntu2.8]
+bluez-cups/noble-updates 5.72-0ubuntu5.5 amd64 [actualizable desde: 5.72-0ubuntu5.4]
+bluez-obexd/noble-updates 5.72-0ubuntu5.5 amd64 [actualizable desde: 5.72-0ubuntu5.4]
+bluez/noble-updates 5.72-0ubuntu5.5 amd64 [actualizable desde: 5.72-0ubuntu5.4]
+cifs-utils/noble-updates,noble-security 2:7.0-2ubuntu0.5 amd64 [actualizable desde: 2:7.0-2ubuntu0.4]
+cloud-init/noble-updates,noble-updates 26.1-0ubuntu1~24.04.1 all [actualizable desde: 25.1.4-0ubuntu0~24.04.1]
+coreutils/noble-updates 9.4-3ubuntu6.2 amd64 [actualizable desde: 9.4-3ubuntu6]
+dconf-cli/noble-updates 0.40.0-4ubuntu0.1 amd64 [actualizable desde: 0.40.0-4build2]
+dconf-gsettings-backend/noble-updates 0.40.0-4ubuntu0.1 amd64 [actualizable desde: 0.40.0-4build2]
+dconf-service/noble-updates 0.40.0-4ubuntu0.1 amd64 [actualizable desde: 0.40.0-4build2]
+dhcpcd-base/noble-updates 1:10.0.6-1ubuntu3.2 amd64 [actualizable desde: 1:10.0.6-1ubuntu3.1]
+dnsmasq-base/noble-updates,noble-security 2.90-2ubuntu0.4 amd64 [actualizable desde: 2.90-2ubuntu0.3]
+file-roller/noble-updates 44.3-0ubuntu2 amd64 [actualizable desde: 44.3-0ubuntu1]
+firmware-sof-signed/noble-updates,noble-updates 2023.12.1-1ubuntu1.11 all [actualizable desde: 2023.12.1-1ubuntu1.7]
+fonts-opensymbol/noble-updates,noble-updates,noble-security,noble-security 4:102.12+LibO24.2.7-0ubuntu0.24.04.6 all [actualizable desde: 4:102.12+LibO24.2.7-0ubuntu0.24.04.5]
+fwupd/noble-updates 2.0.20-1ubuntu2~24.04.2 amd64 [actualizable desde: 1.9.31-0ubuntu1~24.04.1]
+gdb/noble-updates 15.1-1ubuntu1~24.04.1 amd64 [actualizable desde: 15.0.50.20240403-0ubuntu1]
+gdm3/noble-updates 46.2-1ubuntu1~24.04.9 amd64 [actualizable desde: 46.2-1ubuntu1~24.04.1]
+gir1.2-accountsservice-1.0/noble-updates,noble-security 23.13.9-2ubuntu6.1 amd64 [actualizable desde: 23.13.9-2ubuntu6]
+gir1.2-gdm-1.0/noble-updates 46.2-1ubuntu1~24.04.9 amd64 [actualizable desde: 46.2-1ubuntu1~24.04.1]
+gir1.2-gtk-4.0/noble-updates 4.14.5+ds-0ubuntu0.10 amd64 [actualizable desde: 4.14.5+ds-0ubuntu0.5]
+gir1.2-mutter-14/noble-updates 46.2-1ubuntu0.24.04.16 amd64 [actualizable desde: 46.2-1ubuntu0.24.04.10]
+gir1.2-nm-1.0/noble-updates 1.46.0-1ubuntu2.7 amd64 [actualizable desde: 1.46.0-1ubuntu2.2]
+gnome-control-center-data/noble-updates,noble-updates 1:46.7-0ubuntu0.24.04.4 all [actualizable desde: 1:46.7-0ubuntu0.24.04.2]
+gnome-control-center-faces/noble-updates,noble-updates 1:46.7-0ubuntu0.24.04.4 all [actualizable desde: 1:46.7-0ubuntu0.24.04.2]
+gnome-control-center/noble-updates 1:46.7-0ubuntu0.24.04.4 amd64 [actualizable desde: 1:46.7-0ubuntu0.24.04.2]
+gnome-keyring-pkcs11/noble-updates 46.1-2ubuntu0.2 amd64 [actualizable desde: 46.1-2build1]
+gnome-keyring/noble-updates 46.1-2ubuntu0.2 amd64 [actualizable desde: 46.1-2build1]
+gnome-remote-desktop/noble-updates 46.3-0ubuntu1.2 amd64 [actualizable desde: 46.3-0ubuntu1]
+gnome-settings-daemon-common/noble-updates,noble-updates 46.0-1ubuntu1.24.04.1 all [actualizable desde: 46.0-1ubuntu1]
+gnome-settings-daemon/noble-updates 46.0-1ubuntu1.24.04.1 amd64 [actualizable desde: 46.0-1ubuntu1]
+gnome-shell-common/noble-updates,noble-updates 46.0-0ubuntu6~24.04.14 all [actualizable desde: 46.0-0ubuntu6~24.04.9]
+gnome-shell-extension-desktop-icons-ng/noble-updates,noble-updates 46+really47.0.9-1ubuntu5 all [actualizable desde: 46+really47.0.9-1ubuntu4]
+gnome-shell/noble-updates 46.0-0ubuntu6~24.04.14 amd64 [actualizable desde: 46.0-0ubuntu6~24.04.9]
+google-chrome-stable/stable 150.0.7871.186-1 amd64 [actualizable desde: 140.0.7339.207-1]
+gstreamer1.0-gtk3/noble-updates,noble-security 1.24.2-1ubuntu1.5 amd64 [actualizable desde: 1.24.2-1ubuntu1.4]
+gstreamer1.0-pipewire/noble-updates,noble-security 1.0.5-1ubuntu3.3 amd64 [actualizable desde: 1.0.5-1ubuntu3.1]
+gstreamer1.0-plugins-good/noble-updates,noble-security 1.24.2-1ubuntu1.5 amd64 [actualizable desde: 1.24.2-1ubuntu1.4]
+heif-gdk-pixbuf/noble-updates,noble-security 1.17.6-1ubuntu4.6 amd64 [actualizable desde: 1.17.6-1ubuntu4.4]
+heif-thumbnailer/noble-updates,noble-security 1.17.6-1ubuntu4.6 amd64 [actualizable desde: 1.17.6-1ubuntu4.4]
+initramfs-tools-bin/noble-updates 0.142ubuntu25.8 amd64 [actualizable desde: 0.142ubuntu25.5]
+initramfs-tools-core/noble-updates,noble-updates 0.142ubuntu25.8 all [actualizable desde: 0.142ubuntu25.5]
+initramfs-tools/noble-updates,noble-updates 0.142ubuntu25.8 all [actualizable desde: 0.142ubuntu25.5]
+iproute2/noble-updates 6.1.0-1ubuntu6.4 amd64 [actualizable desde: 6.1.0-1ubuntu6.2]
+krb5-locales/noble-updates,noble-updates,noble-security,noble-security 1.20.1-6ubuntu2.7 all [actualizable desde: 1.20.1-6ubuntu2.6]
+language-pack-es-base/noble-updates,noble-updates 1:24.04+20260127 all [actualizable desde: 1:24.04+20250724]
+language-pack-es/noble-updates,noble-updates 1:24.04+20260127 all [actualizable desde: 1:24.04+20250724]
+language-pack-gnome-es-base/noble-updates,noble-updates 1:24.04+20260127 all [actualizable desde: 1:24.04+20250724]
+language-pack-gnome-es/noble-updates,noble-updates 1:24.04+20260127 all [actualizable desde: 1:24.04+20250724]
+ldap-utils/noble-updates 2.6.10+dfsg-0ubuntu0.24.04.1 amd64 [actualizable desde: 2.6.7+dfsg-1~exp1ubuntu8.2]
+libaccountsservice0/noble-updates,noble-security 23.13.9-2ubuntu6.1 amd64 [actualizable desde: 23.13.9-2ubuntu6]
+libapparmor1/noble-updates 4.0.1really4.0.1-0ubuntu0.24.04.7 amd64 [actualizable desde: 4.0.1really4.0.1-0ubuntu0.24.04.4]
+libarchive13t64/noble-updates,noble-security 3.7.2-2ubuntu0.8 amd64 [actualizable desde: 3.7.2-2ubuntu0.7]
+libasound2-data/noble-updates,noble-updates,noble-security,noble-security 1.2.11-1ubuntu0.3 all [actualizable desde: 1.2.11-1ubuntu0.2]
+libasound2t64/noble-updates,noble-security 1.2.11-1ubuntu0.3 amd64 [actualizable desde: 1.2.11-1ubuntu0.2]
+libatopology2t64/noble-updates,noble-security 1.2.11-1ubuntu0.3 amd64 [actualizable desde: 1.2.11-1ubuntu0.2]
+libbinutils/noble-updates 2.42-4ubuntu2.10 amd64 [actualizable desde: 2.42-4ubuntu2.8]
+libbluetooth3/noble-updates 5.72-0ubuntu5.5 amd64 [actualizable desde: 5.72-0ubuntu5.4]
+libboost-iostreams1.83.0/noble-updates 1.83.0-2.1ubuntu3.2 amd64 [actualizable desde: 1.83.0-2.1ubuntu3.1]
+libboost-locale1.83.0/noble-updates 1.83.0-2.1ubuntu3.2 amd64 [actualizable desde: 1.83.0-2.1ubuntu3.1]
+libboost-thread1.83.0/noble-updates 1.83.0-2.1ubuntu3.2 amd64 [actualizable desde: 1.83.0-2.1ubuntu3.1]
+libctf-nobfd0/noble-updates 2.42-4ubuntu2.10 amd64 [actualizable desde: 2.42-4ubuntu2.8]
+libctf0/noble-updates 2.42-4ubuntu2.10 amd64 [actualizable desde: 2.42-4ubuntu2.8]
+libcurl3t64-gnutls/noble-updates,noble-security 8.5.0-2ubuntu10.11 amd64 [actualizable desde: 8.5.0-2ubuntu10.10]
+libcurl4t64/noble-updates,noble-security 8.5.0-2ubuntu10.11 amd64 [actualizable desde: 8.5.0-2ubuntu10.10]
+libdconf1/noble-updates 0.40.0-4ubuntu0.1 amd64 [actualizable desde: 0.40.0-4build2]
+libde265-0/noble-updates,noble-security 1.0.15-1ubuntu0.1 amd64 [actualizable desde: 1.0.15-1build3]
+libexif12/noble-updates,noble-security 0.6.24-1ubuntu0.24.04.1 amd64 [actualizable desde: 0.6.24-1build2]
+libfprint-2-2/noble-updates 1:1.94.7+tod1-0ubuntu5~24.04.8 amd64 [actualizable desde: 1:1.94.7+tod1-0ubuntu5~24.04.4]
+libfprint-2-tod1/noble-updates 1:1.94.7+tod1-0ubuntu5~24.04.8 amd64 [actualizable desde: 1:1.94.7+tod1-0ubuntu5~24.04.4]
+libfreerdp-client3-3/noble-updates,noble-security 3.30.0+dfsg-0ubuntu0.24.04.1 amd64 [actualizable desde: 3.5.1+dfsg1-0ubuntu1.6]
+libfreerdp-server3-3/noble-updates,noble-security 3.30.0+dfsg-0ubuntu0.24.04.1 amd64 [actualizable desde: 3.5.1+dfsg1-0ubuntu1.6]
+libfreerdp3-3/noble-updates,noble-security 3.30.0+dfsg-0ubuntu0.24.04.1 amd64 [actualizable desde: 3.5.1+dfsg1-0ubuntu1.6]
+libfwupd2/noble-updates 1.9.34-0ubuntu1~24.04.1 amd64 [actualizable desde: 1.9.31-0ubuntu1~24.04.1]
+libgdm1/noble-updates 46.2-1ubuntu1~24.04.9 amd64 [actualizable desde: 46.2-1ubuntu1~24.04.1]
+libgif7/noble-updates,noble-security 5.2.2-1ubuntu1.2 amd64 [actualizable desde: 5.2.2-1ubuntu1]
+libgl1-amber-dri/noble-updates,noble-security 21.3.9-0ubuntu3~24.04.2 amd64 [actualizable desde: 21.3.9-0ubuntu2]
+libgphoto2-6t64/noble-updates,noble-security 2.5.31-2.1ubuntu1.1 amd64 [actualizable desde: 2.5.31-2.1build2]
+libgphoto2-l10n/noble-updates,noble-updates,noble-security,noble-security 2.5.31-2.1ubuntu1.1 all [actualizable desde: 2.5.31-2.1build2]
+libgphoto2-port12t64/noble-updates,noble-security 2.5.31-2.1ubuntu1.1 amd64 [actualizable desde: 2.5.31-2.1build2]
+libgprofng0/noble-updates 2.42-4ubuntu2.10 amd64 [actualizable desde: 2.42-4ubuntu2.8]
+libgssapi-krb5-2/noble-updates,noble-security 1.20.1-6ubuntu2.7 amd64 [actualizable desde: 1.20.1-6ubuntu2.6]
+libgstreamer-plugins-good1.0-0/noble-updates,noble-security 1.24.2-1ubuntu1.5 amd64 [actualizable desde: 1.24.2-1ubuntu1.4]
+libgtk-4-1/noble-updates 4.14.5+ds-0ubuntu0.10 amd64 [actualizable desde: 4.14.5+ds-0ubuntu0.5]
+libgtk-4-bin/noble-updates 4.14.5+ds-0ubuntu0.10 amd64 [actualizable desde: 4.14.5+ds-0ubuntu0.5]
+libgtk-4-common/noble-updates,noble-updates 4.14.5+ds-0ubuntu0.10 all [actualizable desde: 4.14.5+ds-0ubuntu0.5]
+libgtk-4-media-gstreamer/noble-updates 4.14.5+ds-0ubuntu0.10 amd64 [actualizable desde: 4.14.5+ds-0ubuntu0.5]
+libgtop-2.0-11/noble-updates 2.41.3-1ubuntu0.24.04.1 amd64 [actualizable desde: 2.41.3-1build4]
+libgtop2-common/noble-updates,noble-updates 2.41.3-1ubuntu0.24.04.1 all [actualizable desde: 2.41.3-1build4]
+libheif-plugin-aomdec/noble-updates,noble-security 1.17.6-1ubuntu4.6 amd64 [actualizable desde: 1.17.6-1ubuntu4.4]
+libheif-plugin-aomenc/noble-updates,noble-security 1.17.6-1ubuntu4.6 amd64 [actualizable desde: 1.17.6-1ubuntu4.4]
+libheif-plugin-libde265/noble-updates,noble-security 1.17.6-1ubuntu4.6 amd64 [actualizable desde: 1.17.6-1ubuntu4.4]
+libheif1/noble-updates,noble-security 1.17.6-1ubuntu4.6 amd64 [actualizable desde: 1.17.6-1ubuntu4.4]
+libhtml-parser-perl/noble-updates,noble-security 3.81-1ubuntu0.1 amd64 [actualizable desde: 3.81-1build3]
+libhttp-date-perl/noble-updates,noble-updates,noble-security,noble-security 6.06-1ubuntu0.24.04.1 all [actualizable desde: 6.06-1]
+libidn12/noble-updates,noble-security 1.42-1ubuntu0.1 amd64 [actualizable desde: 1.42-1build1]
+libinput-bin/noble-updates 1.25.0-1ubuntu3.5 amd64 [actualizable desde: 1.25.0-1ubuntu3.1]
+libinput10/noble-updates 1.25.0-1ubuntu3.5 amd64 [actualizable desde: 1.25.0-1ubuntu3.1]
+libipa-hbac0t64/noble-updates 2.9.4-1.1ubuntu6.6 amd64 [actualizable desde: 2.9.4-1.1ubuntu6.5]
+libjbig2dec0/noble-updates,noble-security 0.20-1ubuntu0.24.04.1 amd64 [actualizable desde: 0.20-1build3]
+libjcat1/noble-updates 0.2.3-1~ubuntu0.24.04.1 amd64 [actualizable desde: 0.2.0-2build3]
+libk5crypto3/noble-updates,noble-security 1.20.1-6ubuntu2.7 amd64 [actualizable desde: 1.20.1-6ubuntu2.6]
+libkrb5-3/noble-updates,noble-security 1.20.1-6ubuntu2.7 amd64 [actualizable desde: 1.20.1-6ubuntu2.6]
+libkrb5support0/noble-updates,noble-security 1.20.1-6ubuntu2.7 amd64 [actualizable desde: 1.20.1-6ubuntu2.6]
+libldap-common/noble-updates,noble-updates 2.6.10+dfsg-0ubuntu0.24.04.1 all [actualizable desde: 2.6.7+dfsg-1~exp1ubuntu8.2]
+libldap2/noble-updates 2.6.10+dfsg-0ubuntu0.24.04.1 amd64 [actualizable desde: 2.6.7+dfsg-1~exp1ubuntu8.2]
+libmalcontent-0-0/noble-updates 0.11.1-1ubuntu1.3 amd64 [actualizable desde: 0.11.1-1ubuntu1.2]
+libmbim-glib4/noble-updates 1.31.2-0ubuntu3.1 amd64 [actualizable desde: 1.31.2-0ubuntu3]
+libmbim-proxy/noble-updates 1.31.2-0ubuntu3.1 amd64 [actualizable desde: 1.31.2-0ubuntu3]
+libmbim-utils/noble-updates 1.31.2-0ubuntu3.1 amd64 [actualizable desde: 1.31.2-0ubuntu3]
+libmtp-common/noble-updates,noble-updates 1.1.21-3.1ubuntu1 all [actualizable desde: 1.1.21-3.1build1]
+libmtp-runtime/noble-updates 1.1.21-3.1ubuntu1 amd64 [actualizable desde: 1.1.21-3.1build1]
+libmtp9t64/noble-updates 1.1.21-3.1ubuntu1 amd64 [actualizable desde: 1.1.21-3.1build1]
+libmutter-14-0/noble-updates 46.2-1ubuntu0.24.04.16 amd64 [actualizable desde: 46.2-1ubuntu0.24.04.10]
+libnautilus-extension4/noble-updates 1:46.4-0ubuntu0.2 amd64 [actualizable desde: 1:46.4-0ubuntu0.1]
+libnetplan1/noble-updates 1.1.2-8ubuntu1~24.04.2 amd64 [actualizable desde: 1.1.2-2~ubuntu24.04.2]
+libnftables1/noble-updates 1.0.9-1ubuntu0.1 amd64 [actualizable desde: 1.0.9-1build1]
+libnm0/noble-updates 1.46.0-1ubuntu2.7 amd64 [actualizable desde: 1.46.0-1ubuntu2.2]
+libnss-sss/noble-updates 2.9.4-1.1ubuntu6.6 amd64 [actualizable desde: 2.9.4-1.1ubuntu6.5]
+libntfs-3g89t64/noble-updates,noble-security 1:2022.10.3-1.2ubuntu3.2 amd64 [actualizable desde: 1:2022.10.3-1.2ubuntu3.1]
+libnuma1/noble-updates 2.0.18-1ubuntu0.24.04.1 amd64 [actualizable desde: 2.0.18-1build1]
+libpam-gnome-keyring/noble-updates 46.1-2ubuntu0.2 amd64 [actualizable desde: 46.1-2build1]
+libpam-modules-bin/noble-updates,noble-security 1.5.3-5ubuntu5.6 amd64 [actualizable desde: 1.5.3-5ubuntu5.5]
+libpam-modules/noble-updates,noble-security 1.5.3-5ubuntu5.6 amd64 [actualizable desde: 1.5.3-5ubuntu5.5]
+libpam-runtime/noble-updates,noble-updates,noble-security,noble-security 1.5.3-5ubuntu5.6 all [actualizable desde: 1.5.3-5ubuntu5.5]
+libpam-sss/noble-updates 2.9.4-1.1ubuntu6.6 amd64 [actualizable desde: 2.9.4-1.1ubuntu6.5]
+libpam0g/noble-updates,noble-security 1.5.3-5ubuntu5.6 amd64 [actualizable desde: 1.5.3-5ubuntu5.5]
+libpipewire-0.3-0t64/noble-updates,noble-security 1.0.5-1ubuntu3.3 amd64 [actualizable desde: 1.0.5-1ubuntu3.1]
+libpipewire-0.3-common/noble-updates,noble-updates,noble-security,noble-security 1.0.5-1ubuntu3.3 all [actualizable desde: 1.0.5-1ubuntu3.1]
+libpipewire-0.3-modules/noble-updates,noble-security 1.0.5-1ubuntu3.3 amd64 [actualizable desde: 1.0.5-1ubuntu3.1]
+libplymouth5/noble-updates 24.004.60-1ubuntu7.2 amd64 [actualizable desde: 24.004.60-1ubuntu7.1]
+libqpdf29t64/noble-updates 11.9.0-1.1ubuntu0.1 amd64 [actualizable desde: 11.9.0-1.1build1]
+libraw23t64/noble-updates,noble-security 0.21.2-2.1ubuntu0.24.04.2 amd64 [actualizable desde: 0.21.2-2.1ubuntu0.24.04.1]
+libreoffice-base-core/noble-updates,noble-security 4:24.2.7-0ubuntu0.24.04.6 amd64 [actualizable desde: 4:24.2.7-0ubuntu0.24.04.5]
+libreoffice-calc/noble-updates,noble-security 4:24.2.7-0ubuntu0.24.04.6 amd64 [actualizable desde: 4:24.2.7-0ubuntu0.24.04.5]
+libreoffice-common/noble-updates,noble-updates,noble-security,noble-security 4:24.2.7-0ubuntu0.24.04.6 all [actualizable desde: 4:24.2.7-0ubuntu0.24.04.5]
+libreoffice-core/noble-updates,noble-security 4:24.2.7-0ubuntu0.24.04.6 amd64 [actualizable desde: 4:24.2.7-0ubuntu0.24.04.5]
+libreoffice-draw/noble-updates,noble-security 4:24.2.7-0ubuntu0.24.04.6 amd64 [actualizable desde: 4:24.2.7-0ubuntu0.24.04.5]
+libreoffice-gnome/noble-updates,noble-security 4:24.2.7-0ubuntu0.24.04.6 amd64 [actualizable desde: 4:24.2.7-0ubuntu0.24.04.5]
+libreoffice-gtk3/noble-updates,noble-security 4:24.2.7-0ubuntu0.24.04.6 amd64 [actualizable desde: 4:24.2.7-0ubuntu0.24.04.5]
+libreoffice-help-common/noble-updates,noble-updates,noble-security,noble-security 4:24.2.7-0ubuntu0.24.04.6 all [actualizable desde: 4:24.2.7-0ubuntu0.24.04.5]
+libreoffice-help-es/noble-updates,noble-updates,noble-security,noble-security 4:24.2.7-0ubuntu0.24.04.6 all [actualizable desde: 4:24.2.7-0ubuntu0.24.04.5]
+libreoffice-impress/noble-updates,noble-security 4:24.2.7-0ubuntu0.24.04.6 amd64 [actualizable desde: 4:24.2.7-0ubuntu0.24.04.5]
+libreoffice-l10n-es/noble-updates,noble-updates,noble-security,noble-security 4:24.2.7-0ubuntu0.24.04.6 all [actualizable desde: 4:24.2.7-0ubuntu0.24.04.5]
+libreoffice-math/noble-updates,noble-security 4:24.2.7-0ubuntu0.24.04.6 amd64 [actualizable desde: 4:24.2.7-0ubuntu0.24.04.5]
+libreoffice-style-colibre/noble-updates,noble-updates,noble-security,noble-security 4:24.2.7-0ubuntu0.24.04.6 all [actualizable desde: 4:24.2.7-0ubuntu0.24.04.5]
+libreoffice-style-elementary/noble-updates,noble-updates,noble-security,noble-security 4:24.2.7-0ubuntu0.24.04.6 all [actualizable desde: 4:24.2.7-0ubuntu0.24.04.5]
+libreoffice-style-yaru/noble-updates,noble-updates,noble-security,noble-security 4:24.2.7-0ubuntu0.24.04.6 all [actualizable desde: 4:24.2.7-0ubuntu0.24.04.5]
+libreoffice-uiconfig-calc/noble-updates,noble-updates,noble-security,noble-security 4:24.2.7-0ubuntu0.24.04.6 all [actualizable desde: 4:24.2.7-0ubuntu0.24.04.5]
+libreoffice-uiconfig-common/noble-updates,noble-updates,noble-security,noble-security 4:24.2.7-0ubuntu0.24.04.6 all [actualizable desde: 4:24.2.7-0ubuntu0.24.04.5]
+libreoffice-uiconfig-draw/noble-updates,noble-updates,noble-security,noble-security 4:24.2.7-0ubuntu0.24.04.6 all [actualizable desde: 4:24.2.7-0ubuntu0.24.04.5]
+libreoffice-uiconfig-impress/noble-updates,noble-updates,noble-security,noble-security 4:24.2.7-0ubuntu0.24.04.6 all [actualizable desde: 4:24.2.7-0ubuntu0.24.04.5]
+libreoffice-uiconfig-math/noble-updates,noble-updates,noble-security,noble-security 4:24.2.7-0ubuntu0.24.04.6 all [actualizable desde: 4:24.2.7-0ubuntu0.24.04.5]
+libreoffice-uiconfig-writer/noble-updates,noble-updates,noble-security,noble-security 4:24.2.7-0ubuntu0.24.04.6 all [actualizable desde: 4:24.2.7-0ubuntu0.24.04.5]
+libreoffice-writer/noble-updates,noble-security 4:24.2.7-0ubuntu0.24.04.6 amd64 [actualizable desde: 4:24.2.7-0ubuntu0.24.04.5]
+libsframe1/noble-updates 2.42-4ubuntu2.10 amd64 [actualizable desde: 2.42-4ubuntu2.8]
+libsoup-2.4-1/noble-updates,noble-security 2.74.3-6ubuntu1.7 amd64 [actualizable desde: 2.74.3-6ubuntu1.6]
+libsoup2.4-common/noble-updates,noble-updates,noble-security,noble-security 2.74.3-6ubuntu1.7 all [actualizable desde: 2.74.3-6ubuntu1.6]
+libspa-0.2-bluetooth/noble-updates,noble-security 1.0.5-1ubuntu3.3 amd64 [actualizable desde: 1.0.5-1ubuntu3.1]
+libspa-0.2-modules/noble-updates,noble-security 1.0.5-1ubuntu3.3 amd64 [actualizable desde: 1.0.5-1ubuntu3.1]
+libsqlite3-0/noble-updates,noble-security 3.45.1-1ubuntu2.7 amd64 [actualizable desde: 3.45.1-1ubuntu2.6]
+libsss-certmap0/noble-updates 2.9.4-1.1ubuntu6.6 amd64 [actualizable desde: 2.9.4-1.1ubuntu6.5]
+libsss-idmap0/noble-updates 2.9.4-1.1ubuntu6.6 amd64 [actualizable desde: 2.9.4-1.1ubuntu6.5]
+libsss-nss-idmap0/noble-updates 2.9.4-1.1ubuntu6.6 amd64 [actualizable desde: 2.9.4-1.1ubuntu6.5]
+libuno-cppu3t64/noble-updates,noble-security 4:24.2.7-0ubuntu0.24.04.6 amd64 [actualizable desde: 4:24.2.7-0ubuntu0.24.04.5]
+libuno-cppuhelpergcc3-3t64/noble-updates,noble-security 4:24.2.7-0ubuntu0.24.04.6 amd64 [actualizable desde: 4:24.2.7-0ubuntu0.24.04.5]
+libuno-purpenvhelpergcc3-3t64/noble-updates,noble-security 4:24.2.7-0ubuntu0.24.04.6 amd64 [actualizable desde: 4:24.2.7-0ubuntu0.24.04.5]
+libuno-sal3t64/noble-updates,noble-security 4:24.2.7-0ubuntu0.24.04.6 amd64 [actualizable desde: 4:24.2.7-0ubuntu0.24.04.5]
+libuno-salhelpergcc3-3t64/noble-updates,noble-security 4:24.2.7-0ubuntu0.24.04.6 amd64 [actualizable desde: 4:24.2.7-0ubuntu0.24.04.5]
+libwhoopsie0/noble-updates 0.2.77ubuntu0.1 amd64 [actualizable desde: 0.2.77build3]
+libwinpr3-3/noble-updates,noble-security 3.30.0+dfsg-0ubuntu0.24.04.1 amd64 [actualizable desde: 3.5.1+dfsg1-0ubuntu1.6]
+libwireplumber-0.4-0/noble-updates 0.4.17-1ubuntu4.1 amd64 [actualizable desde: 0.4.17-1ubuntu4]
+libxfont2/noble-updates,noble-security 1:2.0.6-1+deb13u1build0.24.04.2 amd64 [actualizable desde: 1:2.0.6-1build1]
+libxmlb2/noble-updates 0.3.24-1~ubuntu0.24.04.1 amd64 [actualizable desde: 0.3.18-1]
+libxpm4/noble-updates,noble-security 1:3.5.17-1ubuntu0.24.04.1 amd64 [actualizable desde: 1:3.5.17-1build2]
+linux-base/noble-updates,noble-updates 4.5ubuntu9+24.04.2 all [actualizable desde: 4.5ubuntu9+24.04.1]
+linux-firmware/noble-updates 20240318.git3b128b60-0ubuntu2.27 amd64 [actualizable desde: 20240318.git3b128b60-0ubuntu2.26]
+linux-generic-hwe-24.04/noble-updates,noble-security 7.0.0-28.28~24.04.1 amd64 [actualizable desde: 6.17.0-35.35~24.04.1]
+linux-headers-generic-hwe-24.04/noble-updates,noble-security 7.0.0-28.28~24.04.1 amd64 [actualizable desde: 6.17.0-35.35~24.04.1]
+linux-image-generic-hwe-24.04/noble-updates,noble-security 7.0.0-28.28~24.04.1 amd64 [actualizable desde: 6.17.0-35.35~24.04.1]
+linux-libc-dev/noble-updates,noble-security 6.8.0-136.136 amd64 [actualizable desde: 6.8.0-134.134]
+linux-tools-common/noble-updates,noble-updates,noble-security,noble-security 6.8.0-136.136 all [actualizable desde: 6.8.0-134.134]
+lshw/noble-updates 02.19.git.2021.06.19.996aaad9c7-2ubuntu0.24.04.1 amd64 [actualizable desde: 02.19.git.2021.06.19.996aaad9c7-2build3]
+mutter-common-bin/noble-updates 46.2-1ubuntu0.24.04.16 amd64 [actualizable desde: 46.2-1ubuntu0.24.04.10]
+mutter-common/noble-updates,noble-updates 46.2-1ubuntu0.24.04.16 all [actualizable desde: 46.2-1ubuntu0.24.04.10]
+nautilus-data/noble-updates,noble-updates 1:46.4-0ubuntu0.2 all [actualizable desde: 1:46.4-0ubuntu0.1]
+nautilus/noble-updates 1:46.4-0ubuntu0.2 amd64 [actualizable desde: 1:46.4-0ubuntu0.1]
+netplan-generator/noble-updates 1.1.2-8ubuntu1~24.04.2 amd64 [actualizable desde: 1.1.2-2~ubuntu24.04.2]
+netplan.io/noble-updates 1.1.2-8ubuntu1~24.04.2 amd64 [actualizable desde: 1.1.2-2~ubuntu24.04.2]
+network-manager-config-connectivity-ubuntu/noble-updates,noble-updates 1.46.0-1ubuntu2.7 all [actualizable desde: 1.46.0-1ubuntu2.2]
+network-manager-openvpn-gnome/noble-updates 1.10.2-4ubuntu0.2 amd64 [actualizable desde: 1.10.2-4build2]
+network-manager-openvpn/noble-updates 1.10.2-4ubuntu0.2 amd64 [actualizable desde: 1.10.2-4build2]
+network-manager/noble-updates 1.46.0-1ubuntu2.7 amd64 [actualizable desde: 1.46.0-1ubuntu2.2]
+nftables/noble-updates 1.0.9-1ubuntu0.1 amd64 [actualizable desde: 1.0.9-1build1]
+nginx-common/noble-updates,noble-updates,noble-security,noble-security 1.24.0-2ubuntu7.15 all [actualizable desde: 1.24.0-2ubuntu7.13]
+nginx/noble-updates,noble-security 1.24.0-2ubuntu7.15 amd64 [actualizable desde: 1.24.0-2ubuntu7.13]
+ntfs-3g/noble-updates,noble-security 1:2022.10.3-1.2ubuntu3.2 amd64 [actualizable desde: 1:2022.10.3-1.2ubuntu3.1]
+numactl/noble-updates 2.0.18-1ubuntu0.24.04.1 amd64 [actualizable desde: 2.0.18-1build1]
+openssh-client/noble-updates,noble-security 1:9.6p1-3ubuntu13.18 amd64 [actualizable desde: 1:9.6p1-3ubuntu13.16]
+openssh-server/noble-updates,noble-security 1:9.6p1-3ubuntu13.18 amd64 [actualizable desde: 1:9.6p1-3ubuntu13.16]
+openssh-sftp-server/noble-updates,noble-security 1:9.6p1-3ubuntu13.18 amd64 [actualizable desde: 1:9.6p1-3ubuntu13.16]
+openvpn/noble-updates,noble-security 2.6.19-0ubuntu0.24.04.3 amd64 [actualizable desde: 2.6.19-0ubuntu0.24.04.2]
+pipewire-alsa/noble-updates,noble-security 1.0.5-1ubuntu3.3 amd64 [actualizable desde: 1.0.5-1ubuntu3.1]
+pipewire-audio/noble-updates,noble-updates,noble-security,noble-security 1.0.5-1ubuntu3.3 all [actualizable desde: 1.0.5-1ubuntu3.1]
+pipewire-bin/noble-updates,noble-security 1.0.5-1ubuntu3.3 amd64 [actualizable desde: 1.0.5-1ubuntu3.1]
+pipewire-pulse/noble-updates,noble-security 1.0.5-1ubuntu3.3 amd64 [actualizable desde: 1.0.5-1ubuntu3.1]
+pipewire/noble-updates,noble-security 1.0.5-1ubuntu3.3 amd64 [actualizable desde: 1.0.5-1ubuntu3.1]
+plymouth-label/noble-updates 24.004.60-1ubuntu7.2 amd64 [actualizable desde: 24.004.60-1ubuntu7.1]
+plymouth-theme-spinner/noble-updates 24.004.60-1ubuntu7.2 amd64 [actualizable desde: 24.004.60-1ubuntu7.1]
+plymouth-theme-ubuntu-text/noble-updates 24.004.60-1ubuntu7.2 amd64 [actualizable desde: 24.004.60-1ubuntu7.1]
+plymouth/noble-updates 24.004.60-1ubuntu7.2 amd64 [actualizable desde: 24.004.60-1ubuntu7.1]
+python-apt-common/noble-updates,noble-updates 2.7.7ubuntu5.2 all [actualizable desde: 2.7.7ubuntu5.1]
+python3-apport/noble-updates,noble-updates 2.28.2-0ubuntu0.1 all [actualizable desde: 2.28.1-0ubuntu3.8]
+python3-apt/noble-updates 2.7.7ubuntu5.2 amd64 [actualizable desde: 2.7.7ubuntu5.1]
+python3-distupgrade/noble-updates,noble-updates 1:24.04.28 all [actualizable desde: 1:24.04.27]
+python3-httplib2/noble-updates,noble-updates,noble-security,noble-security 0.20.4-3ubuntu0.1 all [actualizable desde: 0.20.4-3]
+python3-idna/noble-updates,noble-updates,noble-security,noble-security 3.6-2ubuntu0.2 all [actualizable desde: 3.6-2ubuntu0.1]
+python3-netplan/noble-updates 1.1.2-8ubuntu1~24.04.2 amd64 [actualizable desde: 1.1.2-2~ubuntu24.04.2]
+python3-problem-report/noble-updates,noble-updates 2.28.2-0ubuntu0.1 all [actualizable desde: 2.28.1-0ubuntu3.8]
+python3-software-properties/noble-updates,noble-updates 0.99.49.4 all [actualizable desde: 0.99.49.3]
+python3-sss/noble-updates 2.9.4-1.1ubuntu6.6 amd64 [actualizable desde: 2.9.4-1.1ubuntu6.5]
+python3-uno/noble-updates,noble-security 4:24.2.7-0ubuntu0.24.04.6 amd64 [actualizable desde: 4:24.2.7-0ubuntu0.24.04.5]
+remmina-common/noble-updates,noble-updates,noble-security,noble-security 1.4.43+dfsg-0ubuntu0.24.04.2 all [actualizable desde: 1.4.35+dfsg-0ubuntu5.1]
+remmina-plugin-rdp/noble-updates,noble-security 1.4.43+dfsg-0ubuntu0.24.04.2 amd64 [actualizable desde: 1.4.35+dfsg-0ubuntu5.1]
+remmina-plugin-secret/noble-updates,noble-security 1.4.43+dfsg-0ubuntu0.24.04.2 amd64 [actualizable desde: 1.4.35+dfsg-0ubuntu5.1]
+remmina-plugin-vnc/noble-updates,noble-security 1.4.43+dfsg-0ubuntu0.24.04.2 amd64 [actualizable desde: 1.4.35+dfsg-0ubuntu5.1]
+remmina/noble-updates,noble-security 1.4.43+dfsg-0ubuntu0.24.04.2 amd64 [actualizable desde: 1.4.35+dfsg-0ubuntu5.1]
+rsyslog/noble-updates,noble-security 8.2312.0-3ubuntu9.3 amd64 [actualizable desde: 8.2312.0-3ubuntu9.1]
+snapd/noble-updates,noble-security 2.76+ubuntu24.04.1 amd64 [actualizable desde: 2.73+ubuntu24.04.2]
+software-properties-common/noble-updates,noble-updates 0.99.49.4 all [actualizable desde: 0.99.49.3]
+software-properties-gtk/noble-updates,noble-updates 0.99.49.4 all [actualizable desde: 0.99.49.3]
+sssd-ad-common/noble-updates 2.9.4-1.1ubuntu6.6 amd64 [actualizable desde: 2.9.4-1.1ubuntu6.5]
+sssd-ad/noble-updates 2.9.4-1.1ubuntu6.6 amd64 [actualizable desde: 2.9.4-1.1ubuntu6.5]
+sssd-common/noble-updates 2.9.4-1.1ubuntu6.6 amd64 [actualizable desde: 2.9.4-1.1ubuntu6.5]
+sssd-ipa/noble-updates 2.9.4-1.1ubuntu6.6 amd64 [actualizable desde: 2.9.4-1.1ubuntu6.5]
+sssd-krb5-common/noble-updates 2.9.4-1.1ubuntu6.6 amd64 [actualizable desde: 2.9.4-1.1ubuntu6.5]
+sssd-krb5/noble-updates 2.9.4-1.1ubuntu6.6 amd64 [actualizable desde: 2.9.4-1.1ubuntu6.5]
+sssd-ldap/noble-updates 2.9.4-1.1ubuntu6.6 amd64 [actualizable desde: 2.9.4-1.1ubuntu6.5]
+sssd-proxy/noble-updates 2.9.4-1.1ubuntu6.6 amd64 [actualizable desde: 2.9.4-1.1ubuntu6.5]
+sssd/noble-updates 2.9.4-1.1ubuntu6.6 amd64 [actualizable desde: 2.9.4-1.1ubuntu6.5]
+systemd-hwe-hwdb/noble-updates,noble-updates 255.1.7 all [actualizable desde: 255.1.4]
+tar/noble-updates,noble-security 1.35+dfsg-3ubuntu0.4 amd64 [actualizable desde: 1.35+dfsg-3ubuntu0.2]
+tcpdump/noble-updates 4.99.4-3ubuntu4.24.04.1 amd64 [actualizable desde: 4.99.4-3ubuntu4]
+teamviewer/stable 15.79.4 amd64 [actualizable desde: 15.69.4]
+thermald/noble-updates 2.5.6-2ubuntu0.24.04.5 amd64 [actualizable desde: 2.5.6-2ubuntu0.24.04.2]
+tzdata/noble-updates,noble-updates,noble-security,noble-security 2026b-0ubuntu0.24.04.1 all [actualizable desde: 2026a-0ubuntu0.24.04.1]
+ubuntu-drivers-common/noble-updates 1:0.9.7.6ubuntu3.7 amd64 [actualizable desde: 1:0.9.7.6ubuntu3.2]
+ubuntu-pro-client-l10n/noble-updates,noble-security 37.2ubuntu~24.04.1 amd64 [actualizable desde: 36ubuntu0~24.04]
+ubuntu-pro-client/noble-updates,noble-security 37.2ubuntu~24.04.1 amd64 [actualizable desde: 36ubuntu0~24.04]
+ubuntu-release-upgrader-core/noble-updates,noble-updates 1:24.04.28 all [actualizable desde: 1:24.04.27]
+ubuntu-release-upgrader-gtk/noble-updates,noble-updates 1:24.04.28 all [actualizable desde: 1:24.04.27]
+uno-libs-private/noble-updates,noble-security 4:24.2.7-0ubuntu0.24.04.6 amd64 [actualizable desde: 4:24.2.7-0ubuntu0.24.04.5]
+ure/noble-updates,noble-security 4:24.2.7-0ubuntu0.24.04.6 amd64 [actualizable desde: 4:24.2.7-0ubuntu0.24.04.5]
+vim-common/noble-updates,noble-updates,noble-security,noble-security 2:9.1.0016-1ubuntu7.18 all [actualizable desde: 2:9.1.0016-1ubuntu7.17]
+vim-runtime/noble-updates,noble-updates,noble-security,noble-security 2:9.1.0016-1ubuntu7.18 all [actualizable desde: 2:9.1.0016-1ubuntu7.17]
+vim-tiny/noble-updates,noble-security 2:9.1.0016-1ubuntu7.18 amd64 [actualizable desde: 2:9.1.0016-1ubuntu7.17]
+vim/noble-updates,noble-security 2:9.1.0016-1ubuntu7.18 amd64 [actualizable desde: 2:9.1.0016-1ubuntu7.17]
+wget/noble-updates,noble-security 1.21.4-1ubuntu4.4 amd64 [actualizable desde: 1.21.4-1ubuntu4.1]
+whoopsie/noble-updates 0.2.77ubuntu0.1 amd64 [actualizable desde: 0.2.77build3]
+wireplumber/noble-updates 0.4.17-1ubuntu4.1 amd64 [actualizable desde: 0.4.17-1ubuntu4]
+wpasupplicant/noble-updates 2:2.10-21ubuntu0.4 amd64 [actualizable desde: 2:2.10-21ubuntu0.2]
+xserver-common/noble-updates,noble-updates 2:21.1.12-1ubuntu1.6 all [actualizable desde: 2:21.1.12-1ubuntu1.5]
+xserver-xephyr/noble-updates 2:21.1.12-1ubuntu1.6 amd64 [actualizable desde: 2:21.1.12-1ubuntu1.5]
+xserver-xorg-core/noble-updates 2:21.1.12-1ubuntu1.6 amd64 [actualizable desde: 2:21.1.12-1ubuntu1.5]
+xserver-xorg-legacy/noble-updates 2:21.1.12-1ubuntu1.6 amd64 [actualizable desde: 2:21.1.12-1ubuntu1.5]
+xserver-xorg-video-amdgpu/noble-updates 23.0.0-1ubuntu0.24.04.1 amd64 [actualizable desde: 23.0.0-1build1]
+xwayland/noble-updates 2:23.2.6-1ubuntu0.8 amd64 [actualizable desde: 2:23.2.6-1ubuntu0.7]
+xxd/noble-updates,noble-security 2:9.1.0016-1ubuntu7.18 amd64 [actualizable desde: 2:9.1.0016-1ubuntu7.17]
