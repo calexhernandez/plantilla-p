@@ -1,3 +1,12 @@
-promed@promed-Virtual-Machine:~/Escritorio$ grep -R "download.oracle.com" /etc/apt/sources.list /etc/apt/sources.list.d/
-/etc/apt/sources.list.d/oracle-instantclient.list:deb [trusted=yes] https://download.oracle.com/otn_software/linux/instantclient/ oracle-instantclient-release main
-promed@promed-Virtual-Machine:~/Escritorio$ 
+{
+echo "===== VERSION DE UBUNTU ====="
+lsb_release -a
+
+echo
+echo "===== ACTUALIZACION APT ====="
+sudo apt update
+
+echo
+echo "===== PAQUETES ACTUALIZABLES ====="
+apt list --upgradable
+} > revision_ubuntu.txt 2>&1
