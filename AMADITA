@@ -1,4 +1,7 @@
-sudo apt update
-sudo apt upgrade -y
-sudo apt autoremove -y
-sudo apt autoclean
+journalctl -k -b -1
+
+
+cat /var/run/reboot-required
+
+
+uname -r
