@@ -1,1 +1,56 @@
-https://localhost/modulab/servlet/GetXMLRequestServlet?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkFNQURJVEFNQyIsInJlcXVlc3RJRCI6IjIxMDc0NTciLCJpYXQiOjE3ODQ3NDY0OTIsImV4cCI6MTc4NDc0Njc5Mn0.CQsMD9JdJYTMxQBbfOIKcnpK1Kz0qpW2iA8aB0w72Xs
+{
+  "IDTipoPaciente" : "LC",
+  "TipoPaciente" : "Laboratorio Cliente",
+  "NumeroRequisicionPedido" : "PruCI09-1",
+  "FechaAtencion" : "11/08/2026",
+  "IDServicio" : "999999",
+  "Servicio" : "Cliente De Prueba",
+  "UbicacionPaciente" : "",
+  "IDCentroExtraccion" : "L001",
+  "CentroExtraccion" : "Laboratorio Principal (Gazcue)",
+  "IDDoctor" : "24465",
+  "CedulaDoctor" : "",
+  "Doctor" : "PRUEBA",
+  "IDDiagnostico" : "NE",
+  "Diagnostico" : "",
+  "IDDestino" : "RS",
+  "Destino" : "Recoger en Sucursal",
+  "Prioridad" : "",
+  "ImagenOrdenMedica" : [ ],
+  "ConsultaResultados" : "",
+  "Apellidos" : "lastname3",
+  "Nombres" : "name3",
+  "IDPrincipalActual" : "pruCED01",
+  "IdPrincipalNuevo" : "",
+  "IdPaciente" : "pruHis01",
+  "IdFamiliar" : "",
+  "FechaNacimiento" : "20/05/1997",
+  "Sexo" : "M",
+  "Embarazo" : "",
+  "CorreoElectronico" : "",
+  "Direccion" : {
+    "Fisica" : {
+      "Calle" : "",
+      "Ciudad" : "",
+      "Estado" : "",
+      "CodigoPostal" : "",
+      "Pais" : ""
+    },
+    "Postal" : {
+      "Calle" : "",
+      "Ciudad" : "",
+      "Estado" : "",
+      "CodigoPostal" : "",
+      "Pais" : ""
+    }
+  },
+  "Telefono" : "",
+  "TipoMensaje" : "cancela individual",
+  "Procedures" : [
+    {
+      "NumeroLinea" : "2",
+      "IDProcedimiento" : "10201",
+      "Procedimiento" : ""
+    }
+  ]
+}
