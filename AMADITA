@@ -1,56 +1,6 @@
-{
-  "IDTipoPaciente" : "LC",
-  "TipoPaciente" : "Laboratorio Cliente",
-  "NumeroRequisicionPedido" : "PruCI09-1",
-  "FechaAtencion" : "11/08/2026",
-  "IDServicio" : "999999",
-  "Servicio" : "Cliente De Prueba",
-  "UbicacionPaciente" : "",
-  "IDCentroExtraccion" : "L001",
-  "CentroExtraccion" : "Laboratorio Principal (Gazcue)",
-  "IDDoctor" : "24465",
-  "CedulaDoctor" : "",
-  "Doctor" : "PRUEBA",
-  "IDDiagnostico" : "NE",
-  "Diagnostico" : "",
-  "IDDestino" : "RS",
-  "Destino" : "Recoger en Sucursal",
-  "Prioridad" : "",
-  "ImagenOrdenMedica" : [ ],
-  "ConsultaResultados" : "",
-  "Apellidos" : "lastname3",
-  "Nombres" : "name3",
-  "IDPrincipalActual" : "pruCED01",
-  "IdPrincipalNuevo" : "",
-  "IdPaciente" : "pruHis01",
-  "IdFamiliar" : "",
-  "FechaNacimiento" : "20/05/1997",
-  "Sexo" : "M",
-  "Embarazo" : "",
-  "CorreoElectronico" : "",
-  "Direccion" : {
-    "Fisica" : {
-      "Calle" : "",
-      "Ciudad" : "",
-      "Estado" : "",
-      "CodigoPostal" : "",
-      "Pais" : ""
-    },
-    "Postal" : {
-      "Calle" : "",
-      "Ciudad" : "",
-      "Estado" : "",
-      "CodigoPostal" : "",
-      "Pais" : ""
-    }
-  },
-  "Telefono" : "",
-  "TipoMensaje" : "cancela individual",
-  "Procedures" : [
-    {
-      "NumeroLinea" : "2",
-      "IDProcedimiento" : "10201",
-      "Procedimiento" : ""
-    }
-  ]
-}
+MSH|^~\&|Modulab|Modulab|Portal|Portal|20260812162646-0400||ORU^R01^ORU_R01|LAB31786566406576|P|2.5|||||RD||ES
+PID|1||pruHis01^^^^PI~pruCED01^^^^PPN||LASTNAME3^NAME3||19970520120000-0400|M|||||^PRN^PH^^^^^^. ^^^. |||||||||||||||||N
+PV1|1|LC||||||||||||||N
+ORC|SC||01547127^MODULAB|PruCI11-1^2124444&MODULAB|SC||||20260812162636-0400|||NO^No Especificado|||||||||CLIENTE DE PRUEBA^^^^^^FI^^^999999
+OBR|1|PruCI11-1|01547127^MODULAB|10201^THC Marihuana^MODULAB||||||L400||||||NO^No Especificado||||5||||LAB|S|||RS
+SPM|1|41901547127||2^Orina|||^^MODULAB|^^MODULAB|||||||||20260812162636|||N||||||1
